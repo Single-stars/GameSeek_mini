@@ -1097,3 +1097,106 @@ Report hygiene:
 - `test:gameseek:robustness` regenerated v0.3.4 reports during verification.
 - `test:gameseek:followups` regenerated v0.4.1 pair-hardening reports during verification.
 - Those historical report files were restored after verification.
+
+## v0.4.2 Paged Required Follow-ups Correction
+
+Date:
+- `2026-05-09`
+
+Branch:
+- `mini-v0.4.2-paged-required-followups`
+
+Base:
+- `mini-v0.4.2-frontend-followup-integration`
+- Commit `b3dec90 Integrate GameSeek follow-up questions in frontend`
+
+Reason for correction:
+- The first v0.4.2 frontend flow exposed an intermediate recommendation state and made follow-up questions optional.
+- Product direction changed to treat returned follow-up questions as part of the required recommendation process.
+- The corrected flow now shows one question per page, requires all 12 core questions, requires returned follow-up questions, and only then shows final recommendations.
+
+Scope:
+- Do not create v0.4.3; this is a correction to the unpublished v0.4.2 branch.
+- Do not expand the game pool.
+- Do not modify `goldenSeeds.ts`.
+- Do not modify `questions.ts`.
+- Do not modify `scoring.ts`.
+- Do not change the recommendation algorithm.
+- Do not introduce popularity, rating, sales, or external priors.
+- Do not introduce Playwright/Cypress.
+- Do not add multi-round follow-up.
+
+Files changed:
+- `src/app/page.tsx`
+- `scripts/test-gameseek-frontend-contract.ts`
+- `docs/MINI_V042_FRONTEND_FOLLOWUP_INTEGRATION.md`
+- `docs/ITERATION_LOG.md`
+
+TDD / contract notes:
+- Updated `scripts/test-gameseek-frontend-contract.ts` first.
+- RED run confirmed the old page failed the new contract:
+  - Missing `checking_followups`.
+  - Missing `coreQuestionIndex`.
+  - Missing `followUpQuestionIndex`.
+  - Missing progress markers.
+  - Missing required follow-up page copy.
+  - Still contained old optional-flow UI text.
+- Refactored `src/app/page.tsx`.
+- Contract test then passed.
+
+Frontend behavior after correction:
+- `Phase` is now:
+  - `answering_core`
+  - `checking_followups`
+  - `answering_followups`
+  - `loading_final`
+  - `final_results`
+  - `error`
+- Core and follow-up question indices are separate:
+  - `coreQuestionIndex`
+  - `followUpQuestionIndex`
+- The page shows one question at a time.
+- Right-side progress shows `1 / 12` through `12 / 12` during core questions.
+- When follow-ups are returned, progress continues as `13 / 15`, `14 / 15`, `15 / 15` for three follow-ups.
+- The page does not display intermediate recommendations.
+- The page does not provide a follow-up skip button.
+- The page does not expose optional rerank UX.
+- Final recommendations are shown once.
+
+Manual validation:
+- Production server was available at `http://127.0.0.1:3002/`.
+- Page HTTP request returned status `200`.
+- Page HTML contained `GameSeek Mini`.
+- Page HTML did not contain old optional-flow strings checked by the contract test.
+- No-follow-up path with `lol-wild-rift`:
+  - status `200`
+  - recommendations `6`
+  - `needsFollowUp = false`
+  - follow-up count `0`
+- Follow-up path with `slay-the-spire`:
+  - initial status `200`
+  - recommendations `6`
+  - `needsFollowUp = true`
+  - follow-up count `3`
+  - question ids `F_DECKBUILDER_STYLE`, `F_STRATEGY_SUBCLUSTER`, `F_COLONY_MANAGEMENT_STYLE`
+  - final follow-up request status `200`
+  - final recommendations `6`
+  - final `needsFollowUp = false`
+- Browser click automation was not used; this is production HTTP + direct API + contract validation, not Playwright/Cypress E2E.
+
+Verification:
+- `npm.cmd run test:gameseek`: passed, baseline `Top6Recall = 1`, `TopKMonotonicityPassed = true`, `failures = []`.
+- `npm.cmd run test:gameseek:metadata`: passed, metadata errors `0`, warnings `0`.
+- `npm.cmd run test:gameseek:api`: passed.
+- `npm.cmd run test:gameseek:followups`: passed, pair scenarios `8` passed, `0` failed, `2` skipped.
+- `npm.cmd run test:gameseek:robustness`: passed, `missingFiles = []`.
+- `npm.cmd run test:gameseek:frontend-contract`: passed.
+- `npm.cmd run build`: passed.
+- `git diff -- src/lib/gameseek/goldenSeeds.ts`: no diff.
+- `git diff -- src/lib/gameseek/questions.ts`: no diff.
+- `git diff -- src/lib/gameseek/scoring.ts`: no diff.
+
+Report hygiene:
+- `test:gameseek:robustness` regenerated v0.3.4 reports during verification.
+- `test:gameseek:followups` regenerated v0.4.1 reports during verification.
+- Historical report churn was restored after verification.

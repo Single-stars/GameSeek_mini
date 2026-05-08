@@ -1,5 +1,6 @@
 "use client";
 
+import type { CSSProperties } from "react";
 import { useMemo, useState } from "react";
 import { questions } from "@/lib/gameseek/questions";
 import type { AnswerMap } from "@/lib/gameseek/types";
@@ -7,8 +8,7 @@ import type { FollowUpQuestion } from "@/lib/gameseek/followupQuestions";
 
 type Phase =
   | "answering_core"
-  | "loading_initial"
-  | "initial_results"
+  | "checking_followups"
   | "answering_followups"
   | "loading_final"
   | "final_results"
@@ -35,10 +35,10 @@ type Diagnostic = {
 };
 
 type RecommendApiResponse = {
-  results?: ApiResult[];
-  recommendations?: ApiResult[];
+  results?: unknown;
+  recommendations?: unknown;
   needsFollowUp?: boolean;
-  followUpQuestions?: FollowUpQuestion[];
+  followUpQuestions?: unknown;
   diagnostic?: Diagnostic;
   error?: string;
 };
@@ -48,7 +48,7 @@ const shellStyle = {
   margin: "0 auto",
   padding: "40px 20px 72px",
   fontFamily: "Georgia, 'Noto Serif SC', serif",
-} satisfies React.CSSProperties;
+} satisfies CSSProperties;
 
 const cardStyle = {
   border: "2px solid #201915",
@@ -56,7 +56,26 @@ const cardStyle = {
   padding: 28,
   background: "#fffaf0",
   boxShadow: "10px 10px 0 #201915",
-} satisfies React.CSSProperties;
+} satisfies CSSProperties;
+
+const questionCardStyle = {
+  marginTop: 28,
+  padding: 26,
+  background: "#fffdf7",
+  border: "2px solid #201915",
+  borderRadius: 24,
+} satisfies CSSProperties;
+
+const progressPill = {
+  minWidth: 96,
+  padding: "10px 16px",
+  border: "2px solid #201915",
+  borderRadius: 999,
+  background: "#d7ff73",
+  fontWeight: 900,
+  textAlign: "center",
+  whiteSpace: "nowrap",
+} satisfies CSSProperties;
 
 function readRecommendations(data: RecommendApiResponse) {
   const rows = Array.isArray(data.recommendations)
@@ -69,40 +88,104 @@ function readRecommendations(data: RecommendApiResponse) {
     throw new Error("API 返回结构缺少 recommendations/results。");
   }
 
-  return rows;
+  return rows as ApiResult[];
+}
+
+function readFollowUpQuestions(data: RecommendApiResponse) {
+  if (data.followUpQuestions == null) return [];
+  if (!Array.isArray(data.followUpQuestions)) {
+    throw new Error("API 返回的 followUpQuestions 格式不合法。");
+  }
+
+  for (const question of data.followUpQuestions) {
+    if (!question || typeof question !== "object") {
+      throw new Error("API 返回的追加问题格式不合法。");
+    }
+    const row = question as Record<string, unknown>;
+    if (typeof row.id !== "string" || typeof row.text !== "string") {
+      throw new Error("API 返回的追加问题缺少 id/text。");
+    }
+    if (!Array.isArray(row.options) || row.options.length === 0) {
+      throw new Error(`追加问题 ${row.id} 缺少 options。`);
+    }
+    for (const option of row.options) {
+      if (!option || typeof option !== "object") {
+        throw new Error(`追加问题 ${row.id} 的选项格式不合法。`);
+      }
+      const optionRow = option as Record<string, unknown>;
+      if (typeof optionRow.id !== "string" || typeof optionRow.label !== "string") {
+        throw new Error(`追加问题 ${row.id} 的选项缺少 id/label。`);
+      }
+    }
+  }
+
+  return data.followUpQuestions as FollowUpQuestion[];
+}
+
+function resultList(value: string[] | undefined) {
+  return Array.isArray(value) && value.length > 0 ? value.join(" / ") : "暂无";
 }
 
 export default function HomePage() {
+  const [coreQuestionIndex, setCoreQuestionIndex] = useState(0);
+  const [followUpQuestionIndex, setFollowUpQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState<AnswerMap>({});
   const [followUpAnswers, setFollowUpAnswers] = useState<Record<string, string>>({});
-  const [recommendations, setRecommendations] = useState<ApiResult[]>([]);
   const [followUpQuestions, setFollowUpQuestions] = useState<FollowUpQuestion[]>([]);
-  const [needsFollowUp, setNeedsFollowUp] = useState(false);
+  const [recommendations, setRecommendations] = useState<ApiResult[]>([]);
+  const [pendingInitialRecommendations, setPendingInitialRecommendations] = useState<ApiResult[] | null>(null);
   const [diagnostic, setDiagnostic] = useState<Diagnostic | undefined>();
   const [phase, setPhase] = useState<Phase>("answering_core");
-  const [errorMessage, setErrorMessage] = useState("");
-  const [hasSubmittedFollowUps, setHasSubmittedFollowUps] = useState(false);
-  const [hasSkippedFollowUps, setHasSkippedFollowUps] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [softNotice, setSoftNotice] = useState<string | null>(null);
+  const [hasAnsweredFollowUps, setHasAnsweredFollowUps] = useState(false);
 
-  const answeredCount = useMemo(() => Object.keys(answers).length, [answers]);
-  const allCoreAnswered = answeredCount === questions.length;
-  const allFollowUpsAnswered =
-    followUpQuestions.length > 0 &&
-    followUpQuestions.every((question) => Boolean(followUpAnswers[question.id]));
+  const coreTotal = questions.length;
+  const followUpTotal = followUpQuestions.length;
+  const totalQuestionCount = coreTotal + followUpTotal;
+  const currentCoreQuestion = phase === "answering_core" ? questions[coreQuestionIndex] : undefined;
+  const currentFollowUpQuestion =
+    phase === "answering_followups" ? followUpQuestions[followUpQuestionIndex] : undefined;
+
+  const answeredCoreCount = useMemo(() => Object.keys(answers).length, [answers]);
+  const allCoreAnswered = coreTotal > 0 && questions.every((question) => Boolean(answers[question.id]));
+  const currentCoreAnswered = Boolean(currentCoreQuestion && answers[currentCoreQuestion.id]);
+  const currentFollowUpAnswered = Boolean(currentFollowUpQuestion && followUpAnswers[currentFollowUpQuestion.id]);
+  const isLastCoreQuestion = coreQuestionIndex === coreTotal - 1;
+  const isLastFollowUpQuestion = followUpQuestionIndex === followUpTotal - 1;
+
+  const progressLabel =
+    phase === "checking_followups"
+      ? "正在判断是否需要追加问题..."
+      : phase === "answering_followups"
+        ? `${coreTotal + followUpQuestionIndex + 1} / ${totalQuestionCount}`
+        : phase === "answering_core"
+          ? `${coreQuestionIndex + 1} / ${coreTotal}`
+          : "";
+
+  function resetQuestionnaire() {
+    setCoreQuestionIndex(0);
+    setFollowUpQuestionIndex(0);
+    setAnswers({});
+    setFollowUpAnswers({});
+    setFollowUpQuestions([]);
+    setRecommendations([]);
+    setPendingInitialRecommendations(null);
+    setDiagnostic(undefined);
+    setPhase("answering_core");
+    setErrorMessage(null);
+    setSoftNotice(null);
+    setHasAnsweredFollowUps(false);
+  }
 
   function setCoreAnswer(questionId: string, optionId: string) {
     setAnswers((prev) => ({ ...prev, [questionId]: optionId }));
-    if (phase !== "answering_core") {
-      setPhase("answering_core");
-      setRecommendations([]);
-      setFollowUpQuestions([]);
-      setFollowUpAnswers({});
-      setNeedsFollowUp(false);
-      setDiagnostic(undefined);
-      setErrorMessage("");
-      setHasSubmittedFollowUps(false);
-      setHasSkippedFollowUps(false);
-    }
+    setErrorMessage(null);
+  }
+
+  function setFollowUpAnswer(questionId: string, optionId: string) {
+    setFollowUpAnswers((prev) => ({ ...prev, [questionId]: optionId }));
+    setErrorMessage(null);
   }
 
   async function requestRecommendations(payload: { answers: AnswerMap; followUpAnswers?: Record<string, string> }) {
@@ -126,164 +209,332 @@ export default function HomePage() {
     return {
       recommendations: readRecommendations(data),
       needsFollowUp: Boolean(data.needsFollowUp),
-      followUpQuestions: Array.isArray(data.followUpQuestions) ? data.followUpQuestions : [],
+      followUpQuestions: readFollowUpQuestions(data),
       diagnostic: data.diagnostic,
     };
   }
 
-  async function submitCoreAnswers() {
+  async function checkFollowUps() {
     if (!allCoreAnswered) {
-      setErrorMessage(`请先完成全部 ${questions.length} 道核心题，目前已回答 ${answeredCount} 道。`);
-      setPhase("error");
+      setErrorMessage(`请先完成全部 ${coreTotal} 道核心问题，目前已回答 ${answeredCoreCount} 道。`);
       return;
     }
 
-    setPhase("loading_initial");
-    setErrorMessage("");
+    setPhase("checking_followups");
+    setErrorMessage(null);
+    setSoftNotice(null);
     setFollowUpAnswers({});
-    setHasSubmittedFollowUps(false);
-    setHasSkippedFollowUps(false);
+    setFollowUpQuestions([]);
+    setFollowUpQuestionIndex(0);
+    setPendingInitialRecommendations(null);
+    setHasAnsweredFollowUps(false);
 
     try {
       const data = await requestRecommendations({ answers });
-      setRecommendations(data.recommendations);
-      setNeedsFollowUp(data.needsFollowUp);
-      setFollowUpQuestions(data.followUpQuestions);
+      setPendingInitialRecommendations(data.recommendations);
       setDiagnostic(data.diagnostic);
 
-      if (data.needsFollowUp && data.followUpQuestions.length === 0) {
-        throw new Error("API 表示需要追问，但没有返回 followUpQuestions。");
+      if (data.needsFollowUp && data.followUpQuestions.length > 0) {
+        setFollowUpQuestions(data.followUpQuestions);
+        setFollowUpQuestionIndex(0);
+        setPhase("answering_followups");
+        return;
       }
 
-      setPhase(data.needsFollowUp && data.followUpQuestions.length > 0 ? "answering_followups" : "final_results");
+      if (data.needsFollowUp && data.followUpQuestions.length === 0) {
+        setSoftNotice("系统没有返回追加问题，已直接生成推荐。");
+      }
+
+      setRecommendations(data.recommendations);
+      setPhase("final_results");
     } catch (error) {
       setErrorMessage(error instanceof Error ? error.message : "生成推荐失败。");
       setPhase("error");
     }
   }
 
-  async function submitFollowUpAnswers() {
-    if (!allFollowUpsAnswered) {
-      setErrorMessage("请先回答全部追问题，或选择跳过追问。");
+  function goToNextCoreQuestion() {
+    if (!currentCoreQuestion) {
+      setErrorMessage("题目数据异常，请重新开始。");
       setPhase("error");
+      return;
+    }
+    if (!answers[currentCoreQuestion.id]) {
+      setErrorMessage("请先选择当前题的一个选项。");
+      return;
+    }
+    if (isLastCoreQuestion) {
+      void checkFollowUps();
+      return;
+    }
+    setCoreQuestionIndex((index) => index + 1);
+    setErrorMessage(null);
+  }
+
+  function goToPreviousCoreQuestion() {
+    setCoreQuestionIndex((index) => Math.max(0, index - 1));
+    setErrorMessage(null);
+  }
+
+  async function submitFollowUpAnswers() {
+    if (!currentFollowUpQuestion) {
+      setErrorMessage("追加问题数据异常，请重新开始。");
+      setPhase("error");
+      return;
+    }
+    if (!followUpAnswers[currentFollowUpQuestion.id]) {
+      setErrorMessage("请先选择当前追加问题的一个选项。");
+      return;
+    }
+
+    if (!isLastFollowUpQuestion) {
+      setFollowUpQuestionIndex((index) => index + 1);
+      setErrorMessage(null);
+      return;
+    }
+
+    const allFollowUpsAnswered = followUpQuestions.every((question) => Boolean(followUpAnswers[question.id]));
+    if (!allFollowUpsAnswered) {
+      setErrorMessage("请先回答全部追加问题。");
       return;
     }
 
     setPhase("loading_final");
-    setErrorMessage("");
+    setErrorMessage(null);
+    setSoftNotice(null);
 
     try {
       const data = await requestRecommendations({ answers, followUpAnswers });
       setRecommendations(data.recommendations);
-      setNeedsFollowUp(false);
-      setFollowUpQuestions([]);
       setDiagnostic(data.diagnostic);
-      setHasSubmittedFollowUps(true);
-      setHasSkippedFollowUps(false);
+      setPendingInitialRecommendations(null);
+      setHasAnsweredFollowUps(true);
       setPhase("final_results");
     } catch (error) {
-      setErrorMessage(error instanceof Error ? error.message : "优化推荐失败。");
+      setErrorMessage(error instanceof Error ? error.message : "生成最终推荐失败。");
       setPhase("error");
     }
   }
 
-  function skipFollowUps() {
-    setHasSubmittedFollowUps(false);
-    setHasSkippedFollowUps(true);
-    setPhase("final_results");
+  function goToPreviousFollowUpQuestion() {
+    setFollowUpQuestionIndex((index) => Math.max(0, index - 1));
+    setErrorMessage(null);
   }
 
-  function returnFromError() {
-    setPhase(followUpQuestions.length > 0 && recommendations.length > 0 ? "answering_followups" : "answering_core");
-  }
+  const resultHint = hasAnsweredFollowUps
+    ? "已根据你的核心答案和追加问题生成推荐。"
+    : "已根据你的核心答案生成推荐。";
 
-  const isLoading = phase === "loading_initial" || phase === "loading_final";
-  const showingInitial = phase === "answering_followups";
-  const showingResults = recommendations.length > 0 && (showingInitial || phase === "final_results");
-  const resultTitle = showingInitial ? "初步推荐" : "推荐结果";
-  const resultHint = showingInitial
-    ? "下面是根据核心问卷得到的初步结果。回答追问后会进一步优化排序。"
-    : hasSubmittedFollowUps
-      ? "已根据你的追问答案优化排序。"
-      : hasSkippedFollowUps
-        ? "已跳过追问，展示初步推荐结果。"
-        : "下面是根据核心问卷得到的推荐结果。";
+  if (coreTotal === 0) {
+    return (
+      <main style={shellStyle}>
+        <section style={cardStyle}>
+          <h1 style={{ marginTop: 0 }}>GameSeek Mini</h1>
+          <p>题目数据异常：当前没有可用的核心问题。</p>
+        </section>
+      </main>
+    );
+  }
 
   return (
     <main style={shellStyle}>
       <section style={cardStyle}>
-        <p style={{ margin: 0, letterSpacing: 2, textTransform: "uppercase", fontSize: 12 }}>GameSeek Mini v0.4.2</p>
-        <h1 style={{ fontSize: "clamp(42px, 8vw, 84px)", lineHeight: 0.9, margin: "12px 0 16px" }}>纯体验游戏推荐器</h1>
-        <p style={{ fontSize: 18, maxWidth: 700, lineHeight: 1.7, margin: 0 }}>
-          回答 12 个核心问题后，系统会先给出推荐。如果结果里出现相似游戏混淆，会再追问 1 到 3 个问题，用来微调排序。
-        </p>
-        <p style={{ marginTop: 18, fontWeight: 700 }}>已回答：{answeredCount} / {questions.length}</p>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 18 }}>
+          <div>
+            <p style={{ margin: 0, letterSpacing: 2, textTransform: "uppercase", fontSize: 12 }}>GameSeek Mini v0.4.2</p>
+            <h1 style={{ fontSize: "clamp(42px, 8vw, 84px)", lineHeight: 0.9, margin: "12px 0 16px" }}>GameSeek Mini</h1>
+            <p style={{ fontSize: 18, maxWidth: 700, lineHeight: 1.7, margin: 0 }}>
+              回答几个问题，找到更适合你的游戏。系统会先判断大方向；如果几个相似游戏需要区分，会继续展示必答的追加问题。
+            </p>
+          </div>
+          {progressLabel && (
+            <div aria-label="答题进度" style={progressPill}>
+              {progressLabel}
+            </div>
+          )}
+        </div>
       </section>
 
+      {phase === "answering_core" && currentCoreQuestion && (
+        <section style={questionCardStyle}>
+          <p style={{ margin: 0, fontWeight: 900, color: "#6b4f2c" }}>核心问题</p>
+          <h2 style={{ fontSize: 28, margin: "10px 0 18px" }}>{currentCoreQuestion.prompt}</h2>
+          <div style={{ display: "grid", gap: 12 }}>
+            {currentCoreQuestion.options.map((option) => {
+              const checked = answers[currentCoreQuestion.id] === option.id;
+              return (
+                <label
+                  key={option.id}
+                  style={{
+                    display: "flex",
+                    gap: 12,
+                    alignItems: "flex-start",
+                    padding: 14,
+                    border: checked ? "2px solid #201915" : "1px solid #d8c8ae",
+                    borderRadius: 16,
+                    background: checked ? "#ffe08a" : "#fffaf0",
+                    cursor: "pointer",
+                  }}
+                >
+                  <input
+                    type="radio"
+                    name={currentCoreQuestion.id}
+                    checked={checked}
+                    onChange={() => setCoreAnswer(currentCoreQuestion.id, option.id)}
+                    style={{ marginTop: 4 }}
+                  />
+                  <span>{option.text}</span>
+                </label>
+              );
+            })}
+          </div>
+          {errorMessage && <p style={{ color: "#8a1f11", fontWeight: 800 }}>{errorMessage}</p>}
+          <div style={{ display: "flex", justifyContent: "space-between", gap: 12, marginTop: 24 }}>
+            <button
+              onClick={goToPreviousCoreQuestion}
+              disabled={coreQuestionIndex === 0}
+              style={{
+                padding: "12px 18px",
+                borderRadius: 999,
+                border: "2px solid #201915",
+                background: "#fffaf0",
+                fontWeight: 800,
+                cursor: coreQuestionIndex === 0 ? "not-allowed" : "pointer",
+              }}
+            >
+              上一题
+            </button>
+            <button
+              onClick={goToNextCoreQuestion}
+              disabled={!currentCoreAnswered}
+              style={{
+                padding: "12px 20px",
+                borderRadius: 999,
+                border: "2px solid #201915",
+                background: currentCoreAnswered ? "#201915" : "#d8c8ae",
+                color: currentCoreAnswered ? "#fffaf0" : "#201915",
+                fontWeight: 900,
+                cursor: currentCoreAnswered ? "pointer" : "not-allowed",
+              }}
+            >
+              {isLastCoreQuestion ? "检查是否需要追问" : "下一题"}
+            </button>
+          </div>
+        </section>
+      )}
+
+      {phase === "checking_followups" && (
+        <section style={questionCardStyle} aria-live="polite">
+          <p style={{ margin: 0, fontWeight: 900, color: "#6b4f2c" }}>核心问题已完成</p>
+          <h2 style={{ fontSize: 28, margin: "10px 0 12px" }}>正在判断是否需要追加问题...</h2>
+          <p style={{ margin: 0, lineHeight: 1.7 }}>如果当前答案已经足够明确，会直接生成最终推荐；如果存在相似游戏混淆，会继续显示追加问题。</p>
+        </section>
+      )}
+
+      {phase === "answering_followups" && currentFollowUpQuestion && (
+        <section style={{ ...questionCardStyle, background: "#eef7ff" }}>
+          <p style={{ margin: 0, fontWeight: 900, color: "#2b5a78" }}>追加问题</p>
+          <p style={{ margin: "10px 0 0", lineHeight: 1.6 }}>为了更准，还需要回答几个追加问题。</p>
+          <h2 style={{ fontSize: 28, margin: "14px 0 18px" }}>{currentFollowUpQuestion.text}</h2>
+          <div style={{ display: "grid", gap: 12 }}>
+            {currentFollowUpQuestion.options.map((option) => {
+              const checked = followUpAnswers[currentFollowUpQuestion.id] === option.id;
+              return (
+                <label
+                  key={option.id}
+                  style={{
+                    display: "flex",
+                    gap: 12,
+                    alignItems: "flex-start",
+                    padding: 14,
+                    border: checked ? "2px solid #201915" : "1px solid #b8c7d8",
+                    borderRadius: 16,
+                    background: checked ? "#d7ff73" : "#fff",
+                    cursor: "pointer",
+                  }}
+                >
+                  <input
+                    type="radio"
+                    name={currentFollowUpQuestion.id}
+                    checked={checked}
+                    onChange={() => setFollowUpAnswer(currentFollowUpQuestion.id, option.id)}
+                    style={{ marginTop: 4 }}
+                  />
+                  <span>{option.label}</span>
+                </label>
+              );
+            })}
+          </div>
+          {errorMessage && <p style={{ color: "#8a1f11", fontWeight: 800 }}>{errorMessage}</p>}
+          <div style={{ display: "flex", justifyContent: "space-between", gap: 12, marginTop: 24 }}>
+            <button
+              onClick={goToPreviousFollowUpQuestion}
+              disabled={followUpQuestionIndex === 0}
+              style={{
+                padding: "12px 18px",
+                borderRadius: 999,
+                border: "2px solid #201915",
+                background: "#fffaf0",
+                fontWeight: 800,
+                cursor: followUpQuestionIndex === 0 ? "not-allowed" : "pointer",
+              }}
+            >
+              上一题
+            </button>
+            <button
+              onClick={() => void submitFollowUpAnswers()}
+              disabled={!currentFollowUpAnswered}
+              style={{
+                padding: "12px 20px",
+                borderRadius: 999,
+                border: "2px solid #201915",
+                background: currentFollowUpAnswered ? "#201915" : "#d8c8ae",
+                color: currentFollowUpAnswered ? "#fffaf0" : "#201915",
+                fontWeight: 900,
+                cursor: currentFollowUpAnswered ? "pointer" : "not-allowed",
+              }}
+            >
+              {isLastFollowUpQuestion ? "生成推荐" : "下一题"}
+            </button>
+          </div>
+        </section>
+      )}
+
+      {phase === "loading_final" && (
+        <section style={questionCardStyle} aria-live="polite">
+          <p style={{ margin: 0, fontWeight: 900, color: "#2b5a78" }}>追加问题已完成</p>
+          <h2 style={{ fontSize: 28, margin: "10px 0 12px" }}>正在生成最终推荐...</h2>
+          <p style={{ margin: 0, lineHeight: 1.7 }}>正在根据核心答案和追加问题重新排序相似游戏。</p>
+        </section>
+      )}
+
       {phase === "error" && (
-        <section style={{ marginTop: 24, padding: 18, border: "2px solid #8a1f11", borderRadius: 18, background: "#ffe9df" }}>
+        <section style={{ marginTop: 24, padding: 22, border: "2px solid #8a1f11", borderRadius: 18, background: "#ffe9df" }}>
           <h2 style={{ margin: "0 0 8px" }}>需要处理一个问题</h2>
-          <p style={{ margin: "0 0 14px" }}>{errorMessage}</p>
+          <p style={{ margin: "0 0 14px" }}>{errorMessage ?? "页面遇到了未知错误。"}</p>
           <button
-            onClick={returnFromError}
-            style={{ padding: "10px 16px", borderRadius: 999, border: "2px solid #201915", background: "#fffaf0", fontWeight: 800, cursor: "pointer" }}
+            onClick={resetQuestionnaire}
+            style={{
+              padding: "10px 16px",
+              borderRadius: 999,
+              border: "2px solid #201915",
+              background: "#fffaf0",
+              fontWeight: 800,
+              cursor: "pointer",
+            }}
           >
-            返回继续
+            重新开始
           </button>
         </section>
       )}
 
-      <section style={{ marginTop: 32 }}>
-        {questions.map((question, index) => (
-          <article key={question.id} style={{ marginBottom: 22, padding: 22, background: "#fffdf7", border: "1px solid #d8c8ae", borderRadius: 20 }}>
-            <h2 style={{ fontSize: 22, margin: "0 0 16px" }}>
-              {index + 1}. {question.prompt}
-            </h2>
-            <div style={{ display: "grid", gap: 10 }}>
-              {question.options.map((option) => {
-                const checked = answers[question.id] === option.id;
-                return (
-                  <label
-                    key={option.id}
-                    style={{
-                      display: "flex",
-                      gap: 10,
-                      alignItems: "flex-start",
-                      padding: 12,
-                      border: checked ? "2px solid #201915" : "1px solid #d8c8ae",
-                      borderRadius: 14,
-                      background: checked ? "#ffe08a" : "#fffaf0",
-                      cursor: "pointer",
-                    }}
-                  >
-                    <input
-                      type="radio"
-                      name={question.id}
-                      checked={checked}
-                      onChange={() => setCoreAnswer(question.id, option.id)}
-                      style={{ marginTop: 4 }}
-                    />
-                    <span>{option.text}</span>
-                  </label>
-                );
-              })}
-            </div>
-          </article>
-        ))}
-      </section>
-
-      <button
-        onClick={submitCoreAnswers}
-        disabled={isLoading}
-        style={{ width: "100%", padding: "18px 24px", borderRadius: 999, border: "2px solid #201915", background: "#201915", color: "#fffaf0", fontSize: 20, fontWeight: 800, cursor: isLoading ? "wait" : "pointer" }}
-      >
-        {phase === "loading_initial" ? "正在生成推荐..." : "生成推荐"}
-      </button>
-
-      {showingResults && (
+      {phase === "final_results" && (
         <section style={{ marginTop: 42 }}>
-          <h2 style={{ fontSize: 34, marginBottom: 8 }}>{resultTitle}</h2>
-          <p style={{ marginTop: 0, lineHeight: 1.6 }}>{resultHint}</p>
+          <h2 style={{ fontSize: 36, marginBottom: 8 }}>为你推荐</h2>
+          <p style={{ marginTop: 0, lineHeight: 1.6 }}>{softNotice ?? resultHint}</p>
+          {pendingInitialRecommendations && recommendations.length === 0 && (
+            <p style={{ color: "#8a1f11", fontWeight: 800 }}>结果状态异常，请重新开始。</p>
+          )}
           {diagnostic?.reason && (
             <p style={{ marginTop: 0, color: "#6b4f2c" }}>
               诊断：{diagnostic.reason}
@@ -291,89 +542,45 @@ export default function HomePage() {
             </p>
           )}
           {recommendations.map((result, index) => (
-            <article key={result.id} style={{ border: "2px solid #201915", borderRadius: 22, padding: 22, marginBottom: 18, background: index === 0 ? "#d7ff73" : "#fffdf7" }}>
+            <article
+              key={result.id}
+              style={{
+                border: "2px solid #201915",
+                borderRadius: 22,
+                padding: 22,
+                marginBottom: 18,
+                background: index === 0 ? "#d7ff73" : "#fffdf7",
+              }}
+            >
               <p style={{ margin: 0, fontWeight: 800 }}>#{index + 1} · {result.cluster}</p>
               <h3 style={{ fontSize: 28, margin: "8px 0" }}>{result.title}</h3>
               <p style={{ margin: "0 0 8px" }}>分数：{result.score}</p>
-              <p>匹配点：{result.matchedTags.length > 0 ? result.matchedTags.join(" / ") : "暂无显式匹配标签"}</p>
-              {result.blockedBy.length > 0 && <p>可能冲突：{result.blockedBy.join(" / ")}</p>}
-              <ul>
-                {result.explanation.map((item, itemIndex) => <li key={itemIndex}>{item}</li>)}
-              </ul>
-              <p>可能不适合：{result.notFor.join("；")}</p>
-              <p>相似游戏：{result.similar.join(" / ")}</p>
+              <p>匹配点：{resultList(result.matchedTags)}</p>
+              {Array.isArray(result.blockedBy) && result.blockedBy.length > 0 && <p>可能冲突：{result.blockedBy.join(" / ")}</p>}
+              {Array.isArray(result.explanation) && result.explanation.length > 0 && (
+                <ul>
+                  {result.explanation.map((item, itemIndex) => <li key={itemIndex}>{item}</li>)}
+                </ul>
+              )}
+              <p>可能不适合：{resultList(result.notFor)}</p>
+              <p>相似游戏：{resultList(result.similar)}</p>
             </article>
           ))}
-        </section>
-      )}
-
-      {phase === "answering_followups" && needsFollowUp && followUpQuestions.length > 0 && (
-        <section style={{ marginTop: 34, padding: 24, border: "2px solid #201915", borderRadius: 24, background: "#eef7ff" }}>
-          <h2 style={{ fontSize: 30, margin: "0 0 10px" }}>为了更准，再回答几个追问题</h2>
-          <p style={{ marginTop: 0, lineHeight: 1.6 }}>
-            你的答案指向了几个相似游戏方向。回答下面的问题后，我会重新排序推荐结果。
-          </p>
-
-          {followUpQuestions.map((question, index) => (
-            <article key={question.id} style={{ marginTop: 18, padding: 18, border: "1px solid #b8c7d8", borderRadius: 18, background: "#fafdff" }}>
-              <h3 style={{ margin: "0 0 12px", fontSize: 21 }}>
-                {index + 1}. {question.text}
-              </h3>
-              <div style={{ display: "grid", gap: 10 }}>
-                {question.options.map((option) => {
-                  const checked = followUpAnswers[question.id] === option.id;
-                  return (
-                    <label
-                      key={option.id}
-                      style={{
-                        display: "flex",
-                        gap: 10,
-                        alignItems: "flex-start",
-                        padding: 12,
-                        border: checked ? "2px solid #201915" : "1px solid #b8c7d8",
-                        borderRadius: 14,
-                        background: checked ? "#d7ff73" : "#fff",
-                        cursor: "pointer",
-                      }}
-                    >
-                      <input
-                        type="radio"
-                        name={question.id}
-                        checked={checked}
-                        onChange={() => setFollowUpAnswers((prev) => ({ ...prev, [question.id]: option.id }))}
-                        style={{ marginTop: 4 }}
-                      />
-                      <span>{option.label}</span>
-                    </label>
-                  );
-                })}
-              </div>
-            </article>
-          ))}
-
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginTop: 22 }}>
-            <button
-              onClick={submitFollowUpAnswers}
-              disabled={!allFollowUpsAnswered}
-              style={{
-                padding: "14px 20px",
-                borderRadius: 999,
-                border: "2px solid #201915",
-                background: allFollowUpsAnswered ? "#201915" : "#d8c8ae",
-                color: allFollowUpsAnswered ? "#fffaf0" : "#201915",
-                fontWeight: 800,
-                cursor: allFollowUpsAnswered ? "pointer" : "not-allowed",
-              }}
-            >
-              优化推荐
-            </button>
-            <button
-              onClick={skipFollowUps}
-              style={{ padding: "14px 20px", borderRadius: 999, border: "2px solid #201915", background: "#fffaf0", fontWeight: 800, cursor: "pointer" }}
-            >
-              跳过追问，查看初步结果
-            </button>
-          </div>
+          <button
+            onClick={resetQuestionnaire}
+            style={{
+              marginTop: 10,
+              padding: "12px 20px",
+              borderRadius: 999,
+              border: "2px solid #201915",
+              background: "#201915",
+              color: "#fffaf0",
+              fontWeight: 900,
+              cursor: "pointer",
+            }}
+          >
+            重新答题
+          </button>
         </section>
       )}
     </main>

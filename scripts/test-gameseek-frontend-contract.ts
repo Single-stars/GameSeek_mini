@@ -55,7 +55,19 @@ function recommendationsFrom(body: ApiResponse) {
 }
 
 function followUpQuestionsFrom(body: ApiResponse) {
-  return Array.isArray(body.followUpQuestions) ? body.followUpQuestions as AnyRecord[] : [];
+  return Array.isArray(body.followUpQuestions) ? (body.followUpQuestions as AnyRecord[]) : [];
+}
+
+function assertPageIncludes(pageSource: string, markers: string[], errors: string[]) {
+  for (const marker of markers) {
+    assert(pageSource.includes(marker), `page.tsx must include paged required follow-up marker: ${marker}`, errors);
+  }
+}
+
+function assertPageExcludes(pageSource: string, markers: string[], errors: string[]) {
+  for (const marker of markers) {
+    assert(!pageSource.includes(marker), `page.tsx must remove old optional follow-up UI text: ${marker}`, errors);
+  }
 }
 
 async function main() {
@@ -98,26 +110,39 @@ async function main() {
 
   const noFollowUp = await callApi({ answers: noFollowUpSeed.answers });
   assert(noFollowUp.status === 200, `no-follow-up API request must return 200, got ${noFollowUp.status}`, errors);
-  assert(recommendationsFrom(noFollowUp.body).length > 0, "old request path must still show recommendations", errors);
+  assert(recommendationsFrom(noFollowUp.body).length > 0, "old request path must still return recommendations/results", errors);
 
   const requiredPageMarkers = [
-    'type Phase =',
+    "type Phase =",
     '"answering_core"',
-    '"loading_initial"',
+    '"checking_followups"',
     '"answering_followups"',
     '"loading_final"',
     '"final_results"',
+    '"error"',
+    "coreQuestionIndex",
+    "followUpQuestionIndex",
+    "followUpQuestions",
     "followUpAnswers",
-    "submitCoreAnswers",
+    "checkFollowUps",
     "submitFollowUpAnswers",
-    "skipFollowUps",
-    "为了更准，再回答几个追问题",
+    "progressLabel",
+    "progressPill",
+    "核心问题",
+    "追加问题",
+    "正在判断是否需要追加问题",
+    "正在生成最终推荐",
+    "为你推荐",
+  ];
+
+  const forbiddenOldUiMarkers = [
+    "初步推荐",
+    "优化推荐",
     "跳过追问",
   ];
 
-  for (const marker of requiredPageMarkers) {
-    assert(pageSource.includes(marker), `page.tsx must include frontend follow-up marker: ${marker}`, errors);
-  }
+  assertPageIncludes(pageSource, requiredPageMarkers, errors);
+  assertPageExcludes(pageSource, forbiddenOldUiMarkers, errors);
 
   const report = {
     passed: errors.length === 0,
@@ -132,6 +157,7 @@ async function main() {
       oldRequestRecommendations: recommendationsFrom(noFollowUp.body).length,
     },
     pageMarkersChecked: requiredPageMarkers,
+    forbiddenOldUiMarkers,
     errors,
   };
 
