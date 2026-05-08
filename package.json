@@ -9,6 +9,7 @@
     "seed:golden": "tsx scripts/expand-golden-seeds.ts",
     "test:gameseek:api": "tsx scripts/test-gameseek-api.ts",
     "test:gameseek:metadata": "tsx scripts/test-gameseek-metadata.ts",
+    "test:gameseek:seeds": "tsx scripts/audit-golden-seeds.ts",
     "test:gameseek": "tsx scripts/test-gameseek.ts"
   },
   "dependencies": {

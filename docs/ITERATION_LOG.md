@@ -592,3 +592,88 @@ Final verification:
 Seed generation note:
 - `npm.cmd run seed:golden` was not run in v0.3.2.
 - Reason: this branch intentionally curates `goldenSeeds.ts` answer maps for diagnosed failed seeds. Generator preservation should be handled as a separate task if needed.
+
+## v0.3.3 Golden Seed Hardening
+
+Date:
+- `2026-05-08`
+
+Branch:
+- `mini-v0.3.3-golden-seed-hardening`
+
+Base branch:
+- `mini-v0.3.2-strategy-buildcraft-calibration`
+
+Phase document:
+- `docs/MINI_V033_GOLDEN_SEED_HARDENING.md`
+
+Scope:
+- Preserve v0.3.2 curated golden seed calibration.
+- Prevent `seed:golden` from overwriting curated seeds by default.
+- Add seed audit coverage for generated and curated seed boundaries.
+- Do not improve recall in this release; v0.3.3 is a hardening pass.
+
+Files changed:
+- `src/lib/gameseek/goldenSeeds.ts`
+- `scripts/expand-golden-seeds.ts`
+- `scripts/audit-golden-seeds.ts`
+- `package.json`
+- `docs/MINI_V033_GOLDEN_SEED_HARDENING.md`
+- `docs/ITERATION_LOG.md`
+
+Files intentionally unchanged:
+- `src/lib/gameseek/scoring.ts`
+- `src/lib/gameseek/questions.ts`
+- `src/lib/gameseek/games.ts`
+- API route files
+
+Curated seed metadata added:
+- `curated: true`
+- `calibrationVersion: "v0.3.2"`
+- `calibrationReason`
+- `originalFailureRank`
+- `calibratedRank`
+
+Curated targets:
+- `detroit-become-human`: original rank `7`, calibrated rank `6`
+- `balatro`: original rank `8`, calibrated rank `4`
+- `monster-train`: original rank `10`, calibrated rank `5`
+- `into-the-breach`: original rank `13`, calibrated rank `3`
+- `age-of-empires-iv`: original rank `15`, calibrated rank `2`
+- `total-war-warhammer-iii`: original rank `31`, calibrated rank `3`
+- `xcom-2`: original rank `11`, calibrated rank `4`
+- `tactics-ogre-reborn`: original rank `19`, calibrated rank `1`
+- `marvels-midnight-suns`: original rank `15`, calibrated rank `2`
+- `dicey-dungeons`: original rank `8`, calibrated rank `5`
+- `dyson-sphere-program`: original rank `9`, calibrated rank `1`
+- `plants-vs-zombies`: original rank `8`, calibrated rank `6`
+
+Generator behavior:
+- `npm.cmd run seed:golden` preserves any existing seed with `curated: true` as a complete object.
+- Curated `answers`, `persona`, `notes`, and calibration metadata are not overwritten by default.
+- `--force-curated` allows intentional regeneration of curated seeds and prints a warning.
+
+Seed audit:
+- Added `scripts/audit-golden-seeds.ts`.
+- Added package script `test:gameseek:seeds`.
+- Audit validates seed count, target uniqueness, target existence, legal question ids, legal option ids, curated metadata presence, positive rank metadata, and `calibratedRank <= 6`.
+- Audit does not require current live rank to equal `calibratedRank` because rank metadata is historical.
+
+Red/green evidence:
+- Initial `npm.cmd run test:gameseek:seeds` failed as expected with `curatedSeeds = 0` and `12` missing curated metadata errors.
+- After adding metadata, `npm.cmd run test:gameseek:seeds` passed with `curatedSeeds = 12` and `errors = 0`.
+
+Seed generation verification:
+- `npm.cmd run seed:golden` completed after generator hardening.
+- `npm.cmd run test:gameseek:seeds` still passed afterward with `curatedSeeds = 12` and `errors = 0`.
+
+Final verification:
+- `npm.cmd run test:gameseek`: passed, `Top6Recall = 1`, `failures = []`.
+- `npm.cmd run test:gameseek:metadata`: passed, metadata errors `0`, metadata warnings `0`.
+- `npm.cmd run test:gameseek:api`: passed.
+- `npm.cmd run test:gameseek:seeds`: passed, `curatedSeeds = 12`, errors `0`.
+- `npm.cmd run build`: passed.
+- `git diff -- src/lib/gameseek/scoring.ts`: no diff.
+- `git diff -- src/lib/gameseek/questions.ts`: no diff.
+- `git diff --check`: no whitespace errors; only Windows LF-to-CRLF warnings.
+- `git status --short`: only intended v0.3.3 files changed before commit.
