@@ -155,3 +155,30 @@ Metadata validation warnings:
 - similar includes self
 
 Warnings are diagnostic only and do not fail the command. Errors fail the command.
+
+## Regression Report Diagnostics
+
+`npm.cmd run test:gameseek` keeps the v0.1 pass/fail thresholds and adds v0.2 diagnostic sections.
+
+Preserved top-level fields:
+- `total`
+- `top1Recall`
+- `top3Recall`
+- `top6Recall`
+- `topKMonotonicityPassed`
+- `thresholds`
+- `passed`
+- `failureReasonCounts`
+- `failures`
+
+Added diagnostic fields:
+- `global`: the same global metrics grouped as a stable object.
+- `byCluster`: recall metrics grouped by target game cluster.
+- `nearMisses`: targets outside Top6 with rank <= 10.
+- `confusablePairs`: aggregated target/candidate pairs from `confusableWith` relations that appear in failed Top6 lists.
+- `confusableFailureReport`: per-failure detail containing confusable Top6 hits, predicted games above target, shared Top1 tags, and missing discriminator tags.
+
+Report boundaries:
+- The report uses `tags` and `antiTags` for scoring-layer evidence.
+- `discriminatorTags` are used only in `missingDiscriminatorTags` diagnostics.
+- The report does not alter scoring, thresholds, generated seeds, or game/question metadata.
