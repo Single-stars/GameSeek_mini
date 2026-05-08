@@ -10,6 +10,12 @@
     "test:gameseek:api": "tsx scripts/test-gameseek-api.ts",
     "test:gameseek:metadata": "tsx scripts/test-gameseek-metadata.ts",
     "test:gameseek:seeds": "tsx scripts/audit-golden-seeds.ts",
+    "test:gameseek:simulation": "tsx scripts/simulate-user-answers.ts",
+    "test:gameseek:noise": "tsx scripts/test-answer-noise.ts",
+    "test:gameseek:ab": "tsx scripts/test-confusable-ab.ts",
+    "test:gameseek:questions": "tsx scripts/analyze-question-discrimination.ts",
+    "test:gameseek:subclusters": "tsx scripts/analyze-subclusters.ts",
+    "test:gameseek:robustness": "tsx scripts/run-robustness-diagnostics.ts",
     "test:gameseek": "tsx scripts/test-gameseek.ts"
   },
   "dependencies": {

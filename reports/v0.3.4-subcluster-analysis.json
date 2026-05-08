@@ -1,0 +1,3851 @@
+{
+  "generatedAt": "2026-05-08T15:08:03.490Z",
+  "note": "Report-only sub-cluster suggestions. No games.ts fields are changed by this script.",
+  "subclusterCounts": {
+    "city_colony_management": 25,
+    "deckbuilder_roguelike": 13,
+    "defense_survival": 13,
+    "factory_automation": 8,
+    "narrative_strategy": 26,
+    "rts_grand_strategy": 7,
+    "short_loop": 19,
+    "tactics_turn_based": 11
+  },
+  "overloadedClusters": [
+    {
+      "cluster": "strategy_buildcraft",
+      "count": 28
+    }
+  ],
+  "highRiskConfusions": [
+    {
+      "a": "honor-of-kings",
+      "b": "lol-wild-rift",
+      "sameCluster": true,
+      "sharedTags": [
+        "pvp",
+        "moba",
+        "team",
+        "ranked",
+        "reflex"
+      ],
+      "aSuggestedSubclusters": [
+        "short_loop"
+      ],
+      "bSuggestedSubclusters": []
+    },
+    {
+      "a": "honor-of-kings",
+      "b": "overwatch-2",
+      "sameCluster": true,
+      "sharedTags": [
+        "pvp",
+        "team",
+        "social_pressure"
+      ],
+      "aSuggestedSubclusters": [
+        "short_loop"
+      ],
+      "bSuggestedSubclusters": [
+        "short_loop"
+      ]
+    },
+    {
+      "a": "honor-of-kings",
+      "b": "valorant",
+      "sameCluster": true,
+      "sharedTags": [
+        "pvp",
+        "team",
+        "ranked",
+        "reflex"
+      ],
+      "aSuggestedSubclusters": [
+        "short_loop"
+      ],
+      "bSuggestedSubclusters": []
+    },
+    {
+      "a": "honor-of-kings",
+      "b": "peace-elite",
+      "sameCluster": true,
+      "sharedTags": [
+        "pvp",
+        "team",
+        "ranked"
+      ],
+      "aSuggestedSubclusters": [
+        "short_loop"
+      ],
+      "bSuggestedSubclusters": [
+        "defense_survival"
+      ]
+    },
+    {
+      "a": "lol-wild-rift",
+      "b": "valorant",
+      "sameCluster": true,
+      "sharedTags": [
+        "pvp",
+        "team",
+        "ranked",
+        "reflex",
+        "high_pressure"
+      ],
+      "aSuggestedSubclusters": [],
+      "bSuggestedSubclusters": []
+    },
+    {
+      "a": "apex-legends",
+      "b": "peace-elite",
+      "sameCluster": true,
+      "sharedTags": [
+        "pvp",
+        "battle_royale",
+        "team",
+        "aim",
+        "high_pressure",
+        "ranked"
+      ],
+      "aSuggestedSubclusters": [],
+      "bSuggestedSubclusters": [
+        "defense_survival"
+      ]
+    },
+    {
+      "a": "apex-legends",
+      "b": "valorant",
+      "sameCluster": true,
+      "sharedTags": [
+        "pvp",
+        "team",
+        "aim",
+        "high_pressure",
+        "ranked"
+      ],
+      "aSuggestedSubclusters": [],
+      "bSuggestedSubclusters": []
+    },
+    {
+      "a": "apex-legends",
+      "b": "overwatch-2",
+      "sameCluster": true,
+      "sharedTags": [
+        "pvp",
+        "team",
+        "hero_skill"
+      ],
+      "aSuggestedSubclusters": [],
+      "bSuggestedSubclusters": [
+        "short_loop"
+      ]
+    },
+    {
+      "a": "apex-legends",
+      "b": "naraka-bladepoint",
+      "sameCluster": true,
+      "sharedTags": [
+        "pvp",
+        "battle_royale",
+        "high_pressure"
+      ],
+      "aSuggestedSubclusters": [],
+      "bSuggestedSubclusters": []
+    },
+    {
+      "a": "apex-legends",
+      "b": "cs2",
+      "sameCluster": true,
+      "sharedTags": [
+        "pvp",
+        "aim",
+        "high_pressure",
+        "ranked"
+      ],
+      "aSuggestedSubclusters": [],
+      "bSuggestedSubclusters": []
+    },
+    {
+      "a": "peace-elite",
+      "b": "valorant",
+      "sameCluster": true,
+      "sharedTags": [
+        "pvp",
+        "team",
+        "aim",
+        "high_pressure",
+        "ranked"
+      ],
+      "aSuggestedSubclusters": [
+        "defense_survival"
+      ],
+      "bSuggestedSubclusters": []
+    },
+    {
+      "a": "cs2",
+      "b": "valorant",
+      "sameCluster": true,
+      "sharedTags": [
+        "pvp",
+        "tactical_shooter",
+        "aim",
+        "low_ttk",
+        "ranked",
+        "high_pressure",
+        "reflex",
+        "skill_mastery",
+        "combat_mastery"
+      ],
+      "aSuggestedSubclusters": [],
+      "bSuggestedSubclusters": []
+    },
+    {
+      "a": "cs2",
+      "b": "lol-wild-rift",
+      "sameCluster": true,
+      "sharedTags": [
+        "pvp",
+        "ranked",
+        "high_pressure",
+        "reflex"
+      ],
+      "aSuggestedSubclusters": [],
+      "bSuggestedSubclusters": []
+    },
+    {
+      "a": "overwatch-2",
+      "b": "valorant",
+      "sameCluster": true,
+      "sharedTags": [
+        "pvp",
+        "team"
+      ],
+      "aSuggestedSubclusters": [
+        "short_loop"
+      ],
+      "bSuggestedSubclusters": []
+    },
+    {
+      "a": "genshin-impact",
+      "b": "star-rail",
+      "sameCluster": false,
+      "sharedTags": [
+        "character_collection",
+        "anime",
+        "long_term",
+        "story"
+      ],
+      "aSuggestedSubclusters": [
+        "city_colony_management",
+        "narrative_strategy"
+      ],
+      "bSuggestedSubclusters": [
+        "city_colony_management",
+        "narrative_strategy",
+        "tactics_turn_based"
+      ]
+    },
+    {
+      "a": "genshin-impact",
+      "b": "zelda-botw",
+      "sameCluster": true,
+      "sharedTags": [
+        "open_world",
+        "exploration"
+      ],
+      "aSuggestedSubclusters": [
+        "city_colony_management",
+        "narrative_strategy"
+      ],
+      "bSuggestedSubclusters": [
+        "narrative_strategy"
+      ]
+    },
+    {
+      "a": "genshin-impact",
+      "b": "palworld",
+      "sameCluster": true,
+      "sharedTags": [
+        "open_world",
+        "exploration"
+      ],
+      "aSuggestedSubclusters": [
+        "city_colony_management",
+        "narrative_strategy"
+      ],
+      "bSuggestedSubclusters": [
+        "city_colony_management",
+        "defense_survival",
+        "factory_automation"
+      ]
+    },
+    {
+      "a": "genshin-impact",
+      "b": "persona-5-royal",
+      "sameCluster": false,
+      "sharedTags": [
+        "anime",
+        "long_term",
+        "story"
+      ],
+      "aSuggestedSubclusters": [
+        "city_colony_management",
+        "narrative_strategy"
+      ],
+      "bSuggestedSubclusters": [
+        "narrative_strategy",
+        "tactics_turn_based"
+      ]
+    },
+    {
+      "a": "elden-ring",
+      "b": "zelda-botw",
+      "sameCluster": true,
+      "sharedTags": [
+        "open_world",
+        "low_guidance"
+      ],
+      "aSuggestedSubclusters": [],
+      "bSuggestedSubclusters": [
+        "narrative_strategy"
+      ]
+    },
+    {
+      "a": "elden-ring",
+      "b": "skyrim",
+      "sameCluster": true,
+      "sharedTags": [
+        "open_world"
+      ],
+      "aSuggestedSubclusters": [],
+      "bSuggestedSubclusters": []
+    },
+    {
+      "a": "elden-ring",
+      "b": "witcher-3",
+      "sameCluster": true,
+      "sharedTags": [
+        "open_world",
+        "dark_fantasy"
+      ],
+      "aSuggestedSubclusters": [],
+      "bSuggestedSubclusters": [
+        "narrative_strategy"
+      ]
+    },
+    {
+      "a": "rdr2",
+      "b": "witcher-3",
+      "sameCluster": true,
+      "sharedTags": [
+        "open_world",
+        "story"
+      ],
+      "aSuggestedSubclusters": [
+        "narrative_strategy"
+      ],
+      "bSuggestedSubclusters": [
+        "narrative_strategy"
+      ]
+    },
+    {
+      "a": "rdr2",
+      "b": "skyrim",
+      "sameCluster": true,
+      "sharedTags": [
+        "open_world",
+        "solo"
+      ],
+      "aSuggestedSubclusters": [
+        "narrative_strategy"
+      ],
+      "bSuggestedSubclusters": []
+    },
+    {
+      "a": "cyberpunk-2077",
+      "b": "witcher-3",
+      "sameCluster": true,
+      "sharedTags": [
+        "open_world",
+        "story"
+      ],
+      "aSuggestedSubclusters": [
+        "narrative_strategy"
+      ],
+      "bSuggestedSubclusters": [
+        "narrative_strategy"
+      ]
+    },
+    {
+      "a": "cyberpunk-2077",
+      "b": "rdr2",
+      "sameCluster": true,
+      "sharedTags": [
+        "open_world",
+        "story"
+      ],
+      "aSuggestedSubclusters": [
+        "narrative_strategy"
+      ],
+      "bSuggestedSubclusters": [
+        "narrative_strategy"
+      ]
+    },
+    {
+      "a": "cyberpunk-2077",
+      "b": "skyrim",
+      "sameCluster": true,
+      "sharedTags": [
+        "open_world"
+      ],
+      "aSuggestedSubclusters": [
+        "narrative_strategy"
+      ],
+      "bSuggestedSubclusters": []
+    },
+    {
+      "a": "skyrim",
+      "b": "zelda-botw",
+      "sameCluster": true,
+      "sharedTags": [
+        "open_world",
+        "exploration"
+      ],
+      "aSuggestedSubclusters": [],
+      "bSuggestedSubclusters": [
+        "narrative_strategy"
+      ]
+    },
+    {
+      "a": "skyrim",
+      "b": "witcher-3",
+      "sameCluster": true,
+      "sharedTags": [
+        "open_world",
+        "exploration"
+      ],
+      "aSuggestedSubclusters": [],
+      "bSuggestedSubclusters": [
+        "narrative_strategy"
+      ]
+    },
+    {
+      "a": "baldurs-gate-3",
+      "b": "disco-elysium",
+      "sameCluster": true,
+      "sharedTags": [
+        "story",
+        "roleplay"
+      ],
+      "aSuggestedSubclusters": [
+        "narrative_strategy",
+        "tactics_turn_based",
+        "city_colony_management"
+      ],
+      "bSuggestedSubclusters": [
+        "narrative_strategy"
+      ]
+    },
+    {
+      "a": "baldurs-gate-3",
+      "b": "persona-5-royal",
+      "sameCluster": true,
+      "sharedTags": [
+        "story",
+        "turn_based",
+        "solo"
+      ],
+      "aSuggestedSubclusters": [
+        "narrative_strategy",
+        "tactics_turn_based",
+        "city_colony_management"
+      ],
+      "bSuggestedSubclusters": [
+        "narrative_strategy",
+        "tactics_turn_based"
+      ]
+    },
+    {
+      "a": "baldurs-gate-3",
+      "b": "star-rail",
+      "sameCluster": true,
+      "sharedTags": [
+        "story",
+        "turn_based",
+        "solo"
+      ],
+      "aSuggestedSubclusters": [
+        "narrative_strategy",
+        "tactics_turn_based",
+        "city_colony_management"
+      ],
+      "bSuggestedSubclusters": [
+        "city_colony_management",
+        "narrative_strategy",
+        "tactics_turn_based"
+      ]
+    },
+    {
+      "a": "disco-elysium",
+      "b": "life-is-strange",
+      "sameCluster": true,
+      "sharedTags": [
+        "story",
+        "dialogue"
+      ],
+      "aSuggestedSubclusters": [
+        "narrative_strategy"
+      ],
+      "bSuggestedSubclusters": [
+        "narrative_strategy"
+      ]
+    },
+    {
+      "a": "persona-5-royal",
+      "b": "star-rail",
+      "sameCluster": true,
+      "sharedTags": [
+        "story",
+        "turn_based",
+        "anime",
+        "long_term",
+        "solo"
+      ],
+      "aSuggestedSubclusters": [
+        "narrative_strategy",
+        "tactics_turn_based"
+      ],
+      "bSuggestedSubclusters": [
+        "city_colony_management",
+        "narrative_strategy",
+        "tactics_turn_based"
+      ]
+    },
+    {
+      "a": "final-fantasy-xvi",
+      "b": "star-rail",
+      "sameCluster": true,
+      "sharedTags": [
+        "story",
+        "solo"
+      ],
+      "aSuggestedSubclusters": [
+        "narrative_strategy"
+      ],
+      "bSuggestedSubclusters": [
+        "city_colony_management",
+        "narrative_strategy",
+        "tactics_turn_based"
+      ]
+    },
+    {
+      "a": "detroit-become-human",
+      "b": "life-is-strange",
+      "sameCluster": true,
+      "sharedTags": [
+        "choice_consequence"
+      ],
+      "aSuggestedSubclusters": [
+        "narrative_strategy"
+      ],
+      "bSuggestedSubclusters": [
+        "narrative_strategy"
+      ]
+    },
+    {
+      "a": "detroit-become-human",
+      "b": "final-fantasy-xvi",
+      "sameCluster": true,
+      "sharedTags": [
+        "cinematic",
+        "solo"
+      ],
+      "aSuggestedSubclusters": [
+        "narrative_strategy"
+      ],
+      "bSuggestedSubclusters": [
+        "narrative_strategy"
+      ]
+    },
+    {
+      "a": "detroit-become-human",
+      "b": "disco-elysium",
+      "sameCluster": true,
+      "sharedTags": [],
+      "aSuggestedSubclusters": [
+        "narrative_strategy"
+      ],
+      "bSuggestedSubclusters": [
+        "narrative_strategy"
+      ]
+    },
+    {
+      "a": "outer-wilds",
+      "b": "tunic",
+      "sameCluster": false,
+      "sharedTags": [
+        "exploration",
+        "mystery",
+        "puzzle"
+      ],
+      "aSuggestedSubclusters": [],
+      "bSuggestedSubclusters": []
+    },
+    {
+      "a": "slay-the-spire",
+      "b": "wildfrost",
+      "sameCluster": true,
+      "sharedTags": [
+        "deckbuilder",
+        "roguelike",
+        "planning"
+      ],
+      "aSuggestedSubclusters": [
+        "deckbuilder_roguelike",
+        "factory_automation"
+      ],
+      "bSuggestedSubclusters": [
+        "deckbuilder_roguelike",
+        "short_loop",
+        "tactics_turn_based"
+      ]
+    },
+    {
+      "a": "balatro",
+      "b": "slay-the-spire",
+      "sameCluster": true,
+      "sharedTags": [
+        "deckbuilder",
+        "run_based",
+        "system_mastery"
+      ],
+      "aSuggestedSubclusters": [
+        "deckbuilder_roguelike",
+        "short_loop"
+      ],
+      "bSuggestedSubclusters": [
+        "deckbuilder_roguelike",
+        "factory_automation"
+      ]
+    },
+    {
+      "a": "balatro",
+      "b": "vampire-survivors",
+      "sameCluster": true,
+      "sharedTags": [
+        "short_session"
+      ],
+      "aSuggestedSubclusters": [
+        "deckbuilder_roguelike",
+        "short_loop"
+      ],
+      "bSuggestedSubclusters": [
+        "short_loop",
+        "defense_survival"
+      ]
+    },
+    {
+      "a": "balatro",
+      "b": "monster-train",
+      "sameCluster": true,
+      "sharedTags": [
+        "deckbuilder",
+        "combo",
+        "run_based"
+      ],
+      "aSuggestedSubclusters": [
+        "deckbuilder_roguelike",
+        "short_loop"
+      ],
+      "bSuggestedSubclusters": [
+        "deckbuilder_roguelike"
+      ]
+    },
+    {
+      "a": "balatro",
+      "b": "dicey-dungeons",
+      "sameCluster": true,
+      "sharedTags": [
+        "deckbuilder",
+        "combo",
+        "short_session",
+        "run_based",
+        "system_mastery"
+      ],
+      "aSuggestedSubclusters": [
+        "deckbuilder_roguelike",
+        "short_loop"
+      ],
+      "bSuggestedSubclusters": [
+        "deckbuilder_roguelike",
+        "short_loop"
+      ]
+    },
+    {
+      "a": "balatro",
+      "b": "peglin",
+      "sameCluster": true,
+      "sharedTags": [
+        "combo",
+        "short_session"
+      ],
+      "aSuggestedSubclusters": [
+        "deckbuilder_roguelike",
+        "short_loop"
+      ],
+      "bSuggestedSubclusters": [
+        "short_loop",
+        "deckbuilder_roguelike"
+      ]
+    },
+    {
+      "a": "hades",
+      "b": "slay-the-spire",
+      "sameCluster": true,
+      "sharedTags": [
+        "run_based"
+      ],
+      "aSuggestedSubclusters": [
+        "deckbuilder_roguelike",
+        "narrative_strategy",
+        "short_loop"
+      ],
+      "bSuggestedSubclusters": [
+        "deckbuilder_roguelike",
+        "factory_automation"
+      ]
+    },
+    {
+      "a": "hades",
+      "b": "vampire-survivors",
+      "sameCluster": true,
+      "sharedTags": [
+        "fast_feedback"
+      ],
+      "aSuggestedSubclusters": [
+        "deckbuilder_roguelike",
+        "narrative_strategy",
+        "short_loop"
+      ],
+      "bSuggestedSubclusters": [
+        "short_loop",
+        "defense_survival"
+      ]
+    },
+    {
+      "a": "monster-train",
+      "b": "slay-the-spire",
+      "sameCluster": true,
+      "sharedTags": [
+        "deckbuilder",
+        "roguelike",
+        "planning",
+        "run_based",
+        "low_reflex"
+      ],
+      "aSuggestedSubclusters": [
+        "deckbuilder_roguelike"
+      ],
+      "bSuggestedSubclusters": [
+        "deckbuilder_roguelike",
+        "factory_automation"
+      ]
+    },
+    {
+      "a": "monster-train",
+      "b": "wildfrost",
+      "sameCluster": true,
+      "sharedTags": [
+        "deckbuilder",
+        "roguelike",
+        "lane_strategy",
+        "planning",
+        "combo"
+      ],
+      "aSuggestedSubclusters": [
+        "deckbuilder_roguelike"
+      ],
+      "bSuggestedSubclusters": [
+        "deckbuilder_roguelike",
+        "short_loop",
+        "tactics_turn_based"
+      ]
+    },
+    {
+      "a": "inscryption",
+      "b": "slay-the-spire",
+      "sameCluster": true,
+      "sharedTags": [],
+      "aSuggestedSubclusters": [
+        "deckbuilder_roguelike"
+      ],
+      "bSuggestedSubclusters": [
+        "deckbuilder_roguelike",
+        "factory_automation"
+      ]
+    },
+    {
+      "a": "civilization-vi",
+      "b": "into-the-breach",
+      "sameCluster": true,
+      "sharedTags": [
+        "turn_based"
+      ],
+      "aSuggestedSubclusters": [
+        "rts_grand_strategy",
+        "city_colony_management",
+        "factory_automation",
+        "tactics_turn_based"
+      ],
+      "bSuggestedSubclusters": [
+        "tactics_turn_based",
+        "short_loop"
+      ]
+    },
+    {
+      "a": "civilization-vi",
+      "b": "total-war-warhammer-iii",
+      "sameCluster": true,
+      "sharedTags": [
+        "long_session",
+        "macro_planning",
+        "empire_building",
+        "turn_based"
+      ],
+      "aSuggestedSubclusters": [
+        "rts_grand_strategy",
+        "city_colony_management",
+        "factory_automation",
+        "tactics_turn_based"
+      ],
+      "bSuggestedSubclusters": [
+        "rts_grand_strategy",
+        "city_colony_management",
+        "tactics_turn_based"
+      ]
+    },
+    {
+      "a": "into-the-breach",
+      "b": "slay-the-spire",
+      "sameCluster": true,
+      "sharedTags": [
+        "planning"
+      ],
+      "aSuggestedSubclusters": [
+        "tactics_turn_based",
+        "short_loop"
+      ],
+      "bSuggestedSubclusters": [
+        "deckbuilder_roguelike",
+        "factory_automation"
+      ]
+    },
+    {
+      "a": "into-the-breach",
+      "b": "monster-train",
+      "sameCluster": true,
+      "sharedTags": [
+        "planning"
+      ],
+      "aSuggestedSubclusters": [
+        "tactics_turn_based",
+        "short_loop"
+      ],
+      "bSuggestedSubclusters": [
+        "deckbuilder_roguelike"
+      ]
+    },
+    {
+      "a": "into-the-breach",
+      "b": "xcom-2",
+      "sameCluster": true,
+      "sharedTags": [
+        "tactics",
+        "turn_based",
+        "planning"
+      ],
+      "aSuggestedSubclusters": [
+        "tactics_turn_based",
+        "short_loop"
+      ],
+      "bSuggestedSubclusters": [
+        "tactics_turn_based",
+        "city_colony_management",
+        "narrative_strategy"
+      ]
+    },
+    {
+      "a": "into-the-breach",
+      "b": "triangle-strategy",
+      "sameCluster": true,
+      "sharedTags": [
+        "tactics",
+        "turn_based",
+        "planning"
+      ],
+      "aSuggestedSubclusters": [
+        "tactics_turn_based",
+        "short_loop"
+      ],
+      "bSuggestedSubclusters": [
+        "narrative_strategy",
+        "tactics_turn_based"
+      ]
+    },
+    {
+      "a": "against-the-storm",
+      "b": "frostpunk",
+      "sameCluster": true,
+      "sharedTags": [
+        "city_builder",
+        "survival"
+      ],
+      "aSuggestedSubclusters": [
+        "city_colony_management",
+        "deckbuilder_roguelike",
+        "defense_survival"
+      ],
+      "bSuggestedSubclusters": [
+        "defense_survival",
+        "city_colony_management",
+        "narrative_strategy"
+      ]
+    },
+    {
+      "a": "against-the-storm",
+      "b": "northgard",
+      "sameCluster": true,
+      "sharedTags": [
+        "resource_management",
+        "survival",
+        "medium_session"
+      ],
+      "aSuggestedSubclusters": [
+        "city_colony_management",
+        "deckbuilder_roguelike",
+        "defense_survival"
+      ],
+      "bSuggestedSubclusters": [
+        "city_colony_management",
+        "rts_grand_strategy",
+        "defense_survival"
+      ]
+    },
+    {
+      "a": "against-the-storm",
+      "b": "anno-1800",
+      "sameCluster": true,
+      "sharedTags": [
+        "city_builder"
+      ],
+      "aSuggestedSubclusters": [
+        "city_colony_management",
+        "deckbuilder_roguelike",
+        "defense_survival"
+      ],
+      "bSuggestedSubclusters": [
+        "city_colony_management",
+        "factory_automation",
+        "rts_grand_strategy"
+      ]
+    },
+    {
+      "a": "against-the-storm",
+      "b": "oxygen-not-included",
+      "sameCluster": true,
+      "sharedTags": [
+        "survival",
+        "systemic"
+      ],
+      "aSuggestedSubclusters": [
+        "city_colony_management",
+        "deckbuilder_roguelike",
+        "defense_survival"
+      ],
+      "bSuggestedSubclusters": [
+        "factory_automation",
+        "city_colony_management",
+        "defense_survival"
+      ]
+    },
+    {
+      "a": "against-the-storm",
+      "b": "civilization-vi",
+      "sameCluster": true,
+      "sharedTags": [],
+      "aSuggestedSubclusters": [
+        "city_colony_management",
+        "deckbuilder_roguelike",
+        "defense_survival"
+      ],
+      "bSuggestedSubclusters": [
+        "rts_grand_strategy",
+        "city_colony_management",
+        "factory_automation",
+        "tactics_turn_based"
+      ]
+    },
+    {
+      "a": "oxygen-not-included",
+      "b": "rimworld",
+      "sameCluster": false,
+      "sharedTags": [
+        "colony_sim",
+        "systemic",
+        "survival",
+        "high_complexity"
+      ],
+      "aSuggestedSubclusters": [
+        "factory_automation",
+        "city_colony_management",
+        "defense_survival"
+      ],
+      "bSuggestedSubclusters": [
+        "city_colony_management",
+        "defense_survival",
+        "narrative_strategy"
+      ]
+    },
+    {
+      "a": "anno-1800",
+      "b": "oxygen-not-included",
+      "sameCluster": true,
+      "sharedTags": [
+        "optimization",
+        "long_session"
+      ],
+      "aSuggestedSubclusters": [
+        "city_colony_management",
+        "factory_automation",
+        "rts_grand_strategy"
+      ],
+      "bSuggestedSubclusters": [
+        "factory_automation",
+        "city_colony_management",
+        "defense_survival"
+      ]
+    },
+    {
+      "a": "anno-1800",
+      "b": "northgard",
+      "sameCluster": true,
+      "sharedTags": [
+        "macro_planning"
+      ],
+      "aSuggestedSubclusters": [
+        "city_colony_management",
+        "factory_automation",
+        "rts_grand_strategy"
+      ],
+      "bSuggestedSubclusters": [
+        "city_colony_management",
+        "rts_grand_strategy",
+        "defense_survival"
+      ]
+    },
+    {
+      "a": "anno-1800",
+      "b": "civilization-vi",
+      "sameCluster": true,
+      "sharedTags": [
+        "optimization",
+        "macro_planning",
+        "empire_building",
+        "long_session"
+      ],
+      "aSuggestedSubclusters": [
+        "city_colony_management",
+        "factory_automation",
+        "rts_grand_strategy"
+      ],
+      "bSuggestedSubclusters": [
+        "rts_grand_strategy",
+        "city_colony_management",
+        "factory_automation",
+        "tactics_turn_based"
+      ]
+    },
+    {
+      "a": "frostpunk",
+      "b": "oxygen-not-included",
+      "sameCluster": true,
+      "sharedTags": [
+        "survival"
+      ],
+      "aSuggestedSubclusters": [
+        "defense_survival",
+        "city_colony_management",
+        "narrative_strategy"
+      ],
+      "bSuggestedSubclusters": [
+        "factory_automation",
+        "city_colony_management",
+        "defense_survival"
+      ]
+    },
+    {
+      "a": "frostpunk",
+      "b": "they-are-billions",
+      "sameCluster": true,
+      "sharedTags": [
+        "planning",
+        "high_pressure"
+      ],
+      "aSuggestedSubclusters": [
+        "defense_survival",
+        "city_colony_management",
+        "narrative_strategy"
+      ],
+      "bSuggestedSubclusters": [
+        "city_colony_management",
+        "defense_survival",
+        "rts_grand_strategy"
+      ]
+    },
+    {
+      "a": "frostpunk",
+      "b": "northgard",
+      "sameCluster": true,
+      "sharedTags": [
+        "survival",
+        "planning"
+      ],
+      "aSuggestedSubclusters": [
+        "defense_survival",
+        "city_colony_management",
+        "narrative_strategy"
+      ],
+      "bSuggestedSubclusters": [
+        "city_colony_management",
+        "rts_grand_strategy",
+        "defense_survival"
+      ]
+    },
+    {
+      "a": "age-of-empires-iv",
+      "b": "they-are-billions",
+      "sameCluster": true,
+      "sharedTags": [
+        "rts",
+        "macro_planning",
+        "high_pressure"
+      ],
+      "aSuggestedSubclusters": [
+        "rts_grand_strategy",
+        "city_colony_management"
+      ],
+      "bSuggestedSubclusters": [
+        "city_colony_management",
+        "defense_survival",
+        "rts_grand_strategy"
+      ]
+    },
+    {
+      "a": "age-of-empires-iv",
+      "b": "northgard",
+      "sameCluster": true,
+      "sharedTags": [
+        "rts",
+        "macro_planning"
+      ],
+      "aSuggestedSubclusters": [
+        "rts_grand_strategy",
+        "city_colony_management"
+      ],
+      "bSuggestedSubclusters": [
+        "city_colony_management",
+        "rts_grand_strategy",
+        "defense_survival"
+      ]
+    },
+    {
+      "a": "age-of-empires-iv",
+      "b": "total-war-warhammer-iii",
+      "sameCluster": true,
+      "sharedTags": [
+        "macro_planning",
+        "army_control"
+      ],
+      "aSuggestedSubclusters": [
+        "rts_grand_strategy",
+        "city_colony_management"
+      ],
+      "bSuggestedSubclusters": [
+        "rts_grand_strategy",
+        "city_colony_management",
+        "tactics_turn_based"
+      ]
+    },
+    {
+      "a": "age-of-empires-iv",
+      "b": "civilization-vi",
+      "sameCluster": true,
+      "sharedTags": [
+        "macro_planning"
+      ],
+      "aSuggestedSubclusters": [
+        "rts_grand_strategy",
+        "city_colony_management"
+      ],
+      "bSuggestedSubclusters": [
+        "rts_grand_strategy",
+        "city_colony_management",
+        "factory_automation",
+        "tactics_turn_based"
+      ]
+    },
+    {
+      "a": "total-war-warhammer-iii",
+      "b": "xcom-2",
+      "sameCluster": true,
+      "sharedTags": [
+        "tactics",
+        "turn_based"
+      ],
+      "aSuggestedSubclusters": [
+        "rts_grand_strategy",
+        "city_colony_management",
+        "tactics_turn_based"
+      ],
+      "bSuggestedSubclusters": [
+        "tactics_turn_based",
+        "city_colony_management",
+        "narrative_strategy"
+      ]
+    },
+    {
+      "a": "total-war-warhammer-iii",
+      "b": "triangle-strategy",
+      "sameCluster": true,
+      "sharedTags": [
+        "tactics",
+        "turn_based",
+        "long_session"
+      ],
+      "aSuggestedSubclusters": [
+        "rts_grand_strategy",
+        "city_colony_management",
+        "tactics_turn_based"
+      ],
+      "bSuggestedSubclusters": [
+        "narrative_strategy",
+        "tactics_turn_based"
+      ]
+    },
+    {
+      "a": "fire-emblem-engage",
+      "b": "xcom-2",
+      "sameCluster": true,
+      "sharedTags": [
+        "tactics",
+        "turn_based",
+        "planning",
+        "story"
+      ],
+      "aSuggestedSubclusters": [
+        "narrative_strategy",
+        "tactics_turn_based",
+        "city_colony_management"
+      ],
+      "bSuggestedSubclusters": [
+        "tactics_turn_based",
+        "city_colony_management",
+        "narrative_strategy"
+      ]
+    },
+    {
+      "a": "fire-emblem-engage",
+      "b": "tactics-ogre-reborn",
+      "sameCluster": true,
+      "sharedTags": [
+        "tactics",
+        "turn_based",
+        "party_building",
+        "planning",
+        "story"
+      ],
+      "aSuggestedSubclusters": [
+        "narrative_strategy",
+        "tactics_turn_based",
+        "city_colony_management"
+      ],
+      "bSuggestedSubclusters": [
+        "tactics_turn_based",
+        "city_colony_management",
+        "narrative_strategy"
+      ]
+    },
+    {
+      "a": "fire-emblem-engage",
+      "b": "triangle-strategy",
+      "sameCluster": true,
+      "sharedTags": [
+        "tactics",
+        "turn_based",
+        "planning",
+        "story"
+      ],
+      "aSuggestedSubclusters": [
+        "narrative_strategy",
+        "tactics_turn_based",
+        "city_colony_management"
+      ],
+      "bSuggestedSubclusters": [
+        "narrative_strategy",
+        "tactics_turn_based"
+      ]
+    },
+    {
+      "a": "fire-emblem-engage",
+      "b": "marvels-midnight-suns",
+      "sameCluster": true,
+      "sharedTags": [
+        "tactics",
+        "turn_based",
+        "planning",
+        "story"
+      ],
+      "aSuggestedSubclusters": [
+        "narrative_strategy",
+        "tactics_turn_based",
+        "city_colony_management"
+      ],
+      "bSuggestedSubclusters": [
+        "deckbuilder_roguelike",
+        "narrative_strategy",
+        "tactics_turn_based"
+      ]
+    },
+    {
+      "a": "tactics-ogre-reborn",
+      "b": "xcom-2",
+      "sameCluster": true,
+      "sharedTags": [
+        "tactics",
+        "turn_based",
+        "story",
+        "planning"
+      ],
+      "aSuggestedSubclusters": [
+        "tactics_turn_based",
+        "city_colony_management",
+        "narrative_strategy"
+      ],
+      "bSuggestedSubclusters": [
+        "tactics_turn_based",
+        "city_colony_management",
+        "narrative_strategy"
+      ]
+    },
+    {
+      "a": "tactics-ogre-reborn",
+      "b": "triangle-strategy",
+      "sameCluster": true,
+      "sharedTags": [
+        "tactics",
+        "turn_based",
+        "story",
+        "planning",
+        "long_session"
+      ],
+      "aSuggestedSubclusters": [
+        "tactics_turn_based",
+        "city_colony_management",
+        "narrative_strategy"
+      ],
+      "bSuggestedSubclusters": [
+        "narrative_strategy",
+        "tactics_turn_based"
+      ]
+    },
+    {
+      "a": "triangle-strategy",
+      "b": "xcom-2",
+      "sameCluster": true,
+      "sharedTags": [
+        "tactics",
+        "turn_based",
+        "story",
+        "planning"
+      ],
+      "aSuggestedSubclusters": [
+        "narrative_strategy",
+        "tactics_turn_based"
+      ],
+      "bSuggestedSubclusters": [
+        "tactics_turn_based",
+        "city_colony_management",
+        "narrative_strategy"
+      ]
+    },
+    {
+      "a": "marvels-midnight-suns",
+      "b": "xcom-2",
+      "sameCluster": true,
+      "sharedTags": [
+        "tactics",
+        "turn_based",
+        "planning",
+        "story"
+      ],
+      "aSuggestedSubclusters": [
+        "deckbuilder_roguelike",
+        "narrative_strategy",
+        "tactics_turn_based"
+      ],
+      "bSuggestedSubclusters": [
+        "tactics_turn_based",
+        "city_colony_management",
+        "narrative_strategy"
+      ]
+    },
+    {
+      "a": "marvels-midnight-suns",
+      "b": "tactics-ogre-reborn",
+      "sameCluster": true,
+      "sharedTags": [
+        "tactics",
+        "turn_based",
+        "planning",
+        "story"
+      ],
+      "aSuggestedSubclusters": [
+        "deckbuilder_roguelike",
+        "narrative_strategy",
+        "tactics_turn_based"
+      ],
+      "bSuggestedSubclusters": [
+        "tactics_turn_based",
+        "city_colony_management",
+        "narrative_strategy"
+      ]
+    },
+    {
+      "a": "marvels-midnight-suns",
+      "b": "triangle-strategy",
+      "sameCluster": true,
+      "sharedTags": [
+        "tactics",
+        "turn_based",
+        "planning",
+        "story"
+      ],
+      "aSuggestedSubclusters": [
+        "deckbuilder_roguelike",
+        "narrative_strategy",
+        "tactics_turn_based"
+      ],
+      "bSuggestedSubclusters": [
+        "narrative_strategy",
+        "tactics_turn_based"
+      ]
+    },
+    {
+      "a": "loop-hero",
+      "b": "peglin",
+      "sameCluster": true,
+      "sharedTags": [
+        "roguelike",
+        "low_reflex",
+        "short_session"
+      ],
+      "aSuggestedSubclusters": [
+        "city_colony_management",
+        "deckbuilder_roguelike",
+        "short_loop"
+      ],
+      "bSuggestedSubclusters": [
+        "short_loop",
+        "deckbuilder_roguelike"
+      ]
+    },
+    {
+      "a": "loop-hero",
+      "b": "wildfrost",
+      "sameCluster": true,
+      "sharedTags": [
+        "roguelike",
+        "planning",
+        "short_session"
+      ],
+      "aSuggestedSubclusters": [
+        "city_colony_management",
+        "deckbuilder_roguelike",
+        "short_loop"
+      ],
+      "bSuggestedSubclusters": [
+        "deckbuilder_roguelike",
+        "short_loop",
+        "tactics_turn_based"
+      ]
+    },
+    {
+      "a": "loop-hero",
+      "b": "vampire-survivors",
+      "sameCluster": true,
+      "sharedTags": [
+        "short_session"
+      ],
+      "aSuggestedSubclusters": [
+        "city_colony_management",
+        "deckbuilder_roguelike",
+        "short_loop"
+      ],
+      "bSuggestedSubclusters": [
+        "short_loop",
+        "defense_survival"
+      ]
+    },
+    {
+      "a": "dicey-dungeons",
+      "b": "slay-the-spire",
+      "sameCluster": true,
+      "sharedTags": [
+        "deckbuilder",
+        "roguelike",
+        "run_based",
+        "system_mastery",
+        "low_reflex"
+      ],
+      "aSuggestedSubclusters": [
+        "deckbuilder_roguelike",
+        "short_loop"
+      ],
+      "bSuggestedSubclusters": [
+        "deckbuilder_roguelike",
+        "factory_automation"
+      ]
+    },
+    {
+      "a": "dicey-dungeons",
+      "b": "wildfrost",
+      "sameCluster": true,
+      "sharedTags": [
+        "deckbuilder",
+        "roguelike",
+        "combo",
+        "short_session"
+      ],
+      "aSuggestedSubclusters": [
+        "deckbuilder_roguelike",
+        "short_loop"
+      ],
+      "bSuggestedSubclusters": [
+        "deckbuilder_roguelike",
+        "short_loop",
+        "tactics_turn_based"
+      ]
+    },
+    {
+      "a": "dicey-dungeons",
+      "b": "griftlands",
+      "sameCluster": true,
+      "sharedTags": [
+        "deckbuilder",
+        "roguelike",
+        "run_based"
+      ],
+      "aSuggestedSubclusters": [
+        "deckbuilder_roguelike",
+        "short_loop"
+      ],
+      "bSuggestedSubclusters": [
+        "deckbuilder_roguelike",
+        "narrative_strategy"
+      ]
+    },
+    {
+      "a": "dicey-dungeons",
+      "b": "peglin",
+      "sameCluster": true,
+      "sharedTags": [
+        "roguelike",
+        "combo",
+        "short_session",
+        "low_reflex"
+      ],
+      "aSuggestedSubclusters": [
+        "deckbuilder_roguelike",
+        "short_loop"
+      ],
+      "bSuggestedSubclusters": [
+        "short_loop",
+        "deckbuilder_roguelike"
+      ]
+    },
+    {
+      "a": "dicey-dungeons",
+      "b": "loop-hero",
+      "sameCluster": true,
+      "sharedTags": [
+        "roguelike",
+        "run_based",
+        "short_session",
+        "system_mastery",
+        "low_reflex"
+      ],
+      "aSuggestedSubclusters": [
+        "deckbuilder_roguelike",
+        "short_loop"
+      ],
+      "bSuggestedSubclusters": [
+        "city_colony_management",
+        "deckbuilder_roguelike",
+        "short_loop"
+      ]
+    },
+    {
+      "a": "griftlands",
+      "b": "slay-the-spire",
+      "sameCluster": true,
+      "sharedTags": [
+        "deckbuilder",
+        "roguelike",
+        "run_based",
+        "planning"
+      ],
+      "aSuggestedSubclusters": [
+        "deckbuilder_roguelike",
+        "narrative_strategy"
+      ],
+      "bSuggestedSubclusters": [
+        "deckbuilder_roguelike",
+        "factory_automation"
+      ]
+    },
+    {
+      "a": "griftlands",
+      "b": "inscryption",
+      "sameCluster": true,
+      "sharedTags": [],
+      "aSuggestedSubclusters": [
+        "deckbuilder_roguelike",
+        "narrative_strategy"
+      ],
+      "bSuggestedSubclusters": [
+        "deckbuilder_roguelike"
+      ]
+    },
+    {
+      "a": "griftlands",
+      "b": "wildfrost",
+      "sameCluster": true,
+      "sharedTags": [
+        "deckbuilder",
+        "roguelike",
+        "planning"
+      ],
+      "aSuggestedSubclusters": [
+        "deckbuilder_roguelike",
+        "narrative_strategy"
+      ],
+      "bSuggestedSubclusters": [
+        "deckbuilder_roguelike",
+        "short_loop",
+        "tactics_turn_based"
+      ]
+    },
+    {
+      "a": "griftlands",
+      "b": "marvels-midnight-suns",
+      "sameCluster": true,
+      "sharedTags": [
+        "deckbuilder",
+        "story",
+        "planning"
+      ],
+      "aSuggestedSubclusters": [
+        "deckbuilder_roguelike",
+        "narrative_strategy"
+      ],
+      "bSuggestedSubclusters": [
+        "deckbuilder_roguelike",
+        "narrative_strategy",
+        "tactics_turn_based"
+      ]
+    },
+    {
+      "a": "peglin",
+      "b": "vampire-survivors",
+      "sameCluster": true,
+      "sharedTags": [
+        "short_session",
+        "fast_feedback"
+      ],
+      "aSuggestedSubclusters": [
+        "short_loop",
+        "deckbuilder_roguelike"
+      ],
+      "bSuggestedSubclusters": [
+        "short_loop",
+        "defense_survival"
+      ]
+    },
+    {
+      "a": "backpack-hero",
+      "b": "slay-the-spire",
+      "sameCluster": true,
+      "sharedTags": [
+        "roguelike",
+        "planning",
+        "run_based",
+        "optimization",
+        "system_mastery"
+      ],
+      "aSuggestedSubclusters": [
+        "deckbuilder_roguelike",
+        "city_colony_management",
+        "factory_automation",
+        "short_loop"
+      ],
+      "bSuggestedSubclusters": [
+        "deckbuilder_roguelike",
+        "factory_automation"
+      ]
+    },
+    {
+      "a": "backpack-hero",
+      "b": "loop-hero",
+      "sameCluster": true,
+      "sharedTags": [
+        "roguelike",
+        "planning",
+        "run_based",
+        "short_session",
+        "system_mastery"
+      ],
+      "aSuggestedSubclusters": [
+        "deckbuilder_roguelike",
+        "city_colony_management",
+        "factory_automation",
+        "short_loop"
+      ],
+      "bSuggestedSubclusters": [
+        "city_colony_management",
+        "deckbuilder_roguelike",
+        "short_loop"
+      ]
+    },
+    {
+      "a": "backpack-hero",
+      "b": "dicey-dungeons",
+      "sameCluster": true,
+      "sharedTags": [
+        "roguelike",
+        "combo",
+        "run_based",
+        "short_session",
+        "system_mastery"
+      ],
+      "aSuggestedSubclusters": [
+        "deckbuilder_roguelike",
+        "city_colony_management",
+        "factory_automation",
+        "short_loop"
+      ],
+      "bSuggestedSubclusters": [
+        "deckbuilder_roguelike",
+        "short_loop"
+      ]
+    },
+    {
+      "a": "backpack-hero",
+      "b": "wildfrost",
+      "sameCluster": true,
+      "sharedTags": [
+        "roguelike",
+        "planning",
+        "combo",
+        "short_session"
+      ],
+      "aSuggestedSubclusters": [
+        "deckbuilder_roguelike",
+        "city_colony_management",
+        "factory_automation",
+        "short_loop"
+      ],
+      "bSuggestedSubclusters": [
+        "deckbuilder_roguelike",
+        "short_loop",
+        "tactics_turn_based"
+      ]
+    },
+    {
+      "a": "dome-keeper",
+      "b": "vampire-survivors",
+      "sameCluster": true,
+      "sharedTags": [
+        "short_session",
+        "fast_feedback"
+      ],
+      "aSuggestedSubclusters": [
+        "city_colony_management",
+        "defense_survival",
+        "short_loop"
+      ],
+      "bSuggestedSubclusters": [
+        "short_loop",
+        "defense_survival"
+      ]
+    },
+    {
+      "a": "dome-keeper",
+      "b": "they-are-billions",
+      "sameCluster": true,
+      "sharedTags": [
+        "tower_defense",
+        "resource_management",
+        "planning"
+      ],
+      "aSuggestedSubclusters": [
+        "city_colony_management",
+        "defense_survival",
+        "short_loop"
+      ],
+      "bSuggestedSubclusters": [
+        "city_colony_management",
+        "defense_survival",
+        "rts_grand_strategy"
+      ]
+    },
+    {
+      "a": "dome-keeper",
+      "b": "oxygen-not-included",
+      "sameCluster": true,
+      "sharedTags": [
+        "survival"
+      ],
+      "aSuggestedSubclusters": [
+        "city_colony_management",
+        "defense_survival",
+        "short_loop"
+      ],
+      "bSuggestedSubclusters": [
+        "factory_automation",
+        "city_colony_management",
+        "defense_survival"
+      ]
+    },
+    {
+      "a": "dome-keeper",
+      "b": "loop-hero",
+      "sameCluster": true,
+      "sharedTags": [
+        "resource_management",
+        "short_session",
+        "planning"
+      ],
+      "aSuggestedSubclusters": [
+        "city_colony_management",
+        "defense_survival",
+        "short_loop"
+      ],
+      "bSuggestedSubclusters": [
+        "city_colony_management",
+        "deckbuilder_roguelike",
+        "short_loop"
+      ]
+    },
+    {
+      "a": "dome-keeper",
+      "b": "peglin",
+      "sameCluster": true,
+      "sharedTags": [
+        "short_session",
+        "fast_feedback"
+      ],
+      "aSuggestedSubclusters": [
+        "city_colony_management",
+        "defense_survival",
+        "short_loop"
+      ],
+      "bSuggestedSubclusters": [
+        "short_loop",
+        "deckbuilder_roguelike"
+      ]
+    },
+    {
+      "a": "northgard",
+      "b": "total-war-warhammer-iii",
+      "sameCluster": true,
+      "sharedTags": [
+        "macro_planning"
+      ],
+      "aSuggestedSubclusters": [
+        "city_colony_management",
+        "rts_grand_strategy",
+        "defense_survival"
+      ],
+      "bSuggestedSubclusters": [
+        "rts_grand_strategy",
+        "city_colony_management",
+        "tactics_turn_based"
+      ]
+    },
+    {
+      "a": "northgard",
+      "b": "they-are-billions",
+      "sameCluster": true,
+      "sharedTags": [
+        "rts",
+        "resource_management",
+        "macro_planning",
+        "planning"
+      ],
+      "aSuggestedSubclusters": [
+        "city_colony_management",
+        "rts_grand_strategy",
+        "defense_survival"
+      ],
+      "bSuggestedSubclusters": [
+        "city_colony_management",
+        "defense_survival",
+        "rts_grand_strategy"
+      ]
+    },
+    {
+      "a": "stardew-valley",
+      "b": "story-of-seasons",
+      "sameCluster": true,
+      "sharedTags": [
+        "farming",
+        "life_sim",
+        "cozy",
+        "routine",
+        "relationship"
+      ],
+      "aSuggestedSubclusters": [],
+      "bSuggestedSubclusters": []
+    },
+    {
+      "a": "stardew-valley",
+      "b": "the-sims-4",
+      "sameCluster": true,
+      "sharedTags": [
+        "life_sim",
+        "low_pressure"
+      ],
+      "aSuggestedSubclusters": [],
+      "bSuggestedSubclusters": [
+        "city_colony_management",
+        "narrative_strategy"
+      ]
+    },
+    {
+      "a": "animal-crossing",
+      "b": "stardew-valley",
+      "sameCluster": true,
+      "sharedTags": [
+        "cozy",
+        "collection",
+        "low_pressure"
+      ],
+      "aSuggestedSubclusters": [],
+      "bSuggestedSubclusters": []
+    },
+    {
+      "a": "animal-crossing",
+      "b": "the-sims-4",
+      "sameCluster": true,
+      "sharedTags": [
+        "low_pressure",
+        "self_expression"
+      ],
+      "aSuggestedSubclusters": [],
+      "bSuggestedSubclusters": [
+        "city_colony_management",
+        "narrative_strategy"
+      ]
+    },
+    {
+      "a": "animal-crossing",
+      "b": "unpacking",
+      "sameCluster": true,
+      "sharedTags": [
+        "cozy",
+        "low_pressure"
+      ],
+      "aSuggestedSubclusters": [],
+      "bSuggestedSubclusters": [
+        "narrative_strategy",
+        "short_loop"
+      ]
+    },
+    {
+      "a": "animal-crossing",
+      "b": "story-of-seasons",
+      "sameCluster": true,
+      "sharedTags": [
+        "cozy"
+      ],
+      "aSuggestedSubclusters": [],
+      "bSuggestedSubclusters": []
+    },
+    {
+      "a": "dave-the-diver",
+      "b": "stardew-valley",
+      "sameCluster": true,
+      "sharedTags": [
+        "cozy",
+        "collection"
+      ],
+      "aSuggestedSubclusters": [
+        "city_colony_management"
+      ],
+      "bSuggestedSubclusters": []
+    },
+    {
+      "a": "dave-the-diver",
+      "b": "spiritfarer",
+      "sameCluster": true,
+      "sharedTags": [
+        "cozy"
+      ],
+      "aSuggestedSubclusters": [
+        "city_colony_management"
+      ],
+      "bSuggestedSubclusters": [
+        "narrative_strategy",
+        "city_colony_management"
+      ]
+    },
+    {
+      "a": "spiritfarer",
+      "b": "stardew-valley",
+      "sameCluster": true,
+      "sharedTags": [
+        "cozy",
+        "low_pressure"
+      ],
+      "aSuggestedSubclusters": [
+        "narrative_strategy",
+        "city_colony_management"
+      ],
+      "bSuggestedSubclusters": []
+    },
+    {
+      "a": "spiritfarer",
+      "b": "unpacking",
+      "sameCluster": true,
+      "sharedTags": [
+        "cozy",
+        "low_pressure"
+      ],
+      "aSuggestedSubclusters": [
+        "narrative_strategy",
+        "city_colony_management"
+      ],
+      "bSuggestedSubclusters": [
+        "narrative_strategy",
+        "short_loop"
+      ]
+    },
+    {
+      "a": "coral-island",
+      "b": "stardew-valley",
+      "sameCluster": true,
+      "sharedTags": [
+        "farming",
+        "life_sim",
+        "cozy",
+        "relationship",
+        "collection"
+      ],
+      "aSuggestedSubclusters": [],
+      "bSuggestedSubclusters": []
+    },
+    {
+      "a": "coral-island",
+      "b": "story-of-seasons",
+      "sameCluster": true,
+      "sharedTags": [
+        "farming",
+        "life_sim",
+        "cozy",
+        "relationship"
+      ],
+      "aSuggestedSubclusters": [],
+      "bSuggestedSubclusters": []
+    },
+    {
+      "a": "coral-island",
+      "b": "dave-the-diver",
+      "sameCluster": true,
+      "sharedTags": [
+        "cozy",
+        "collection"
+      ],
+      "aSuggestedSubclusters": [],
+      "bSuggestedSubclusters": [
+        "city_colony_management"
+      ]
+    },
+    {
+      "a": "minecraft",
+      "b": "terraria",
+      "sameCluster": true,
+      "sharedTags": [
+        "sandbox",
+        "building",
+        "exploration",
+        "crafting"
+      ],
+      "aSuggestedSubclusters": [
+        "city_colony_management",
+        "defense_survival"
+      ],
+      "bSuggestedSubclusters": [
+        "city_colony_management"
+      ]
+    },
+    {
+      "a": "minecraft",
+      "b": "palworld",
+      "sameCluster": false,
+      "sharedTags": [
+        "survival",
+        "exploration",
+        "crafting"
+      ],
+      "aSuggestedSubclusters": [
+        "city_colony_management",
+        "defense_survival"
+      ],
+      "bSuggestedSubclusters": [
+        "city_colony_management",
+        "defense_survival",
+        "factory_automation"
+      ]
+    },
+    {
+      "a": "dont-starve",
+      "b": "rimworld",
+      "sameCluster": true,
+      "sharedTags": [
+        "survival",
+        "solo"
+      ],
+      "aSuggestedSubclusters": [
+        "defense_survival"
+      ],
+      "bSuggestedSubclusters": [
+        "city_colony_management",
+        "defense_survival",
+        "narrative_strategy"
+      ]
+    },
+    {
+      "a": "dont-starve",
+      "b": "minecraft",
+      "sameCluster": true,
+      "sharedTags": [
+        "survival",
+        "crafting",
+        "self_directed"
+      ],
+      "aSuggestedSubclusters": [
+        "defense_survival"
+      ],
+      "bSuggestedSubclusters": [
+        "city_colony_management",
+        "defense_survival"
+      ]
+    },
+    {
+      "a": "dont-starve",
+      "b": "terraria",
+      "sameCluster": true,
+      "sharedTags": [
+        "crafting"
+      ],
+      "aSuggestedSubclusters": [
+        "defense_survival"
+      ],
+      "bSuggestedSubclusters": [
+        "city_colony_management"
+      ]
+    },
+    {
+      "a": "dyson-sphere-program",
+      "b": "factorio",
+      "sameCluster": true,
+      "sharedTags": [
+        "factory",
+        "automation",
+        "resource_chain",
+        "optimization"
+      ],
+      "aSuggestedSubclusters": [
+        "factory_automation",
+        "rts_grand_strategy"
+      ],
+      "bSuggestedSubclusters": [
+        "factory_automation"
+      ]
+    },
+    {
+      "a": "dyson-sphere-program",
+      "b": "rimworld",
+      "sameCluster": true,
+      "sharedTags": [],
+      "aSuggestedSubclusters": [
+        "factory_automation",
+        "rts_grand_strategy"
+      ],
+      "bSuggestedSubclusters": [
+        "city_colony_management",
+        "defense_survival",
+        "narrative_strategy"
+      ]
+    },
+    {
+      "a": "factorio",
+      "b": "rimworld",
+      "sameCluster": true,
+      "sharedTags": [],
+      "aSuggestedSubclusters": [
+        "factory_automation"
+      ],
+      "bSuggestedSubclusters": [
+        "city_colony_management",
+        "defense_survival",
+        "narrative_strategy"
+      ]
+    },
+    {
+      "a": "it-takes-two",
+      "b": "overcooked-2",
+      "sameCluster": true,
+      "sharedTags": [
+        "fixed_coop",
+        "teamwork"
+      ],
+      "aSuggestedSubclusters": [
+        "narrative_strategy"
+      ],
+      "bSuggestedSubclusters": [
+        "short_loop"
+      ]
+    },
+    {
+      "a": "it-takes-two",
+      "b": "super-mario-party",
+      "sameCluster": true,
+      "sharedTags": [],
+      "aSuggestedSubclusters": [
+        "narrative_strategy"
+      ],
+      "bSuggestedSubclusters": [
+        "short_loop"
+      ]
+    },
+    {
+      "a": "overcooked-2",
+      "b": "super-mario-party",
+      "sameCluster": true,
+      "sharedTags": [
+        "party",
+        "short_session"
+      ],
+      "aSuggestedSubclusters": [
+        "short_loop"
+      ],
+      "bSuggestedSubclusters": [
+        "short_loop"
+      ]
+    },
+    {
+      "a": "eggy-party",
+      "b": "super-mario-party",
+      "sameCluster": true,
+      "sharedTags": [
+        "party",
+        "short_session"
+      ],
+      "aSuggestedSubclusters": [
+        "short_loop"
+      ],
+      "bSuggestedSubclusters": [
+        "short_loop"
+      ]
+    },
+    {
+      "a": "eggy-party",
+      "b": "human-fall-flat",
+      "sameCluster": true,
+      "sharedTags": [
+        "short_session",
+        "chaos_fun"
+      ],
+      "aSuggestedSubclusters": [
+        "short_loop"
+      ],
+      "bSuggestedSubclusters": [
+        "short_loop"
+      ]
+    },
+    {
+      "a": "eggy-party",
+      "b": "overcooked-2",
+      "sameCluster": true,
+      "sharedTags": [
+        "party",
+        "short_session",
+        "chaos_fun",
+        "fast_feedback"
+      ],
+      "aSuggestedSubclusters": [
+        "short_loop"
+      ],
+      "bSuggestedSubclusters": [
+        "short_loop"
+      ]
+    },
+    {
+      "a": "human-fall-flat",
+      "b": "it-takes-two",
+      "sameCluster": true,
+      "sharedTags": [
+        "puzzle_platforming"
+      ],
+      "aSuggestedSubclusters": [
+        "short_loop"
+      ],
+      "bSuggestedSubclusters": [
+        "narrative_strategy"
+      ]
+    },
+    {
+      "a": "human-fall-flat",
+      "b": "overcooked-2",
+      "sameCluster": true,
+      "sharedTags": [
+        "coop",
+        "chaos_fun",
+        "short_session"
+      ],
+      "aSuggestedSubclusters": [
+        "short_loop"
+      ],
+      "bSuggestedSubclusters": [
+        "short_loop"
+      ]
+    },
+    {
+      "a": "human-fall-flat",
+      "b": "sky",
+      "sameCluster": true,
+      "sharedTags": [
+        "low_pressure"
+      ],
+      "aSuggestedSubclusters": [
+        "short_loop"
+      ],
+      "bSuggestedSubclusters": []
+    },
+    {
+      "a": "monument-valley-2",
+      "b": "portal-2",
+      "sameCluster": true,
+      "sharedTags": [
+        "puzzle",
+        "guided"
+      ],
+      "aSuggestedSubclusters": [
+        "narrative_strategy",
+        "short_loop"
+      ],
+      "bSuggestedSubclusters": []
+    },
+    {
+      "a": "baba-is-you",
+      "b": "portal-2",
+      "sameCluster": true,
+      "sharedTags": [
+        "puzzle"
+      ],
+      "aSuggestedSubclusters": [],
+      "bSuggestedSubclusters": []
+    },
+    {
+      "a": "baba-is-you",
+      "b": "return-of-obra-dinn",
+      "sameCluster": true,
+      "sharedTags": [
+        "logic"
+      ],
+      "aSuggestedSubclusters": [],
+      "bSuggestedSubclusters": []
+    },
+    {
+      "a": "baba-is-you",
+      "b": "monument-valley-2",
+      "sameCluster": true,
+      "sharedTags": [
+        "puzzle"
+      ],
+      "aSuggestedSubclusters": [],
+      "bSuggestedSubclusters": [
+        "narrative_strategy",
+        "short_loop"
+      ]
+    },
+    {
+      "a": "portal-2",
+      "b": "return-of-obra-dinn",
+      "sameCluster": true,
+      "sharedTags": [],
+      "aSuggestedSubclusters": [],
+      "bSuggestedSubclusters": []
+    },
+    {
+      "a": "animal-well",
+      "b": "tunic",
+      "sameCluster": true,
+      "sharedTags": [
+        "exploration",
+        "mystery",
+        "puzzle",
+        "compact_world"
+      ],
+      "aSuggestedSubclusters": [],
+      "bSuggestedSubclusters": []
+    },
+    {
+      "a": "animal-well",
+      "b": "outer-wilds",
+      "sameCluster": false,
+      "sharedTags": [
+        "exploration",
+        "mystery",
+        "puzzle",
+        "discovery"
+      ],
+      "aSuggestedSubclusters": [],
+      "bSuggestedSubclusters": []
+    },
+    {
+      "a": "plants-vs-zombies",
+      "b": "tetris-effect",
+      "sameCluster": true,
+      "sharedTags": [
+        "short_session",
+        "fast_feedback"
+      ],
+      "aSuggestedSubclusters": [
+        "short_loop",
+        "defense_survival"
+      ],
+      "bSuggestedSubclusters": [
+        "short_loop"
+      ]
+    },
+    {
+      "a": "plants-vs-zombies",
+      "b": "vampire-survivors",
+      "sameCluster": false,
+      "sharedTags": [
+        "short_session",
+        "fast_feedback",
+        "solo"
+      ],
+      "aSuggestedSubclusters": [
+        "short_loop",
+        "defense_survival"
+      ],
+      "bSuggestedSubclusters": [
+        "short_loop",
+        "defense_survival"
+      ]
+    }
+  ],
+  "recommendedNewQuestions": [
+    {
+      "topic": "strategy_buildcraft subtype",
+      "reason": "The strategy_buildcraft cluster is intentionally large and needs finer report-only subtype separation.",
+      "options": [
+        "deckbuilder runs",
+        "factory automation",
+        "turn tactics",
+        "macro empire / RTS"
+      ]
+    },
+    {
+      "topic": "failure consequence",
+      "reason": "Tactics, roguelike, survival, and cozy management respond differently to failure but share broad planning tags.",
+      "options": [
+        "restart run",
+        "reload tactical mistake",
+        "recover colony crisis",
+        "low-stakes retry"
+      ]
+    },
+    {
+      "topic": "session scale",
+      "reason": "Short-loop strategy and long-session macro planning can share optimization tags but differ strongly in user intent.",
+      "options": [
+        "5-15 minute loop",
+        "single tactical mission",
+        "multi-hour city/factory plan",
+        "open-ended sandbox"
+      ]
+    }
+  ],
+  "gameSuggestions": [
+    {
+      "id": "honor-of-kings",
+      "title": "王者荣耀",
+      "cluster": "competitive_pvp",
+      "suggestedSubclusters": [
+        {
+          "id": "short_loop",
+          "hits": [
+            "short_session"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lol-wild-rift",
+      "title": "英雄联盟手游",
+      "cluster": "competitive_pvp",
+      "suggestedSubclusters": []
+    },
+    {
+      "id": "valorant",
+      "title": "VALORANT",
+      "cluster": "competitive_pvp",
+      "suggestedSubclusters": []
+    },
+    {
+      "id": "apex-legends",
+      "title": "Apex Legends",
+      "cluster": "competitive_pvp",
+      "suggestedSubclusters": []
+    },
+    {
+      "id": "peace-elite",
+      "title": "和平精英",
+      "cluster": "competitive_pvp",
+      "suggestedSubclusters": [
+        {
+          "id": "defense_survival",
+          "hits": [
+            "survival"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cs2",
+      "title": "CS2",
+      "cluster": "competitive_pvp",
+      "suggestedSubclusters": []
+    },
+    {
+      "id": "overwatch-2",
+      "title": "守望先锋2",
+      "cluster": "competitive_pvp",
+      "suggestedSubclusters": [
+        {
+          "id": "short_loop",
+          "hits": [
+            "fast_feedback"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "naraka-bladepoint",
+      "title": "永劫无间",
+      "cluster": "competitive_pvp",
+      "suggestedSubclusters": []
+    },
+    {
+      "id": "genshin-impact",
+      "title": "原神",
+      "cluster": "open_world_explore",
+      "suggestedSubclusters": [
+        {
+          "id": "city_colony_management",
+          "hits": [
+            "building"
+          ]
+        },
+        {
+          "id": "narrative_strategy",
+          "hits": [
+            "story"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zelda-botw",
+      "title": "塞尔达传说：旷野之息",
+      "cluster": "open_world_explore",
+      "suggestedSubclusters": [
+        {
+          "id": "narrative_strategy",
+          "hits": [
+            "dialogue"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "elden-ring",
+      "title": "艾尔登法环",
+      "cluster": "open_world_explore",
+      "suggestedSubclusters": []
+    },
+    {
+      "id": "rdr2",
+      "title": "荒野大镖客2",
+      "cluster": "open_world_explore",
+      "suggestedSubclusters": [
+        {
+          "id": "narrative_strategy",
+          "hits": [
+            "story"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cyberpunk-2077",
+      "title": "赛博朋克2077",
+      "cluster": "open_world_explore",
+      "suggestedSubclusters": [
+        {
+          "id": "narrative_strategy",
+          "hits": [
+            "story"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "witcher-3",
+      "title": "巫师3",
+      "cluster": "open_world_explore",
+      "suggestedSubclusters": [
+        {
+          "id": "narrative_strategy",
+          "hits": [
+            "story",
+            "choice_consequence"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "palworld",
+      "title": "幻兽帕鲁",
+      "cluster": "open_world_explore",
+      "suggestedSubclusters": [
+        {
+          "id": "city_colony_management",
+          "hits": [
+            "building"
+          ]
+        },
+        {
+          "id": "defense_survival",
+          "hits": [
+            "survival"
+          ]
+        },
+        {
+          "id": "factory_automation",
+          "hits": [
+            "automation"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "skyrim",
+      "title": "上古卷轴5",
+      "cluster": "open_world_explore",
+      "suggestedSubclusters": []
+    },
+    {
+      "id": "baldurs-gate-3",
+      "title": "博德之门3",
+      "cluster": "narrative_roleplay",
+      "suggestedSubclusters": [
+        {
+          "id": "narrative_strategy",
+          "hits": [
+            "story",
+            "choice_consequence",
+            "dialogue"
+          ]
+        },
+        {
+          "id": "tactics_turn_based",
+          "hits": [
+            "turn_based",
+            "party_building"
+          ]
+        },
+        {
+          "id": "city_colony_management",
+          "hits": [
+            "building"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "disco-elysium",
+      "title": "极乐迪斯科",
+      "cluster": "narrative_roleplay",
+      "suggestedSubclusters": [
+        {
+          "id": "narrative_strategy",
+          "hits": [
+            "story",
+            "dialogue"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "persona-5-royal",
+      "title": "女神异闻录5 皇家版",
+      "cluster": "narrative_roleplay",
+      "suggestedSubclusters": [
+        {
+          "id": "narrative_strategy",
+          "hits": [
+            "story",
+            "character_bond"
+          ]
+        },
+        {
+          "id": "tactics_turn_based",
+          "hits": [
+            "turn_based"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "final-fantasy-xvi",
+      "title": "最终幻想 XVI",
+      "cluster": "narrative_roleplay",
+      "suggestedSubclusters": [
+        {
+          "id": "narrative_strategy",
+          "hits": [
+            "story"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "detroit-become-human",
+      "title": "底特律：化身为人",
+      "cluster": "narrative_roleplay",
+      "suggestedSubclusters": [
+        {
+          "id": "narrative_strategy",
+          "hits": [
+            "story",
+            "choice_consequence"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "star-rail",
+      "title": "崩坏：星穹铁道",
+      "cluster": "narrative_roleplay",
+      "suggestedSubclusters": [
+        {
+          "id": "city_colony_management",
+          "hits": [
+            "building"
+          ]
+        },
+        {
+          "id": "narrative_strategy",
+          "hits": [
+            "story"
+          ]
+        },
+        {
+          "id": "tactics_turn_based",
+          "hits": [
+            "turn_based"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "life-is-strange",
+      "title": "Life is Strange",
+      "cluster": "narrative_roleplay",
+      "suggestedSubclusters": [
+        {
+          "id": "narrative_strategy",
+          "hits": [
+            "story",
+            "choice_consequence",
+            "character_bond",
+            "dialogue"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "outer-wilds",
+      "title": "星际拓荒",
+      "cluster": "narrative_roleplay",
+      "suggestedSubclusters": []
+    },
+    {
+      "id": "slay-the-spire",
+      "title": "杀戮尖塔",
+      "cluster": "strategy_buildcraft",
+      "suggestedSubclusters": [
+        {
+          "id": "deckbuilder_roguelike",
+          "hits": [
+            "deckbuilder",
+            "run_based",
+            "roguelike",
+            "card"
+          ]
+        },
+        {
+          "id": "factory_automation",
+          "hits": [
+            "optimization"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "balatro",
+      "title": "Balatro",
+      "cluster": "strategy_buildcraft",
+      "suggestedSubclusters": [
+        {
+          "id": "deckbuilder_roguelike",
+          "hits": [
+            "deckbuilder",
+            "run_based"
+          ]
+        },
+        {
+          "id": "short_loop",
+          "hits": [
+            "short_session"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hades",
+      "title": "哈迪斯",
+      "cluster": "strategy_buildcraft",
+      "suggestedSubclusters": [
+        {
+          "id": "deckbuilder_roguelike",
+          "hits": [
+            "run_based",
+            "roguelike"
+          ]
+        },
+        {
+          "id": "narrative_strategy",
+          "hits": [
+            "story"
+          ]
+        },
+        {
+          "id": "short_loop",
+          "hits": [
+            "fast_feedback"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "monster-train",
+      "title": "怪物火车",
+      "cluster": "strategy_buildcraft",
+      "suggestedSubclusters": [
+        {
+          "id": "deckbuilder_roguelike",
+          "hits": [
+            "deckbuilder",
+            "run_based",
+            "roguelike",
+            "card"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vampire-survivors",
+      "title": "吸血鬼幸存者",
+      "cluster": "strategy_buildcraft",
+      "suggestedSubclusters": [
+        {
+          "id": "short_loop",
+          "hits": [
+            "short_session",
+            "fast_feedback",
+            "auto_attack"
+          ]
+        },
+        {
+          "id": "defense_survival",
+          "hits": [
+            "survival"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "inscryption",
+      "title": "邪恶冥刻",
+      "cluster": "strategy_buildcraft",
+      "suggestedSubclusters": [
+        {
+          "id": "deckbuilder_roguelike",
+          "hits": [
+            "card"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "civilization-vi",
+      "title": "文明6",
+      "cluster": "strategy_buildcraft",
+      "suggestedSubclusters": [
+        {
+          "id": "rts_grand_strategy",
+          "hits": [
+            "4x_strategy",
+            "macro_planning",
+            "empire_building"
+          ]
+        },
+        {
+          "id": "city_colony_management",
+          "hits": [
+            "building"
+          ]
+        },
+        {
+          "id": "factory_automation",
+          "hits": [
+            "optimization"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "into-the-breach",
+      "title": "Into the Breach",
+      "cluster": "strategy_buildcraft",
+      "suggestedSubclusters": [
+        {
+          "id": "tactics_turn_based",
+          "hits": [
+            "turn_based",
+            "perfect_information"
+          ]
+        },
+        {
+          "id": "short_loop",
+          "hits": [
+            "short_session"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "against-the-storm",
+      "title": "风暴之城",
+      "cluster": "strategy_buildcraft",
+      "suggestedSubclusters": [
+        {
+          "id": "city_colony_management",
+          "hits": [
+            "management",
+            "resource_management"
+          ]
+        },
+        {
+          "id": "deckbuilder_roguelike",
+          "hits": [
+            "run_based",
+            "roguelike"
+          ]
+        },
+        {
+          "id": "defense_survival",
+          "hits": [
+            "survival",
+            "resource_pressure"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "oxygen-not-included",
+      "title": "缺氧",
+      "cluster": "strategy_buildcraft",
+      "suggestedSubclusters": [
+        {
+          "id": "factory_automation",
+          "hits": [
+            "automation",
+            "optimization"
+          ]
+        },
+        {
+          "id": "city_colony_management",
+          "hits": [
+            "colony_sim"
+          ]
+        },
+        {
+          "id": "defense_survival",
+          "hits": [
+            "survival"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "anno-1800",
+      "title": "纪元1800",
+      "cluster": "strategy_buildcraft",
+      "suggestedSubclusters": [
+        {
+          "id": "city_colony_management",
+          "hits": [
+            "management",
+            "building"
+          ]
+        },
+        {
+          "id": "factory_automation",
+          "hits": [
+            "resource_chain",
+            "optimization"
+          ]
+        },
+        {
+          "id": "rts_grand_strategy",
+          "hits": [
+            "macro_planning",
+            "empire_building"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "frostpunk",
+      "title": "冰汽时代",
+      "cluster": "strategy_buildcraft",
+      "suggestedSubclusters": [
+        {
+          "id": "defense_survival",
+          "hits": [
+            "survival",
+            "resource_pressure"
+          ]
+        },
+        {
+          "id": "city_colony_management",
+          "hits": [
+            "management"
+          ]
+        },
+        {
+          "id": "narrative_strategy",
+          "hits": [
+            "story"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "they-are-billions",
+      "title": "亿万僵尸",
+      "cluster": "strategy_buildcraft",
+      "suggestedSubclusters": [
+        {
+          "id": "city_colony_management",
+          "hits": [
+            "management",
+            "resource_management",
+            "building"
+          ]
+        },
+        {
+          "id": "defense_survival",
+          "hits": [
+            "tower_defense",
+            "survival"
+          ]
+        },
+        {
+          "id": "rts_grand_strategy",
+          "hits": [
+            "rts",
+            "macro_planning"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "age-of-empires-iv",
+      "title": "帝国时代 IV",
+      "cluster": "strategy_buildcraft",
+      "suggestedSubclusters": [
+        {
+          "id": "rts_grand_strategy",
+          "hits": [
+            "rts",
+            "macro_planning"
+          ]
+        },
+        {
+          "id": "city_colony_management",
+          "hits": [
+            "management"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "total-war-warhammer-iii",
+      "title": "全面战争：战锤3",
+      "cluster": "strategy_buildcraft",
+      "suggestedSubclusters": [
+        {
+          "id": "rts_grand_strategy",
+          "hits": [
+            "macro_planning",
+            "empire_building",
+            "grand_strategy"
+          ]
+        },
+        {
+          "id": "city_colony_management",
+          "hits": [
+            "building"
+          ]
+        },
+        {
+          "id": "tactics_turn_based",
+          "hits": [
+            "turn_based"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "xcom-2",
+      "title": "XCOM 2",
+      "cluster": "strategy_buildcraft",
+      "suggestedSubclusters": [
+        {
+          "id": "tactics_turn_based",
+          "hits": [
+            "turn_based",
+            "squad_building"
+          ]
+        },
+        {
+          "id": "city_colony_management",
+          "hits": [
+            "building"
+          ]
+        },
+        {
+          "id": "narrative_strategy",
+          "hits": [
+            "story"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fire-emblem-engage",
+      "title": "火焰纹章 Engage",
+      "cluster": "strategy_buildcraft",
+      "suggestedSubclusters": [
+        {
+          "id": "narrative_strategy",
+          "hits": [
+            "story",
+            "character_bond"
+          ]
+        },
+        {
+          "id": "tactics_turn_based",
+          "hits": [
+            "turn_based",
+            "party_building"
+          ]
+        },
+        {
+          "id": "city_colony_management",
+          "hits": [
+            "building"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tactics-ogre-reborn",
+      "title": "皇家骑士团：重生",
+      "cluster": "strategy_buildcraft",
+      "suggestedSubclusters": [
+        {
+          "id": "tactics_turn_based",
+          "hits": [
+            "turn_based",
+            "party_building"
+          ]
+        },
+        {
+          "id": "city_colony_management",
+          "hits": [
+            "building"
+          ]
+        },
+        {
+          "id": "narrative_strategy",
+          "hits": [
+            "story"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "triangle-strategy",
+      "title": "三角战略",
+      "cluster": "strategy_buildcraft",
+      "suggestedSubclusters": [
+        {
+          "id": "narrative_strategy",
+          "hits": [
+            "story",
+            "choice_consequence"
+          ]
+        },
+        {
+          "id": "tactics_turn_based",
+          "hits": [
+            "turn_based"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marvels-midnight-suns",
+      "title": "漫威暗夜之子",
+      "cluster": "strategy_buildcraft",
+      "suggestedSubclusters": [
+        {
+          "id": "deckbuilder_roguelike",
+          "hits": [
+            "deckbuilder",
+            "card"
+          ]
+        },
+        {
+          "id": "narrative_strategy",
+          "hits": [
+            "story"
+          ]
+        },
+        {
+          "id": "tactics_turn_based",
+          "hits": [
+            "turn_based"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "loop-hero",
+      "title": "循环英雄",
+      "cluster": "strategy_buildcraft",
+      "suggestedSubclusters": [
+        {
+          "id": "city_colony_management",
+          "hits": [
+            "management",
+            "resource_management",
+            "building"
+          ]
+        },
+        {
+          "id": "deckbuilder_roguelike",
+          "hits": [
+            "run_based",
+            "roguelike"
+          ]
+        },
+        {
+          "id": "short_loop",
+          "hits": [
+            "short_session"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dicey-dungeons",
+      "title": "骰子地下城",
+      "cluster": "strategy_buildcraft",
+      "suggestedSubclusters": [
+        {
+          "id": "deckbuilder_roguelike",
+          "hits": [
+            "deckbuilder",
+            "run_based",
+            "roguelike",
+            "dice"
+          ]
+        },
+        {
+          "id": "short_loop",
+          "hits": [
+            "short_session"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wildfrost",
+      "title": "Wildfrost",
+      "cluster": "strategy_buildcraft",
+      "suggestedSubclusters": [
+        {
+          "id": "deckbuilder_roguelike",
+          "hits": [
+            "deckbuilder",
+            "roguelike",
+            "card"
+          ]
+        },
+        {
+          "id": "short_loop",
+          "hits": [
+            "short_session"
+          ]
+        },
+        {
+          "id": "tactics_turn_based",
+          "hits": [
+            "turn_based"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "griftlands",
+      "title": "欺诈之地",
+      "cluster": "strategy_buildcraft",
+      "suggestedSubclusters": [
+        {
+          "id": "deckbuilder_roguelike",
+          "hits": [
+            "deckbuilder",
+            "run_based",
+            "roguelike",
+            "card"
+          ]
+        },
+        {
+          "id": "narrative_strategy",
+          "hits": [
+            "story",
+            "choice_consequence",
+            "character_bond",
+            "dialogue"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "peglin",
+      "title": "Peglin",
+      "cluster": "strategy_buildcraft",
+      "suggestedSubclusters": [
+        {
+          "id": "short_loop",
+          "hits": [
+            "short_session",
+            "fast_feedback"
+          ]
+        },
+        {
+          "id": "deckbuilder_roguelike",
+          "hits": [
+            "roguelike"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "backpack-hero",
+      "title": "背包英雄",
+      "cluster": "strategy_buildcraft",
+      "suggestedSubclusters": [
+        {
+          "id": "deckbuilder_roguelike",
+          "hits": [
+            "run_based",
+            "roguelike"
+          ]
+        },
+        {
+          "id": "city_colony_management",
+          "hits": [
+            "management"
+          ]
+        },
+        {
+          "id": "factory_automation",
+          "hits": [
+            "optimization"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dome-keeper",
+      "title": "穹顶守护者",
+      "cluster": "strategy_buildcraft",
+      "suggestedSubclusters": [
+        {
+          "id": "city_colony_management",
+          "hits": [
+            "management",
+            "resource_management"
+          ]
+        },
+        {
+          "id": "defense_survival",
+          "hits": [
+            "tower_defense",
+            "survival"
+          ]
+        },
+        {
+          "id": "short_loop",
+          "hits": [
+            "short_session",
+            "fast_feedback"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "northgard",
+      "title": "Northgard（北境之地）",
+      "cluster": "strategy_buildcraft",
+      "suggestedSubclusters": [
+        {
+          "id": "city_colony_management",
+          "hits": [
+            "management",
+            "resource_management"
+          ]
+        },
+        {
+          "id": "rts_grand_strategy",
+          "hits": [
+            "rts",
+            "macro_planning"
+          ]
+        },
+        {
+          "id": "defense_survival",
+          "hits": [
+            "survival"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stardew-valley",
+      "title": "星露谷物语",
+      "cluster": "cozy_management",
+      "suggestedSubclusters": []
+    },
+    {
+      "id": "animal-crossing",
+      "title": "集合啦！动物森友会",
+      "cluster": "cozy_management",
+      "suggestedSubclusters": []
+    },
+    {
+      "id": "the-sims-4",
+      "title": "模拟人生4",
+      "cluster": "cozy_management",
+      "suggestedSubclusters": [
+        {
+          "id": "city_colony_management",
+          "hits": [
+            "building"
+          ]
+        },
+        {
+          "id": "narrative_strategy",
+          "hits": [
+            "story"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dave-the-diver",
+      "title": "潜水员戴夫",
+      "cluster": "cozy_management",
+      "suggestedSubclusters": [
+        {
+          "id": "city_colony_management",
+          "hits": [
+            "management"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "spiritfarer",
+      "title": "Spiritfarer",
+      "cluster": "cozy_management",
+      "suggestedSubclusters": [
+        {
+          "id": "narrative_strategy",
+          "hits": [
+            "story",
+            "character_bond"
+          ]
+        },
+        {
+          "id": "city_colony_management",
+          "hits": [
+            "management"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "unpacking",
+      "title": "Unpacking",
+      "cluster": "cozy_management",
+      "suggestedSubclusters": [
+        {
+          "id": "narrative_strategy",
+          "hits": [
+            "story"
+          ]
+        },
+        {
+          "id": "short_loop",
+          "hits": [
+            "short_session"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "coral-island",
+      "title": "珊瑚岛",
+      "cluster": "cozy_management",
+      "suggestedSubclusters": []
+    },
+    {
+      "id": "story-of-seasons",
+      "title": "牧场物语",
+      "cluster": "cozy_management",
+      "suggestedSubclusters": []
+    },
+    {
+      "id": "minecraft",
+      "title": "我的世界",
+      "cluster": "sandbox_factory",
+      "suggestedSubclusters": [
+        {
+          "id": "city_colony_management",
+          "hits": [
+            "building"
+          ]
+        },
+        {
+          "id": "defense_survival",
+          "hits": [
+            "survival"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "terraria",
+      "title": "泰拉瑞亚",
+      "cluster": "sandbox_factory",
+      "suggestedSubclusters": [
+        {
+          "id": "city_colony_management",
+          "hits": [
+            "building"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dont-starve",
+      "title": "饥荒",
+      "cluster": "sandbox_factory",
+      "suggestedSubclusters": [
+        {
+          "id": "defense_survival",
+          "hits": [
+            "survival",
+            "resource_pressure",
+            "failure_pressure"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rimworld",
+      "title": "RimWorld",
+      "cluster": "sandbox_factory",
+      "suggestedSubclusters": [
+        {
+          "id": "city_colony_management",
+          "hits": [
+            "colony_sim",
+            "management",
+            "resource_management"
+          ]
+        },
+        {
+          "id": "defense_survival",
+          "hits": [
+            "survival"
+          ]
+        },
+        {
+          "id": "narrative_strategy",
+          "hits": [
+            "story"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dyson-sphere-program",
+      "title": "戴森球计划",
+      "cluster": "sandbox_factory",
+      "suggestedSubclusters": [
+        {
+          "id": "factory_automation",
+          "hits": [
+            "factory",
+            "automation",
+            "resource_chain",
+            "optimization"
+          ]
+        },
+        {
+          "id": "rts_grand_strategy",
+          "hits": [
+            "macro_planning"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "factorio",
+      "title": "Factorio",
+      "cluster": "sandbox_factory",
+      "suggestedSubclusters": [
+        {
+          "id": "factory_automation",
+          "hits": [
+            "factory",
+            "automation",
+            "resource_chain",
+            "optimization"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "it-takes-two",
+      "title": "双人成行",
+      "cluster": "coop_party",
+      "suggestedSubclusters": [
+        {
+          "id": "narrative_strategy",
+          "hits": [
+            "story"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "overcooked-2",
+      "title": "胡闹厨房2",
+      "cluster": "coop_party",
+      "suggestedSubclusters": [
+        {
+          "id": "short_loop",
+          "hits": [
+            "short_session",
+            "fast_feedback"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "eggy-party",
+      "title": "蛋仔派对",
+      "cluster": "coop_party",
+      "suggestedSubclusters": [
+        {
+          "id": "short_loop",
+          "hits": [
+            "short_session",
+            "fast_feedback"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sky",
+      "title": "光·遇",
+      "cluster": "coop_party",
+      "suggestedSubclusters": []
+    },
+    {
+      "id": "human-fall-flat",
+      "title": "人类一败涂地",
+      "cluster": "coop_party",
+      "suggestedSubclusters": [
+        {
+          "id": "short_loop",
+          "hits": [
+            "short_session"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "super-mario-party",
+      "title": "超级马力欧派对",
+      "cluster": "coop_party",
+      "suggestedSubclusters": [
+        {
+          "id": "short_loop",
+          "hits": [
+            "short_session",
+            "mini_games"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "monument-valley-2",
+      "title": "纪念碑谷2",
+      "cluster": "puzzle_observation",
+      "suggestedSubclusters": [
+        {
+          "id": "narrative_strategy",
+          "hits": [
+            "story"
+          ]
+        },
+        {
+          "id": "short_loop",
+          "hits": [
+            "short_session"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "baba-is-you",
+      "title": "Baba Is You",
+      "cluster": "puzzle_observation",
+      "suggestedSubclusters": []
+    },
+    {
+      "id": "portal-2",
+      "title": "传送门2",
+      "cluster": "puzzle_observation",
+      "suggestedSubclusters": []
+    },
+    {
+      "id": "return-of-obra-dinn",
+      "title": "奥伯拉丁的回归",
+      "cluster": "puzzle_observation",
+      "suggestedSubclusters": []
+    },
+    {
+      "id": "animal-well",
+      "title": "动物井",
+      "cluster": "short_loop_casual",
+      "suggestedSubclusters": []
+    },
+    {
+      "id": "tunic",
+      "title": "Tunic",
+      "cluster": "short_loop_casual",
+      "suggestedSubclusters": []
+    },
+    {
+      "id": "tetris-effect",
+      "title": "俄罗斯方块效应",
+      "cluster": "short_loop_casual",
+      "suggestedSubclusters": [
+        {
+          "id": "short_loop",
+          "hits": [
+            "short_session",
+            "fast_feedback"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "plants-vs-zombies",
+      "title": "植物大战僵尸",
+      "cluster": "short_loop_casual",
+      "suggestedSubclusters": [
+        {
+          "id": "short_loop",
+          "hits": [
+            "short_session",
+            "fast_feedback"
+          ]
+        },
+        {
+          "id": "defense_survival",
+          "hits": [
+            "tower_defense"
+          ]
+        }
+      ]
+    }
+  ]
+}

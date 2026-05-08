@@ -1,0 +1,421 @@
+{
+  "generatedAt": "2026-05-08T15:08:03.126Z",
+  "note": "Report-only question discrimination diagnostic. Negative deltas indicate questions that carry more ranking signal.",
+  "baseline": {
+    "total": 80,
+    "top1Recall": 0.3375,
+    "top3Recall": 0.65,
+    "top6Recall": 1,
+    "averageRank": 2.825
+  },
+  "questions": [
+    {
+      "questionId": "Q01_MOTIVE",
+      "prompt": "你现在最想从游戏里获得什么？",
+      "answerDistribution": {
+        "A": 12,
+        "B": 18,
+        "C": 22,
+        "D": 28
+      },
+      "leaveOneOut": {
+        "total": 80,
+        "top1Recall": 0.275,
+        "top3Recall": 0.575,
+        "top6Recall": 0.8875,
+        "averageRank": 3.5125
+      },
+      "deltas": {
+        "top1Recall": -0.0625,
+        "top3Recall": -0.07500000000000007,
+        "top6Recall": -0.11250000000000004,
+        "averageRank": 0.6875
+      },
+      "clusterTop6RecallDelta": {
+        "competitive_pvp": -0.125,
+        "coop_party": -0.16666666666666663,
+        "cozy_management": 0,
+        "narrative_roleplay": -0.25,
+        "open_world_explore": 0,
+        "puzzle_observation": -0.25,
+        "sandbox_factory": -0.16666666666666663,
+        "short_loop_casual": 0,
+        "strategy_buildcraft": -0.1071428571428571
+      }
+    },
+    {
+      "questionId": "Q02_LOOP",
+      "prompt": "你希望自己在游戏里最常反复做什么？",
+      "answerDistribution": {
+        "A": 34,
+        "B": 22,
+        "C": 14,
+        "D": 10
+      },
+      "leaveOneOut": {
+        "total": 80,
+        "top1Recall": 0.3,
+        "top3Recall": 0.625,
+        "top6Recall": 0.9,
+        "averageRank": 3.5
+      },
+      "deltas": {
+        "top1Recall": -0.03750000000000003,
+        "top3Recall": -0.025000000000000022,
+        "top6Recall": -0.09999999999999998,
+        "averageRank": 0.6749999999999998
+      },
+      "clusterTop6RecallDelta": {
+        "competitive_pvp": -0.125,
+        "coop_party": 0,
+        "cozy_management": 0,
+        "narrative_roleplay": 0,
+        "open_world_explore": -0.125,
+        "puzzle_observation": 0,
+        "sandbox_factory": -0.16666666666666663,
+        "short_loop_casual": 0,
+        "strategy_buildcraft": -0.1785714285714286
+      }
+    },
+    {
+      "questionId": "Q03_MASTERY",
+      "prompt": "你更想靠什么变强？",
+      "answerDistribution": {
+        "A": 8,
+        "B": 24,
+        "C": 12,
+        "D": 36
+      },
+      "leaveOneOut": {
+        "total": 80,
+        "top1Recall": 0.25,
+        "top3Recall": 0.525,
+        "top6Recall": 0.8125,
+        "averageRank": 4.6625
+      },
+      "deltas": {
+        "top1Recall": -0.08750000000000002,
+        "top3Recall": -0.125,
+        "top6Recall": -0.1875,
+        "averageRank": 1.8374999999999995
+      },
+      "clusterTop6RecallDelta": {
+        "competitive_pvp": 0,
+        "coop_party": 0,
+        "cozy_management": 0,
+        "narrative_roleplay": -0.25,
+        "open_world_explore": -0.125,
+        "puzzle_observation": -1,
+        "sandbox_factory": 0,
+        "short_loop_casual": 0,
+        "strategy_buildcraft": -0.2857142857142857
+      }
+    },
+    {
+      "questionId": "Q04_SOCIAL",
+      "prompt": "你希望游戏里其他人的参与程度是？",
+      "answerDistribution": {
+        "A": 7,
+        "B": 12,
+        "C": 34,
+        "D": 27
+      },
+      "leaveOneOut": {
+        "total": 80,
+        "top1Recall": 0.2875,
+        "top3Recall": 0.6125,
+        "top6Recall": 0.8375,
+        "averageRank": 4.9625
+      },
+      "deltas": {
+        "top1Recall": -0.050000000000000044,
+        "top3Recall": -0.03749999999999998,
+        "top6Recall": -0.16249999999999998,
+        "averageRank": 2.1375
+      },
+      "clusterTop6RecallDelta": {
+        "competitive_pvp": -0.25,
+        "coop_party": -0.8333333333333334,
+        "cozy_management": 0,
+        "narrative_roleplay": -0.25,
+        "open_world_explore": 0,
+        "puzzle_observation": 0,
+        "sandbox_factory": -0.16666666666666663,
+        "short_loop_casual": -0.25,
+        "strategy_buildcraft": -0.0714285714285714
+      }
+    },
+    {
+      "questionId": "Q05_PRESSURE",
+      "prompt": "你最不想要哪种压力？",
+      "answerDistribution": {
+        "A": 7,
+        "B": 3,
+        "C": 9,
+        "D": 61
+      },
+      "leaveOneOut": {
+        "total": 80,
+        "top1Recall": 0.275,
+        "top3Recall": 0.575,
+        "top6Recall": 0.925,
+        "averageRank": 3.3625
+      },
+      "deltas": {
+        "top1Recall": -0.0625,
+        "top3Recall": -0.07500000000000007,
+        "top6Recall": -0.07499999999999996,
+        "averageRank": 0.5374999999999996
+      },
+      "clusterTop6RecallDelta": {
+        "competitive_pvp": 0,
+        "coop_party": -0.16666666666666663,
+        "cozy_management": 0,
+        "narrative_roleplay": 0,
+        "open_world_explore": 0,
+        "puzzle_observation": 0,
+        "sandbox_factory": 0,
+        "short_loop_casual": -0.25,
+        "strategy_buildcraft": -0.1428571428571429
+      }
+    },
+    {
+      "questionId": "Q06_FAILURE",
+      "prompt": "你能接受哪种失败？",
+      "answerDistribution": {
+        "A": 9,
+        "B": 10,
+        "C": 47,
+        "D": 14
+      },
+      "leaveOneOut": {
+        "total": 80,
+        "top1Recall": 0.3,
+        "top3Recall": 0.65,
+        "top6Recall": 0.8875,
+        "averageRank": 3.75
+      },
+      "deltas": {
+        "top1Recall": -0.03750000000000003,
+        "top3Recall": 0,
+        "top6Recall": -0.11250000000000004,
+        "averageRank": 0.9249999999999998
+      },
+      "clusterTop6RecallDelta": {
+        "competitive_pvp": 0,
+        "coop_party": 0,
+        "cozy_management": 0,
+        "narrative_roleplay": 0,
+        "open_world_explore": -0.125,
+        "puzzle_observation": 0,
+        "sandbox_factory": -0.33333333333333337,
+        "short_loop_casual": 0,
+        "strategy_buildcraft": -0.2142857142857143
+      }
+    },
+    {
+      "questionId": "Q07_STORY",
+      "prompt": "你对剧情、角色、文本的需求是？",
+      "answerDistribution": {
+        "A": 56,
+        "B": 3,
+        "C": 13,
+        "D": 8
+      },
+      "leaveOneOut": {
+        "total": 80,
+        "top1Recall": 0.2625,
+        "top3Recall": 0.5375,
+        "top6Recall": 0.8875,
+        "averageRank": 4.475
+      },
+      "deltas": {
+        "top1Recall": -0.07500000000000001,
+        "top3Recall": -0.11250000000000004,
+        "top6Recall": -0.11250000000000004,
+        "averageRank": 1.6499999999999995
+      },
+      "clusterTop6RecallDelta": {
+        "competitive_pvp": 0,
+        "coop_party": -0.16666666666666663,
+        "cozy_management": 0,
+        "narrative_roleplay": -0.5,
+        "open_world_explore": -0.25,
+        "puzzle_observation": 0,
+        "sandbox_factory": 0,
+        "short_loop_casual": 0,
+        "strategy_buildcraft": -0.0714285714285714
+      }
+    },
+    {
+      "questionId": "Q08_EXPLORATION",
+      "prompt": "你对探索和自由度的偏好是？",
+      "answerDistribution": {
+        "A": 13,
+        "B": 0,
+        "C": 56,
+        "D": 11
+      },
+      "leaveOneOut": {
+        "total": 80,
+        "top1Recall": 0.2875,
+        "top3Recall": 0.55,
+        "top6Recall": 0.9125,
+        "averageRank": 3.3625
+      },
+      "deltas": {
+        "top1Recall": -0.050000000000000044,
+        "top3Recall": -0.09999999999999998,
+        "top6Recall": -0.08750000000000002,
+        "averageRank": 0.5374999999999996
+      },
+      "clusterTop6RecallDelta": {
+        "competitive_pvp": 0,
+        "coop_party": 0,
+        "cozy_management": 0,
+        "narrative_roleplay": -0.125,
+        "open_world_explore": -0.25,
+        "puzzle_observation": -0.5,
+        "sandbox_factory": 0,
+        "short_loop_casual": 0,
+        "strategy_buildcraft": -0.0714285714285714
+      }
+    },
+    {
+      "questionId": "Q09_CREATE_MANAGE",
+      "prompt": "你对经营、建造、收集、创造的态度？",
+      "answerDistribution": {
+        "A": 6,
+        "B": 4,
+        "C": 60,
+        "D": 10
+      },
+      "leaveOneOut": {
+        "total": 80,
+        "top1Recall": 0.275,
+        "top3Recall": 0.525,
+        "top6Recall": 0.875,
+        "averageRank": 3.8125
+      },
+      "deltas": {
+        "top1Recall": -0.0625,
+        "top3Recall": -0.125,
+        "top6Recall": -0.125,
+        "averageRank": 0.9874999999999998
+      },
+      "clusterTop6RecallDelta": {
+        "competitive_pvp": 0,
+        "coop_party": 0,
+        "cozy_management": -0.375,
+        "narrative_roleplay": 0,
+        "open_world_explore": -0.125,
+        "puzzle_observation": 0,
+        "sandbox_factory": -0.6666666666666667,
+        "short_loop_casual": 0,
+        "strategy_buildcraft": -0.0714285714285714
+      }
+    },
+    {
+      "questionId": "Q10_RHYTHM",
+      "prompt": "你更喜欢怎样的游戏节奏？",
+      "answerDistribution": {
+        "A": 25,
+        "B": 6,
+        "C": 45,
+        "D": 4
+      },
+      "leaveOneOut": {
+        "total": 80,
+        "top1Recall": 0.2625,
+        "top3Recall": 0.6,
+        "top6Recall": 0.8625,
+        "averageRank": 4.3
+      },
+      "deltas": {
+        "top1Recall": -0.07500000000000001,
+        "top3Recall": -0.050000000000000044,
+        "top6Recall": -0.13749999999999996,
+        "averageRank": 1.4749999999999996
+      },
+      "clusterTop6RecallDelta": {
+        "competitive_pvp": 0,
+        "coop_party": -0.16666666666666663,
+        "cozy_management": 0,
+        "narrative_roleplay": -0.125,
+        "open_world_explore": -0.125,
+        "puzzle_observation": 0,
+        "sandbox_factory": 0,
+        "short_loop_casual": -0.25,
+        "strategy_buildcraft": -0.25
+      }
+    },
+    {
+      "questionId": "Q11_TONE",
+      "prompt": "你想要的主要情绪是？",
+      "answerDistribution": {
+        "A": 42,
+        "B": 13,
+        "C": 13,
+        "D": 12
+      },
+      "leaveOneOut": {
+        "total": 80,
+        "top1Recall": 0.3,
+        "top3Recall": 0.6625,
+        "top6Recall": 0.925,
+        "averageRank": 3.2375
+      },
+      "deltas": {
+        "top1Recall": -0.03750000000000003,
+        "top3Recall": 0.012499999999999956,
+        "top6Recall": -0.07499999999999996,
+        "averageRank": 0.41249999999999964
+      },
+      "clusterTop6RecallDelta": {
+        "competitive_pvp": 0,
+        "coop_party": -0.33333333333333337,
+        "cozy_management": 0,
+        "narrative_roleplay": 0,
+        "open_world_explore": 0,
+        "puzzle_observation": 0,
+        "sandbox_factory": 0,
+        "short_loop_casual": -0.25,
+        "strategy_buildcraft": -0.1071428571428571
+      }
+    },
+    {
+      "questionId": "Q12_HARD_AVOID",
+      "prompt": "最后，下面哪类你最明确不想要？",
+      "answerDistribution": {
+        "A": 8,
+        "B": 3,
+        "C": 11,
+        "D": 58
+      },
+      "leaveOneOut": {
+        "total": 80,
+        "top1Recall": 0.2875,
+        "top3Recall": 0.55,
+        "top6Recall": 0.9375,
+        "averageRank": 3.4125
+      },
+      "deltas": {
+        "top1Recall": -0.050000000000000044,
+        "top3Recall": -0.09999999999999998,
+        "top6Recall": -0.0625,
+        "averageRank": 0.5874999999999999
+      },
+      "clusterTop6RecallDelta": {
+        "competitive_pvp": 0,
+        "coop_party": -0.16666666666666663,
+        "cozy_management": 0,
+        "narrative_roleplay": -0.125,
+        "open_world_explore": 0,
+        "puzzle_observation": 0,
+        "sandbox_factory": -0.16666666666666663,
+        "short_loop_casual": 0,
+        "strategy_buildcraft": -0.0714285714285714
+      }
+    }
+  ]
+}

@@ -1,0 +1,5569 @@
+{
+  "generatedAt": "2026-05-08T15:08:02.525Z",
+  "note": "Report-only confusable A/B diagnostic. Weak or failed pairs are optimization inputs, not v0.3.4 failures.",
+  "pairs": 177,
+  "statusCounts": {
+    "failed": 49,
+    "passed": 124,
+    "indistinguishable": 4
+  },
+  "skippedPairs": [
+    {
+      "from": "lol-wild-rift",
+      "to": "honor-of-kings",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "valorant",
+      "to": "honor-of-kings",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "valorant",
+      "to": "lol-wild-rift",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "apex-legends",
+      "to": "valorant",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "peace-elite",
+      "to": "apex-legends",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "peace-elite",
+      "to": "valorant",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "peace-elite",
+      "to": "honor-of-kings",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "cs2",
+      "to": "valorant",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "cs2",
+      "to": "lol-wild-rift",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "cs2",
+      "to": "apex-legends",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "overwatch-2",
+      "to": "honor-of-kings",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "overwatch-2",
+      "to": "apex-legends",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "overwatch-2",
+      "to": "valorant",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "naraka-bladepoint",
+      "to": "apex-legends",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "zelda-botw",
+      "to": "genshin-impact",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "elden-ring",
+      "to": "zelda-botw",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "elden-ring",
+      "to": "naraka-bladepoint",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "cyberpunk-2077",
+      "to": "rdr2",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "witcher-3",
+      "to": "rdr2",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "witcher-3",
+      "to": "cyberpunk-2077",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "witcher-3",
+      "to": "elden-ring",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "palworld",
+      "to": "genshin-impact",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "skyrim",
+      "to": "zelda-botw",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "skyrim",
+      "to": "witcher-3",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "skyrim",
+      "to": "elden-ring",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "skyrim",
+      "to": "rdr2",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "skyrim",
+      "to": "cyberpunk-2077",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "baldurs-gate-3",
+      "to": "witcher-3",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "disco-elysium",
+      "to": "baldurs-gate-3",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "persona-5-royal",
+      "to": "baldurs-gate-3",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "persona-5-royal",
+      "to": "genshin-impact",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "final-fantasy-xvi",
+      "to": "rdr2",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "final-fantasy-xvi",
+      "to": "witcher-3",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "detroit-become-human",
+      "to": "final-fantasy-xvi",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "detroit-become-human",
+      "to": "disco-elysium",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "star-rail",
+      "to": "genshin-impact",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "star-rail",
+      "to": "persona-5-royal",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "star-rail",
+      "to": "baldurs-gate-3",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "star-rail",
+      "to": "final-fantasy-xvi",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "life-is-strange",
+      "to": "detroit-become-human",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "life-is-strange",
+      "to": "disco-elysium",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "outer-wilds",
+      "to": "zelda-botw",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "balatro",
+      "to": "slay-the-spire",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "hades",
+      "to": "slay-the-spire",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "hades",
+      "to": "final-fantasy-xvi",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "hades",
+      "to": "naraka-bladepoint",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "monster-train",
+      "to": "slay-the-spire",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "monster-train",
+      "to": "balatro",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "vampire-survivors",
+      "to": "hades",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "vampire-survivors",
+      "to": "balatro",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "inscryption",
+      "to": "slay-the-spire",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "into-the-breach",
+      "to": "slay-the-spire",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "into-the-breach",
+      "to": "monster-train",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "into-the-breach",
+      "to": "civilization-vi",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "against-the-storm",
+      "to": "civilization-vi",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "oxygen-not-included",
+      "to": "against-the-storm",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "anno-1800",
+      "to": "against-the-storm",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "anno-1800",
+      "to": "oxygen-not-included",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "anno-1800",
+      "to": "civilization-vi",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "frostpunk",
+      "to": "against-the-storm",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "frostpunk",
+      "to": "oxygen-not-included",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "they-are-billions",
+      "to": "frostpunk",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "age-of-empires-iv",
+      "to": "they-are-billions",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "age-of-empires-iv",
+      "to": "civilization-vi",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "total-war-warhammer-iii",
+      "to": "age-of-empires-iv",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "total-war-warhammer-iii",
+      "to": "civilization-vi",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "xcom-2",
+      "to": "into-the-breach",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "xcom-2",
+      "to": "total-war-warhammer-iii",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "fire-emblem-engage",
+      "to": "xcom-2",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "tactics-ogre-reborn",
+      "to": "xcom-2",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "tactics-ogre-reborn",
+      "to": "fire-emblem-engage",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "triangle-strategy",
+      "to": "xcom-2",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "triangle-strategy",
+      "to": "fire-emblem-engage",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "triangle-strategy",
+      "to": "tactics-ogre-reborn",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "triangle-strategy",
+      "to": "total-war-warhammer-iii",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "triangle-strategy",
+      "to": "into-the-breach",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "marvels-midnight-suns",
+      "to": "xcom-2",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "marvels-midnight-suns",
+      "to": "fire-emblem-engage",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "marvels-midnight-suns",
+      "to": "tactics-ogre-reborn",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "marvels-midnight-suns",
+      "to": "triangle-strategy",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "loop-hero",
+      "to": "vampire-survivors",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "dicey-dungeons",
+      "to": "slay-the-spire",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "dicey-dungeons",
+      "to": "balatro",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "dicey-dungeons",
+      "to": "loop-hero",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "wildfrost",
+      "to": "slay-the-spire",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "wildfrost",
+      "to": "monster-train",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "wildfrost",
+      "to": "dicey-dungeons",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "wildfrost",
+      "to": "loop-hero",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "griftlands",
+      "to": "slay-the-spire",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "griftlands",
+      "to": "inscryption",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "griftlands",
+      "to": "dicey-dungeons",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "griftlands",
+      "to": "wildfrost",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "griftlands",
+      "to": "marvels-midnight-suns",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "peglin",
+      "to": "balatro",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "peglin",
+      "to": "vampire-survivors",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "peglin",
+      "to": "dicey-dungeons",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "peglin",
+      "to": "loop-hero",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "backpack-hero",
+      "to": "slay-the-spire",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "backpack-hero",
+      "to": "loop-hero",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "backpack-hero",
+      "to": "dicey-dungeons",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "backpack-hero",
+      "to": "wildfrost",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "dome-keeper",
+      "to": "vampire-survivors",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "dome-keeper",
+      "to": "they-are-billions",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "dome-keeper",
+      "to": "oxygen-not-included",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "dome-keeper",
+      "to": "loop-hero",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "dome-keeper",
+      "to": "peglin",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "northgard",
+      "to": "against-the-storm",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "northgard",
+      "to": "anno-1800",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "northgard",
+      "to": "frostpunk",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "northgard",
+      "to": "age-of-empires-iv",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "northgard",
+      "to": "total-war-warhammer-iii",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "northgard",
+      "to": "they-are-billions",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "animal-crossing",
+      "to": "stardew-valley",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "the-sims-4",
+      "to": "animal-crossing",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "the-sims-4",
+      "to": "stardew-valley",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "dave-the-diver",
+      "to": "stardew-valley",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "spiritfarer",
+      "to": "stardew-valley",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "spiritfarer",
+      "to": "life-is-strange",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "spiritfarer",
+      "to": "dave-the-diver",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "unpacking",
+      "to": "spiritfarer",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "unpacking",
+      "to": "animal-crossing",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "coral-island",
+      "to": "stardew-valley",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "coral-island",
+      "to": "dave-the-diver",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "story-of-seasons",
+      "to": "stardew-valley",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "story-of-seasons",
+      "to": "coral-island",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "story-of-seasons",
+      "to": "animal-crossing",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "minecraft",
+      "to": "palworld",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "minecraft",
+      "to": "the-sims-4",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "minecraft",
+      "to": "skyrim",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "terraria",
+      "to": "minecraft",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "terraria",
+      "to": "palworld",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "dont-starve",
+      "to": "minecraft",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "dont-starve",
+      "to": "terraria",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "rimworld",
+      "to": "dont-starve",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "rimworld",
+      "to": "civilization-vi",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "rimworld",
+      "to": "stardew-valley",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "rimworld",
+      "to": "oxygen-not-included",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "rimworld",
+      "to": "frostpunk",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "dyson-sphere-program",
+      "to": "civilization-vi",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "dyson-sphere-program",
+      "to": "rimworld",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "factorio",
+      "to": "dyson-sphere-program",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "factorio",
+      "to": "civilization-vi",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "factorio",
+      "to": "rimworld",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "overcooked-2",
+      "to": "it-takes-two",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "eggy-party",
+      "to": "overcooked-2",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "sky",
+      "to": "animal-crossing",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "sky",
+      "to": "stardew-valley",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "human-fall-flat",
+      "to": "it-takes-two",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "human-fall-flat",
+      "to": "overcooked-2",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "human-fall-flat",
+      "to": "eggy-party",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "human-fall-flat",
+      "to": "sky",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "super-mario-party",
+      "to": "eggy-party",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "super-mario-party",
+      "to": "overcooked-2",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "super-mario-party",
+      "to": "it-takes-two",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "monument-valley-2",
+      "to": "unpacking",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "baba-is-you",
+      "to": "into-the-breach",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "baba-is-you",
+      "to": "inscryption",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "baba-is-you",
+      "to": "monument-valley-2",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "portal-2",
+      "to": "baba-is-you",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "portal-2",
+      "to": "monument-valley-2",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "portal-2",
+      "to": "outer-wilds",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "return-of-obra-dinn",
+      "to": "outer-wilds",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "return-of-obra-dinn",
+      "to": "disco-elysium",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "return-of-obra-dinn",
+      "to": "baba-is-you",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "return-of-obra-dinn",
+      "to": "portal-2",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "return-of-obra-dinn",
+      "to": "inscryption",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "animal-well",
+      "to": "outer-wilds",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "animal-well",
+      "to": "terraria",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "animal-well",
+      "to": "zelda-botw",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "tunic",
+      "to": "animal-well",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "tunic",
+      "to": "outer-wilds",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "tunic",
+      "to": "zelda-botw",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "tetris-effect",
+      "to": "balatro",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "tetris-effect",
+      "to": "vampire-survivors",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "plants-vs-zombies",
+      "to": "tetris-effect",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "plants-vs-zombies",
+      "to": "vampire-survivors",
+      "reason": "duplicate_reverse_pair"
+    },
+    {
+      "from": "plants-vs-zombies",
+      "to": "into-the-breach",
+      "reason": "duplicate_reverse_pair"
+    }
+  ],
+  "results": [
+    {
+      "pair": {
+        "a": "honor-of-kings",
+        "b": "lol-wild-rift"
+      },
+      "status": "failed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 8,
+        "targetScore": 100,
+        "confusableScore": 60,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 4,
+        "confusableRank": 3,
+        "targetScore": 70,
+        "confusableScore": 70,
+        "targetBeatsConfusable": false
+      },
+      "sharedTags": [
+        "pvp",
+        "moba",
+        "team",
+        "ranked",
+        "reflex"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "honor-of-kings",
+        "b": "overwatch-2"
+      },
+      "status": "failed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 6,
+        "targetScore": 100,
+        "confusableScore": 70,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 4,
+        "confusableRank": 2,
+        "targetScore": 70,
+        "confusableScore": 80,
+        "targetBeatsConfusable": false
+      },
+      "sharedTags": [
+        "pvp",
+        "team",
+        "social_pressure"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "honor-of-kings",
+        "b": "valorant"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 2,
+        "targetScore": 100,
+        "confusableScore": 100,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 5,
+        "targetScore": 120,
+        "confusableScore": 70,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "pvp",
+        "team",
+        "ranked",
+        "reflex"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "honor-of-kings",
+        "b": "peace-elite"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 10,
+        "targetScore": 100,
+        "confusableScore": 60,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 2,
+        "confusableRank": 5,
+        "targetScore": 80,
+        "confusableScore": 60,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "pvp",
+        "team",
+        "ranked"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "cs2",
+        "b": "lol-wild-rift"
+      },
+      "status": "failed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 7,
+        "targetScore": 110,
+        "confusableScore": 58,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 4,
+        "confusableRank": 2,
+        "targetScore": 70,
+        "confusableScore": 100,
+        "targetBeatsConfusable": false
+      },
+      "sharedTags": [
+        "pvp",
+        "ranked",
+        "high_pressure",
+        "reflex"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "lol-wild-rift",
+        "b": "valorant"
+      },
+      "status": "failed",
+      "aSeed": {
+        "targetRank": 4,
+        "confusableRank": 1,
+        "targetScore": 70,
+        "confusableScore": 110,
+        "targetBeatsConfusable": false
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 6,
+        "targetScore": 120,
+        "confusableScore": 70,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "pvp",
+        "team",
+        "ranked",
+        "reflex",
+        "high_pressure"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "cs2",
+        "b": "valorant"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 2,
+        "targetScore": 110,
+        "confusableScore": 108,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 2,
+        "targetScore": 120,
+        "confusableScore": 110,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "pvp",
+        "tactical_shooter",
+        "aim",
+        "low_ttk",
+        "ranked",
+        "high_pressure",
+        "reflex",
+        "skill_mastery",
+        "combat_mastery"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "apex-legends",
+        "b": "valorant"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 3,
+        "targetScore": 80,
+        "confusableScore": 70,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 3,
+        "targetScore": 120,
+        "confusableScore": 80,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "pvp",
+        "team",
+        "aim",
+        "high_pressure",
+        "ranked"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "overwatch-2",
+        "b": "valorant"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 4,
+        "confusableRank": 7,
+        "targetScore": 70,
+        "confusableScore": 60,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 10,
+        "targetScore": 120,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "pvp",
+        "team"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "peace-elite",
+        "b": "valorant"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 2,
+        "confusableRank": 3,
+        "targetScore": 80,
+        "confusableScore": 70,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 7,
+        "targetScore": 120,
+        "confusableScore": 70,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "pvp",
+        "team",
+        "aim",
+        "high_pressure",
+        "ranked"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "apex-legends",
+        "b": "peace-elite"
+      },
+      "status": "indistinguishable",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 2,
+        "targetScore": 80,
+        "confusableScore": 80,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 2,
+        "confusableRank": 1,
+        "targetScore": 80,
+        "confusableScore": 80,
+        "targetBeatsConfusable": false
+      },
+      "sharedTags": [
+        "pvp",
+        "battle_royale",
+        "team",
+        "aim",
+        "high_pressure",
+        "ranked"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "apex-legends",
+        "b": "overwatch-2"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 7,
+        "targetScore": 80,
+        "confusableScore": 60,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 4,
+        "confusableRank": 8,
+        "targetScore": 70,
+        "confusableScore": 60,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "pvp",
+        "team",
+        "hero_skill"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "apex-legends",
+        "b": "naraka-bladepoint"
+      },
+      "status": "failed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 4,
+        "targetScore": 80,
+        "confusableScore": 70,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 5,
+        "confusableRank": 2,
+        "targetScore": 80,
+        "confusableScore": 80,
+        "targetBeatsConfusable": false
+      },
+      "sharedTags": [
+        "pvp",
+        "battle_royale",
+        "high_pressure"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "apex-legends",
+        "b": "cs2"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 6,
+        "targetScore": 80,
+        "confusableScore": 60,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 5,
+        "targetScore": 110,
+        "confusableScore": 68,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "pvp",
+        "aim",
+        "high_pressure",
+        "ranked"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "elden-ring",
+        "b": "naraka-bladepoint"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 3,
+        "confusableRank": 8,
+        "targetScore": 80,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 5,
+        "confusableRank": 38,
+        "targetScore": 80,
+        "confusableScore": 20,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "high_pressure"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "hades",
+        "b": "naraka-bladepoint"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 13,
+        "targetScore": 100,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 5,
+        "confusableRank": 9,
+        "targetScore": 80,
+        "confusableScore": 60,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "genshin-impact",
+        "b": "star-rail"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 2,
+        "confusableRank": 13,
+        "targetScore": 90,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 4,
+        "confusableRank": 13,
+        "targetScore": 70,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "character_collection",
+        "anime",
+        "long_term",
+        "story"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "genshin-impact",
+        "b": "zelda-botw"
+      },
+      "status": "failed",
+      "aSeed": {
+        "targetRank": 2,
+        "confusableRank": 1,
+        "targetScore": 90,
+        "confusableScore": 110,
+        "targetBeatsConfusable": false
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 8,
+        "targetScore": 120,
+        "confusableScore": 78,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "open_world",
+        "exploration"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "genshin-impact",
+        "b": "palworld"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 2,
+        "confusableRank": 5,
+        "targetScore": 90,
+        "confusableScore": 80,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 4,
+        "confusableRank": 8,
+        "targetScore": 90,
+        "confusableScore": 78,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "open_world",
+        "exploration"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "genshin-impact",
+        "b": "persona-5-royal"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 2,
+        "confusableRank": 25,
+        "targetScore": 90,
+        "confusableScore": 40,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 14,
+        "targetScore": 70,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "anime",
+        "long_term",
+        "story"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "elden-ring",
+        "b": "zelda-botw"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 3,
+        "confusableRank": 5,
+        "targetScore": 80,
+        "confusableScore": 60,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 23,
+        "targetScore": 120,
+        "confusableScore": 30,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "open_world",
+        "low_guidance"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "outer-wilds",
+        "b": "zelda-botw"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 4,
+        "targetScore": 160,
+        "confusableScore": 100,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 2,
+        "targetScore": 120,
+        "confusableScore": 110,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "exploration",
+        "discovery"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "tunic",
+        "b": "zelda-botw"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 3,
+        "confusableRank": 4,
+        "targetScore": 110,
+        "confusableScore": 100,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 7,
+        "targetScore": 120,
+        "confusableScore": 80,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "exploration"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "skyrim",
+        "b": "zelda-botw"
+      },
+      "status": "failed",
+      "aSeed": {
+        "targetRank": 5,
+        "confusableRank": 1,
+        "targetScore": 90,
+        "confusableScore": 120,
+        "targetBeatsConfusable": false
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 5,
+        "targetScore": 120,
+        "confusableScore": 80,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "open_world",
+        "exploration"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "animal-well",
+        "b": "zelda-botw"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 2,
+        "confusableRank": 4,
+        "targetScore": 150,
+        "confusableScore": 100,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 3,
+        "targetScore": 120,
+        "confusableScore": 110,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "exploration",
+        "discovery"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "elden-ring",
+        "b": "skyrim"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 3,
+        "confusableRank": 10,
+        "targetScore": 80,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 5,
+        "confusableRank": 22,
+        "targetScore": 90,
+        "confusableScore": 30,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "open_world"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "elden-ring",
+        "b": "witcher-3"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 3,
+        "confusableRank": 6,
+        "targetScore": 80,
+        "confusableScore": 60,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 2,
+        "confusableRank": 12,
+        "targetScore": 70,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "open_world",
+        "dark_fantasy"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "rdr2",
+        "b": "witcher-3"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 14,
+        "targetScore": 70,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 2,
+        "confusableRank": 18,
+        "targetScore": 70,
+        "confusableScore": 40,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "open_world",
+        "story"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "cyberpunk-2077",
+        "b": "rdr2"
+      },
+      "status": "failed",
+      "aSeed": {
+        "targetRank": 4,
+        "confusableRank": 3,
+        "targetScore": 60,
+        "confusableScore": 60,
+        "targetBeatsConfusable": false
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 27,
+        "targetScore": 70,
+        "confusableScore": 40,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "open_world",
+        "story"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "rdr2",
+        "b": "skyrim"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 16,
+        "targetScore": 70,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 5,
+        "confusableRank": 17,
+        "targetScore": 90,
+        "confusableScore": 40,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "open_world",
+        "solo"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "final-fantasy-xvi",
+        "b": "rdr2"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 5,
+        "targetScore": 90,
+        "confusableScore": 60,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 2,
+        "targetScore": 70,
+        "confusableScore": 70,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "story",
+        "solo"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "cyberpunk-2077",
+        "b": "witcher-3"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 4,
+        "confusableRank": 12,
+        "targetScore": 60,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 2,
+        "confusableRank": 33,
+        "targetScore": 70,
+        "confusableScore": 30,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "open_world",
+        "story"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "cyberpunk-2077",
+        "b": "skyrim"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 4,
+        "confusableRank": 21,
+        "targetScore": 60,
+        "confusableScore": 40,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 5,
+        "confusableRank": 41,
+        "targetScore": 90,
+        "confusableScore": 10,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "open_world"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "skyrim",
+        "b": "witcher-3"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 5,
+        "confusableRank": 10,
+        "targetScore": 90,
+        "confusableScore": 60,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 2,
+        "confusableRank": 5,
+        "targetScore": 70,
+        "confusableScore": 60,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "open_world",
+        "exploration"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "baldurs-gate-3",
+        "b": "witcher-3"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 5,
+        "confusableRank": 31,
+        "targetScore": 60,
+        "confusableScore": 30,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 2,
+        "confusableRank": 34,
+        "targetScore": 70,
+        "confusableScore": 30,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "story",
+        "choice_consequence"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "final-fantasy-xvi",
+        "b": "witcher-3"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 23,
+        "targetScore": 90,
+        "confusableScore": 30,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 2,
+        "confusableRank": 46,
+        "targetScore": 70,
+        "confusableScore": 20,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "story"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "minecraft",
+        "b": "palworld"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 3,
+        "confusableRank": 9,
+        "targetScore": 90,
+        "confusableScore": 60,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 4,
+        "confusableRank": 6,
+        "targetScore": 90,
+        "confusableScore": 80,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "survival",
+        "exploration",
+        "crafting"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "palworld",
+        "b": "terraria"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 4,
+        "confusableRank": 10,
+        "targetScore": 90,
+        "confusableScore": 60,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 6,
+        "confusableRank": 9,
+        "targetScore": 70,
+        "confusableScore": 60,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "crafting",
+        "exploration"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "minecraft",
+        "b": "skyrim"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 3,
+        "confusableRank": 5,
+        "targetScore": 90,
+        "confusableScore": 70,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 5,
+        "confusableRank": 6,
+        "targetScore": 90,
+        "confusableScore": 80,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "exploration",
+        "self_directed"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "baldurs-gate-3",
+        "b": "disco-elysium"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 5,
+        "confusableRank": 6,
+        "targetScore": 60,
+        "confusableScore": 60,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 3,
+        "confusableRank": 13,
+        "targetScore": 60,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "story",
+        "roleplay"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "baldurs-gate-3",
+        "b": "persona-5-royal"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 5,
+        "confusableRank": 8,
+        "targetScore": 60,
+        "confusableScore": 58,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 8,
+        "targetScore": 70,
+        "confusableScore": 60,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "story",
+        "turn_based",
+        "solo"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "baldurs-gate-3",
+        "b": "star-rail"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 5,
+        "confusableRank": 9,
+        "targetScore": 60,
+        "confusableScore": 58,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 4,
+        "confusableRank": 14,
+        "targetScore": 70,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "story",
+        "turn_based",
+        "solo"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "disco-elysium",
+        "b": "life-is-strange"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 3,
+        "confusableRank": 5,
+        "targetScore": 60,
+        "confusableScore": 60,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 3,
+        "targetScore": 80,
+        "confusableScore": 60,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "story",
+        "dialogue"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "disco-elysium",
+        "b": "return-of-obra-dinn"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 3,
+        "confusableRank": 68,
+        "targetScore": 60,
+        "confusableScore": 10,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 4,
+        "confusableRank": 67,
+        "targetScore": 80,
+        "confusableScore": 0,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "detective",
+        "no_combat"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "detroit-become-human",
+        "b": "disco-elysium"
+      },
+      "status": "failed",
+      "aSeed": {
+        "targetRank": 6,
+        "confusableRank": 2,
+        "targetScore": 50,
+        "confusableScore": 60,
+        "targetBeatsConfusable": false
+      },
+      "bSeed": {
+        "targetRank": 3,
+        "confusableRank": 24,
+        "targetScore": 60,
+        "confusableScore": 40,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "persona-5-royal",
+        "b": "star-rail"
+      },
+      "status": "indistinguishable",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 3,
+        "targetScore": 70,
+        "confusableScore": 70,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 4,
+        "confusableRank": 2,
+        "targetScore": 70,
+        "confusableScore": 70,
+        "targetBeatsConfusable": false
+      },
+      "sharedTags": [
+        "story",
+        "turn_based",
+        "anime",
+        "long_term",
+        "solo"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "final-fantasy-xvi",
+        "b": "hades"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 2,
+        "targetScore": 90,
+        "confusableScore": 90,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 4,
+        "targetScore": 100,
+        "confusableScore": 70,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "story",
+        "combat_mastery"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "final-fantasy-xvi",
+        "b": "star-rail"
+      },
+      "status": "failed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 49,
+        "targetScore": 90,
+        "confusableScore": 18,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 4,
+        "confusableRank": 3,
+        "targetScore": 70,
+        "confusableScore": 70,
+        "targetBeatsConfusable": false
+      },
+      "sharedTags": [
+        "story",
+        "solo"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "detroit-become-human",
+        "b": "final-fantasy-xvi"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 6,
+        "confusableRank": 8,
+        "targetScore": 50,
+        "confusableScore": 40,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 11,
+        "targetScore": 90,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "cinematic",
+        "solo"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "detroit-become-human",
+        "b": "life-is-strange"
+      },
+      "status": "failed",
+      "aSeed": {
+        "targetRank": 6,
+        "confusableRank": 1,
+        "targetScore": 50,
+        "confusableScore": 70,
+        "targetBeatsConfusable": false
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 16,
+        "targetScore": 80,
+        "confusableScore": 40,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "choice_consequence"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "life-is-strange",
+        "b": "spiritfarer"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 2,
+        "targetScore": 80,
+        "confusableScore": 78,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 2,
+        "confusableRank": 7,
+        "targetScore": 120,
+        "confusableScore": 70,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "character_bond",
+        "low_pressure"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "animal-well",
+        "b": "outer-wilds"
+      },
+      "status": "failed",
+      "aSeed": {
+        "targetRank": 2,
+        "confusableRank": 1,
+        "targetScore": 150,
+        "confusableScore": 160,
+        "targetBeatsConfusable": false
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 2,
+        "targetScore": 160,
+        "confusableScore": 150,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "exploration",
+        "mystery",
+        "puzzle",
+        "discovery"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "outer-wilds",
+        "b": "tunic"
+      },
+      "status": "failed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 3,
+        "targetScore": 160,
+        "confusableScore": 110,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 3,
+        "confusableRank": 1,
+        "targetScore": 110,
+        "confusableScore": 160,
+        "targetBeatsConfusable": false
+      },
+      "sharedTags": [
+        "exploration",
+        "mystery",
+        "puzzle"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "outer-wilds",
+        "b": "return-of-obra-dinn"
+      },
+      "status": "failed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 5,
+        "targetScore": 160,
+        "confusableScore": 80,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 4,
+        "confusableRank": 1,
+        "targetScore": 80,
+        "confusableScore": 140,
+        "targetBeatsConfusable": false
+      },
+      "sharedTags": [
+        "mystery",
+        "no_combat"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "outer-wilds",
+        "b": "portal-2"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 9,
+        "targetScore": 160,
+        "confusableScore": 60,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 4,
+        "targetScore": 80,
+        "confusableScore": 60,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "puzzle"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "monster-train",
+        "b": "slay-the-spire"
+      },
+      "status": "failed",
+      "aSeed": {
+        "targetRank": 5,
+        "confusableRank": 1,
+        "targetScore": 60,
+        "confusableScore": 90,
+        "targetBeatsConfusable": false
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 15,
+        "targetScore": 100,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "deckbuilder",
+        "roguelike",
+        "planning",
+        "run_based",
+        "low_reflex"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "balatro",
+        "b": "slay-the-spire"
+      },
+      "status": "failed",
+      "aSeed": {
+        "targetRank": 4,
+        "confusableRank": 1,
+        "targetScore": 70,
+        "confusableScore": 90,
+        "targetBeatsConfusable": false
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 9,
+        "targetScore": 100,
+        "confusableScore": 60,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "deckbuilder",
+        "run_based",
+        "system_mastery"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "inscryption",
+        "b": "slay-the-spire"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 4,
+        "confusableRank": 61,
+        "targetScore": 70,
+        "confusableScore": 8,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 44,
+        "targetScore": 100,
+        "confusableScore": 20,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "into-the-breach",
+        "b": "slay-the-spire"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 3,
+        "confusableRank": 25,
+        "targetScore": 50,
+        "confusableScore": 28,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 35,
+        "targetScore": 100,
+        "confusableScore": 30,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "planning"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "hades",
+        "b": "slay-the-spire"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 53,
+        "targetScore": 100,
+        "confusableScore": 18,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 14,
+        "targetScore": 100,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "run_based"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "dicey-dungeons",
+        "b": "slay-the-spire"
+      },
+      "status": "failed",
+      "aSeed": {
+        "targetRank": 5,
+        "confusableRank": 1,
+        "targetScore": 70,
+        "confusableScore": 90,
+        "targetBeatsConfusable": false
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 11,
+        "targetScore": 100,
+        "confusableScore": 60,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "deckbuilder",
+        "roguelike",
+        "run_based",
+        "system_mastery",
+        "low_reflex"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "slay-the-spire",
+        "b": "wildfrost"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 41,
+        "targetScore": 100,
+        "confusableScore": 28,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 6,
+        "confusableRank": 7,
+        "targetScore": 70,
+        "confusableScore": 68,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "deckbuilder",
+        "roguelike",
+        "planning"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "griftlands",
+        "b": "slay-the-spire"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 4,
+        "targetScore": 100,
+        "confusableScore": 68,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 5,
+        "targetScore": 100,
+        "confusableScore": 80,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "deckbuilder",
+        "roguelike",
+        "run_based",
+        "planning"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "backpack-hero",
+        "b": "slay-the-spire"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 2,
+        "targetScore": 100,
+        "confusableScore": 90,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 2,
+        "targetScore": 100,
+        "confusableScore": 90,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "roguelike",
+        "planning",
+        "run_based",
+        "optimization",
+        "system_mastery"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "balatro",
+        "b": "vampire-survivors"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 4,
+        "confusableRank": 9,
+        "targetScore": 70,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 6,
+        "confusableRank": 42,
+        "targetScore": 60,
+        "confusableScore": 30,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "short_session"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "balatro",
+        "b": "tetris-effect"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 4,
+        "confusableRank": 21,
+        "targetScore": 70,
+        "confusableScore": 30,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 3,
+        "confusableRank": 31,
+        "targetScore": 90,
+        "confusableScore": 30,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "short_session"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "balatro",
+        "b": "monster-train"
+      },
+      "status": "failed",
+      "aSeed": {
+        "targetRank": 4,
+        "confusableRank": 6,
+        "targetScore": 70,
+        "confusableScore": 60,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 5,
+        "confusableRank": 4,
+        "targetScore": 60,
+        "confusableScore": 60,
+        "targetBeatsConfusable": false
+      },
+      "sharedTags": [
+        "deckbuilder",
+        "combo",
+        "run_based"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "balatro",
+        "b": "dicey-dungeons"
+      },
+      "status": "indistinguishable",
+      "aSeed": {
+        "targetRank": 4,
+        "confusableRank": 5,
+        "targetScore": 70,
+        "confusableScore": 70,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 5,
+        "confusableRank": 4,
+        "targetScore": 70,
+        "confusableScore": 70,
+        "targetBeatsConfusable": false
+      },
+      "sharedTags": [
+        "deckbuilder",
+        "combo",
+        "short_session",
+        "run_based",
+        "system_mastery"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "balatro",
+        "b": "peglin"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 4,
+        "confusableRank": 19,
+        "targetScore": 70,
+        "confusableScore": 30,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 6,
+        "confusableRank": 44,
+        "targetScore": 70,
+        "confusableScore": 30,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "combo",
+        "short_session"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "hades",
+        "b": "vampire-survivors"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 22,
+        "targetScore": 100,
+        "confusableScore": 40,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 6,
+        "confusableRank": 12,
+        "targetScore": 60,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "fast_feedback"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "into-the-breach",
+        "b": "monster-train"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 3,
+        "confusableRank": 31,
+        "targetScore": 50,
+        "confusableScore": 20,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 5,
+        "confusableRank": 14,
+        "targetScore": 60,
+        "confusableScore": 30,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "planning"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "monster-train",
+        "b": "wildfrost"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 5,
+        "confusableRank": 8,
+        "targetScore": 60,
+        "confusableScore": 40,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 6,
+        "confusableRank": 21,
+        "targetScore": 70,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "deckbuilder",
+        "roguelike",
+        "lane_strategy",
+        "planning",
+        "combo"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "tetris-effect",
+        "b": "vampire-survivors"
+      },
+      "status": "failed",
+      "aSeed": {
+        "targetRank": 3,
+        "confusableRank": 14,
+        "targetScore": 90,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 6,
+        "confusableRank": 2,
+        "targetScore": 60,
+        "confusableScore": 70,
+        "targetBeatsConfusable": false
+      },
+      "sharedTags": [
+        "short_session",
+        "fast_feedback"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "plants-vs-zombies",
+        "b": "vampire-survivors"
+      },
+      "status": "indistinguishable",
+      "aSeed": {
+        "targetRank": 6,
+        "confusableRank": 2,
+        "targetScore": 60,
+        "confusableScore": 60,
+        "targetBeatsConfusable": false
+      },
+      "bSeed": {
+        "targetRank": 6,
+        "confusableRank": 8,
+        "targetScore": 60,
+        "confusableScore": 60,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "short_session",
+        "fast_feedback",
+        "solo"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "loop-hero",
+        "b": "vampire-survivors"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 2,
+        "confusableRank": 22,
+        "targetScore": 90,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 6,
+        "confusableRank": 14,
+        "targetScore": 60,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "short_session"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "peglin",
+        "b": "vampire-survivors"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 6,
+        "confusableRank": 18,
+        "targetScore": 70,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 6,
+        "confusableRank": 7,
+        "targetScore": 60,
+        "confusableScore": 60,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "short_session",
+        "fast_feedback"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "dome-keeper",
+        "b": "vampire-survivors"
+      },
+      "status": "failed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 22,
+        "targetScore": 110,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 6,
+        "confusableRank": 1,
+        "targetScore": 60,
+        "confusableScore": 90,
+        "targetBeatsConfusable": false
+      },
+      "sharedTags": [
+        "short_session",
+        "fast_feedback"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "baba-is-you",
+        "b": "inscryption"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 3,
+        "confusableRank": 22,
+        "targetScore": 70,
+        "confusableScore": 40,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 4,
+        "confusableRank": 24,
+        "targetScore": 70,
+        "confusableScore": 40,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "puzzle"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "inscryption",
+        "b": "return-of-obra-dinn"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 4,
+        "confusableRank": 5,
+        "targetScore": 70,
+        "confusableScore": 70,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 4,
+        "confusableRank": 6,
+        "targetScore": 80,
+        "confusableScore": 70,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "mystery"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "griftlands",
+        "b": "inscryption"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 59,
+        "targetScore": 100,
+        "confusableScore": 20,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 4,
+        "confusableRank": 58,
+        "targetScore": 70,
+        "confusableScore": 10,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "civilization-vi",
+        "b": "rimworld"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 2,
+        "confusableRank": 3,
+        "targetScore": 80,
+        "confusableScore": 80,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 2,
+        "confusableRank": 22,
+        "targetScore": 80,
+        "confusableScore": 40,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "solo"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "civilization-vi",
+        "b": "dyson-sphere-program"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 2,
+        "confusableRank": 8,
+        "targetScore": 80,
+        "confusableScore": 70,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 2,
+        "targetScore": 70,
+        "confusableScore": 60,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "macro_planning",
+        "optimization"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "civilization-vi",
+        "b": "factorio"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 2,
+        "confusableRank": 12,
+        "targetScore": 80,
+        "confusableScore": 60,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 3,
+        "confusableRank": 6,
+        "targetScore": 90,
+        "confusableScore": 70,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "optimization"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "civilization-vi",
+        "b": "into-the-breach"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 2,
+        "confusableRank": 29,
+        "targetScore": 80,
+        "confusableScore": 40,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 3,
+        "confusableRank": 42,
+        "targetScore": 50,
+        "confusableScore": 16,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "turn_based"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "against-the-storm",
+        "b": "civilization-vi"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 6,
+        "confusableRank": 13,
+        "targetScore": 70,
+        "confusableScore": 60,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 2,
+        "confusableRank": 16,
+        "targetScore": 80,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "anno-1800",
+        "b": "civilization-vi"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 3,
+        "targetScore": 100,
+        "confusableScore": 70,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 2,
+        "confusableRank": 4,
+        "targetScore": 80,
+        "confusableScore": 78,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "optimization",
+        "macro_planning",
+        "empire_building",
+        "long_session"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "age-of-empires-iv",
+        "b": "civilization-vi"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 2,
+        "confusableRank": 27,
+        "targetScore": 50,
+        "confusableScore": 20,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 2,
+        "confusableRank": 71,
+        "targetScore": 80,
+        "confusableScore": 8,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "macro_planning"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "civilization-vi",
+        "b": "total-war-warhammer-iii"
+      },
+      "status": "failed",
+      "aSeed": {
+        "targetRank": 2,
+        "confusableRank": 30,
+        "targetScore": 80,
+        "confusableScore": 40,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 3,
+        "confusableRank": 1,
+        "targetScore": 30,
+        "confusableScore": 60,
+        "targetBeatsConfusable": false
+      },
+      "sharedTags": [
+        "long_session",
+        "macro_planning",
+        "empire_building",
+        "turn_based"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "baba-is-you",
+        "b": "into-the-breach"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 3,
+        "confusableRank": 56,
+        "targetScore": 70,
+        "confusableScore": 10,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 3,
+        "confusableRank": 50,
+        "targetScore": 50,
+        "confusableScore": 10,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "into-the-breach",
+        "b": "plants-vs-zombies"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 3,
+        "confusableRank": 10,
+        "targetScore": 50,
+        "confusableScore": 40,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 6,
+        "confusableRank": 10,
+        "targetScore": 60,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "short_session"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "into-the-breach",
+        "b": "xcom-2"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 3,
+        "confusableRank": 32,
+        "targetScore": 50,
+        "confusableScore": 20,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 4,
+        "confusableRank": 18,
+        "targetScore": 60,
+        "confusableScore": 40,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "tactics",
+        "turn_based",
+        "planning"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "into-the-breach",
+        "b": "triangle-strategy"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 3,
+        "confusableRank": 35,
+        "targetScore": 50,
+        "confusableScore": 20,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 2,
+        "confusableRank": 36,
+        "targetScore": 70,
+        "confusableScore": 40,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "tactics",
+        "turn_based",
+        "planning"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "against-the-storm",
+        "b": "frostpunk"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 6,
+        "confusableRank": 23,
+        "targetScore": 70,
+        "confusableScore": 46,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 7,
+        "targetScore": 90,
+        "confusableScore": 60,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "city_builder",
+        "survival"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "against-the-storm",
+        "b": "northgard"
+      },
+      "status": "failed",
+      "aSeed": {
+        "targetRank": 6,
+        "confusableRank": 1,
+        "targetScore": 70,
+        "confusableScore": 90,
+        "targetBeatsConfusable": false
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 6,
+        "targetScore": 90,
+        "confusableScore": 70,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "resource_management",
+        "survival",
+        "medium_session"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "against-the-storm",
+        "b": "anno-1800"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 6,
+        "confusableRank": 15,
+        "targetScore": 70,
+        "confusableScore": 58,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 18,
+        "targetScore": 100,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "city_builder"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "against-the-storm",
+        "b": "oxygen-not-included"
+      },
+      "status": "failed",
+      "aSeed": {
+        "targetRank": 6,
+        "confusableRank": 3,
+        "targetScore": 70,
+        "confusableScore": 80,
+        "targetBeatsConfusable": false
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 14,
+        "targetScore": 90,
+        "confusableScore": 60,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "survival",
+        "systemic"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "anno-1800",
+        "b": "oxygen-not-included"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 2,
+        "targetScore": 100,
+        "confusableScore": 90,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 13,
+        "targetScore": 90,
+        "confusableScore": 68,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "optimization",
+        "long_session"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "frostpunk",
+        "b": "oxygen-not-included"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 22,
+        "targetScore": 90,
+        "confusableScore": 46,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 24,
+        "targetScore": 90,
+        "confusableScore": 46,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "survival"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "dome-keeper",
+        "b": "oxygen-not-included"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 17,
+        "targetScore": 110,
+        "confusableScore": 56,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 9,
+        "targetScore": 90,
+        "confusableScore": 70,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "survival"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "oxygen-not-included",
+        "b": "rimworld"
+      },
+      "status": "failed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 10,
+        "targetScore": 90,
+        "confusableScore": 70,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 2,
+        "confusableRank": 1,
+        "targetScore": 80,
+        "confusableScore": 80,
+        "targetBeatsConfusable": false
+      },
+      "sharedTags": [
+        "colony_sim",
+        "systemic",
+        "survival",
+        "high_complexity"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "anno-1800",
+        "b": "northgard"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 5,
+        "targetScore": 100,
+        "confusableScore": 70,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 15,
+        "targetScore": 90,
+        "confusableScore": 58,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "macro_planning"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "frostpunk",
+        "b": "they-are-billions"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 10,
+        "targetScore": 90,
+        "confusableScore": 58,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 13,
+        "targetScore": 90,
+        "confusableScore": 68,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "planning",
+        "high_pressure"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "frostpunk",
+        "b": "northgard"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 21,
+        "targetScore": 90,
+        "confusableScore": 48,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 23,
+        "targetScore": 90,
+        "confusableScore": 46,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "survival",
+        "planning"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "frostpunk",
+        "b": "rimworld"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 11,
+        "targetScore": 90,
+        "confusableScore": 58,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 2,
+        "confusableRank": 32,
+        "targetScore": 80,
+        "confusableScore": 36,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "survival"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "age-of-empires-iv",
+        "b": "they-are-billions"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 2,
+        "confusableRank": 19,
+        "targetScore": 50,
+        "confusableScore": 30,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 21,
+        "targetScore": 90,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "rts",
+        "macro_planning",
+        "high_pressure"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "northgard",
+        "b": "they-are-billions"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 16,
+        "targetScore": 90,
+        "confusableScore": 58,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 8,
+        "targetScore": 90,
+        "confusableScore": 80,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "rts",
+        "resource_management",
+        "macro_planning",
+        "planning"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "dome-keeper",
+        "b": "they-are-billions"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 9,
+        "targetScore": 110,
+        "confusableScore": 68,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 2,
+        "targetScore": 90,
+        "confusableScore": 90,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "tower_defense",
+        "resource_management",
+        "planning"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "age-of-empires-iv",
+        "b": "northgard"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 2,
+        "confusableRank": 28,
+        "targetScore": 50,
+        "confusableScore": 20,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 46,
+        "targetScore": 90,
+        "confusableScore": 28,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "rts",
+        "macro_planning"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "age-of-empires-iv",
+        "b": "total-war-warhammer-iii"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 2,
+        "confusableRank": 35,
+        "targetScore": 50,
+        "confusableScore": 10,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 3,
+        "confusableRank": 73,
+        "targetScore": 30,
+        "confusableScore": -28,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "macro_planning",
+        "army_control"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "northgard",
+        "b": "total-war-warhammer-iii"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 43,
+        "targetScore": 90,
+        "confusableScore": 30,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 3,
+        "confusableRank": 16,
+        "targetScore": 30,
+        "confusableScore": 20,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "macro_planning"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "total-war-warhammer-iii",
+        "b": "xcom-2"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 3,
+        "confusableRank": 37,
+        "targetScore": 30,
+        "confusableScore": 8,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 4,
+        "confusableRank": 41,
+        "targetScore": 60,
+        "confusableScore": 8,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "tactics",
+        "turn_based"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "total-war-warhammer-iii",
+        "b": "triangle-strategy"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 3,
+        "confusableRank": 14,
+        "targetScore": 30,
+        "confusableScore": 20,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 2,
+        "confusableRank": 49,
+        "targetScore": 70,
+        "confusableScore": 28,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "tactics",
+        "turn_based",
+        "long_session"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "marvels-midnight-suns",
+        "b": "xcom-2"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 2,
+        "confusableRank": 7,
+        "targetScore": 60,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 4,
+        "confusableRank": 6,
+        "targetScore": 60,
+        "confusableScore": 60,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "tactics",
+        "turn_based",
+        "planning",
+        "story"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "fire-emblem-engage",
+        "b": "xcom-2"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 3,
+        "confusableRank": 51,
+        "targetScore": 80,
+        "confusableScore": 28,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 4,
+        "confusableRank": 5,
+        "targetScore": 60,
+        "confusableScore": 60,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "tactics",
+        "turn_based",
+        "planning",
+        "story"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "tactics-ogre-reborn",
+        "b": "xcom-2"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 11,
+        "targetScore": 50,
+        "confusableScore": 40,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 4,
+        "confusableRank": 9,
+        "targetScore": 60,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "tactics",
+        "turn_based",
+        "story",
+        "planning"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "triangle-strategy",
+        "b": "xcom-2"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 2,
+        "confusableRank": 26,
+        "targetScore": 70,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 4,
+        "confusableRank": 10,
+        "targetScore": 60,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "tactics",
+        "turn_based",
+        "story",
+        "planning"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "fire-emblem-engage",
+        "b": "tactics-ogre-reborn"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 3,
+        "confusableRank": 28,
+        "targetScore": 80,
+        "confusableScore": 40,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 16,
+        "targetScore": 50,
+        "confusableScore": 38,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "tactics",
+        "turn_based",
+        "party_building",
+        "planning",
+        "story"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "fire-emblem-engage",
+        "b": "triangle-strategy"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 3,
+        "confusableRank": 17,
+        "targetScore": 80,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 2,
+        "confusableRank": 15,
+        "targetScore": 70,
+        "confusableScore": 58,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "tactics",
+        "turn_based",
+        "planning",
+        "story"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "fire-emblem-engage",
+        "b": "marvels-midnight-suns"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 3,
+        "confusableRank": 18,
+        "targetScore": 80,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 2,
+        "confusableRank": 12,
+        "targetScore": 60,
+        "confusableScore": 48,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "tactics",
+        "turn_based",
+        "planning",
+        "story"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "tactics-ogre-reborn",
+        "b": "triangle-strategy"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 2,
+        "targetScore": 50,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 2,
+        "confusableRank": 12,
+        "targetScore": 70,
+        "confusableScore": 60,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "tactics",
+        "turn_based",
+        "story",
+        "planning",
+        "long_session"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "marvels-midnight-suns",
+        "b": "tactics-ogre-reborn"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 2,
+        "confusableRank": 8,
+        "targetScore": 60,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 12,
+        "targetScore": 50,
+        "confusableScore": 40,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "tactics",
+        "turn_based",
+        "planning",
+        "story"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "marvels-midnight-suns",
+        "b": "triangle-strategy"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 2,
+        "confusableRank": 9,
+        "targetScore": 60,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 2,
+        "confusableRank": 13,
+        "targetScore": 70,
+        "confusableScore": 60,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "tactics",
+        "turn_based",
+        "planning",
+        "story"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "griftlands",
+        "b": "marvels-midnight-suns"
+      },
+      "status": "failed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 15,
+        "targetScore": 100,
+        "confusableScore": 60,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 2,
+        "confusableRank": 1,
+        "targetScore": 60,
+        "confusableScore": 70,
+        "targetBeatsConfusable": false
+      },
+      "sharedTags": [
+        "deckbuilder",
+        "story",
+        "planning"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "backpack-hero",
+        "b": "loop-hero"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 3,
+        "targetScore": 100,
+        "confusableScore": 90,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 2,
+        "confusableRank": 4,
+        "targetScore": 90,
+        "confusableScore": 78,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "roguelike",
+        "planning",
+        "run_based",
+        "short_session",
+        "system_mastery"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "loop-hero",
+        "b": "peglin"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 2,
+        "confusableRank": 26,
+        "targetScore": 90,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 6,
+        "confusableRank": 20,
+        "targetScore": 70,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "roguelike",
+        "low_reflex",
+        "short_session"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "dicey-dungeons",
+        "b": "loop-hero"
+      },
+      "status": "failed",
+      "aSeed": {
+        "targetRank": 5,
+        "confusableRank": 3,
+        "targetScore": 70,
+        "confusableScore": 80,
+        "targetBeatsConfusable": false
+      },
+      "bSeed": {
+        "targetRank": 2,
+        "confusableRank": 25,
+        "targetScore": 90,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "roguelike",
+        "run_based",
+        "short_session",
+        "system_mastery",
+        "low_reflex"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "dome-keeper",
+        "b": "loop-hero"
+      },
+      "status": "failed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 2,
+        "targetScore": 110,
+        "confusableScore": 90,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 2,
+        "confusableRank": 1,
+        "targetScore": 90,
+        "confusableScore": 110,
+        "targetBeatsConfusable": false
+      },
+      "sharedTags": [
+        "resource_management",
+        "short_session",
+        "planning"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "loop-hero",
+        "b": "wildfrost"
+      },
+      "status": "failed",
+      "aSeed": {
+        "targetRank": 2,
+        "confusableRank": 6,
+        "targetScore": 90,
+        "confusableScore": 70,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 6,
+        "confusableRank": 2,
+        "targetScore": 70,
+        "confusableScore": 90,
+        "targetBeatsConfusable": false
+      },
+      "sharedTags": [
+        "roguelike",
+        "planning",
+        "short_session"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "dicey-dungeons",
+        "b": "wildfrost"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 5,
+        "confusableRank": 11,
+        "targetScore": 70,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 6,
+        "confusableRank": 25,
+        "targetScore": 70,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "deckbuilder",
+        "roguelike",
+        "combo",
+        "short_session"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "dicey-dungeons",
+        "b": "griftlands"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 5,
+        "confusableRank": 14,
+        "targetScore": 70,
+        "confusableScore": 40,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 36,
+        "targetScore": 100,
+        "confusableScore": 40,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "deckbuilder",
+        "roguelike",
+        "run_based"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "dicey-dungeons",
+        "b": "peglin"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 5,
+        "confusableRank": 19,
+        "targetScore": 70,
+        "confusableScore": 30,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 6,
+        "confusableRank": 47,
+        "targetScore": 70,
+        "confusableScore": 30,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "roguelike",
+        "combo",
+        "short_session",
+        "low_reflex"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "backpack-hero",
+        "b": "dicey-dungeons"
+      },
+      "status": "failed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 9,
+        "targetScore": 100,
+        "confusableScore": 70,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 5,
+        "confusableRank": 2,
+        "targetScore": 70,
+        "confusableScore": 90,
+        "targetBeatsConfusable": false
+      },
+      "sharedTags": [
+        "roguelike",
+        "combo",
+        "run_based",
+        "short_session",
+        "system_mastery"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "griftlands",
+        "b": "wildfrost"
+      },
+      "status": "failed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 16,
+        "targetScore": 100,
+        "confusableScore": 60,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 6,
+        "confusableRank": 3,
+        "targetScore": 70,
+        "confusableScore": 80,
+        "targetBeatsConfusable": false
+      },
+      "sharedTags": [
+        "deckbuilder",
+        "roguelike",
+        "planning"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "backpack-hero",
+        "b": "wildfrost"
+      },
+      "status": "failed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 28,
+        "targetScore": 100,
+        "confusableScore": 48,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 6,
+        "confusableRank": 4,
+        "targetScore": 70,
+        "confusableScore": 78,
+        "targetBeatsConfusable": false
+      },
+      "sharedTags": [
+        "roguelike",
+        "planning",
+        "combo",
+        "short_session"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "dome-keeper",
+        "b": "peglin"
+      },
+      "status": "failed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 26,
+        "targetScore": 110,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 6,
+        "confusableRank": 1,
+        "targetScore": 70,
+        "confusableScore": 90,
+        "targetBeatsConfusable": false
+      },
+      "sharedTags": [
+        "short_session",
+        "fast_feedback"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "stardew-valley",
+        "b": "story-of-seasons"
+      },
+      "status": "failed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 6,
+        "targetScore": 130,
+        "confusableScore": 90,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 5,
+        "confusableRank": 1,
+        "targetScore": 90,
+        "confusableScore": 120,
+        "targetBeatsConfusable": false
+      },
+      "sharedTags": [
+        "farming",
+        "life_sim",
+        "cozy",
+        "routine",
+        "relationship"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "coral-island",
+        "b": "stardew-valley"
+      },
+      "status": "failed",
+      "aSeed": {
+        "targetRank": 5,
+        "confusableRank": 1,
+        "targetScore": 90,
+        "confusableScore": 130,
+        "targetBeatsConfusable": false
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 5,
+        "targetScore": 130,
+        "confusableScore": 90,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "farming",
+        "life_sim",
+        "cozy",
+        "relationship",
+        "collection"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "animal-crossing",
+        "b": "stardew-valley"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 3,
+        "targetScore": 120,
+        "confusableScore": 90,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 3,
+        "targetScore": 130,
+        "confusableScore": 110,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "cozy",
+        "collection",
+        "low_pressure"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "dave-the-diver",
+        "b": "stardew-valley"
+      },
+      "status": "failed",
+      "aSeed": {
+        "targetRank": 2,
+        "confusableRank": 1,
+        "targetScore": 100,
+        "confusableScore": 110,
+        "targetBeatsConfusable": false
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 8,
+        "targetScore": 130,
+        "confusableScore": 70,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "cozy",
+        "collection"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "rimworld",
+        "b": "stardew-valley"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 2,
+        "confusableRank": 78,
+        "targetScore": 80,
+        "confusableScore": -4,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 64,
+        "targetScore": 130,
+        "confusableScore": -12,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "sky",
+        "b": "stardew-valley"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 3,
+        "confusableRank": 11,
+        "targetScore": 80,
+        "confusableScore": 56,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 14,
+        "targetScore": 130,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "low_pressure"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "spiritfarer",
+        "b": "stardew-valley"
+      },
+      "status": "failed",
+      "aSeed": {
+        "targetRank": 2,
+        "confusableRank": 1,
+        "targetScore": 120,
+        "confusableScore": 130,
+        "targetBeatsConfusable": false
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 2,
+        "targetScore": 130,
+        "confusableScore": 120,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "cozy",
+        "low_pressure"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "stardew-valley",
+        "b": "the-sims-4"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 12,
+        "targetScore": 130,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 3,
+        "confusableRank": 6,
+        "targetScore": 80,
+        "confusableScore": 66,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "life_sim",
+        "low_pressure"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "animal-crossing",
+        "b": "the-sims-4"
+      },
+      "status": "failed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 6,
+        "targetScore": 120,
+        "confusableScore": 70,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 3,
+        "confusableRank": 1,
+        "targetScore": 80,
+        "confusableScore": 108,
+        "targetBeatsConfusable": false
+      },
+      "sharedTags": [
+        "low_pressure",
+        "self_expression"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "animal-crossing",
+        "b": "unpacking"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 4,
+        "targetScore": 120,
+        "confusableScore": 80,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 7,
+        "targetScore": 110,
+        "confusableScore": 78,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "cozy",
+        "low_pressure"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "animal-crossing",
+        "b": "sky"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 14,
+        "targetScore": 120,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 3,
+        "confusableRank": 6,
+        "targetScore": 80,
+        "confusableScore": 68,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "low_pressure"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "animal-crossing",
+        "b": "story-of-seasons"
+      },
+      "status": "failed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 12,
+        "targetScore": 120,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 5,
+        "confusableRank": 3,
+        "targetScore": 90,
+        "confusableScore": 90,
+        "targetBeatsConfusable": false
+      },
+      "sharedTags": [
+        "cozy"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "minecraft",
+        "b": "the-sims-4"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 3,
+        "confusableRank": 15,
+        "targetScore": 90,
+        "confusableScore": 40,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 3,
+        "confusableRank": 24,
+        "targetScore": 80,
+        "confusableScore": 30,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "dave-the-diver",
+        "b": "spiritfarer"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 2,
+        "confusableRank": 4,
+        "targetScore": 100,
+        "confusableScore": 90,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 2,
+        "confusableRank": 8,
+        "targetScore": 120,
+        "confusableScore": 70,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "cozy"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "coral-island",
+        "b": "dave-the-diver"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 5,
+        "confusableRank": 8,
+        "targetScore": 90,
+        "confusableScore": 70,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 2,
+        "confusableRank": 6,
+        "targetScore": 100,
+        "confusableScore": 80,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "cozy",
+        "collection"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "spiritfarer",
+        "b": "unpacking"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 2,
+        "confusableRank": 4,
+        "targetScore": 120,
+        "confusableScore": 90,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 3,
+        "targetScore": 110,
+        "confusableScore": 88,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "cozy",
+        "low_pressure"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "monument-valley-2",
+        "b": "unpacking"
+      },
+      "status": "failed",
+      "aSeed": {
+        "targetRank": 5,
+        "confusableRank": 2,
+        "targetScore": 80,
+        "confusableScore": 80,
+        "targetBeatsConfusable": false
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 13,
+        "targetScore": 110,
+        "confusableScore": 60,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "short_session",
+        "low_pressure"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "coral-island",
+        "b": "story-of-seasons"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 5,
+        "confusableRank": 6,
+        "targetScore": 90,
+        "confusableScore": 90,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 5,
+        "confusableRank": 6,
+        "targetScore": 90,
+        "confusableScore": 80,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "farming",
+        "life_sim",
+        "cozy",
+        "relationship"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "minecraft",
+        "b": "terraria"
+      },
+      "status": "failed",
+      "aSeed": {
+        "targetRank": 3,
+        "confusableRank": 6,
+        "targetScore": 90,
+        "confusableScore": 70,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 6,
+        "confusableRank": 3,
+        "targetScore": 70,
+        "confusableScore": 90,
+        "targetBeatsConfusable": false
+      },
+      "sharedTags": [
+        "sandbox",
+        "building",
+        "exploration",
+        "crafting"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "dont-starve",
+        "b": "minecraft"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 4,
+        "confusableRank": 24,
+        "targetScore": 60,
+        "confusableScore": 40,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 3,
+        "confusableRank": 16,
+        "targetScore": 90,
+        "confusableScore": 40,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "survival",
+        "crafting",
+        "self_directed"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "animal-well",
+        "b": "terraria"
+      },
+      "status": "failed",
+      "aSeed": {
+        "targetRank": 2,
+        "confusableRank": 14,
+        "targetScore": 150,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 6,
+        "confusableRank": 4,
+        "targetScore": 70,
+        "confusableScore": 90,
+        "targetBeatsConfusable": false
+      },
+      "sharedTags": [
+        "exploration"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "dont-starve",
+        "b": "terraria"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 4,
+        "confusableRank": 54,
+        "targetScore": 60,
+        "confusableScore": 20,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 6,
+        "confusableRank": 16,
+        "targetScore": 70,
+        "confusableScore": 40,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "crafting"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "dont-starve",
+        "b": "rimworld"
+      },
+      "status": "failed",
+      "aSeed": {
+        "targetRank": 4,
+        "confusableRank": 2,
+        "targetScore": 60,
+        "confusableScore": 68,
+        "targetBeatsConfusable": false
+      },
+      "bSeed": {
+        "targetRank": 2,
+        "confusableRank": 5,
+        "targetScore": 80,
+        "confusableScore": 60,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "survival",
+        "solo"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "factorio",
+        "b": "rimworld"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 3,
+        "confusableRank": 36,
+        "targetScore": 90,
+        "confusableScore": 30,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 2,
+        "confusableRank": 25,
+        "targetScore": 80,
+        "confusableScore": 40,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "dyson-sphere-program",
+        "b": "rimworld"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 16,
+        "targetScore": 70,
+        "confusableScore": 30,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 2,
+        "confusableRank": 12,
+        "targetScore": 80,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "dyson-sphere-program",
+        "b": "factorio"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 4,
+        "targetScore": 70,
+        "confusableScore": 60,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 3,
+        "confusableRank": 7,
+        "targetScore": 90,
+        "confusableScore": 70,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "factory",
+        "automation",
+        "resource_chain",
+        "optimization"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "it-takes-two",
+        "b": "overcooked-2"
+      },
+      "status": "failed",
+      "aSeed": {
+        "targetRank": 6,
+        "confusableRank": 2,
+        "targetScore": 60,
+        "confusableScore": 70,
+        "targetBeatsConfusable": false
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 19,
+        "targetScore": 100,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "fixed_coop",
+        "teamwork"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "human-fall-flat",
+        "b": "it-takes-two"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 4,
+        "confusableRank": 13,
+        "targetScore": 80,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 6,
+        "confusableRank": 40,
+        "targetScore": 60,
+        "confusableScore": 30,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "puzzle_platforming"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "it-takes-two",
+        "b": "super-mario-party"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 6,
+        "confusableRank": 7,
+        "targetScore": 60,
+        "confusableScore": 60,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 3,
+        "confusableRank": 19,
+        "targetScore": 90,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "overcooked-2",
+        "b": "super-mario-party"
+      },
+      "status": "failed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 3,
+        "targetScore": 100,
+        "confusableScore": 90,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 3,
+        "confusableRank": 1,
+        "targetScore": 90,
+        "confusableScore": 100,
+        "targetBeatsConfusable": false
+      },
+      "sharedTags": [
+        "party",
+        "short_session"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "human-fall-flat",
+        "b": "overcooked-2"
+      },
+      "status": "failed",
+      "aSeed": {
+        "targetRank": 4,
+        "confusableRank": 3,
+        "targetScore": 80,
+        "confusableScore": 80,
+        "targetBeatsConfusable": false
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 8,
+        "targetScore": 100,
+        "confusableScore": 60,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "coop",
+        "chaos_fun",
+        "short_session"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "eggy-party",
+        "b": "overcooked-2"
+      },
+      "status": "failed",
+      "aSeed": {
+        "targetRank": 4,
+        "confusableRank": 1,
+        "targetScore": 70,
+        "confusableScore": 100,
+        "targetBeatsConfusable": false
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 4,
+        "targetScore": 100,
+        "confusableScore": 70,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "party",
+        "short_session",
+        "chaos_fun",
+        "fast_feedback"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "eggy-party",
+        "b": "super-mario-party"
+      },
+      "status": "failed",
+      "aSeed": {
+        "targetRank": 4,
+        "confusableRank": 3,
+        "targetScore": 70,
+        "confusableScore": 90,
+        "targetBeatsConfusable": false
+      },
+      "bSeed": {
+        "targetRank": 3,
+        "confusableRank": 4,
+        "targetScore": 90,
+        "confusableScore": 70,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "party",
+        "short_session"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "eggy-party",
+        "b": "human-fall-flat"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 4,
+        "confusableRank": 8,
+        "targetScore": 70,
+        "confusableScore": 60,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 4,
+        "confusableRank": 14,
+        "targetScore": 80,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "short_session",
+        "chaos_fun"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "human-fall-flat",
+        "b": "sky"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 4,
+        "confusableRank": 15,
+        "targetScore": 80,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 3,
+        "confusableRank": 5,
+        "targetScore": 80,
+        "confusableScore": 70,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "low_pressure"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "monument-valley-2",
+        "b": "portal-2"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 5,
+        "confusableRank": 11,
+        "targetScore": 80,
+        "confusableScore": 60,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 13,
+        "targetScore": 80,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "puzzle",
+        "guided"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "baba-is-you",
+        "b": "monument-valley-2"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 3,
+        "confusableRank": 38,
+        "targetScore": 70,
+        "confusableScore": 30,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 5,
+        "confusableRank": 36,
+        "targetScore": 80,
+        "confusableScore": 28,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "puzzle"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "baba-is-you",
+        "b": "portal-2"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 3,
+        "confusableRank": 7,
+        "targetScore": 70,
+        "confusableScore": 60,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 1,
+        "confusableRank": 26,
+        "targetScore": 80,
+        "confusableScore": 40,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "puzzle"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "baba-is-you",
+        "b": "return-of-obra-dinn"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 3,
+        "confusableRank": 14,
+        "targetScore": 70,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 4,
+        "confusableRank": 20,
+        "targetScore": 80,
+        "confusableScore": 40,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "logic"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "portal-2",
+        "b": "return-of-obra-dinn"
+      },
+      "status": "passed",
+      "aSeed": {
+        "targetRank": 1,
+        "confusableRank": 14,
+        "targetScore": 80,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 4,
+        "confusableRank": 9,
+        "targetScore": 80,
+        "confusableScore": 60,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "animal-well",
+        "b": "tunic"
+      },
+      "status": "failed",
+      "aSeed": {
+        "targetRank": 2,
+        "confusableRank": 3,
+        "targetScore": 150,
+        "confusableScore": 110,
+        "targetBeatsConfusable": true
+      },
+      "bSeed": {
+        "targetRank": 3,
+        "confusableRank": 2,
+        "targetScore": 110,
+        "confusableScore": 150,
+        "targetBeatsConfusable": false
+      },
+      "sharedTags": [
+        "exploration",
+        "mystery",
+        "puzzle",
+        "compact_world"
+      ],
+      "sharedDiscriminatorTags": []
+    },
+    {
+      "pair": {
+        "a": "plants-vs-zombies",
+        "b": "tetris-effect"
+      },
+      "status": "failed",
+      "aSeed": {
+        "targetRank": 6,
+        "confusableRank": 5,
+        "targetScore": 60,
+        "confusableScore": 60,
+        "targetBeatsConfusable": false
+      },
+      "bSeed": {
+        "targetRank": 3,
+        "confusableRank": 19,
+        "targetScore": 90,
+        "confusableScore": 50,
+        "targetBeatsConfusable": true
+      },
+      "sharedTags": [
+        "short_session",
+        "fast_feedback"
+      ],
+      "sharedDiscriminatorTags": []
+    }
+  ]
+}

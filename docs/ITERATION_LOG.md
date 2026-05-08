@@ -677,3 +677,94 @@ Final verification:
 - `git diff -- src/lib/gameseek/questions.ts`: no diff.
 - `git diff --check`: no whitespace errors; only Windows LF-to-CRLF warnings.
 - `git status --short`: only intended v0.3.3 files changed before commit.
+
+## v0.3.4 Recommendation Robustness Diagnostics
+
+Date:
+- `2026-05-08`
+
+Branch:
+- `mini-v0.3.4-recommendation-robustness-diagnostics`
+
+Base branch:
+- `mini-v0.3.3-golden-seed-hardening`
+
+Phase document:
+- `docs/MINI_V034_ROBUSTNESS_DIAGNOSTICS.md`
+
+Scope:
+- Diagnostics and reports only.
+- Do not modify `src/lib/gameseek/scoring.ts`.
+- Do not modify `src/lib/gameseek/questions.ts`.
+- Do not modify `src/lib/gameseek/games.ts`.
+- Do not modify `src/lib/gameseek/goldenSeeds.ts`.
+- Do not modify API route or API contract.
+- Do not change the recommendation algorithm or game pool size.
+
+Files added or changed:
+- `scripts/gameseek-diagnostics-utils.ts`
+- `scripts/simulate-user-answers.ts`
+- `scripts/test-answer-noise.ts`
+- `scripts/test-confusable-ab.ts`
+- `scripts/analyze-question-discrimination.ts`
+- `scripts/analyze-subclusters.ts`
+- `scripts/run-robustness-diagnostics.ts`
+- `package.json`
+- `docs/MINI_V034_ROBUSTNESS_DIAGNOSTICS.md`
+- `docs/ITERATION_LOG.md`
+- `reports/v0.3.4-user-answer-simulation.json`
+- `reports/v0.3.4-user-answer-simulation.md`
+- `reports/v0.3.4-answer-noise.json`
+- `reports/v0.3.4-answer-noise.md`
+- `reports/v0.3.4-confusable-ab.json`
+- `reports/v0.3.4-confusable-ab.md`
+- `reports/v0.3.4-question-discrimination.json`
+- `reports/v0.3.4-question-discrimination.md`
+- `reports/v0.3.4-subcluster-analysis.json`
+- `reports/v0.3.4-subcluster-analysis.md`
+- `reports/v0.3.4-recommendation-robustness-summary.md`
+
+Package scripts added:
+- `test:gameseek:simulation`
+- `test:gameseek:noise`
+- `test:gameseek:ab`
+- `test:gameseek:questions`
+- `test:gameseek:subclusters`
+- `test:gameseek:robustness`
+
+TDD / execution notes:
+- Added package script references first.
+- Initial `npm.cmd run test:gameseek:robustness` failed as expected because `scripts/run-robustness-diagnostics.ts` did not exist.
+- Implemented diagnostics scripts and runner.
+- First runner attempt failed on Windows because `spawnSync` invoked a `.cmd` shim without shell.
+- Fixed runner to use a Windows shell command string for child diagnostics.
+- `npm.cmd run test:gameseek:robustness` then passed and generated all reports.
+
+Diagnostic method:
+- Scripts reuse `rankAll` from `src/lib/gameseek/scoring.ts`.
+- Scripts are read-only against games, questions, golden seeds, scoring, and API files.
+- User simulation and noise tests use deterministic seeded randomness.
+- Robustness metric weakness does not fail v0.3.4; only script/data/report generation failures fail this phase.
+- Confusable A/B pairs are de-duplicated and skipped pairs are recorded.
+
+Headline diagnostic results:
+- User simulation Top6Recall: light `0.8333`, medium `0.6750`, heavy `0.4292`.
+- Answer noise Top6 retention: 1 changed question `0.8250`, 2 changed questions `0.6875`, 3 changed questions `0.5675`.
+- Confusable A/B pairs tested: `177`.
+- Confusable A/B status counts: `passed = 124`, `failed = 49`, `indistinguishable = 4`.
+- Question discrimination baseline Top6Recall: `1`.
+- Strongest leave-one-out Top6 drops: `Q03_MASTERY = -0.1875`, `Q04_SOCIAL = -0.1625`, `Q10_RHYTHM = -0.1375`.
+- Sub-cluster high-risk confusions: `146`.
+- Overloaded cluster: `strategy_buildcraft`, `28` games.
+
+Final verification:
+- `npm.cmd run test:gameseek`: passed, baseline `Top6Recall = 1`, `failures = []`.
+- `npm.cmd run test:gameseek:metadata`: passed, metadata errors `0`, warnings `0`.
+- `npm.cmd run test:gameseek:api`: passed.
+- `npm.cmd run test:gameseek:robustness`: passed, generated all robustness reports, `missingFiles = []`.
+- `npm.cmd run build`: passed.
+- `git diff -- src/lib/gameseek/scoring.ts`: no diff.
+- `git diff -- src/lib/gameseek/questions.ts`: no diff.
+- `git diff -- src/lib/gameseek/games.ts`: no diff.
+- `git diff -- src/lib/gameseek/goldenSeeds.ts`: no diff.
+- `git status --short`: only intended v0.3.4 diagnostics files changed before commit.
