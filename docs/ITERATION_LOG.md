@@ -1200,3 +1200,108 @@ Report hygiene:
 - `test:gameseek:robustness` regenerated v0.3.4 reports during verification.
 - `test:gameseek:followups` regenerated v0.4.1 reports during verification.
 - Historical report churn was restored after verification.
+
+## v0.4.2 Score and Follow-up Impact Fix
+
+Date:
+- `2026-05-09`
+
+Branch:
+- `mini-v0.4.2-score-and-followup-impact-fix`
+
+Base:
+- `mini-v0.4.2-paged-required-followups`
+- Commit `af1ef2f Make GameSeek follow-ups required in paged questionnaire`
+
+Release handling:
+- This branch does not process or rewrite the already pushed remote `v0.4.2` tag.
+- It is a correction branch only.
+
+Problems found:
+- The frontend displayed raw `score` directly.
+- The API score is an internal ranking score, and follow-up rerank can add capped deltas on top of it.
+- Users could therefore see display values above the implied old maximum, such as scores above `120`.
+- Users also could not tell whether required follow-up questions affected final recommendations because the new paged flow intentionally hides the initial recommendations.
+
+Files changed:
+- `src/app/page.tsx`
+- `scripts/test-gameseek-frontend-contract.ts`
+- `scripts/test-gameseek-followup-impact.ts`
+- `package.json`
+- `docs/MINI_V042_FRONTEND_FOLLOWUP_INTEGRATION.md`
+- `docs/ITERATION_LOG.md`
+
+Score display fix:
+- Added `normalizeDisplayScore(score)` in the frontend.
+- The final recommendation cards now show bounded percentage display copy:
+  - `匹配度 94%`
+- The display formula clamps to `0..100`:
+  - `Math.max(0, Math.min(100, Math.round((score / 120) * 100)))`
+- This is display-only normalization.
+- Internal raw scores remain unchanged for ranking.
+
+Follow-up impact visibility:
+- The frontend keeps the hidden initial recommendations in `pendingInitialRecommendations`.
+- It still does not show an initial recommendation list.
+- After follow-up submission, the frontend compares hidden initial recommendations with final recommendations via `compareRecommendations`.
+- The final page now shows:
+  - `追加问题已影响排序。`
+  - or `排序无需明显调整。`
+- When changed, it lists up to three ranking movement notes.
+
+Follow-up impact test:
+- Added `scripts/test-gameseek-followup-impact.ts`.
+- Added package script:
+  - `test:gameseek:followup-impact`
+- Focused result:
+  - `visibleRankDeltaCount = 3`
+  - required visible rank-delta count `2`
+  - `slay-the-spire` seed + Monster Train follow-up improved Monster Train rank from `15` to `10`
+  - `rimworld` seed + colony-storytelling follow-up moved RimWorld from rank `2` to rank `1`
+  - `rimworld` seed + engineering-systems follow-up confirmed Oxygen Not Included was already rank `1`, with score deltas reflecting the preference
+
+Rerank weights:
+- No `followupScoring.ts` weight or cap changes were made.
+- The impact script already showed measurable follow-up impact.
+- Existing pair tests still protect the 8 passed / 0 failed / 2 skipped follow-up pair status.
+
+Focused verification before full suite:
+- `npm.cmd run test:gameseek:frontend-contract`: passed.
+- `npm.cmd run test:gameseek:followup-impact`: passed.
+- `npm.cmd run build`: passed.
+
+Manual validation:
+- Production server was restarted on `http://127.0.0.1:3002/`.
+- Page HTTP request returned `200`.
+- Page source did not contain the old optional-flow strings:
+  - `初步推荐`
+  - `优化推荐`
+  - `跳过追问`
+- Direct API follow-up path with `slay-the-spire` returned:
+  - initial status `200`
+  - `needsFollowUp = true`
+  - follow-up count `3`
+  - final status `200`
+  - final recommendations `6`
+  - final `needsFollowUp = false`
+- Raw-score scan found `outer-wilds` can produce raw score `160`.
+- Display normalization clamps that to `100%`.
+- Browser click automation was not used; this remains production HTTP + direct API + contract validation, not Playwright/Cypress E2E.
+
+Full verification:
+- `npm.cmd run test:gameseek`: passed, baseline `Top6Recall = 1`, `TopKMonotonicityPassed = true`, `failures = []`.
+- `npm.cmd run test:gameseek:metadata`: passed, metadata errors `0`, warnings `0`.
+- `npm.cmd run test:gameseek:api`: passed.
+- `npm.cmd run test:gameseek:followups`: passed, pair scenarios `8` passed, `0` failed, `2` skipped.
+- `npm.cmd run test:gameseek:robustness`: passed, `missingFiles = []`.
+- `npm.cmd run test:gameseek:frontend-contract`: passed.
+- `npm.cmd run test:gameseek:followup-impact`: passed, `visibleRankDeltaCount = 3`.
+- `npm.cmd run build`: passed.
+- `git diff -- src/lib/gameseek/goldenSeeds.ts`: no diff.
+- `git diff -- src/lib/gameseek/questions.ts`: no diff.
+- `git diff -- src/lib/gameseek/scoring.ts`: no diff.
+
+Report hygiene:
+- `test:gameseek:robustness` regenerated v0.3.4 reports during verification.
+- `test:gameseek:followups` regenerated v0.4.1 reports during verification.
+- Historical report churn was restored after verification.

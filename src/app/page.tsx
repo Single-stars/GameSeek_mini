@@ -34,6 +34,13 @@ type Diagnostic = {
   reason?: string;
 };
 
+type RecommendationDelta = {
+  changed: boolean;
+  movedUp: Array<{ id: string; title: string; from: number; to: number }>;
+  movedDown: Array<{ id: string; title: string; from: number; to: number }>;
+  topChanged: boolean;
+};
+
 type RecommendApiResponse = {
   results?: unknown;
   recommendations?: unknown;
@@ -126,6 +133,41 @@ function resultList(value: string[] | undefined) {
   return Array.isArray(value) && value.length > 0 ? value.join(" / ") : "暂无";
 }
 
+function normalizeDisplayScore(score: number) {
+  if (!Number.isFinite(score)) return 0;
+  return Math.max(0, Math.min(100, Math.round((score / 120) * 100)));
+}
+
+function compareRecommendations(before: ApiResult[] | null, after: ApiResult[]): RecommendationDelta {
+  if (!before?.length || after.length === 0) {
+    return { changed: false, movedUp: [], movedDown: [], topChanged: false };
+  }
+
+  const beforeRank = new Map(before.map((item, index) => [item.id, { rank: index + 1, title: item.title }]));
+  const movedUp: RecommendationDelta["movedUp"] = [];
+  const movedDown: RecommendationDelta["movedDown"] = [];
+
+  for (const [index, item] of after.entries()) {
+    const previous = beforeRank.get(item.id);
+    if (!previous) continue;
+
+    const nextRank = index + 1;
+    if (nextRank < previous.rank) {
+      movedUp.push({ id: item.id, title: item.title, from: previous.rank, to: nextRank });
+    } else if (nextRank > previous.rank) {
+      movedDown.push({ id: item.id, title: item.title, from: previous.rank, to: nextRank });
+    }
+  }
+
+  const topChanged = before[0]?.id !== after[0]?.id;
+  return {
+    changed: topChanged || movedUp.length > 0 || movedDown.length > 0,
+    movedUp,
+    movedDown,
+    topChanged,
+  };
+}
+
 export default function HomePage() {
   const [coreQuestionIndex, setCoreQuestionIndex] = useState(0);
   const [followUpQuestionIndex, setFollowUpQuestionIndex] = useState(0);
@@ -153,6 +195,20 @@ export default function HomePage() {
   const currentFollowUpAnswered = Boolean(currentFollowUpQuestion && followUpAnswers[currentFollowUpQuestion.id]);
   const isLastCoreQuestion = coreQuestionIndex === coreTotal - 1;
   const isLastFollowUpQuestion = followUpQuestionIndex === followUpTotal - 1;
+  const recommendationDelta = useMemo(
+    () => (hasAnsweredFollowUps ? compareRecommendations(pendingInitialRecommendations, recommendations) : null),
+    [hasAnsweredFollowUps, pendingInitialRecommendations, recommendations],
+  );
+  const recommendationDeltaItems = [
+    ...(recommendationDelta?.movedUp ?? []).slice(0, 3).map((item) => ({
+      id: `up-${item.id}`,
+      text: `《${item.title}》因为你的追加答案更靠前（${item.from} → ${item.to}）。`,
+    })),
+    ...(recommendationDelta?.movedDown ?? []).slice(0, 3).map((item) => ({
+      id: `down-${item.id}`,
+      text: `《${item.title}》与追加答案关联较弱，排序降低（${item.from} → ${item.to}）。`,
+    })),
+  ].slice(0, 3);
 
   const progressLabel =
     phase === "checking_followups"
@@ -307,7 +363,6 @@ export default function HomePage() {
       const data = await requestRecommendations({ answers, followUpAnswers });
       setRecommendations(data.recommendations);
       setDiagnostic(data.diagnostic);
-      setPendingInitialRecommendations(null);
       setHasAnsweredFollowUps(true);
       setPhase("final_results");
     } catch (error) {
@@ -532,6 +587,19 @@ export default function HomePage() {
         <section style={{ marginTop: 42 }}>
           <h2 style={{ fontSize: 36, marginBottom: 8 }}>为你推荐</h2>
           <p style={{ marginTop: 0, lineHeight: 1.6 }}>{softNotice ?? resultHint}</p>
+          {hasAnsweredFollowUps && (
+            <section style={{ margin: "18px 0 22px", padding: 18, border: "1px solid #b8c7d8", borderRadius: 18, background: "#eef7ff" }}>
+              <h3 style={{ margin: "0 0 8px" }}>
+                {recommendationDelta?.changed ? "追加问题已影响排序。" : "排序无需明显调整。"}
+              </h3>
+              <p style={{ margin: 0, lineHeight: 1.6 }}>追加问题用于在相似游戏之间微调排序。</p>
+              {recommendationDelta?.changed && recommendationDeltaItems.length > 0 && (
+                <ul style={{ marginBottom: 0 }}>
+                  {recommendationDeltaItems.map((item) => <li key={item.id}>{item.text}</li>)}
+                </ul>
+              )}
+            </section>
+          )}
           {pendingInitialRecommendations && recommendations.length === 0 && (
             <p style={{ color: "#8a1f11", fontWeight: 800 }}>结果状态异常，请重新开始。</p>
           )}
@@ -554,7 +622,7 @@ export default function HomePage() {
             >
               <p style={{ margin: 0, fontWeight: 800 }}>#{index + 1} · {result.cluster}</p>
               <h3 style={{ fontSize: 28, margin: "8px 0" }}>{result.title}</h3>
-              <p style={{ margin: "0 0 8px" }}>分数：{result.score}</p>
+              <p style={{ margin: "0 0 8px" }}>匹配度 {normalizeDisplayScore(result.score)}%</p>
               <p>匹配点：{resultList(result.matchedTags)}</p>
               {Array.isArray(result.blockedBy) && result.blockedBy.length > 0 && <p>可能冲突：{result.blockedBy.join(" / ")}</p>}
               {Array.isArray(result.explanation) && result.explanation.length > 0 && (

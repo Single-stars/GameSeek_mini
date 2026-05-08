@@ -321,6 +321,117 @@ Report hygiene:
 - v0.4.2 does not add game content.
 - Full browser click automation is still a future testing improvement.
 
+## Score and Follow-up Impact Fix
+
+Branch:
+
+- `mini-v0.4.2-score-and-followup-impact-fix`
+
+Reason:
+
+- The API returns an internal raw `score` used for ranking.
+- `rankAllWithFollowUps` can add a capped follow-up delta to that raw score.
+- The previous frontend displayed `result.score` directly, so users could see values above the old implied display ceiling, for example values above `120`.
+- This was a display problem, not a ranking problem.
+
+Resolution:
+
+- The frontend now uses `normalizeDisplayScore(score)` before showing a score to users.
+- The UI now shows a bounded percentage:
+
+```txt
+匹配度 94%
+```
+
+- The normalization is display-only:
+
+```ts
+Math.max(0, Math.min(100, Math.round((score / 120) * 100)))
+```
+
+- Internal raw scores remain unchanged for sorting.
+- No `scoring.ts` changes were made.
+- No follow-up rerank cap changes were made.
+
+Follow-up impact:
+
+- The frontend keeps the first API recommendations in `pendingInitialRecommendations`.
+- It does not show those initial recommendations to the user.
+- After the user answers follow-up questions, the frontend compares the hidden initial recommendations with final recommendations using `compareRecommendations`.
+- The final recommendation page now explains whether the follow-up changed ordering:
+
+```txt
+追加问题已影响排序。
+```
+
+or:
+
+```txt
+排序无需明显调整。
+```
+
+- When ranking changes are available, the page lists at most three small explanations, for example:
+
+```txt
+《RimWorld》因为你的追加答案更靠前（2 → 1）。
+```
+
+Impact verification:
+
+- Added `scripts/test-gameseek-followup-impact.ts`.
+- Added package script:
+
+```json
+"test:gameseek:followup-impact": "tsx scripts/test-gameseek-followup-impact.ts"
+```
+
+The script compares base rankings and follow-up rankings for these scenarios:
+
+- `slay-the-spire` seed with Slay the Spire deckbuilder follow-up.
+- `slay-the-spire` seed with Monster Train deckbuilder follow-up.
+- `rimworld` seed with RimWorld colony-storytelling follow-up.
+- `rimworld` seed with Oxygen Not Included engineering-systems follow-up.
+
+Focused result before final verification:
+
+- `visibleRankDeltaCount = 3`
+- Required visible rank-delta count: `2`
+- `slay-the-spire` seed + Monster Train follow-up: Monster Train rank improved from `15` to `10`.
+- `rimworld` seed + colony-storytelling follow-up: RimWorld moved from rank `2` to rank `1`.
+- `rimworld` seed + engineering-systems follow-up was a confirmation-only case: Oxygen Not Included was already rank `1`, but score deltas still reflected the follow-up preference.
+
+No rerank weight adjustment:
+
+- The impact script showed measurable follow-up effects.
+- Existing pair-hardening tests still cover the 8 passed / 0 failed / 2 skipped pair status.
+- Because impact was already measurable, this fix did not change `followupScoring.ts` weights or caps.
+
+Manual production validation for this fix:
+
+- Production server was restarted on `http://127.0.0.1:3002/`.
+- Page HTTP request returned `200`.
+- The page did not contain the old optional-flow strings checked by the contract test.
+- Direct API follow-up path with the `slay-the-spire` seed returned:
+  - initial status `200`
+  - `needsFollowUp = true`
+  - follow-up count `3`
+  - final status `200`
+  - final recommendation count `6`
+  - final `needsFollowUp = false`
+- A raw-score scan found a baseline raw score of `160` for `outer-wilds`, confirming that raw score can exceed the old display ceiling.
+- The same score normalizes to display percent `100`, confirming the display clamp.
+
+Final verification on this fix branch:
+
+- `npm.cmd run test:gameseek`: passed, `Top6Recall = 1`, `TopKMonotonicityPassed = true`, `failures = []`.
+- `npm.cmd run test:gameseek:metadata`: passed, metadata errors `0`, warnings `0`.
+- `npm.cmd run test:gameseek:api`: passed.
+- `npm.cmd run test:gameseek:followups`: passed, pair scenarios `8` passed, `0` failed, `2` skipped.
+- `npm.cmd run test:gameseek:robustness`: passed, `missingFiles = []`.
+- `npm.cmd run test:gameseek:frontend-contract`: passed.
+- `npm.cmd run test:gameseek:followup-impact`: passed, `visibleRankDeltaCount = 3`.
+- `npm.cmd run build`: passed.
+
 ## Next
 
 Recommended next work:

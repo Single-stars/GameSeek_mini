@@ -133,6 +133,13 @@ async function main() {
     "正在判断是否需要追加问题",
     "正在生成最终推荐",
     "为你推荐",
+    "normalizeDisplayScore",
+    "Math.min(100",
+    "Math.max(0",
+    "compareRecommendations",
+    "匹配度",
+    "追加问题已影响排序",
+    "排序无需明显调整",
   ];
 
   const forbiddenOldUiMarkers = [
@@ -143,6 +150,11 @@ async function main() {
 
   assertPageIncludes(pageSource, requiredPageMarkers, errors);
   assertPageExcludes(pageSource, forbiddenOldUiMarkers, errors);
+  assert(
+    !pageSource.includes("分数：{result.score}"),
+    "page.tsx must not display the raw score directly",
+    errors,
+  );
 
   const report = {
     passed: errors.length === 0,
