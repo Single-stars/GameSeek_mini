@@ -6,6 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "seed:golden": "tsx scripts/expand-golden-seeds.ts",
+    "test:gameseek:api": "tsx scripts/test-gameseek-api.ts",
     "test:gameseek": "tsx scripts/test-gameseek.ts"
   },
   "dependencies": {

@@ -1,11 +1,29 @@
 import { NextRequest, NextResponse } from "next/server";
 import { recommend } from "@/lib/gameseek/scoring";
+import { validateAnswerMap } from "@/lib/gameseek/validateAnswers";
 
 export async function POST(req: NextRequest) {
-  const body = await req.json();
-  const answers = body.answers ?? {};
+  let body: unknown = {};
+  try {
+    body = await req.json();
+  } catch {
+    body = {};
+  }
 
-  const results = recommend(answers, 6);
+  const answersInput =
+    body && typeof body === "object" && "answers" in body
+      ? (body as { answers?: unknown }).answers
+      : {};
+
+  const validation = validateAnswerMap(answersInput);
+  if (!validation.ok) {
+    return NextResponse.json(
+      { error: validation.error, details: validation.details },
+      { status: validation.status },
+    );
+  }
+
+  const results = recommend(validation.answers, 6);
 
   return NextResponse.json({
     results: results.map(r => ({
