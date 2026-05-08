@@ -118,27 +118,40 @@ Expected v0.1 baseline thresholds must remain valid:
 - production build passes
 - `scoring.ts` has no diff
 
-## Next Step
-
-Second v0.2 step should add `scripts/test-gameseek-metadata.ts` and a package script for metadata validation.
+## Script and Metadata Validation
 
 Seed generator boundary:
 - `scripts/expand-golden-seeds.ts` must treat only `tags` and `antiTags` as scoring-layer seed inputs.
 - It must not read `discriminatorTags`, `confusableWith`, `why`, `notFor`, `similar`, or `cluster` when choosing answers or writing `coreTags` notes.
 - This keeps v0.2 structural metadata out of golden seed generation and prevents generated seed diffs when only diagnostic fields change.
 
-Planned metadata errors:
+Metadata validation command:
+
+```powershell
+npm.cmd run test:gameseek:metadata
+```
+
+Metadata validation errors:
 - missing cluster
 - missing discriminatorTags
 - fewer than 3 discriminatorTags
-- missing why or notFor
+- missing why
+- missing notFor
 - confusableWith references an unknown id
 - confusableWith includes self
 - cluster has fewer than 2 games
+- duplicate game id
+- empty title
+- empty tags
 
-Planned metadata warnings:
+Metadata validation warnings:
 - confusableWith is not bidirectional
 - discriminatorTags strongly duplicate plain scoring tags
-- why or notFor text is very short
+- why text is very short
+- notFor text is very short
 - a cluster is unusually large
 - a game has empty confusableWith
+- similar contains an id-shaped reference that does not exist
+- similar includes self
+
+Warnings are diagnostic only and do not fail the command. Errors fail the command.
