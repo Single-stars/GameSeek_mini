@@ -874,3 +874,106 @@ Report hygiene:
 - `test:gameseek:robustness` regenerated v0.3.4 JSON reports during verification.
 - Those v0.3.4 report files were restored after verification to avoid committing timestamp/report churn.
 - v0.4 commits only `reports/v0.4-followup-before-after.json` and `reports/v0.4-followup-before-after.md`.
+
+## v0.4.1 Follow-up Pair Hardening
+
+Date:
+- `2026-05-08`
+
+Branch:
+- `mini-v0.4.1-followup-pair-hardening`
+
+Base:
+- `main`
+- `v0.4.0`
+
+Phase document:
+- `docs/MINI_V041_FOLLOWUP_PAIR_HARDENING.md`
+
+Scope:
+- Harden only the two unresolved v0.4.0 follow-up pair scenarios.
+- Do not expand the game pool.
+- Do not add frontend UI.
+- Do not modify `src/lib/gameseek/goldenSeeds.ts`.
+- Do not modify `src/lib/gameseek/questions.ts`.
+- Do not rewrite `src/lib/gameseek/scoring.ts`.
+- Do not add popularity, rating, sales, or other external priors.
+- Do not break the API contract.
+
+Files changed or added:
+- `src/lib/gameseek/followupQuestions.ts`
+- `src/lib/gameseek/followupSelector.ts`
+- `src/lib/gameseek/followupScoring.ts`
+- `scripts/test-gameseek-followups.ts`
+- `reports/v0.4.1-followup-pair-hardening.json`
+- `reports/v0.4.1-followup-pair-hardening.md`
+- `docs/MINI_V041_FOLLOWUP_PAIR_HARDENING.md`
+- `docs/ITERATION_LOG.md`
+
+Why this phase comes before frontend:
+- v0.4.0 proved the backend follow-up mechanism works, but two important pair scenarios were still unresolved.
+- Frontend integration should use a stronger backend pair distinction instead of exposing a known weak state.
+- v0.4.1 therefore hardens pair behavior before v0.4.2 UI work.
+
+TDD / execution notes:
+- Updated `scripts/test-gameseek-followups.ts` first.
+- The red run failed as expected:
+  - `expected 0 failed existing pairs, got 2`
+  - `hard assertion pair failed: slay-the-spire vs monster-train, rimworld vs oxygen-not-included`
+  - `colony-management confusion should select F_COLONY_MANAGEMENT_STYLE`
+- A PowerShell `Set-Content` edit attempt on `followupQuestions.ts` corrupted UTF-8 Chinese text into mojibake. The file was restored from Git immediately, and subsequent edits to the Chinese-containing source file used Node UTF-8 read/write instead. This prevents repeating the same encoding mistake.
+- Added `F_COLONY_MANAGEMENT_STYLE` for colony/base management.
+- Strengthened `F_DECKBUILDER_STYLE` to distinguish classic single-character card climb from multi-floor unit/lane train defense.
+- Updated selector priority for:
+  - `slay-the-spire` vs `monster-train`
+  - `rimworld` vs `oxygen-not-included`
+  - deckbuilder and city-colony internal confusion.
+- Updated follow-up rerank so an explicitly penalized game does not also receive broad sub-cluster/tag boosts from the same selected option.
+- Added a close explicit pair-order override after capped deltas only when post-delta scores are within 4 points and one game is explicitly boosted while the other is explicitly penalized.
+
+Follow-up boundary:
+- `rankAllWithFollowUps` still calls `rankAll` first.
+- Empty or missing `followUpAnswers` still has zero ordering effect.
+- Follow-up bonus cap remains `+16`.
+- Follow-up penalty floor remains `-12`.
+- The close explicit pair-order override does not alter base scoring and only applies to close, explicit pair preferences after capped follow-up deltas.
+
+Pair scenario result:
+- Existing tested pairs: `8`
+- Passed: `8`
+- Failed: `0`
+- Skipped missing game: `2`
+- Fixed since v0.4.0: `2`
+- Regressions from v0.4.0 passed pairs: `0`
+
+Fixed pairs:
+- `slay-the-spire` vs `monster-train`
+- `rimworld` vs `oxygen-not-included`
+
+v0.4.0 passed pairs that remained passing:
+- `factorio` vs `dyson-sphere-program`
+- `balatro` vs `dicey-dungeons`
+- `xcom-2` vs `into-the-breach`
+- `tactics-ogre-reborn` vs `marvels-midnight-suns`
+- `age-of-empires-iv` vs `total-war-warhammer-iii`
+- `civilization-vi` vs `age-of-empires-iv`
+
+Skipped missing game:
+- `plants-vs-zombies` vs `bloons-td-6`
+- `cities-skylines` vs `frostpunk`
+
+Final verification:
+- `npm.cmd run test:gameseek`: passed, baseline `Top6Recall = 1`, `TopKMonotonicityPassed = true`, `failures = []`.
+- `npm.cmd run test:gameseek:metadata`: passed, metadata errors `0`, warnings `0`.
+- `npm.cmd run test:gameseek:api`: passed.
+- `npm.cmd run test:gameseek:followups`: passed, existing pair scenarios `8` passed, `0` failed, `2` skipped missing game.
+- `npm.cmd run test:gameseek:robustness`: passed, `missingFiles = []`.
+- `npm.cmd run build`: passed.
+- `git diff -- src/lib/gameseek/goldenSeeds.ts`: no diff.
+- `git diff -- src/lib/gameseek/questions.ts`: no diff.
+- `git diff -- src/lib/gameseek/scoring.ts`: no diff.
+
+Report hygiene:
+- `test:gameseek:robustness` regenerated v0.3.4 reports during verification.
+- Those v0.3.4 report files were restored after verification.
+- v0.4.1 commits only `reports/v0.4.1-followup-pair-hardening.json` and `reports/v0.4.1-followup-pair-hardening.md`.

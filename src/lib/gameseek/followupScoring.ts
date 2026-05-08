@@ -9,6 +9,12 @@ export type FollowUpRecommendation = Recommendation & {
 
 const MAX_FOLLOWUP_BONUS = 16;
 const MIN_FOLLOWUP_PENALTY = -12;
+const CLOSE_EXPLICIT_PAIR_SPREAD = 4;
+
+type ExplicitGamePreferences = {
+  boosted: Set<string>;
+  penalized: Set<string>;
+};
 
 function clampDelta(delta: number) {
   return Math.max(MIN_FOLLOWUP_PENALTY, Math.min(MAX_FOLLOWUP_BONUS, delta));
@@ -27,17 +33,21 @@ function scoreFollowUpsForGame(game: Game, followUpAnswers: FollowUpAnswerMap) {
     const question = getFollowUpQuestion(questionId);
     const option = question?.options.find((candidate) => candidate.id === optionId);
     if (!option) continue;
+    const explicitGamePenalty = option.gamePenalties?.[game.id] ?? 0;
+    const explicitlyPenalized = explicitGamePenalty < 0;
 
-    for (const [subCluster, boost] of Object.entries(option.subClusterBoosts ?? {})) {
-      if (game.primarySubCluster === subCluster) {
-        delta += boost;
-      } else if (game.secondarySubClusters?.includes(subCluster as GameSubCluster)) {
-        delta += Math.min(4, boost);
+    if (!explicitlyPenalized) {
+      for (const [subCluster, boost] of Object.entries(option.subClusterBoosts ?? {})) {
+        if (game.primarySubCluster === subCluster) {
+          delta += boost;
+        } else if (game.secondarySubClusters?.includes(subCluster as GameSubCluster)) {
+          delta += Math.min(4, boost);
+        }
       }
-    }
 
-    for (const tag of option.tagBoosts ?? []) {
-      if (game.tags.includes(tag)) delta += 2;
+      for (const tag of option.tagBoosts ?? []) {
+        if (game.tags.includes(tag)) delta += 2;
+      }
     }
 
     for (const tag of option.tagPenalties ?? []) {
@@ -51,11 +61,49 @@ function scoreFollowUpsForGame(game: Game, followUpAnswers: FollowUpAnswerMap) {
   return clampDelta(delta);
 }
 
+function collectExplicitGamePreferences(followUpAnswers: FollowUpAnswerMap): ExplicitGamePreferences {
+  const boosted = new Set<string>();
+  const penalized = new Set<string>();
+
+  for (const [questionId, optionId] of Object.entries(followUpAnswers)) {
+    const question = getFollowUpQuestion(questionId);
+    const option = question?.options.find((candidate) => candidate.id === optionId);
+    if (!option) continue;
+
+    for (const [gameId, boost] of Object.entries(option.gameBoosts ?? {})) {
+      if (boost > 0) boosted.add(gameId);
+      if (boost < 0) penalized.add(gameId);
+    }
+
+    for (const [gameId, penalty] of Object.entries(option.gamePenalties ?? {})) {
+      if (penalty > 0) boosted.add(gameId);
+      if (penalty < 0) penalized.add(gameId);
+    }
+  }
+
+  return { boosted, penalized };
+}
+
+function compareCloseExplicitPair(
+  a: FollowUpRecommendation,
+  b: FollowUpRecommendation,
+  preferences: ExplicitGamePreferences,
+) {
+  const aPreferredOverB = preferences.boosted.has(a.game.id) && preferences.penalized.has(b.game.id);
+  const bPreferredOverA = preferences.boosted.has(b.game.id) && preferences.penalized.has(a.game.id);
+
+  if (aPreferredOverB && !bPreferredOverA) return -1;
+  if (bPreferredOverA && !aPreferredOverB) return 1;
+  return 0;
+}
+
 export function rankAllWithFollowUps(baseAnswers: AnswerMap, followUpAnswers?: FollowUpAnswerMap): FollowUpRecommendation[] {
   const baseRanked = rankAll(baseAnswers);
   if (!followUpAnswers || Object.keys(followUpAnswers).length === 0) {
     return baseRanked.map((item) => ({ ...item, baseScore: item.score, followUpDelta: 0 }));
   }
+
+  const explicitPreferences = collectExplicitGamePreferences(followUpAnswers);
 
   return baseRanked
     .map((item, baseIndex) => {
@@ -68,7 +116,18 @@ export function rankAllWithFollowUps(baseAnswers: AnswerMap, followUpAnswers?: F
         baseIndex,
       };
     })
-    .sort((a, b) => b.score - a.score || b.baseScore - a.baseScore || a.baseIndex - b.baseIndex)
+    .sort((a, b) => {
+      const scoreDiff = b.score - a.score;
+      if (scoreDiff !== 0) {
+        if (Math.abs(scoreDiff) <= CLOSE_EXPLICIT_PAIR_SPREAD) {
+          const explicitPairOrder = compareCloseExplicitPair(a, b, explicitPreferences);
+          if (explicitPairOrder !== 0) return explicitPairOrder;
+        }
+        return scoreDiff;
+      }
+
+      return b.baseScore - a.baseScore || a.baseIndex - b.baseIndex;
+    })
     .map(({ baseIndex: _baseIndex, ...item }) => item);
 }
 

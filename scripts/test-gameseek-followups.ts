@@ -14,6 +14,8 @@ type PairCase = {
   b: string;
   aFollowUps: Record<string, string>;
   bFollowUps: Record<string, string>;
+  hardAssertion?: boolean;
+  v040Status: "passed" | "failed" | "skipped_missing_game";
 };
 
 type PairResult = {
@@ -33,60 +35,72 @@ const pairCases: PairCase[] = [
     b: "dyson-sphere-program",
     aFollowUps: { F_FACTORY_STYLE: "factorio" },
     bFollowUps: { F_FACTORY_STYLE: "dyson-sphere-program" },
+    v040Status: "passed",
   },
   {
     a: "slay-the-spire",
     b: "monster-train",
     aFollowUps: { F_DECKBUILDER_STYLE: "slay-the-spire" },
     bFollowUps: { F_DECKBUILDER_STYLE: "monster-train" },
+    hardAssertion: true,
+    v040Status: "failed",
   },
   {
     a: "balatro",
     b: "dicey-dungeons",
     aFollowUps: { F_DECKBUILDER_STYLE: "balatro" },
     bFollowUps: { F_DECKBUILDER_STYLE: "dicey-dungeons" },
+    v040Status: "passed",
   },
   {
     a: "xcom-2",
     b: "into-the-breach",
     aFollowUps: { F_TACTICS_STYLE: "xcom-2" },
     bFollowUps: { F_TACTICS_STYLE: "into-the-breach" },
+    v040Status: "passed",
   },
   {
     a: "tactics-ogre-reborn",
     b: "marvels-midnight-suns",
     aFollowUps: { F_TACTICS_STYLE: "tactics-ogre-reborn" },
     bFollowUps: { F_TACTICS_STYLE: "marvels-midnight-suns" },
+    v040Status: "passed",
   },
   {
     a: "age-of-empires-iv",
     b: "total-war-warhammer-iii",
     aFollowUps: { F_RTS_GRAND_STYLE: "age-of-empires-iv" },
     bFollowUps: { F_RTS_GRAND_STYLE: "total-war-warhammer-iii" },
+    v040Status: "passed",
   },
   {
     a: "civilization-vi",
     b: "age-of-empires-iv",
     aFollowUps: { F_RTS_GRAND_STYLE: "civilization-vi" },
     bFollowUps: { F_RTS_GRAND_STYLE: "age-of-empires-iv" },
+    v040Status: "passed",
   },
   {
     a: "plants-vs-zombies",
     b: "bloons-td-6",
     aFollowUps: { F_DEFENSE_STYLE: "plants-vs-zombies" },
     bFollowUps: { F_DEFENSE_STYLE: "bloons-td-6" },
+    v040Status: "skipped_missing_game",
   },
   {
     a: "cities-skylines",
     b: "frostpunk",
     aFollowUps: { F_STRATEGY_SUBCLUSTER: "city_colony_management" },
     bFollowUps: { F_DEFENSE_STYLE: "frostpunk" },
+    v040Status: "skipped_missing_game",
   },
   {
     a: "rimworld",
     b: "oxygen-not-included",
-    aFollowUps: { F_STRATEGY_SUBCLUSTER: "city_colony_management" },
-    bFollowUps: { F_FACTORY_STYLE: "oxygen-not-included" },
+    aFollowUps: { F_COLONY_MANAGEMENT_STYLE: "colony_storytelling" },
+    bFollowUps: { F_COLONY_MANAGEMENT_STYLE: "engineering_systems" },
+    hardAssertion: true,
+    v040Status: "failed",
   },
 ];
 
@@ -170,7 +184,7 @@ async function callApi(payload: unknown) {
 function writeReports(report: unknown, pairResults: PairResult[]) {
   fs.mkdirSync(reportsDir, { recursive: true });
   fs.writeFileSync(
-    path.join(reportsDir, "v0.4-followup-before-after.json"),
+    path.join(reportsDir, "v0.4.1-followup-pair-hardening.json"),
     `${JSON.stringify(report, null, 2)}\n`,
     "utf8",
   );
@@ -178,6 +192,14 @@ function writeReports(report: unknown, pairResults: PairResult[]) {
   const improved = pairResults.filter((item) => item.status === "passed");
   const unresolved = pairResults.filter((item) => item.status === "failed");
   const skipped = pairResults.filter((item) => item.status.startsWith("skipped"));
+  const fixedSinceV040 = pairResults.filter((item) => {
+    const pairCase = pairCases.find((candidate) => `${candidate.a} vs ${candidate.b}` === item.pair);
+    return pairCase?.v040Status === "failed" && item.status === "passed";
+  });
+  const regressions = pairResults.filter((item) => {
+    const pairCase = pairCases.find((candidate) => `${candidate.a} vs ${candidate.b}` === item.pair);
+    return pairCase?.v040Status === "passed" && item.status !== "passed";
+  });
   const table = (headers: string[], rows: string[][]) => [
     `| ${headers.join(" | ")} |`,
     `| ${headers.map(() => "---").join(" | ")} |`,
@@ -185,24 +207,39 @@ function writeReports(report: unknown, pairResults: PairResult[]) {
   ].join("\n");
 
   const markdown = [
-    "# GameSeek Mini v0.4 Follow-up Before/After",
+    "# GameSeek Mini v0.4.1 Follow-up Pair Hardening",
     "",
-    "v0.4.0 is backend-only. It adds strategy sub-clusters and follow-up reranking without replacing the base scorer.",
+    "v0.4.1 hardens the two unresolved backend-only follow-up pair scenarios from v0.4.0 without changing the base scorer, the original 12 questions, golden seeds, game pool, API contract, or frontend.",
     "",
-    "## v0.3.4 Baseline",
+    "## v0.4.0 Pair Status",
     "",
-    "- Baseline Top6Recall: `1`",
-    "- v0.3.4 confusable A/B failed pairs: `49`",
-    "- v0.3.4 strategy_buildcraft high-risk confusions: `146`",
+    "- Passed pair scenarios: `6`",
+    "- Failed pair scenarios: `2`",
+    "- Skipped missing-game scenarios: `2`",
     "",
-    "## v0.4 Follow-up Scenario Results",
+    "## v0.4.1 Pair Status",
     "",
     `- Tested existing pair scenarios: \`${improved.length + unresolved.length}\``,
-    `- Improved pair scenarios: \`${improved.length}\``,
-    `- Still unresolved pair scenarios: \`${unresolved.length}\``,
+    `- Passed pair scenarios: \`${improved.length}\``,
+    `- Still failed pair scenarios: \`${unresolved.length}\``,
     `- Skipped missing-game scenarios: \`${skipped.length}\``,
+    `- Fixed since v0.4.0: \`${fixedSinceV040.length}\``,
+    `- Regressions from v0.4.0 passed pairs: \`${regressions.length}\``,
     "",
-    "## Improved Pairs",
+    "## Fixed Pairs",
+    "",
+    fixedSinceV040.length
+      ? table(
+          ["Pair", "A seed ranks A/B", "B seed ranks B/A"],
+          fixedSinceV040.map((item) => [
+            item.pair,
+            `${item.aSeedRanks?.a}/${item.aSeedRanks?.b}`,
+            `${item.bSeedRanks?.b}/${item.bSeedRanks?.a}`,
+          ]),
+        )
+      : "None.",
+    "",
+    "## Passed Pairs",
     "",
     improved.length
       ? table(
@@ -214,6 +251,10 @@ function writeReports(report: unknown, pairResults: PairResult[]) {
           ]),
         )
       : "None.",
+    "",
+    "## Regressions",
+    "",
+    regressions.length ? table(["Pair", "Status"], regressions.map((item) => [item.pair, item.status])) : "None.",
     "",
     "## Still Unresolved Pairs",
     "",
@@ -233,17 +274,21 @@ function writeReports(report: unknown, pairResults: PairResult[]) {
     "",
     skipped.length ? table(["Pair", "Status"], skipped.map((item) => [item.pair, item.status])) : "None.",
     "",
-    "## Strategy Ambiguity",
+    "## Rerank Boundary",
     "",
-    "The targeted pair scenarios reduce ambiguity for most existing tested strategy/factory/tactics pairs, but this report does not claim the full v0.3.4 177-pair A/B failure count is solved. Full A/B reduction should be measured in a later v0.4.1 diagnostic pass.",
+    "- `rankAllWithFollowUps` still calls `rankAll` first.",
+    "- Empty or missing `followUpAnswers` still has zero ordering effect.",
+    "- Follow-up bonus cap remains `+16`.",
+    "- Follow-up penalty floor remains `-12`.",
+    "- This hardening only adjusts follow-up pair distinction, not the base scoring algorithm.",
     "",
     "## Next",
     "",
-    "- v0.4.1: frontend integration for displaying 1-3 follow-up questions.",
-    "- v0.4.1 or v0.5: add a colony-management-specific follow-up to separate RimWorld / Oxygen Not Included / Frostpunk.",
+    "- v0.4.2: frontend integration for displaying 1-3 follow-up questions.",
+    "- v0.5: broader robustness work if full 177-pair A/B diagnostics still show high-risk ambiguity.",
   ].join("\n");
 
-  fs.writeFileSync(path.join(reportsDir, "v0.4-followup-before-after.md"), `${markdown}\n`, "utf8");
+  fs.writeFileSync(path.join(reportsDir, "v0.4.1-followup-pair-hardening.md"), `${markdown}\n`, "utf8");
 }
 
 async function main() {
@@ -283,8 +328,38 @@ async function main() {
   const pairResults = pairCases.map(runPairCase);
   const failedPairs = pairResults.filter((item) => item.status === "failed");
   const testedPairs = pairResults.filter((item) => item.status === "passed" || item.status === "failed");
+  const hardFailedPairs = pairResults.filter((item) => {
+    const pairCase = pairCases.find((candidate) => `${candidate.a} vs ${candidate.b}` === item.pair);
+    return pairCase?.hardAssertion && item.status !== "passed";
+  });
+  const regressions = pairResults.filter((item) => {
+    const pairCase = pairCases.find((candidate) => `${candidate.a} vs ${candidate.b}` === item.pair);
+    return pairCase?.v040Status === "passed" && item.status !== "passed";
+  });
   assert(testedPairs.length > 0, "expected at least one existing pair to be tested", errors);
-  assert(failedPairs.length <= 2, `expected <= 2 failed existing pairs, got ${failedPairs.length}`, errors);
+  assert(failedPairs.length === 0, `expected 0 failed existing pairs, got ${failedPairs.length}`, errors);
+  assert(hardFailedPairs.length === 0, `hard assertion pair failed: ${hardFailedPairs.map((item) => item.pair).join(", ")}`, errors);
+  assert(regressions.length === 0, `v0.4.0 passed pair regressed: ${regressions.map((item) => item.pair).join(", ")}`, errors);
+
+  const deckbuilderSeed = seedByTarget.get("slay-the-spire");
+  if (deckbuilderSeed) {
+    const selected = selectFollowUpQuestions(rankAll(deckbuilderSeed.answers)).map((question) => question.id);
+    assert(
+      selected.includes("F_DECKBUILDER_STYLE"),
+      `deckbuilder confusion should select F_DECKBUILDER_STYLE, got ${selected.join(", ")}`,
+      errors,
+    );
+  }
+
+  const colonySeed = seedByTarget.get("rimworld");
+  if (colonySeed) {
+    const selected = selectFollowUpQuestions(rankAll(colonySeed.answers)).map((question) => question.id);
+    assert(
+      selected.includes("F_COLONY_MANAGEMENT_STYLE"),
+      `colony-management confusion should select F_COLONY_MANAGEMENT_STYLE, got ${selected.join(", ")}`,
+      errors,
+    );
+  }
 
   const factorySeed = seedByTarget.get("factorio");
   if (factorySeed) {
@@ -317,11 +392,30 @@ async function main() {
       confusableAbFailed: 49,
       strategyBuildcraftHighRiskConfusions: 146,
     },
+    v040PairSummary: {
+      tested: 8,
+      passed: 6,
+      failed: 2,
+      skipped: 2,
+      unresolvedPairs: ["slay-the-spire vs monster-train", "rimworld vs oxygen-not-included"],
+    },
     pairSummary: {
       tested: testedPairs.length,
       passed: pairResults.filter((item) => item.status === "passed").length,
       failed: failedPairs.length,
       skipped: pairResults.filter((item) => item.status.startsWith("skipped")).length,
+      fixedSinceV040: pairResults.filter((item) => {
+        const pairCase = pairCases.find((candidate) => `${candidate.a} vs ${candidate.b}` === item.pair);
+        return pairCase?.v040Status === "failed" && item.status === "passed";
+      }).length,
+      regressions: regressions.length,
+    },
+    rerankBoundary: {
+      callsRankAllFirst: true,
+      zeroEffectWhenFollowUpAnswersEmpty: true,
+      maxFollowUpBonus: 16,
+      minFollowUpPenalty: -12,
+      closeExplicitPairSpread: 4,
     },
     pairResults,
     errors,

@@ -31,6 +31,18 @@ function hasConfusablePair(top6: Recommendation[]) {
   return top6.some((item) => item.game.confusableWith.some((id) => idSet.has(id)));
 }
 
+function hasGamePair(top6: Recommendation[], a: string, b: string) {
+  const ids = new Set(top6.map((item) => item.game.id));
+  return ids.has(a) && ids.has(b);
+}
+
+function countSubCluster(top6: Recommendation[], subCluster: GameSubCluster) {
+  return top6.filter((item) => {
+    const game = item.game;
+    return game.primarySubCluster === subCluster || game.secondarySubClusters?.includes(subCluster);
+  }).length;
+}
+
 export function getFollowUpDiagnostic(ranked: Recommendation[]): FollowUpDiagnostic {
   const top6 = ranked.slice(0, 6);
   const clusterCounts = new Map<string, number>();
@@ -57,9 +69,21 @@ export function selectFollowUpQuestions(ranked: Recommendation[]): FollowUpQuest
   const subClusters = new Set(top6SubClusters(top6));
   const spread = top6.length >= 6 ? top6[0].score - top6[5].score : 999;
   const hasConfusion = hasConfusablePair(top6);
+  const hasDeckbuilderPair = hasGamePair(top6, "slay-the-spire", "monster-train");
+  const hasColonyPair = hasGamePair(top6, "rimworld", "oxygen-not-included");
+  const deckbuilderCount = countSubCluster(top6, "deckbuilder_roguelike");
+  const colonyCount = countSubCluster(top6, "city_colony_management");
 
   if (strategyCount < 3 && !hasConfusion && !(spread <= 12 && subClusters.size >= 2)) {
     return result;
+  }
+
+  if (hasDeckbuilderPair || (deckbuilderCount >= 2 && hasConfusion)) {
+    pushUnique(result, "F_DECKBUILDER_STYLE");
+  }
+
+  if (hasColonyPair || (colonyCount >= 2 && hasConfusion)) {
+    pushUnique(result, "F_COLONY_MANAGEMENT_STYLE");
   }
 
   if (strategyCount >= 3 || subClusters.size >= 3) {
@@ -67,6 +91,7 @@ export function selectFollowUpQuestions(ranked: Recommendation[]): FollowUpQuest
   }
 
   if (subClusters.has("deckbuilder_roguelike")) pushUnique(result, "F_DECKBUILDER_STYLE");
+  if (subClusters.has("city_colony_management")) pushUnique(result, "F_COLONY_MANAGEMENT_STYLE");
   if (subClusters.has("tactics_turn_based") || subClusters.has("puzzle_strategy")) pushUnique(result, "F_TACTICS_STYLE");
   if (subClusters.has("factory_automation")) pushUnique(result, "F_FACTORY_STYLE");
   if (subClusters.has("rts_grand_strategy")) pushUnique(result, "F_RTS_GRAND_STYLE");

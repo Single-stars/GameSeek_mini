@@ -63,8 +63,8 @@ export const followUpQuestions: FollowUpQuestion[] = [
     text: "如果是卡牌或构筑类，你更偏好哪种？",
     trigger: { subClusters: ["deckbuilder_roguelike"] },
     options: [
-      { id: "slay-the-spire", label: "经典卡牌爬塔，逐步构筑强力牌组", subClusterBoosts: { deckbuilder_roguelike: 6 }, gameBoosts: { "slay-the-spire": 10 }, gamePenalties: { "monster-train": -4, balatro: -4, "dicey-dungeons": -4 } },
-      { id: "monster-train", label: "多层战场、单位站位、路线防守", subClusterBoosts: { deckbuilder_roguelike: 6, defense_survival: 4 }, gameBoosts: { "monster-train": 10 }, gamePenalties: { "slay-the-spire": -30, balatro: -4 } },
+      { id: "slay-the-spire", label: "Classic card climb, single-character deckbuilding, route and relic synergy", subClusterBoosts: { deckbuilder_roguelike: 6, short_loop_strategy: 3 }, gameBoosts: { "slay-the-spire": 10 }, gamePenalties: { "monster-train": -8, balatro: -4, "dicey-dungeons": -4, wildfrost: -4 } },
+      { id: "monster-train", label: "Multi-floor battlefield, summoned units, lane defense and train protection", subClusterBoosts: { deckbuilder_roguelike: 6, defense_survival: 5 }, gameBoosts: { "monster-train": 10 }, gamePenalties: { "slay-the-spire": -12, balatro: -4, wildfrost: -3 } },
       { id: "balatro", label: "扑克牌、数字倍率、短局冲分", subClusterBoosts: { deckbuilder_roguelike: 6, short_loop_strategy: 5 }, gameBoosts: { balatro: 10 }, gamePenalties: { "dicey-dungeons": -4, "slay-the-spire": -4 } },
       { id: "dicey-dungeons", label: "骰子、角色能力、随机战斗谜题", subClusterBoosts: { deckbuilder_roguelike: 6, short_loop_strategy: 5 }, gameBoosts: { "dicey-dungeons": 10 }, gamePenalties: { balatro: -4 } },
       { id: "marvels-midnight-suns", label: "卡牌只是辅助，我更想要角色和剧情战斗", subClusterBoosts: { tactics_turn_based: 6, narrative_strategy: 6 }, gameBoosts: { "marvels-midnight-suns": 10 } },
@@ -79,6 +79,17 @@ export const followUpQuestions: FollowUpQuestion[] = [
       { id: "into-the-breach", label: "短小精悍、像解谜一样的战术关卡", subClusterBoosts: { puzzle_strategy: 8, tactics_turn_based: 5, short_loop_strategy: 4 }, gameBoosts: { "into-the-breach": 10 }, gamePenalties: { "xcom-2": -5 } },
       { id: "tactics-ogre-reborn", label: "日式战棋、职业养成、剧情推进", subClusterBoosts: { tactics_turn_based: 7, narrative_strategy: 5 }, gameBoosts: { "tactics-ogre-reborn": 10 }, gamePenalties: { "marvels-midnight-suns": -4 } },
       { id: "marvels-midnight-suns", label: "超级英雄、角色羁绊、卡牌战斗混合", subClusterBoosts: { tactics_turn_based: 6, deckbuilder_roguelike: 5, narrative_strategy: 5 }, gameBoosts: { "marvels-midnight-suns": 10 }, gamePenalties: { "tactics-ogre-reborn": -4 } },
+    ],
+  },
+  {
+    id: "F_COLONY_MANAGEMENT_STYLE",
+    text: "If recommendations lean colony/base management, which core appeal matters most?",
+    trigger: { subClusters: ["city_colony_management"] },
+    options: [
+      { id: "colony_storytelling", label: "Colonist personalities, random events, character stories and disaster narrative", subClusterBoosts: { city_colony_management: 6, narrative_strategy: 6 }, tagBoosts: ["emergent_story", "colony_sim"], gameBoosts: { rimworld: 10 }, gamePenalties: { "oxygen-not-included": -8, "dyson-sphere-program": -4, factorio: -4 } },
+      { id: "engineering_systems", label: "Gas, liquid, heat, power, pipes, automation and engineering simulation", subClusterBoosts: { city_colony_management: 6, factory_automation: 6 }, tagBoosts: ["automation", "optimization", "systemic"], gameBoosts: { "oxygen-not-included": 10 }, gamePenalties: { rimworld: -8, frostpunk: -4 } },
+      { id: "city_economy", label: "City planning, resident demand, logistics and economic balance", subClusterBoosts: { city_colony_management: 8 }, tagBoosts: ["city_builder", "management", "resource_chain"] },
+      { id: "survival_disaster", label: "Survival pressure, scarce resources and disaster management", subClusterBoosts: { city_colony_management: 6, defense_survival: 6 }, tagBoosts: ["survival", "resource_pressure", "high_pressure"] },
     ],
   },
   {
