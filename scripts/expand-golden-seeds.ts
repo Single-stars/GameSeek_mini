@@ -98,7 +98,11 @@ function extractTags(value: unknown, positive: Set<string>, negative: Set<string
 function tagSets(value: unknown) {
   const positive = new Set<string>();
   const negative = new Set<string>();
-  extractTags(value, positive, negative);
+  if (value && typeof value === "object") {
+    const record = value as AnyRecord;
+    extractTags(record.tags, positive, negative, "tags");
+    extractTags(record.antiTags, positive, negative, "anti");
+  }
   return { positive, negative };
 }
 

@@ -122,11 +122,10 @@ Expected v0.1 baseline thresholds must remain valid:
 
 Second v0.2 step should add `scripts/test-gameseek-metadata.ts` and a package script for metadata validation.
 
-Known first-step generator issue:
-- The current golden seed generator reads string-array fields broadly.
-- After adding `discriminatorTags`, running `npm.cmd run seed:golden` can update `goldenSeeds.ts` notes even when scoring tags and answers are unchanged.
-- This first step intentionally does not change generator code because the allowed file set is limited to types, games, and this document.
-- The next script-focused step should restrict seed generation to scoring-layer fields (`tags` and `antiTags`) so structural metadata does not dirty generated seeds.
+Seed generator boundary:
+- `scripts/expand-golden-seeds.ts` must treat only `tags` and `antiTags` as scoring-layer seed inputs.
+- It must not read `discriminatorTags`, `confusableWith`, `why`, `notFor`, `similar`, or `cluster` when choosing answers or writing `coreTags` notes.
+- This keeps v0.2 structural metadata out of golden seed generation and prevents generated seed diffs when only diagnostic fields change.
 
 Planned metadata errors:
 - missing cluster
