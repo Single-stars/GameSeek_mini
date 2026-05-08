@@ -22,6 +22,10 @@ const CLUSTERS: GameCluster[] = [
   "short_loop_casual",
 ];
 
+const UNUSUALLY_LARGE_CLUSTER_LIMITS: Partial<Record<GameCluster, number>> = {
+  strategy_buildcraft: 30,
+};
+
 const errors: Issue[] = [];
 const warnings: Issue[] = [];
 const ids = new Set<string>();
@@ -143,7 +147,10 @@ for (const [cluster, count] of Object.entries(byCluster)) {
   if (count < 2) {
     pushError({ type: "cluster_has_fewer_than_2_games", cluster, value: count });
   }
-  if (count > Math.max(12, games.length * 0.25)) {
+  const limit =
+    UNUSUALLY_LARGE_CLUSTER_LIMITS[cluster as GameCluster] ??
+    Math.max(12, games.length * 0.25);
+  if (count > limit) {
     pushWarning({ type: "cluster_unusually_large", cluster, value: count });
   }
 }

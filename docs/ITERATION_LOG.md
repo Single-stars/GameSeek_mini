@@ -268,3 +268,140 @@ Result:
 - `goldenSeeds.ts`: no diff after `seed:golden`
 - `scoring.ts`: no diff
 - `working tree`: only intended v0.2.1 files changed before commit
+
+## v0.2.1 Release
+
+Date:
+- `2026-05-08`
+
+Release branch:
+- `main`
+
+Source branch:
+- `mini-v0.2.1-metadata-hygiene`
+
+Release commit:
+- `95dc2e6`
+
+Release tag:
+- `v0.2.1`
+
+Purpose:
+- Publish metadata hygiene cleanup after v0.2.0.
+- Preserve `Top6Recall = 1`.
+- Reduce metadata warnings from `33` to `0`.
+
+Final state:
+- `main = 95dc2e6`
+- `v0.2.1 = 95dc2e6`
+- `working tree = clean`
+- `scoring.ts = no diff`
+- `goldenSeeds.ts = no diff after seed:golden`
+
+## v0.3 Strategy Buildcraft Expansion
+
+Date:
+- `2026-05-08`
+
+Branch:
+- `mini-v0.3-strategy-buildcraft-expansion`
+
+Phase document:
+- `docs/MINI_V03_EXPANSION.md`
+
+Scope:
+- Expand only the `strategy_buildcraft` cluster.
+- Move the game pool from `60` to `80`.
+- Add `20` games.
+- Do not modify `src/lib/gameseek/scoring.ts`.
+- Do not modify the recommendation algorithm.
+- Do not modify the API contract.
+- Do not modify `src/lib/gameseek/questions.ts`.
+- Do not add dynamic adaptation, signature rescue, popularity priors, or quality priors.
+
+Files changed:
+- `src/lib/gameseek/games.ts`
+- `src/lib/gameseek/goldenSeeds.ts`
+- `scripts/test-gameseek-metadata.ts`
+- `scripts/test-gameseek.ts`
+- `docs/MINI_V03_EXPANSION.md`
+- `docs/ITERATION_LOG.md`
+
+Added games:
+- `against-the-storm`
+- `oxygen-not-included`
+- `anno-1800`
+- `frostpunk`
+- `they-are-billions`
+- `age-of-empires-iv`
+- `total-war-warhammer-iii`
+- `xcom-2`
+- `fire-emblem-engage`
+- `tactics-ogre-reborn`
+- `triangle-strategy`
+- `marvels-midnight-suns`
+- `loop-hero`
+- `dicey-dungeons`
+- `wildfrost`
+- `griftlands`
+- `peglin`
+- `backpack-hero`
+- `dome-keeper`
+- `northgard`
+
+Candidate handling:
+- `factorio` was skipped because the project already contains `factorio`.
+- `northgard` was used as the approved replacement.
+- `cobalt-core` was not added and remains reserved for a later deckbuilder / roguelike sub-cluster expansion.
+
+Metadata rule adjustment:
+- `strategy_buildcraft` now has a v0.3-specific `cluster_unusually_large` warning limit of `30`.
+- Other clusters still use `Math.max(12, games.length * 0.25)`.
+- Reason: v0.3 intentionally expands a single cluster to `28` games, which would otherwise trigger a false-positive warning at the generic `20` limit.
+
+Regression test boundary adjustment:
+- `scripts/test-gameseek.ts` changed the game count validation from fixed `60` to minimum `60`.
+- Current rule: `games.length >= 60`.
+- The script still requires one seed per game, unique target count equal to game count, exactly `12` questions, legal question ids, and legal option ids.
+- TopK / recall calculation and failure diagnostics were not changed.
+
+Seed generation:
+- `npm.cmd run seed:golden` generated `80` total seeds.
+- `src/lib/gameseek/goldenSeeds.ts` includes the expected `20` new generated seeds.
+- Existing seed generation boundary remains scoring-only: `tags` / `antiTags`.
+- `discriminatorTags`, `confusableWith`, `why`, `notFor`, `similar`, and `cluster` remain out of seed answer scoring.
+
+Calibration:
+- Initial v0.3 generated-seed regression after expansion had `Top1Recall = 0.225`, `Top3Recall = 0.525`, `Top6Recall = 0.8`, and `16` Top6 failures.
+- Root cause was broad scoring-tag suppression by new strategy games, mainly `oxygen-not-included`.
+- Minimal tag calibration removed `resource_management` and `planning` from `oxygen-not-included`.
+- Minimal tag calibration removed `planning` from `against-the-storm`.
+- `questions.ts` was not changed.
+
+Verification:
+- `npm.cmd run seed:golden`
+- `npm.cmd run test:gameseek`
+- `npm.cmd run test:gameseek:metadata`
+- `npm.cmd run test:gameseek:api`
+- `npm.cmd run build`
+- `git diff -- src/lib/gameseek/scoring.ts`
+- `git status --short`
+
+Current measured result:
+- `games.length`: `80`
+- `strategy_buildcraft`: `28`
+- `Top1Recall`: `0.3125`
+- `Top3Recall`: `0.575`
+- `Top6Recall`: `0.85`
+- `TopKMonotonicityPassed`: `true`
+- `test:gameseek passed`: `true`
+- `metadata errors`: `0`
+- `metadata warnings`: `0`
+- `API`: passed
+- `build`: passed
+- `scoring.ts`: no diff
+
+Remaining diagnostics:
+- `12` Top6 failures remain in generated-seed regression.
+- All are classified as `confusable_game_suppression`.
+- This is above the v0.3 first-round threshold and should be used as input for later sub-cluster tuning rather than solved by changing the algorithm.

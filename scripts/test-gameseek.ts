@@ -80,6 +80,7 @@ function getArray<T>(moduleValue: Record<string, unknown>, names: string[]): T[]
 const games = getArray<GameLike>(gamesModule as Record<string, unknown>, ["games", "GAMES", "gamePool", "GAME_POOL"]);
 const questions = getArray<QuestionLike>(questionsModule as Record<string, unknown>, ["questions", "QUESTIONS", "gameSeekQuestions", "GAMESEEK_QUESTIONS"]);
 const goldenSeeds = getArray<GoldenSeed>(seedsModule as Record<string, unknown>, ["goldenSeeds", "GOLDEN_SEEDS", "seeds", "SEEDS"]);
+const MIN_GAME_COUNT = 60;
 
 const gameById = new Map(games.map((game) => [game.id, game]));
 const questionById = new Map(questions.map((question) => [question.id, question]));
@@ -122,7 +123,7 @@ function validateSeeds() {
   const errors: string[] = [];
   const seenTargets = new Set<string>();
 
-  if (games.length !== 60) errors.push(`Mini v0.1 expects 60 games, got ${games.length}`);
+  if (games.length < MIN_GAME_COUNT) errors.push(`Game pool must have at least ${MIN_GAME_COUNT} games, got ${games.length}`);
   if (questions.length !== 12) errors.push(`Mini v0.1 expects 12 questions, got ${questions.length}`);
   for (const seed of goldenSeeds) {
     if (!gameById.has(seed.targetGameId)) errors.push(`${seed.id}: unknown targetGameId ${seed.targetGameId}`);

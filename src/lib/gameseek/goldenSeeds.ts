@@ -780,6 +780,486 @@ export const goldenSeeds: GoldenSeed[] = [
     ]
   },
   {
+    "id": "seed-against-the-storm",
+    "targetGameId": "against-the-storm",
+    "persona": "核心目标玩家：想玩《风暴之城》这类city builder、反复构筑、resource management体验；能接受它的主要节奏和门槛，最在意玩法是否对味，而不是平台、价格或热度。",
+    "answers": {
+      "Q01_MOTIVE": "C",
+      "Q02_LOOP": "B",
+      "Q03_MASTERY": "B",
+      "Q04_SOCIAL": "D",
+      "Q05_PRESSURE": "C",
+      "Q06_FAILURE": "C",
+      "Q07_STORY": "A",
+      "Q08_EXPLORATION": "C",
+      "Q09_CREATE_MANAGE": "C",
+      "Q10_RHYTHM": "B",
+      "Q11_TONE": "A",
+      "Q12_HARD_AVOID": "D"
+    },
+    "notes": [
+      "target=风暴之城",
+      "coreTags=city_builder, roguelike, resource_management, survival, planning, run_based, systemic, medium_session",
+      "avoidSignals=needs_action, no_management, no_failure_retry"
+    ]
+  },
+  {
+    "id": "seed-oxygen-not-included",
+    "targetGameId": "oxygen-not-included",
+    "persona": "核心目标玩家：想玩《缺氧》这类colony sim、resource management、systemic体验；能接受它的主要节奏和门槛，最在意玩法是否对味，而不是平台、价格或热度。",
+    "answers": {
+      "Q01_MOTIVE": "C",
+      "Q02_LOOP": "B",
+      "Q03_MASTERY": "B",
+      "Q04_SOCIAL": "D",
+      "Q05_PRESSURE": "C",
+      "Q06_FAILURE": "C",
+      "Q07_STORY": "A",
+      "Q08_EXPLORATION": "C",
+      "Q09_CREATE_MANAGE": "C",
+      "Q10_RHYTHM": "C",
+      "Q11_TONE": "A",
+      "Q12_HARD_AVOID": "D"
+    },
+    "notes": [
+      "target=缺氧",
+      "coreTags=colony_sim, resource_management, systemic, survival, planning, optimization, automation, high_complexity",
+      "avoidSignals=no_complex_system, needs_action, short_session_only"
+    ]
+  },
+  {
+    "id": "seed-anno-1800",
+    "targetGameId": "anno-1800",
+    "persona": "核心目标玩家：想玩《纪元1800》这类city builder、resource chain、trade体验；能接受它的主要节奏和门槛，最在意玩法是否对味，而不是平台、价格或热度。",
+    "answers": {
+      "Q01_MOTIVE": "D",
+      "Q02_LOOP": "D",
+      "Q03_MASTERY": "B",
+      "Q04_SOCIAL": "D",
+      "Q05_PRESSURE": "C",
+      "Q06_FAILURE": "C",
+      "Q07_STORY": "A",
+      "Q08_EXPLORATION": "C",
+      "Q09_CREATE_MANAGE": "C",
+      "Q10_RHYTHM": "C",
+      "Q11_TONE": "A",
+      "Q12_HARD_AVOID": "C"
+    },
+    "notes": [
+      "target=纪元1800",
+      "coreTags=city_builder, resource_chain, trade, optimization, macro_planning, empire_building, long_session, management",
+      "avoidSignals=needs_action, short_session_only, no_optimization"
+    ]
+  },
+  {
+    "id": "seed-frostpunk",
+    "targetGameId": "frostpunk",
+    "persona": "核心目标玩家：想玩《冰汽时代》这类city builder、生存推进、resource pressure体验；能接受它的主要节奏和门槛，最在意玩法是否对味，而不是平台、价格或热度。",
+    "answers": {
+      "Q01_MOTIVE": "B",
+      "Q02_LOOP": "B",
+      "Q03_MASTERY": "D",
+      "Q04_SOCIAL": "D",
+      "Q05_PRESSURE": "D",
+      "Q06_FAILURE": "C",
+      "Q07_STORY": "A",
+      "Q08_EXPLORATION": "C",
+      "Q09_CREATE_MANAGE": "C",
+      "Q10_RHYTHM": "A",
+      "Q11_TONE": "D",
+      "Q12_HARD_AVOID": "B"
+    },
+    "notes": [
+      "target=冰汽时代",
+      "coreTags=city_builder, survival, resource_pressure, moral_choice, planning, high_pressure, story, management",
+      "avoidSignals=low_pressure, no_moral_choice, needs_fast_feedback"
+    ]
+  },
+  {
+    "id": "seed-they-are-billions",
+    "targetGameId": "they-are-billions",
+    "persona": "核心目标玩家：想玩《亿万僵尸》这类塔防解题、rts、base building体验；能接受它的主要节奏和门槛，最在意玩法是否对味，而不是平台、价格或热度。",
+    "answers": {
+      "Q01_MOTIVE": "C",
+      "Q02_LOOP": "B",
+      "Q03_MASTERY": "B",
+      "Q04_SOCIAL": "D",
+      "Q05_PRESSURE": "B",
+      "Q06_FAILURE": "C",
+      "Q07_STORY": "A",
+      "Q08_EXPLORATION": "C",
+      "Q09_CREATE_MANAGE": "C",
+      "Q10_RHYTHM": "A",
+      "Q11_TONE": "D",
+      "Q12_HARD_AVOID": "D"
+    },
+    "notes": [
+      "target=亿万僵尸",
+      "coreTags=tower_defense, rts, base_building, horde_survival, resource_management, planning, high_pressure, macro_planning",
+      "avoidSignals=low_pressure, no_time_pressure, no_failure_retry"
+    ]
+  },
+  {
+    "id": "seed-age-of-empires-iv",
+    "targetGameId": "age-of-empires-iv",
+    "persona": "核心目标玩家：想玩《帝国时代 IV》这类rts、macro planning、强对抗体验；能接受它的主要节奏和门槛，最在意玩法是否对味，而不是平台、价格或热度。",
+    "answers": {
+      "Q01_MOTIVE": "A",
+      "Q02_LOOP": "B",
+      "Q03_MASTERY": "B",
+      "Q04_SOCIAL": "D",
+      "Q05_PRESSURE": "B",
+      "Q06_FAILURE": "C",
+      "Q07_STORY": "A",
+      "Q08_EXPLORATION": "C",
+      "Q09_CREATE_MANAGE": "C",
+      "Q10_RHYTHM": "A",
+      "Q11_TONE": "D",
+      "Q12_HARD_AVOID": "D"
+    },
+    "notes": [
+      "target=帝国时代 IV",
+      "coreTags=rts, macro_planning, pvp, ranked, economy_management, army_control, high_pressure, skill_mastery",
+      "avoidSignals=no_pvp, low_pressure, no_micro"
+    ]
+  },
+  {
+    "id": "seed-total-war-warhammer-iii",
+    "targetGameId": "total-war-warhammer-iii",
+    "persona": "核心目标玩家：想玩《全面战争：战锤3》这类grand strategy、战术决策、fantasy体验；能接受它的主要节奏和门槛，最在意玩法是否对味，而不是平台、价格或热度。",
+    "answers": {
+      "Q01_MOTIVE": "C",
+      "Q02_LOOP": "B",
+      "Q03_MASTERY": "B",
+      "Q04_SOCIAL": "D",
+      "Q05_PRESSURE": "C",
+      "Q06_FAILURE": "C",
+      "Q07_STORY": "A",
+      "Q08_EXPLORATION": "C",
+      "Q09_CREATE_MANAGE": "C",
+      "Q10_RHYTHM": "C",
+      "Q11_TONE": "A",
+      "Q12_HARD_AVOID": "D"
+    },
+    "notes": [
+      "target=全面战争：战锤3",
+      "coreTags=grand_strategy, tactics, fantasy, army_control, macro_planning, turn_based, long_session, empire_building",
+      "avoidSignals=short_session_only, no_complex_system, needs_small_scale"
+    ]
+  },
+  {
+    "id": "seed-xcom-2",
+    "targetGameId": "xcom-2",
+    "persona": "核心目标玩家：想玩《XCOM 2》这类战术决策、turn based、squad building体验；能接受它的主要节奏和门槛，最在意玩法是否对味，而不是平台、价格或热度。",
+    "answers": {
+      "Q01_MOTIVE": "B",
+      "Q02_LOOP": "B",
+      "Q03_MASTERY": "B",
+      "Q04_SOCIAL": "D",
+      "Q05_PRESSURE": "D",
+      "Q06_FAILURE": "C",
+      "Q07_STORY": "A",
+      "Q08_EXPLORATION": "C",
+      "Q09_CREATE_MANAGE": "C",
+      "Q10_RHYTHM": "A",
+      "Q11_TONE": "D",
+      "Q12_HARD_AVOID": "B"
+    },
+    "notes": [
+      "target=XCOM 2",
+      "coreTags=tactics, turn_based, squad_building, permadeath, planning, high_pressure, story, risk_reward",
+      "avoidSignals=no_failure_retry, low_pressure, needs_fast_feedback"
+    ]
+  },
+  {
+    "id": "seed-fire-emblem-engage",
+    "targetGameId": "fire-emblem-engage",
+    "persona": "核心目标玩家：想玩《火焰纹章 Engage》这类战术决策、turn based、party building体验；能接受它的主要节奏和门槛，最在意玩法是否对味，而不是平台、价格或热度。",
+    "answers": {
+      "Q01_MOTIVE": "B",
+      "Q02_LOOP": "B",
+      "Q03_MASTERY": "D",
+      "Q04_SOCIAL": "D",
+      "Q05_PRESSURE": "D",
+      "Q06_FAILURE": "C",
+      "Q07_STORY": "A",
+      "Q08_EXPLORATION": "C",
+      "Q09_CREATE_MANAGE": "C",
+      "Q10_RHYTHM": "A",
+      "Q11_TONE": "A",
+      "Q12_HARD_AVOID": "C"
+    },
+    "notes": [
+      "target=火焰纹章 Engage",
+      "coreTags=tactics, turn_based, party_building, character_bond, anime, planning, story, long_term",
+      "avoidSignals=no_anime, no_turn_based, needs_fast_feedback"
+    ]
+  },
+  {
+    "id": "seed-tactics-ogre-reborn",
+    "targetGameId": "tactics-ogre-reborn",
+    "persona": "核心目标玩家：想玩《皇家骑士团：重生》这类战术决策、turn based、party building体验；能接受它的主要节奏和门槛，最在意玩法是否对味，而不是平台、价格或热度。",
+    "answers": {
+      "Q01_MOTIVE": "B",
+      "Q02_LOOP": "B",
+      "Q03_MASTERY": "B",
+      "Q04_SOCIAL": "D",
+      "Q05_PRESSURE": "B",
+      "Q06_FAILURE": "C",
+      "Q07_STORY": "A",
+      "Q08_EXPLORATION": "C",
+      "Q09_CREATE_MANAGE": "C",
+      "Q10_RHYTHM": "C",
+      "Q11_TONE": "A",
+      "Q12_HARD_AVOID": "D"
+    },
+    "notes": [
+      "target=皇家骑士团：重生",
+      "coreTags=tactics, turn_based, party_building, class_building, story, planning, long_session",
+      "avoidSignals=no_heavy_text, no_turn_based, needs_fast_feedback"
+    ]
+  },
+  {
+    "id": "seed-triangle-strategy",
+    "targetGameId": "triangle-strategy",
+    "persona": "核心目标玩家：想玩《三角战略》这类战术决策、turn based、剧情沉浸体验；能接受它的主要节奏和门槛，最在意玩法是否对味，而不是平台、价格或热度。",
+    "answers": {
+      "Q01_MOTIVE": "B",
+      "Q02_LOOP": "B",
+      "Q03_MASTERY": "B",
+      "Q04_SOCIAL": "D",
+      "Q05_PRESSURE": "D",
+      "Q06_FAILURE": "C",
+      "Q07_STORY": "A",
+      "Q08_EXPLORATION": "C",
+      "Q09_CREATE_MANAGE": "C",
+      "Q10_RHYTHM": "C",
+      "Q11_TONE": "A",
+      "Q12_HARD_AVOID": "D"
+    },
+    "notes": [
+      "target=三角战略",
+      "coreTags=tactics, turn_based, story, choice_consequence, political_drama, planning, long_session",
+      "avoidSignals=no_heavy_text, needs_action, needs_fast_feedback"
+    ]
+  },
+  {
+    "id": "seed-marvels-midnight-suns",
+    "targetGameId": "marvels-midnight-suns",
+    "persona": "核心目标玩家：想玩《漫威暗夜之子》这类card game、牌组构筑、战术决策体验；能接受它的主要节奏和门槛，最在意玩法是否对味，而不是平台、价格或热度。",
+    "answers": {
+      "Q01_MOTIVE": "B",
+      "Q02_LOOP": "B",
+      "Q03_MASTERY": "B",
+      "Q04_SOCIAL": "D",
+      "Q05_PRESSURE": "D",
+      "Q06_FAILURE": "C",
+      "Q07_STORY": "A",
+      "Q08_EXPLORATION": "C",
+      "Q09_CREATE_MANAGE": "C",
+      "Q10_RHYTHM": "A",
+      "Q11_TONE": "A",
+      "Q12_HARD_AVOID": "D"
+    },
+    "notes": [
+      "target=漫威暗夜之子",
+      "coreTags=card_game, deckbuilder, tactics, turn_based, superhero, relationship, planning, story",
+      "avoidSignals=no_superhero, no_card_logic, no_turn_based"
+    ]
+  },
+  {
+    "id": "seed-loop-hero",
+    "targetGameId": "loop-hero",
+    "persona": "核心目标玩家：想玩《循环英雄》这类反复构筑、run based、loop building体验；能接受它的主要节奏和门槛，最在意玩法是否对味，而不是平台、价格或热度。",
+    "answers": {
+      "Q01_MOTIVE": "D",
+      "Q02_LOOP": "B",
+      "Q03_MASTERY": "B",
+      "Q04_SOCIAL": "D",
+      "Q05_PRESSURE": "D",
+      "Q06_FAILURE": "C",
+      "Q07_STORY": "A",
+      "Q08_EXPLORATION": "C",
+      "Q09_CREATE_MANAGE": "C",
+      "Q10_RHYTHM": "A",
+      "Q11_TONE": "A",
+      "Q12_HARD_AVOID": "D"
+    },
+    "notes": [
+      "target=循环英雄",
+      "coreTags=roguelike, run_based, loop_building, resource_management, planning, low_reflex, system_mastery, short_session",
+      "avoidSignals=needs_action, needs_direct_control, needs_strong_story"
+    ]
+  },
+  {
+    "id": "seed-dicey-dungeons",
+    "targetGameId": "dicey-dungeons",
+    "persona": "核心目标玩家：想玩《骰子地下城》这类牌组构筑、dice、反复构筑体验；能接受它的主要节奏和门槛，最在意玩法是否对味，而不是平台、价格或热度。",
+    "answers": {
+      "Q01_MOTIVE": "D",
+      "Q02_LOOP": "B",
+      "Q03_MASTERY": "B",
+      "Q04_SOCIAL": "D",
+      "Q05_PRESSURE": "D",
+      "Q06_FAILURE": "B",
+      "Q07_STORY": "A",
+      "Q08_EXPLORATION": "C",
+      "Q09_CREATE_MANAGE": "C",
+      "Q10_RHYTHM": "A",
+      "Q11_TONE": "A",
+      "Q12_HARD_AVOID": "D"
+    },
+    "notes": [
+      "target=骰子地下城",
+      "coreTags=deckbuilder, dice, roguelike, run_based, combo, short_session, system_mastery, low_reflex",
+      "avoidSignals=needs_story, no_randomness, needs_action"
+    ]
+  },
+  {
+    "id": "seed-wildfrost",
+    "targetGameId": "wildfrost",
+    "persona": "核心目标玩家：想玩《Wildfrost》这类牌组构筑、反复构筑、turn based体验；能接受它的主要节奏和门槛，最在意玩法是否对味，而不是平台、价格或热度。",
+    "answers": {
+      "Q01_MOTIVE": "D",
+      "Q02_LOOP": "B",
+      "Q03_MASTERY": "B",
+      "Q04_SOCIAL": "D",
+      "Q05_PRESSURE": "D",
+      "Q06_FAILURE": "C",
+      "Q07_STORY": "A",
+      "Q08_EXPLORATION": "C",
+      "Q09_CREATE_MANAGE": "C",
+      "Q10_RHYTHM": "A",
+      "Q11_TONE": "A",
+      "Q12_HARD_AVOID": "D"
+    },
+    "notes": [
+      "target=Wildfrost",
+      "coreTags=deckbuilder, roguelike, turn_based, combo, lane_strategy, planning, high_difficulty, short_session",
+      "avoidSignals=no_hard_puzzle, needs_story, needs_action"
+    ]
+  },
+  {
+    "id": "seed-griftlands",
+    "targetGameId": "griftlands",
+    "persona": "核心目标玩家：想玩《欺诈之地》这类牌组构筑、剧情沉浸、dialogue体验；能接受它的主要节奏和门槛，最在意玩法是否对味，而不是平台、价格或热度。",
+    "answers": {
+      "Q01_MOTIVE": "B",
+      "Q02_LOOP": "B",
+      "Q03_MASTERY": "B",
+      "Q04_SOCIAL": "D",
+      "Q05_PRESSURE": "D",
+      "Q06_FAILURE": "C",
+      "Q07_STORY": "A",
+      "Q08_EXPLORATION": "C",
+      "Q09_CREATE_MANAGE": "C",
+      "Q10_RHYTHM": "A",
+      "Q11_TONE": "A",
+      "Q12_HARD_AVOID": "D"
+    },
+    "notes": [
+      "target=欺诈之地",
+      "coreTags=deckbuilder, story, dialogue, choice_consequence, roguelike, run_based, planning, character_bond",
+      "avoidSignals=no_heavy_text, needs_action, no_card_logic"
+    ]
+  },
+  {
+    "id": "seed-peglin",
+    "targetGameId": "peglin",
+    "persona": "核心目标玩家：想玩《Peglin》这类反复构筑、pachinko、physics体验；能接受它的主要节奏和门槛，最在意玩法是否对味，而不是平台、价格或热度。",
+    "answers": {
+      "Q01_MOTIVE": "D",
+      "Q02_LOOP": "A",
+      "Q03_MASTERY": "C",
+      "Q04_SOCIAL": "D",
+      "Q05_PRESSURE": "D",
+      "Q06_FAILURE": "C",
+      "Q07_STORY": "A",
+      "Q08_EXPLORATION": "C",
+      "Q09_CREATE_MANAGE": "C",
+      "Q10_RHYTHM": "A",
+      "Q11_TONE": "A",
+      "Q12_HARD_AVOID": "D"
+    },
+    "notes": [
+      "target=Peglin",
+      "coreTags=roguelike, pachinko, physics, combo, short_session, risk_reward, fast_feedback, low_reflex",
+      "avoidSignals=needs_deep_story, no_randomness, needs_precision_control"
+    ]
+  },
+  {
+    "id": "seed-backpack-hero",
+    "targetGameId": "backpack-hero",
+    "persona": "核心目标玩家：想玩《背包英雄》这类inventory management、反复构筑、planning体验；能接受它的主要节奏和门槛，最在意玩法是否对味，而不是平台、价格或热度。",
+    "answers": {
+      "Q01_MOTIVE": "D",
+      "Q02_LOOP": "B",
+      "Q03_MASTERY": "B",
+      "Q04_SOCIAL": "D",
+      "Q05_PRESSURE": "C",
+      "Q06_FAILURE": "B",
+      "Q07_STORY": "A",
+      "Q08_EXPLORATION": "C",
+      "Q09_CREATE_MANAGE": "C",
+      "Q10_RHYTHM": "A",
+      "Q11_TONE": "A",
+      "Q12_HARD_AVOID": "D"
+    },
+    "notes": [
+      "target=背包英雄",
+      "coreTags=inventory_management, roguelike, planning, combo, run_based, optimization, short_session, system_mastery",
+      "avoidSignals=needs_story, needs_action, no_inventory_logic"
+    ]
+  },
+  {
+    "id": "seed-dome-keeper",
+    "targetGameId": "dome-keeper",
+    "persona": "核心目标玩家：想玩《穹顶守护者》这类塔防解题、mining、resource management体验；能接受它的主要节奏和门槛，最在意玩法是否对味，而不是平台、价格或热度。",
+    "answers": {
+      "Q01_MOTIVE": "D",
+      "Q02_LOOP": "B",
+      "Q03_MASTERY": "B",
+      "Q04_SOCIAL": "D",
+      "Q05_PRESSURE": "D",
+      "Q06_FAILURE": "C",
+      "Q07_STORY": "A",
+      "Q08_EXPLORATION": "C",
+      "Q09_CREATE_MANAGE": "C",
+      "Q10_RHYTHM": "A",
+      "Q11_TONE": "A",
+      "Q12_HARD_AVOID": "D"
+    },
+    "notes": [
+      "target=穹顶守护者",
+      "coreTags=tower_defense, mining, resource_management, base_defense, short_session, planning, survival, fast_feedback",
+      "avoidSignals=needs_story, no_time_pressure, no_repetition"
+    ]
+  },
+  {
+    "id": "seed-northgard",
+    "targetGameId": "northgard",
+    "persona": "核心目标玩家：想玩《Northgard（北境之地）》这类rts、resource management、生存推进体验；能接受它的主要节奏和门槛，最在意玩法是否对味，而不是平台、价格或热度。",
+    "answers": {
+      "Q01_MOTIVE": "C",
+      "Q02_LOOP": "B",
+      "Q03_MASTERY": "B",
+      "Q04_SOCIAL": "D",
+      "Q05_PRESSURE": "C",
+      "Q06_FAILURE": "C",
+      "Q07_STORY": "A",
+      "Q08_EXPLORATION": "C",
+      "Q09_CREATE_MANAGE": "C",
+      "Q10_RHYTHM": "B",
+      "Q11_TONE": "A",
+      "Q12_HARD_AVOID": "D"
+    },
+    "notes": [
+      "target=Northgard（北境之地）",
+      "coreTags=rts, resource_management, survival, territory_control, clan_strategy, macro_planning, medium_session, planning",
+      "avoidSignals=needs_fast_feedback, no_resource_pressure, no_rts"
+    ]
+  },
+  {
     "id": "seed-stardew-valley",
     "targetGameId": "stardew-valley",
     "persona": "核心目标玩家：想玩《星露谷物语》这类田园经营、生活模拟、治愈低压体验；能接受它的主要节奏和门槛，最在意玩法是否对味，而不是平台、价格或热度。",
