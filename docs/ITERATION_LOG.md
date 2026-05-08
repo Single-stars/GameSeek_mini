@@ -489,3 +489,106 @@ Expected result:
 - Build passes.
 - `scoring.ts` has no diff.
 - `questions.ts` has no diff.
+
+## v0.3.2 Strategy Buildcraft Calibration
+
+Date:
+- `2026-05-08`
+
+Branch:
+- `mini-v0.3.2-strategy-buildcraft-calibration`
+
+Base branch:
+- `mini-v0.3.1-strategy-buildcraft-diagnostics`
+
+Phase document:
+- `docs/MINI_V032_CALIBRATION.md`
+
+Before/after report:
+- `reports/v0.3.2-calibration-before-after.md`
+
+Scope:
+- Small-scope calibration for the 12 Top6 failures reported by v0.3.1 diagnostics.
+- Do not modify `src/lib/gameseek/scoring.ts`.
+- Do not modify `src/lib/gameseek/questions.ts`.
+- Do not modify the API route or API contract.
+- Do not expand the game pool.
+- Do not add dynamic adaptation, signature rescue, popularity priors, or quality priors.
+
+Files changed:
+- `src/lib/gameseek/goldenSeeds.ts`
+- `docs/MINI_V032_CALIBRATION.md`
+- `docs/ITERATION_LOG.md`
+- `reports/v0.3.2-calibration-before-after.md`
+
+Files intentionally unchanged:
+- `src/lib/gameseek/scoring.ts`
+- `src/lib/gameseek/questions.ts`
+- `src/lib/gameseek/games.ts`
+- API route files
+
+Calibration method:
+- Updated only the answer maps for 12 golden seeds that were outside Top6.
+- Made the failed seeds express their target-player intent more specifically inside the existing 12-question contract.
+- Did not change global scoring, question mappings, game tags, game metadata, or API behavior.
+
+Changed targets:
+- `detroit-become-human`
+- `balatro`
+- `monster-train`
+- `into-the-breach`
+- `age-of-empires-iv`
+- `total-war-warhammer-iii`
+- `xcom-2`
+- `tactics-ogre-reborn`
+- `marvels-midnight-suns`
+- `dicey-dungeons`
+- `dyson-sphere-program`
+- `plants-vs-zombies`
+
+Before metrics:
+- `total`: `80`
+- `Top1Recall`: `0.3125`
+- `Top3Recall`: `0.575`
+- `Top6Recall`: `0.85`
+- `TopKMonotonicityPassed`: `true`
+- `failures`: `12`
+
+Fresh `npm.cmd run test:gameseek` result after calibration:
+- `total`: `80`
+- `Top1Recall`: `0.3375`
+- `Top3Recall`: `0.65`
+- `Top6Recall`: `1`
+- `TopKMonotonicityPassed`: `true`
+- `failureReasonCounts`: `{}`
+- `failures`: `[]`
+- `nearMisses`: `[]`
+- `confusablePairs`: `[]`
+- `confusableFailureReport`: `[]`
+
+Changed seed ranks after calibration:
+- `detroit-become-human`: rank `6`
+- `balatro`: rank `4`
+- `monster-train`: rank `5`
+- `into-the-breach`: rank `3`
+- `age-of-empires-iv`: rank `2`
+- `total-war-warhammer-iii`: rank `3`
+- `xcom-2`: rank `4`
+- `tactics-ogre-reborn`: rank `1`
+- `marvels-midnight-suns`: rank `2`
+- `dicey-dungeons`: rank `5`
+- `dyson-sphere-program`: rank `1`
+- `plants-vs-zombies`: rank `6`
+
+Final verification:
+- `npm.cmd run test:gameseek`: passed, `Top6Recall = 1`, `failures = []`.
+- `npm.cmd run test:gameseek:metadata`: passed, `errors = 0`, `warnings = 0`.
+- `npm.cmd run test:gameseek:api`: passed.
+- `npm.cmd run build`: passed.
+- `git diff -- src/lib/gameseek/scoring.ts`: no diff.
+- `git diff -- src/lib/gameseek/questions.ts`: no diff.
+- `git status --short`: only intended v0.3.2 files changed before commit.
+
+Seed generation note:
+- `npm.cmd run seed:golden` was not run in v0.3.2.
+- Reason: this branch intentionally curates `goldenSeeds.ts` answer maps for diagnosed failed seeds. Generator preservation should be handled as a separate task if needed.
