@@ -124,6 +124,8 @@ Seed generator boundary:
 - `scripts/expand-golden-seeds.ts` must treat only `tags` and `antiTags` as scoring-layer seed inputs.
 - It must not read `discriminatorTags`, `confusableWith`, `why`, `notFor`, `similar`, or `cluster` when choosing answers or writing `coreTags` notes.
 - This keeps v0.2 structural metadata out of golden seed generation and prevents generated seed diffs when only diagnostic fields change.
+- From v0.2 onward, the generator preserves existing valid seed answers, persona text, and notes. It only computes an answer for missing or illegal question/option entries.
+- This makes `npm.cmd run seed:golden` idempotent after question tag calibration while keeping newly generated fallback answers based only on scoring-layer `tags` and `antiTags`.
 
 Metadata validation command:
 

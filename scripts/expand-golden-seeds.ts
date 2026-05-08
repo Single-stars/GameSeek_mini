@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 
 import * as gamesModule from "../src/lib/gameseek/games";
+import * as goldenSeedsModule from "../src/lib/gameseek/goldenSeeds";
 import * as questionsModule from "../src/lib/gameseek/questions";
 
 /**
@@ -57,6 +58,8 @@ function pickArrayExport<T>(moduleValue: Record<string, unknown>, names: string[
 
 const games = pickArrayExport<GameLike>(gamesModule as Record<string, unknown>, ["games", "GAMES", "gamePool", "GAME_POOL"]);
 const questions = pickArrayExport<QuestionLike>(questionsModule as Record<string, unknown>, ["questions", "QUESTIONS", "gameSeekQuestions", "GAMESEEK_QUESTIONS"]);
+const existingSeeds = pickArrayExport<GoldenSeed>(goldenSeedsModule as Record<string, unknown>, ["goldenSeeds", "GOLDEN_SEEDS"]);
+const existingSeedByTarget = new Map(existingSeeds.map((seed) => [seed.targetGameId, seed]));
 
 const GENERIC_TAGS = new Set([
   "game", "games", "fun", "good", "popular", "mainstream", "singleplayer", "multiplayer",
@@ -157,6 +160,28 @@ function chooseAnswer(game: GameLike, question: QuestionLike): string {
   return ranked[0].option.id;
 }
 
+function existingAnswerFor(game: GameLike, question: QuestionLike): string | null {
+  const existingSeed = existingSeedByTarget.get(game.id);
+  const selected = existingSeed?.answers?.[question.id];
+  if (typeof selected !== "string") return null;
+  if (!question.options.some((option) => option.id === selected)) return null;
+  return selected;
+}
+
+function existingPersonaFor(game: GameLike): string | null {
+  const existingSeed = existingSeedByTarget.get(game.id);
+  if (typeof existingSeed?.persona !== "string") return null;
+  if (existingSeed.persona.length < 24) return null;
+  return existingSeed.persona;
+}
+
+function existingNotesFor(game: GameLike): string[] | null {
+  const existingSeed = existingSeedByTarget.get(game.id);
+  if (!Array.isArray(existingSeed?.notes)) return null;
+  if (!existingSeed.notes.every((note) => typeof note === "string")) return null;
+  return existingSeed.notes;
+}
+
 function buildPersona(game: GameLike) {
   const tagList = [...tagSets(game).positive];
   const traits = tagsForPersona(tagList);
@@ -173,7 +198,7 @@ function buildPersona(game: GameLike) {
 function buildSeed(game: GameLike): GoldenSeed {
   const answers: Record<string, string> = {};
   for (const question of questions) {
-    answers[question.id] = chooseAnswer(game, question);
+    answers[question.id] = existingAnswerFor(game, question) ?? chooseAnswer(game, question);
   }
 
   const positiveTags = [...tagSets(game).positive].slice(0, 8);
@@ -181,9 +206,9 @@ function buildSeed(game: GameLike): GoldenSeed {
   return {
     id: `seed-${game.id}`,
     targetGameId: game.id,
-    persona: buildPersona(game),
+    persona: existingPersonaFor(game) ?? buildPersona(game),
     answers,
-    notes: [
+    notes: existingNotesFor(game) ?? [
       `target=${gameTitle(game)}`,
       `coreTags=${positiveTags.join(", ") || "none"}`,
       `avoidSignals=${antiTags.join(", ") || "none"}`,
