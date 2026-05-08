@@ -204,3 +204,67 @@ Current warning backlog:
 
 Do not mix warning cleanup with scoring, seed generation, or release tasks unless explicitly scoped.
 
+## v0.2.1 Metadata Hygiene
+
+Date:
+- `2026-05-08`
+
+Branch:
+- `mini-v0.2.1-metadata-hygiene`
+
+Scope:
+- Metadata hygiene only.
+- Do not modify `src/lib/gameseek/scoring.ts`.
+- Do not modify `src/lib/gameseek/questions.ts`.
+- Do not hand-edit `src/lib/gameseek/goldenSeeds.ts`.
+- Do not expand the game pool.
+- Do not tune Top1 or Top3.
+
+Files changed:
+- `src/lib/gameseek/games.ts`
+- `docs/MINI_V02_STRUCTURE.md`
+- `docs/ITERATION_LOG.md`
+
+Initial metadata state:
+- `metadata errors`: `0`
+- `metadata warnings`: `33`
+- `confusable_not_bidirectional`: `30`
+- `notFor_too_short`: `3`
+- `why_too_short`: `0`
+
+Data changes:
+- Added reverse `confusableWith` entries for all one-way confusable relations reported by metadata validation.
+- Expanded short `notFor` copy for `spiritfarer`, `eggy-party`, and `animal-well`.
+- Left metadata validation rules unchanged because the warnings were valid data hygiene issues.
+
+Target result:
+- `metadata errors = 0`
+- `metadata warnings = 0`
+- `Top6Recall = 1`
+- `goldenSeeds.ts` no diff after `npm.cmd run seed:golden`
+- `scoring.ts` no diff
+
+Verification:
+- `npm.cmd run seed:golden`
+- `git diff -- src/lib/gameseek/goldenSeeds.ts`
+- `npm.cmd run test:gameseek`
+- `npm.cmd run test:gameseek:metadata`
+- `npm.cmd run test:gameseek:api`
+- `npm.cmd run build`
+- `git diff -- src/lib/gameseek/scoring.ts`
+- `git status --short`
+
+Result:
+- `Top1Recall`: `0.31666666666666665`
+- `Top3Recall`: `0.6666666666666666`
+- `Top6Recall`: `1`
+- `TopKMonotonicityPassed`: `true`
+- `failureReasonCounts`: `{}`
+- `failures`: `[]`
+- `metadata errors`: `0`
+- `metadata warnings`: `0`
+- `API`: passed
+- `build`: passed
+- `goldenSeeds.ts`: no diff after `seed:golden`
+- `scoring.ts`: no diff
+- `working tree`: only intended v0.2.1 files changed before commit

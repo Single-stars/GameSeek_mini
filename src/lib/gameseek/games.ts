@@ -8,7 +8,7 @@ export const games: Game[] = [
     tags: ["pvp", "moba", "team", "ranked", "short_session", "reflex", "social_pressure", "hype"],
     antiTags: ["solo_only", "low_pressure", "no_pvp", "no_team_dependency"],
     discriminatorTags: ["mobile_first_5v5_moba","short_match_lane_teamfight","high_social_rank_pressure"],
-    confusableWith: ["lol-wild-rift","overwatch-2","valorant"],
+    confusableWith: ["lol-wild-rift","overwatch-2","valorant","peace-elite"],
     why: ["适合想要短局 5v5、团队配合、排位胜负反馈的玩家。"],
     notFor: ["不适合只想单人低压、讨厌队友影响体验的玩家。"],
     similar: ["英雄联盟手游", "Dota 2", "宝可梦大集结"]
@@ -32,7 +32,7 @@ export const games: Game[] = [
     tags: ["pvp", "tactical_shooter", "ranked", "team", "aim", "low_ttk", "high_pressure", "skill_mastery", "reflex", "combat_mastery"],
     antiTags: ["low_pressure", "no_pvp", "no_aim", "solo_only"],
     discriminatorTags: ["agent_ability_tactical_fps","low_ttk_spike_rounds","aim_plus_utility_execution"],
-    confusableWith: ["cs2","apex-legends","overwatch-2"],
+    confusableWith: ["cs2","apex-legends","overwatch-2","honor-of-kings","lol-wild-rift","peace-elite"],
     why: ["适合想要枪法、技能配合、低容错爆破战术的玩家。"],
     notFor: ["不适合讨厌瞄准、排位压力或队友沟通的玩家。"],
     similar: ["CS2", "彩虹六号：围攻", "Apex Legends"]
@@ -44,7 +44,7 @@ export const games: Game[] = [
     tags: ["pvp", "battle_royale", "team", "aim", "movement", "hero_skill", "high_pressure", "long_session", "ranked"],
     antiTags: ["low_pressure", "no_pvp", "no_aim", "solo_only"],
     discriminatorTags: ["squad_battle_royale_movement","hero_ability_gunplay","long_match_ring_rotation"],
-    confusableWith: ["peace-elite","valorant","overwatch-2","naraka-bladepoint"],
+    confusableWith: ["peace-elite","valorant","overwatch-2","naraka-bladepoint","cs2"],
     why: ["适合想要高机动英雄吃鸡、枪法身法和团队协同的玩家。"],
     notFor: ["不适合讨厌长局淘汰压力和枪法要求的玩家。"],
     similar: ["和平精英", "PUBG", "使命召唤：战区"]
@@ -104,7 +104,7 @@ export const games: Game[] = [
     tags: ["open_world", "exploration", "character_collection", "element_team_building", "anime", "long_term", "story", "cozy_adventure"],
     antiTags: ["no_collection", "no_long_term", "no_gacha_like"],
     discriminatorTags: ["elemental_team_open_world","character_collection_exploration","version_map_live_service"],
-    confusableWith: ["star-rail","zelda-botw","palworld"],
+    confusableWith: ["star-rail","zelda-botw","palworld","persona-5-royal"],
     why: ["适合想要角色收集、元素队伍构筑和版本化大地图探索的玩家。"],
     notFor: ["不适合讨厌长期养成、收集和版本运营节奏的玩家。"],
     similar: ["塞尔达传说：旷野之息", "崩坏：星穹铁道"]
@@ -116,7 +116,7 @@ export const games: Game[] = [
     tags: ["open_world", "physics_play", "free_solution", "exploration", "discovery", "low_guidance", "adventure"],
     antiTags: ["needs_strong_story", "needs_clear_objectives"],
     discriminatorTags: ["physics_discovery_open_world","emergent_tool_problem_solving","low_dialogue_environmental_adventure"],
-    confusableWith: ["genshin-impact","elden-ring","outer-wilds","tunic","skyrim"],
+    confusableWith: ["genshin-impact","elden-ring","outer-wilds","tunic","skyrim","animal-well"],
     why: ["适合想要自由探索、物理互动、自己找解法的玩家。"],
     notFor: ["不适合非常依赖强剧情和清晰任务指引的玩家。"],
     similar: ["原神", "艾尔登法环", "Tunic"]
@@ -140,7 +140,7 @@ export const games: Game[] = [
     tags: ["open_world", "cinematic_story", "slow_burn", "immersion", "realistic_world", "travel_feeling", "character_story", "solo", "story"],
     antiTags: ["needs_fast_feedback", "no_slow_pace"],
     discriminatorTags: ["slow_burn_western_immersion","cinematic_character_journey","realistic_travel_world_sim"],
-    confusableWith: ["witcher-3","cyberpunk-2077","skyrim"],
+    confusableWith: ["witcher-3","cyberpunk-2077","skyrim","final-fantasy-xvi"],
     why: ["适合想要写实世界、慢节奏旅途感和电影化叙事的玩家。"],
     notFor: ["不适合只想短局快反馈或讨厌慢热节奏的玩家。"],
     similar: ["巫师3", "赛博朋克2077", "GTA V"]
@@ -164,7 +164,7 @@ export const games: Game[] = [
     tags: ["open_world", "dark_fantasy", "story", "choice_consequence", "quest_writing", "exploration"],
     antiTags: ["no_heavy_story", "no_open_world"],
     discriminatorTags: ["branching_dark_fantasy_quests","monster_hunter_roleplay","moral_choice_side_stories"],
-    confusableWith: ["rdr2","cyberpunk-2077","skyrim","baldurs-gate-3"],
+    confusableWith: ["rdr2","cyberpunk-2077","skyrim","baldurs-gate-3","elden-ring","final-fantasy-xvi"],
     why: ["适合想要开放世界、支线叙事、道德选择和黑暗奇幻旅程的玩家。"],
     notFor: ["不适合只想玩法系统、讨厌长剧情任务的玩家。"],
     similar: ["赛博朋克2077", "荒野大镖客2", "上古卷轴5"]
@@ -188,7 +188,7 @@ export const games: Game[] = [
     tags: ["open_world", "roleplay", "fantasy", "self_directed", "mod_friendly", "exploration", "sandbox_rpg", "solo"],
     antiTags: ["needs_tight_story", "needs_modern_combat"],
     discriminatorTags: ["self_directed_fantasy_sandbox","mod_friendly_roleplay_world","loose_quest_open_rpg"],
-    confusableWith: ["zelda-botw","witcher-3","elden-ring","rdr2"],
+    confusableWith: ["zelda-botw","witcher-3","elden-ring","rdr2","cyberpunk-2077","minecraft"],
     why: ["适合想要自由扮演、奇幻世界探索和自己找目标的玩家。"],
     notFor: ["不适合想要紧凑剧情和现代动作手感的玩家。"],
     similar: ["巫师3", "辐射4", "艾尔登法环"]
@@ -212,7 +212,7 @@ export const games: Game[] = [
     tags: ["story", "heavy_text", "dialogue", "detective", "roleplay", "philosophical", "no_combat"],
     antiTags: ["no_heavy_text", "needs_action", "needs_fast_feedback"],
     discriminatorTags: ["no_combat_text_roleplay","internal_voice_skill_dialogue","detective_philosophical_investigation"],
-    confusableWith: ["baldurs-gate-3","life-is-strange","return-of-obra-dinn"],
+    confusableWith: ["baldurs-gate-3","life-is-strange","return-of-obra-dinn","detroit-become-human"],
     why: ["适合想要大量文本、人格扮演、对话推理和文学感的玩家。"],
     notFor: ["不适合讨厌阅读或想要战斗爽感的玩家。"],
     similar: ["博德之门3", "公民沉睡者"]
@@ -236,7 +236,7 @@ export const games: Game[] = [
     tags: ["story", "cinematic", "action_combat", "fantasy", "epic", "character_drama", "solo", "combat_mastery"],
     antiTags: ["no_cinematic", "needs_open_world", "no_action"],
     discriminatorTags: ["cinematic_action_jrpg","setpiece_driven_fantasy_drama","solo_character_combat_spectacle"],
-    confusableWith: ["hades","rdr2","witcher-3","star-rail"],
+    confusableWith: ["hades","rdr2","witcher-3","star-rail","detroit-become-human"],
     why: ["适合想要史诗演出、角色命运和动作战斗结合的玩家。"],
     notFor: ["不适合想要高自由探索或纯系统玩法的玩家。"],
     similar: ["最终幻想 VII 重制版", "巫师3"]
@@ -284,7 +284,7 @@ export const games: Game[] = [
     tags: ["exploration", "mystery", "knowledge_progression", "space", "puzzle", "discovery", "no_combat"],
     antiTags: ["needs_clear_objectives", "no_exploration", "no_mystery"],
     discriminatorTags: ["knowledge_gated_space_mystery","time_loop_environmental_discovery","no_combat_curiosity_progression"],
-    confusableWith: ["zelda-botw","animal-well","tunic","return-of-obra-dinn"],
+    confusableWith: ["zelda-botw","animal-well","tunic","return-of-obra-dinn","portal-2"],
     why: ["适合想要靠知识推进、探索宇宙谜团和自我发现的玩家。"],
     notFor: ["不适合非常依赖任务标记和明确指引的玩家。"],
     similar: ["遗忘之城", "塞尔达传说：旷野之息"]
@@ -296,7 +296,7 @@ export const games: Game[] = [
     tags: ["deckbuilder", "roguelike", "planning", "run_based", "risk_reward", "low_reflex", "system_mastery", "optimization"],
     antiTags: ["needs_story", "needs_action", "no_failure_retry"],
     discriminatorTags: ["deckbuilder_path_relic_runs","turn_planning_risk_reward","low_reflex_card_optimization"],
-    confusableWith: ["monster-train","balatro","inscryption","into-the-breach"],
+    confusableWith: ["monster-train","balatro","inscryption","into-the-breach","hades"],
     why: ["适合想要牌组、路线、遗物和风险取舍的玩家。"],
     notFor: ["不适合想要强剧情演出或实时动作的玩家。"],
     similar: ["怪物火车", "Balatro", "邪恶冥刻"]
@@ -308,7 +308,7 @@ export const games: Game[] = [
     tags: ["deckbuilder", "poker", "combo", "short_session", "multiplier", "run_based", "system_mastery"],
     antiTags: ["needs_story", "no_card_logic"],
     discriminatorTags: ["poker_hand_multiplier_combo","short_run_score_explosion","joker_synergy_deckbuilder"],
-    confusableWith: ["slay-the-spire","vampire-survivors","tetris-effect"],
+    confusableWith: ["slay-the-spire","vampire-survivors","tetris-effect","monster-train"],
     why: ["适合想要短局扑克牌型、倍率爆炸和连锁构筑爽感的玩家。"],
     notFor: ["不适合想要剧情、角色或长线冒险的玩家。"],
     similar: ["杀戮尖塔", "吸血鬼幸存者"]
@@ -380,7 +380,7 @@ export const games: Game[] = [
     tags: ["tactics", "puzzle_strategy", "turn_based", "perfect_information", "short_session", "planning"],
     antiTags: ["needs_story", "needs_random_growth"],
     discriminatorTags: ["perfect_information_tactics_puzzle","short_grid_turn_scenarios","push_pull_damage_forecasting"],
-    confusableWith: ["slay-the-spire","monster-train","civilization-vi","baba-is-you"],
+    confusableWith: ["slay-the-spire","monster-train","civilization-vi","baba-is-you","plants-vs-zombies"],
     why: ["适合想要短局战棋、完美信息和解题式战术判断的玩家。"],
     notFor: ["不适合想要角色剧情或长期养成的玩家。"],
     similar: ["XCOM", "杀戮尖塔"]
@@ -392,7 +392,7 @@ export const games: Game[] = [
     tags: ["farming", "life_sim", "cozy", "routine", "relationship", "collection", "low_pressure"],
     antiTags: ["needs_fast_feedback", "no_repetition", "no_cozy"],
     discriminatorTags: ["farm_day_routine_relationships","cozy_long_term_village_growth","mining_fishing_calendar_balance"],
-    confusableWith: ["story-of-seasons","coral-island","animal-crossing","dave-the-diver"],
+    confusableWith: ["story-of-seasons","coral-island","animal-crossing","dave-the-diver","rimworld","sky","spiritfarer","the-sims-4"],
     why: ["适合想要农场日程、村民关系、钓鱼采矿和长期秩序成形的玩家。"],
     notFor: ["不适合讨厌重复日程和慢节奏经营的玩家。"],
     similar: ["牧场物语", "珊瑚岛", "动物森友会"]
@@ -404,7 +404,7 @@ export const games: Game[] = [
     tags: ["cozy", "decoration", "collection", "daily_routine", "island_design", "low_pressure", "self_expression"],
     antiTags: ["needs_challenge", "needs_fast_feedback", "no_daily_routine"],
     discriminatorTags: ["real_time_island_decoration","furniture_collection_self_expression","low_pressure_daily_social_space"],
-    confusableWith: ["stardew-valley","the-sims-4","unpacking","sky"],
+    confusableWith: ["stardew-valley","the-sims-4","unpacking","sky","story-of-seasons"],
     why: ["适合想要岛屿装修、家具收集和低压陪伴的玩家。"],
     notFor: ["不适合想要强挑战和明确目标的玩家。"],
     similar: ["星露谷物语", "模拟人生4"]
@@ -442,7 +442,7 @@ export const games: Game[] = [
     discriminatorTags: ["farewell_emotional_cozy_management","boat_crafting_character_care","gentle_grief_story_loop"],
     confusableWith: ["stardew-valley","life-is-strange","unpacking","dave-the-diver"],
     why: ["适合想要温柔经营、陪伴角色告别和轻度制作的玩家。"],
-    notFor: ["不适合不想要伤感叙事的玩家。"],
+    notFor: ["不适合不想要伤感叙事、告别主题或慢节奏角色陪伴的玩家。"],
     similar: ["星露谷物语", "Unpacking"]
   },
   {
@@ -488,7 +488,7 @@ export const games: Game[] = [
     tags: ["sandbox", "building", "survival", "creative", "exploration", "self_directed", "crafting"],
     antiTags: ["needs_clear_objectives", "no_sandbox", "no_building"],
     discriminatorTags: ["block_building_survival_creative","self_directed_voxel_sandbox","craft_mine_build_any_goal"],
-    confusableWith: ["terraria","palworld","the-sims-4","skyrim"],
+    confusableWith: ["terraria","palworld","the-sims-4","skyrim","dont-starve"],
     why: ["适合想要自由建造、探索、制作和自己定义目标的玩家。"],
     notFor: ["不适合强依赖任务指引和线性流程的玩家。"],
     similar: ["泰拉瑞亚", "幻兽帕鲁"]
@@ -500,7 +500,7 @@ export const games: Game[] = [
     tags: ["sandbox", "crafting", "exploration", "boss_progression", "gear_growth", "2d_action", "building"],
     antiTags: ["needs_clear_objectives", "no_action", "no_sandbox"],
     discriminatorTags: ["2d_sandbox_boss_progression","gear_growth_biome_exploration","crafting_action_side_view"],
-    confusableWith: ["minecraft","palworld","animal-well"],
+    confusableWith: ["minecraft","palworld","animal-well","dont-starve"],
     why: ["适合想要 2D 沙盒探索、装备成长、Boss 推进和建造的玩家。"],
     notFor: ["不适合讨厌自我探索和战斗成长的玩家。"],
     similar: ["我的世界", "星界边境"]
@@ -524,7 +524,7 @@ export const games: Game[] = [
     tags: ["colony_sim", "emergent_story", "resource_management", "survival", "systemic", "high_complexity", "solo"],
     antiTags: ["no_complex_system", "low_pressure", "needs_short_session"],
     discriminatorTags: ["colony_story_generator_systems","pawn_needs_crisis_chain","resource_management_emergent_failure"],
-    confusableWith: ["dont-starve","civilization-vi","factorio","stardew-valley"],
+    confusableWith: ["dont-starve","civilization-vi","factorio","stardew-valley","dyson-sphere-program"],
     why: ["适合想要殖民地管理、突发故事和系统连锁反应的玩家。"],
     notFor: ["不适合讨厌复杂系统和崩盘压力的玩家。"],
     similar: ["矮人要塞", "饥荒", "环世界"]
@@ -572,7 +572,7 @@ export const games: Game[] = [
     tags: ["fixed_coop", "party", "time_pressure", "coordination", "cooking", "short_session", "chaos_fun", "coop", "teamwork", "fast_feedback"],
     antiTags: ["solo_only", "no_time_pressure", "no_coop"],
     discriminatorTags: ["cooperative_kitchen_time_pressure","communication_coordination_chaos","short_stage_role_switching"],
-    confusableWith: ["it-takes-two","super-mario-party","human-fall-flat"],
+    confusableWith: ["it-takes-two","super-mario-party","human-fall-flat","eggy-party"],
     why: ["适合想要朋友合作、厨房分工、时间压力和混乱笑点的玩家。"],
     notFor: ["不适合讨厌合作压力和临场混乱的玩家。"],
     similar: ["速速上菜", "双人成行"]
@@ -586,7 +586,7 @@ export const games: Game[] = [
     discriminatorTags: ["ugc_party_obstacle_courses","cute_multiplayer_short_rounds","chaotic_social_mobile_party"],
     confusableWith: ["super-mario-party","human-fall-flat","overcooked-2"],
     why: ["适合想要短局派对、轻松混乱、UGC 关卡和社交传播的玩家。"],
-    notFor: ["不适合只想深度单机体验的玩家。"],
+    notFor: ["不适合只想深度单机体验、讨厌多人混乱或轻量社交关卡的玩家。"],
     similar: ["Fall Guys", "超级马力欧派对"]
   },
   {
@@ -608,7 +608,7 @@ export const games: Game[] = [
     tags: ["physics_comedy", "coop", "puzzle_platforming", "chaos_fun", "short_session", "low_pressure"],
     antiTags: ["needs_precision", "solo_only", "no_chaos"],
     discriminatorTags: ["wobbly_physics_coop_comedy","sandbox_puzzle_platform_mischief","low_precision_friend_chaos"],
-    confusableWith: ["it-takes-two","overcooked-2","eggy-party"],
+    confusableWith: ["it-takes-two","overcooked-2","eggy-party","sky"],
     why: ["适合想要物理搞笑、朋友互坑和轻解谜的玩家。"],
     notFor: ["不适合想要精密操作和严肃叙事的玩家。"],
     similar: ["双人成行", "胡闹厨房2"]
@@ -644,7 +644,7 @@ export const games: Game[] = [
     tags: ["puzzle", "logic", "rule_manipulation", "high_difficulty", "system_mastery", "low_reflex"],
     antiTags: ["low_pressure_only", "needs_story", "no_hard_puzzle"],
     discriminatorTags: ["rule_manipulation_logic_language","abstract_hard_puzzle_breakthrough","systemic_word_rules_reasoning"],
-    confusableWith: ["portal-2","into-the-breach","inscryption","return-of-obra-dinn"],
+    confusableWith: ["portal-2","into-the-breach","inscryption","return-of-obra-dinn","monument-valley-2"],
     why: ["适合想要规则语言、逻辑推导和高难解谜的玩家。"],
     notFor: ["不适合讨厌卡关和抽象逻辑的玩家。"],
     similar: ["Patrick's Parabox", "塔罗斯的法则"]
@@ -668,7 +668,7 @@ export const games: Game[] = [
     tags: ["deduction", "mystery", "observation", "logic", "no_combat", "slow_thinking", "detective"],
     antiTags: ["needs_action", "no_deduction", "needs_clear_solution"],
     discriminatorTags: ["deduction_identity_logic_grid","observation_reconstruct_deaths","monochrome_detective_no_combat"],
-    confusableWith: ["outer-wilds","disco-elysium","baba-is-you","portal-2"],
+    confusableWith: ["outer-wilds","disco-elysium","baba-is-you","portal-2","inscryption"],
     why: ["适合想要观察证据、推理身份和还原事件真相的玩家。"],
     notFor: ["不适合想要动作、即时反馈或明确提示的玩家。"],
     similar: ["黄金偶像案", "Her Story"]
@@ -682,7 +682,7 @@ export const games: Game[] = [
     discriminatorTags: ["compact_secret_dense_metroidvania","hidden_rule_discovery_puzzlebox","mysterious_nonverbal_exploration"],
     confusableWith: ["tunic","outer-wilds","terraria","zelda-botw"],
     why: ["适合想要紧凑地图、神秘探索和发现隐藏规则的玩家。"],
-    notFor: ["不适合非常依赖任务指引的玩家。"],
+    notFor: ["不适合非常依赖任务指引、明确目标或不喜欢隐藏规则探索的玩家。"],
     similar: ["Tunic", "空洞骑士"]
   },
   {

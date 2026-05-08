@@ -163,6 +163,38 @@ Metadata validation warnings:
 
 Warnings are diagnostic only and do not fail the command. Errors fail the command.
 
+## v0.2.1 Metadata Hygiene
+
+Branch:
+- `mini-v0.2.1-metadata-hygiene`
+
+Scope:
+- Clean metadata warnings only.
+- Do not modify `src/lib/gameseek/scoring.ts`.
+- Do not modify `src/lib/gameseek/questions.ts`.
+- Do not modify `src/lib/gameseek/goldenSeeds.ts`.
+- Do not change recommendation behavior intentionally.
+
+Data hygiene actions:
+- Make `confusableWith` relations bidirectional where metadata validation reports one-way links.
+- Expand short `notFor` copy only when it triggers `notFor_too_short`.
+- Leave metadata warning rule logic unchanged unless a warning is proven to be a false positive.
+
+Target verification:
+- `metadata errors = 0`
+- `metadata warnings = 0`
+- `Top6Recall = 1`
+- `goldenSeeds.ts` has no diff after `npm.cmd run seed:golden`
+- `scoring.ts` has no diff
+
+Verified result:
+- `metadata errors = 0`
+- `metadata warnings = 0`
+- `Top6Recall = 1`
+- `failures = []`
+- `goldenSeeds.ts` had no diff after `npm.cmd run seed:golden`
+- `scoring.ts` had no diff
+
 ## Regression Report Diagnostics
 
 `npm.cmd run test:gameseek` keeps the v0.1 pass/fail thresholds and adds v0.2 diagnostic sections.
