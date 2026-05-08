@@ -15,6 +15,8 @@ export type Game = {
   cluster: GameCluster;
   tags: string[];
   antiTags: string[];
+  discriminatorTags: string[];
+  confusableWith: string[];
   why: string[];
   notFor: string[];
   similar: string[];
