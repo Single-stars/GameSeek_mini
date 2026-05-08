@@ -405,3 +405,87 @@ Remaining diagnostics:
 - `12` Top6 failures remain in generated-seed regression.
 - All are classified as `confusable_game_suppression`.
 - This is above the v0.3 first-round threshold and should be used as input for later sub-cluster tuning rather than solved by changing the algorithm.
+
+## v0.3.1 Strategy Buildcraft Diagnostics
+
+Date:
+- `2026-05-08`
+
+Branch:
+- `mini-v0.3.1-strategy-buildcraft-diagnostics`
+
+Base branch:
+- `mini-v0.3-strategy-buildcraft-expansion`
+
+Base commit:
+- `ced2343 Expand GameSeek v0.3 strategy buildcraft cluster`
+
+Scope:
+- Diagnostics only.
+- Do not expand the game pool.
+- Do not modify `src/lib/gameseek/scoring.ts`.
+- Do not modify `src/lib/gameseek/questions.ts`.
+- Do not modify API route or API contract.
+- Do not tune tags / antiTags.
+- Do not hand-edit golden seed answers.
+
+Files changed:
+- `scripts/diagnose-strategy-buildcraft.ts`
+- `reports/v0.3.1-strategy-buildcraft-diagnostics.json`
+- `reports/v0.3.1-strategy-buildcraft-diagnostics.md`
+- `docs/MINI_V031_DIAGNOSTICS.md`
+- `docs/ITERATION_LOG.md`
+
+Method:
+- Added a read-only diagnostic script.
+- The script reuses `rankAll` from `src/lib/gameseek/scoring.ts`.
+- The script reads existing `games`, `goldenSeeds`, and `questions`.
+- The script does not copy or reimplement scoring.
+- The script outputs JSON and Markdown reports.
+
+Diagnostic scope:
+- Include failures where target cluster is `strategy_buildcraft`.
+- Also include failures where the Top6 contains v0.3-added `strategy_buildcraft` candidates.
+- This captures all current `12` Top6 failures while separating strategy target failures from expansion side effects.
+
+Diagnostic output:
+- `totalGames`: `80`
+- `strategyBuildcraftGames`: `28`
+- `allTop6Failures`: `12`
+- `strategyTargetFailures`: `9`
+- `failuresWithV03StrategyCandidates`: `12`
+
+Failure reason distribution:
+- `candidate_metadata_too_broad`: `5`
+- `question_space_insufficient`: `4`
+- `confusable_games_under_suppressed`: `3`
+
+Key findings:
+- All 12 Top6 failures have at least one v0.3-added strategy candidate above target.
+- 9 failures are target-cluster strategy failures.
+- 3 failures are non-strategy targets suppressed by the strategy expansion.
+- The report separates diagnostic finding from recommended action for each failed seed.
+
+Recommended v0.3.2 direction:
+- Do not start with `scoring.ts`.
+- First inspect `candidate_metadata_too_broad` failures.
+- Then inspect `question_space_insufficient` failures as evidence for possible v0.4 question-space work.
+- Treat `confusable_games_under_suppressed` as metadata / confusableWith review before any algorithmic suppression.
+
+Verification:
+- `npx.cmd tsx scripts/diagnose-strategy-buildcraft.ts`
+- `npm.cmd run test:gameseek`
+- `npm.cmd run test:gameseek:metadata`
+- `npm.cmd run test:gameseek:api`
+- `npm.cmd run build`
+- `git diff -- src/lib/gameseek/scoring.ts`
+- `git diff -- src/lib/gameseek/questions.ts`
+- `git status --short`
+
+Expected result:
+- `test:gameseek` remains passed.
+- Metadata validation remains `errors = 0`, `warnings = 0`.
+- API tests pass.
+- Build passes.
+- `scoring.ts` has no diff.
+- `questions.ts` has no diff.

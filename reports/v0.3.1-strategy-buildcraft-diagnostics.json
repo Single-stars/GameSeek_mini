@@ -1,0 +1,3514 @@
+{
+  "generatedAt": "2026-05-08T14:11:58.715Z",
+  "scope": {
+    "branch": "mini-v0.3.1-strategy-buildcraft-diagnostics",
+    "primaryCluster": "strategy_buildcraft",
+    "note": "Includes all Top6 failures whose target is strategy_buildcraft or whose Top6 contains a v0.3 added strategy_buildcraft candidate.",
+    "noAlgorithmChange": true,
+    "scoringReused": "rankAll from src/lib/gameseek/scoring.ts"
+  },
+  "summary": {
+    "totalGames": 80,
+    "strategyBuildcraftGames": 28,
+    "allTop6Failures": 12,
+    "strategyTargetFailures": 9,
+    "failuresWithV03StrategyCandidates": 12
+  },
+  "failureReasonCounts": {
+    "candidate_metadata_too_broad": 5,
+    "question_space_insufficient": 4,
+    "confusable_games_under_suppressed": 3
+  },
+  "failures": [
+    {
+      "seedId": "seed-detroit-become-human",
+      "targetGameId": "detroit-become-human",
+      "targetTitle": "底特律：化身为人",
+      "targetRank": 7,
+      "targetScore": 50,
+      "targetMatchedTags": [
+        "interactive_movie",
+        "choice_consequence",
+        "cinematic",
+        "branching_story",
+        "solo"
+      ],
+      "top6": [
+        {
+          "rank": 1,
+          "gameId": "spiritfarer",
+          "title": "Spiritfarer",
+          "score": 68,
+          "scoreDeltaVsTarget": 18,
+          "matchedTags": [
+            "cozy",
+            "management",
+            "crafting",
+            "low_pressure",
+            "character_bond"
+          ],
+          "blockedBy": [
+            "management"
+          ],
+          "sharedTags": [],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": false,
+          "primaryCluster": "cozy_management",
+          "secondaryClusters": [
+            "city_colony_management",
+            "narrative_strategy"
+          ]
+        },
+        {
+          "rank": 2,
+          "gameId": "rimworld",
+          "title": "RimWorld",
+          "score": 68,
+          "scoreDeltaVsTarget": 18,
+          "matchedTags": [
+            "colony_sim",
+            "resource_management",
+            "survival",
+            "systemic",
+            "solo"
+          ],
+          "blockedBy": [
+            "high_complexity"
+          ],
+          "sharedTags": [
+            "solo"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": false,
+          "primaryCluster": "sandbox_factory",
+          "secondaryClusters": [
+            "city_colony_management"
+          ]
+        },
+        {
+          "rank": 3,
+          "gameId": "final-fantasy-xvi",
+          "title": "最终幻想 XVI",
+          "score": 60,
+          "scoreDeltaVsTarget": 10,
+          "matchedTags": [
+            "story",
+            "cinematic",
+            "action_combat",
+            "solo",
+            "combat_mastery"
+          ],
+          "blockedBy": [],
+          "sharedTags": [
+            "cinematic",
+            "solo"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": true,
+          "isV03AddedStrategyGame": false,
+          "primaryCluster": "narrative_roleplay",
+          "secondaryClusters": [
+            "narrative_strategy"
+          ]
+        },
+        {
+          "rank": 4,
+          "gameId": "dome-keeper",
+          "title": "穹顶守护者",
+          "score": 60,
+          "scoreDeltaVsTarget": 10,
+          "matchedTags": [
+            "resource_management",
+            "short_session",
+            "planning",
+            "survival",
+            "fast_feedback"
+          ],
+          "blockedBy": [],
+          "sharedTags": [],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": true,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "city_colony_management",
+            "defense_survival",
+            "short_loop"
+          ]
+        },
+        {
+          "rank": 5,
+          "gameId": "frostpunk",
+          "title": "冰汽时代",
+          "score": 58,
+          "scoreDeltaVsTarget": 8,
+          "matchedTags": [
+            "survival",
+            "resource_pressure",
+            "planning",
+            "story",
+            "management"
+          ],
+          "blockedBy": [
+            "management"
+          ],
+          "sharedTags": [],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": true,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "city_colony_management",
+            "narrative_strategy"
+          ]
+        },
+        {
+          "rank": 6,
+          "gameId": "oxygen-not-included",
+          "title": "缺氧",
+          "score": 56,
+          "scoreDeltaVsTarget": 6,
+          "matchedTags": [
+            "colony_sim",
+            "systemic",
+            "survival",
+            "optimization",
+            "automation",
+            "long_session"
+          ],
+          "blockedBy": [
+            "optimization",
+            "high_complexity"
+          ],
+          "sharedTags": [],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": true,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "city_colony_management",
+            "factory_automation"
+          ]
+        }
+      ],
+      "targetTags": [
+        "interactive_movie",
+        "choice_consequence",
+        "cinematic",
+        "branching_story",
+        "sci_fi",
+        "low_execution",
+        "solo"
+      ],
+      "targetDiscriminatorTags": [
+        "interactive_movie_branching_choices",
+        "cinematic_choice_consequence",
+        "low_execution_sci_fi_drama"
+      ],
+      "targetConfusableWith": [
+        "life-is-strange",
+        "final-fantasy-xvi",
+        "disco-elysium"
+      ],
+      "targetPrimaryCluster": "narrative_roleplay",
+      "targetSecondaryClusters": [
+        "narrative_strategy"
+      ],
+      "selectedAnswerTags": [
+        "action_combat",
+        "aim",
+        "anime",
+        "automation",
+        "battle_royale",
+        "branching_story",
+        "character_bond",
+        "character_collection",
+        "choice_consequence",
+        "cinematic",
+        "cinematic_choice",
+        "collection",
+        "colony_sim",
+        "combat_mastery",
+        "combo",
+        "cozy",
+        "crafting",
+        "dialogue",
+        "discovery",
+        "factory",
+        "failure_pressure",
+        "fast_feedback",
+        "heavy_text",
+        "hero_shooter",
+        "hype",
+        "immersion",
+        "interactive_movie",
+        "knowledge_progression",
+        "long_session",
+        "long_term",
+        "low_pressure",
+        "macro_planning",
+        "management",
+        "melee_action",
+        "mini_games",
+        "mystery",
+        "optimization",
+        "optional_social",
+        "party",
+        "philosophical",
+        "physics",
+        "planning",
+        "puzzle",
+        "reflex",
+        "resource_chain",
+        "resource_management",
+        "resource_pressure",
+        "short_session",
+        "slow_burn",
+        "solo",
+        "spatial_logic",
+        "story",
+        "survival",
+        "systemic",
+        "team_building"
+      ],
+      "selectedAntiTags": [
+        "collection",
+        "high_complexity",
+        "long_term",
+        "macro_planning",
+        "management",
+        "optimization",
+        "routine"
+      ],
+      "targetDiscriminatorTagsExpressedByAnswers": [],
+      "targetDiscriminatorTagsMissingFromAnswers": [
+        "interactive_movie_branching_choices",
+        "cinematic_choice_consequence",
+        "low_execution_sci_fi_drama"
+      ],
+      "v03StrategyCandidatesInTop6": [
+        "dome-keeper",
+        "frostpunk",
+        "oxygen-not-included"
+      ],
+      "confusableCandidatesInTop6": [
+        "final-fantasy-xvi"
+      ],
+      "likelyFailureReason": "candidate_metadata_too_broad",
+      "diagnosticFinding": "Top6 contains 3 v0.3 added strategy games above the target, indicating broad candidate tags are still pulling unrelated seeds upward.",
+      "recommendedAction": "For v0.3.2, review the candidates above the target and remove only demonstrably over-broad scoring tags from those candidates.",
+      "includedBecause": [
+        "top6_contains_v0.3_strategy_candidate"
+      ]
+    },
+    {
+      "seedId": "seed-balatro",
+      "targetGameId": "balatro",
+      "targetTitle": "Balatro",
+      "targetRank": 8,
+      "targetScore": 70,
+      "targetMatchedTags": [
+        "deckbuilder",
+        "short_session",
+        "run_based",
+        "system_mastery"
+      ],
+      "top6": [
+        {
+          "rank": 1,
+          "gameId": "overcooked-2",
+          "title": "胡闹厨房2",
+          "score": 100,
+          "scoreDeltaVsTarget": 30,
+          "matchedTags": [
+            "fixed_coop",
+            "party",
+            "short_session",
+            "chaos_fun",
+            "coop",
+            "teamwork",
+            "fast_feedback"
+          ],
+          "blockedBy": [],
+          "sharedTags": [
+            "short_session"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": false,
+          "primaryCluster": "coop_party",
+          "secondaryClusters": [
+            "short_loop"
+          ]
+        },
+        {
+          "rank": 2,
+          "gameId": "loop-hero",
+          "title": "循环英雄",
+          "score": 90,
+          "scoreDeltaVsTarget": 20,
+          "matchedTags": [
+            "run_based",
+            "resource_management",
+            "planning",
+            "system_mastery",
+            "short_session"
+          ],
+          "blockedBy": [],
+          "sharedTags": [
+            "run_based",
+            "short_session",
+            "system_mastery"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": true,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "city_colony_management",
+            "deckbuilder_roguelike",
+            "short_loop"
+          ]
+        },
+        {
+          "rank": 3,
+          "gameId": "super-mario-party",
+          "title": "超级马力欧派对",
+          "score": 90,
+          "scoreDeltaVsTarget": 20,
+          "matchedTags": [
+            "party",
+            "local_multiplayer",
+            "mini_games",
+            "short_session",
+            "randomness"
+          ],
+          "blockedBy": [],
+          "sharedTags": [
+            "short_session"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": false,
+          "primaryCluster": "coop_party",
+          "secondaryClusters": [
+            "short_loop"
+          ]
+        },
+        {
+          "rank": 4,
+          "gameId": "backpack-hero",
+          "title": "背包英雄",
+          "score": 88,
+          "scoreDeltaVsTarget": 18,
+          "matchedTags": [
+            "planning",
+            "run_based",
+            "optimization",
+            "short_session",
+            "system_mastery"
+          ],
+          "blockedBy": [
+            "optimization"
+          ],
+          "sharedTags": [
+            "combo",
+            "run_based",
+            "short_session",
+            "system_mastery"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": true,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "deckbuilder_roguelike",
+            "short_loop"
+          ]
+        },
+        {
+          "rank": 5,
+          "gameId": "griftlands",
+          "title": "欺诈之地",
+          "score": 80,
+          "scoreDeltaVsTarget": 10,
+          "matchedTags": [
+            "deckbuilder",
+            "story",
+            "dialogue",
+            "choice_consequence",
+            "run_based",
+            "planning",
+            "character_bond"
+          ],
+          "blockedBy": [],
+          "sharedTags": [
+            "deckbuilder",
+            "run_based"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": true,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "deckbuilder_roguelike",
+            "narrative_strategy"
+          ]
+        },
+        {
+          "rank": 6,
+          "gameId": "dome-keeper",
+          "title": "穹顶守护者",
+          "score": 80,
+          "scoreDeltaVsTarget": 10,
+          "matchedTags": [
+            "tower_defense",
+            "resource_management",
+            "short_session",
+            "planning",
+            "fast_feedback"
+          ],
+          "blockedBy": [],
+          "sharedTags": [
+            "short_session"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": true,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "city_colony_management",
+            "defense_survival",
+            "short_loop"
+          ]
+        }
+      ],
+      "targetTags": [
+        "deckbuilder",
+        "poker",
+        "combo",
+        "short_session",
+        "multiplier",
+        "run_based",
+        "system_mastery"
+      ],
+      "targetDiscriminatorTags": [
+        "poker_hand_multiplier_combo",
+        "short_run_score_explosion",
+        "joker_synergy_deckbuilder"
+      ],
+      "targetConfusableWith": [
+        "slay-the-spire",
+        "vampire-survivors",
+        "tetris-effect",
+        "monster-train",
+        "dicey-dungeons",
+        "peglin"
+      ],
+      "targetPrimaryCluster": "strategy_buildcraft",
+      "targetSecondaryClusters": [
+        "deckbuilder_roguelike",
+        "short_loop"
+      ],
+      "selectedAnswerTags": [
+        "4x_strategy",
+        "action_combat",
+        "auto_attack",
+        "automation",
+        "battle_royale",
+        "branching_story",
+        "buildcraft",
+        "chaos_fun",
+        "character_bond",
+        "choice_consequence",
+        "cinematic",
+        "cinematic_choice",
+        "colony_sim",
+        "coop",
+        "cozy",
+        "crafting",
+        "deckbuilder",
+        "dialogue",
+        "discovery",
+        "empire_building",
+        "factory",
+        "fast_feedback",
+        "fixed_coop",
+        "heavy_text",
+        "hype",
+        "interactive_movie",
+        "knowledge_progression",
+        "lane_strategy",
+        "local_multiplayer",
+        "low_pressure",
+        "macro_planning",
+        "management",
+        "mini_games",
+        "mystery",
+        "optimization",
+        "party",
+        "perfect_information",
+        "philosophical",
+        "physics",
+        "planning",
+        "puzzle",
+        "puzzle_platforming",
+        "randomness",
+        "resource_chain",
+        "resource_management",
+        "run_based",
+        "short_session",
+        "spatial_logic",
+        "story",
+        "strategy",
+        "system_mastery",
+        "systemic",
+        "teamwork",
+        "tower_defense",
+        "two_player"
+      ],
+      "selectedAntiTags": [
+        "collection",
+        "high_complexity",
+        "long_term",
+        "macro_planning",
+        "management",
+        "optimization",
+        "routine"
+      ],
+      "targetDiscriminatorTagsExpressedByAnswers": [],
+      "targetDiscriminatorTagsMissingFromAnswers": [
+        "poker_hand_multiplier_combo",
+        "short_run_score_explosion",
+        "joker_synergy_deckbuilder"
+      ],
+      "v03StrategyCandidatesInTop6": [
+        "loop-hero",
+        "backpack-hero",
+        "griftlands",
+        "dome-keeper"
+      ],
+      "confusableCandidatesInTop6": [],
+      "likelyFailureReason": "candidate_metadata_too_broad",
+      "diagnosticFinding": "Top6 contains 4 v0.3 added strategy games above the target, indicating broad candidate tags are still pulling unrelated seeds upward.",
+      "recommendedAction": "For v0.3.2, review the candidates above the target and remove only demonstrably over-broad scoring tags from those candidates.",
+      "includedBecause": [
+        "target_cluster_strategy_buildcraft",
+        "top6_contains_v0.3_strategy_candidate"
+      ]
+    },
+    {
+      "seedId": "seed-monster-train",
+      "targetGameId": "monster-train",
+      "targetTitle": "怪物火车",
+      "targetRank": 10,
+      "targetScore": 60,
+      "targetMatchedTags": [
+        "deckbuilder",
+        "lane_strategy",
+        "planning",
+        "solo"
+      ],
+      "top6": [
+        {
+          "rank": 1,
+          "gameId": "loop-hero",
+          "title": "循环英雄",
+          "score": 80,
+          "scoreDeltaVsTarget": 20,
+          "matchedTags": [
+            "resource_management",
+            "planning",
+            "system_mastery",
+            "short_session"
+          ],
+          "blockedBy": [],
+          "sharedTags": [
+            "low_reflex",
+            "planning",
+            "roguelike",
+            "run_based"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": true,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "city_colony_management",
+            "deckbuilder_roguelike",
+            "short_loop"
+          ]
+        },
+        {
+          "rank": 2,
+          "gameId": "griftlands",
+          "title": "欺诈之地",
+          "score": 80,
+          "scoreDeltaVsTarget": 20,
+          "matchedTags": [
+            "deckbuilder",
+            "story",
+            "dialogue",
+            "choice_consequence",
+            "planning",
+            "character_bond"
+          ],
+          "blockedBy": [],
+          "sharedTags": [
+            "deckbuilder",
+            "planning",
+            "roguelike",
+            "run_based"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": true,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "deckbuilder_roguelike",
+            "narrative_strategy"
+          ]
+        },
+        {
+          "rank": 3,
+          "gameId": "dome-keeper",
+          "title": "穹顶守护者",
+          "score": 80,
+          "scoreDeltaVsTarget": 20,
+          "matchedTags": [
+            "resource_management",
+            "short_session",
+            "planning",
+            "survival",
+            "fast_feedback"
+          ],
+          "blockedBy": [],
+          "sharedTags": [
+            "planning"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": true,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "city_colony_management",
+            "defense_survival",
+            "short_loop"
+          ]
+        },
+        {
+          "rank": 4,
+          "gameId": "slay-the-spire",
+          "title": "杀戮尖塔",
+          "score": 68,
+          "scoreDeltaVsTarget": 8,
+          "matchedTags": [
+            "deckbuilder",
+            "planning",
+            "system_mastery",
+            "optimization"
+          ],
+          "blockedBy": [
+            "optimization"
+          ],
+          "sharedTags": [
+            "deckbuilder",
+            "low_reflex",
+            "planning",
+            "roguelike",
+            "run_based"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": true,
+          "isV03AddedStrategyGame": false,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "deckbuilder_roguelike"
+          ]
+        },
+        {
+          "rank": 5,
+          "gameId": "frostpunk",
+          "title": "冰汽时代",
+          "score": 68,
+          "scoreDeltaVsTarget": 8,
+          "matchedTags": [
+            "survival",
+            "resource_pressure",
+            "planning",
+            "story",
+            "management"
+          ],
+          "blockedBy": [
+            "management"
+          ],
+          "sharedTags": [
+            "planning"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": true,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "city_colony_management",
+            "narrative_strategy"
+          ]
+        },
+        {
+          "rank": 6,
+          "gameId": "backpack-hero",
+          "title": "背包英雄",
+          "score": 68,
+          "scoreDeltaVsTarget": 8,
+          "matchedTags": [
+            "planning",
+            "optimization",
+            "short_session",
+            "system_mastery"
+          ],
+          "blockedBy": [
+            "optimization"
+          ],
+          "sharedTags": [
+            "combo",
+            "planning",
+            "roguelike",
+            "run_based"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": true,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "deckbuilder_roguelike",
+            "short_loop"
+          ]
+        }
+      ],
+      "targetTags": [
+        "deckbuilder",
+        "roguelike",
+        "lane_strategy",
+        "planning",
+        "combo",
+        "run_based",
+        "low_reflex",
+        "solo"
+      ],
+      "targetDiscriminatorTags": [
+        "lane_based_deckbuilder_defense",
+        "multi_floor_unit_positioning",
+        "roguelike_card_synergy_runs"
+      ],
+      "targetConfusableWith": [
+        "slay-the-spire",
+        "into-the-breach",
+        "balatro",
+        "wildfrost"
+      ],
+      "targetPrimaryCluster": "strategy_buildcraft",
+      "targetSecondaryClusters": [
+        "deckbuilder_roguelike"
+      ],
+      "selectedAnswerTags": [
+        "4x_strategy",
+        "action_combat",
+        "automation",
+        "battle_royale",
+        "branching_story",
+        "buildcraft",
+        "character_bond",
+        "choice_consequence",
+        "cinematic",
+        "cinematic_choice",
+        "colony_sim",
+        "cozy",
+        "crafting",
+        "deckbuilder",
+        "dialogue",
+        "discovery",
+        "empire_building",
+        "factory",
+        "failure_pressure",
+        "fast_feedback",
+        "heavy_text",
+        "hype",
+        "immersion",
+        "interactive_movie",
+        "knowledge_progression",
+        "lane_strategy",
+        "long_session",
+        "low_pressure",
+        "macro_planning",
+        "management",
+        "mini_games",
+        "mystery",
+        "optimization",
+        "optional_social",
+        "party",
+        "perfect_information",
+        "philosophical",
+        "physics",
+        "planning",
+        "puzzle",
+        "resource_chain",
+        "resource_management",
+        "resource_pressure",
+        "short_session",
+        "slow_burn",
+        "solo",
+        "spatial_logic",
+        "story",
+        "strategy",
+        "survival",
+        "system_mastery",
+        "systemic"
+      ],
+      "selectedAntiTags": [
+        "collection",
+        "high_complexity",
+        "long_term",
+        "macro_planning",
+        "management",
+        "optimization",
+        "routine"
+      ],
+      "targetDiscriminatorTagsExpressedByAnswers": [],
+      "targetDiscriminatorTagsMissingFromAnswers": [
+        "lane_based_deckbuilder_defense",
+        "multi_floor_unit_positioning",
+        "roguelike_card_synergy_runs"
+      ],
+      "v03StrategyCandidatesInTop6": [
+        "loop-hero",
+        "griftlands",
+        "dome-keeper",
+        "frostpunk",
+        "backpack-hero"
+      ],
+      "confusableCandidatesInTop6": [
+        "slay-the-spire"
+      ],
+      "likelyFailureReason": "candidate_metadata_too_broad",
+      "diagnosticFinding": "Top6 contains 5 v0.3 added strategy games above the target, indicating broad candidate tags are still pulling unrelated seeds upward.",
+      "recommendedAction": "For v0.3.2, review the candidates above the target and remove only demonstrably over-broad scoring tags from those candidates.",
+      "includedBecause": [
+        "target_cluster_strategy_buildcraft",
+        "top6_contains_v0.3_strategy_candidate"
+      ]
+    },
+    {
+      "seedId": "seed-into-the-breach",
+      "targetGameId": "into-the-breach",
+      "targetTitle": "Into the Breach",
+      "targetRank": 13,
+      "targetScore": 60,
+      "targetMatchedTags": [
+        "perfect_information",
+        "short_session",
+        "planning"
+      ],
+      "top6": [
+        {
+          "rank": 1,
+          "gameId": "dome-keeper",
+          "title": "穹顶守护者",
+          "score": 110,
+          "scoreDeltaVsTarget": 50,
+          "matchedTags": [
+            "tower_defense",
+            "resource_management",
+            "short_session",
+            "planning",
+            "survival",
+            "fast_feedback"
+          ],
+          "blockedBy": [],
+          "sharedTags": [
+            "planning",
+            "short_session"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": true,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "city_colony_management",
+            "defense_survival",
+            "short_loop"
+          ]
+        },
+        {
+          "rank": 2,
+          "gameId": "overcooked-2",
+          "title": "胡闹厨房2",
+          "score": 100,
+          "scoreDeltaVsTarget": 40,
+          "matchedTags": [
+            "fixed_coop",
+            "party",
+            "short_session",
+            "chaos_fun",
+            "coop",
+            "teamwork",
+            "fast_feedback"
+          ],
+          "blockedBy": [],
+          "sharedTags": [
+            "short_session"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": false,
+          "primaryCluster": "coop_party",
+          "secondaryClusters": [
+            "short_loop"
+          ]
+        },
+        {
+          "rank": 3,
+          "gameId": "loop-hero",
+          "title": "循环英雄",
+          "score": 90,
+          "scoreDeltaVsTarget": 30,
+          "matchedTags": [
+            "resource_management",
+            "planning",
+            "system_mastery",
+            "short_session"
+          ],
+          "blockedBy": [],
+          "sharedTags": [
+            "planning",
+            "short_session"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": true,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "city_colony_management",
+            "deckbuilder_roguelike",
+            "short_loop"
+          ]
+        },
+        {
+          "rank": 4,
+          "gameId": "super-mario-party",
+          "title": "超级马力欧派对",
+          "score": 90,
+          "scoreDeltaVsTarget": 30,
+          "matchedTags": [
+            "party",
+            "local_multiplayer",
+            "mini_games",
+            "short_session",
+            "randomness"
+          ],
+          "blockedBy": [],
+          "sharedTags": [
+            "short_session"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": false,
+          "primaryCluster": "coop_party",
+          "secondaryClusters": [
+            "short_loop"
+          ]
+        },
+        {
+          "rank": 5,
+          "gameId": "griftlands",
+          "title": "欺诈之地",
+          "score": 80,
+          "scoreDeltaVsTarget": 20,
+          "matchedTags": [
+            "deckbuilder",
+            "story",
+            "dialogue",
+            "choice_consequence",
+            "planning",
+            "character_bond"
+          ],
+          "blockedBy": [],
+          "sharedTags": [
+            "planning"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": true,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "deckbuilder_roguelike",
+            "narrative_strategy"
+          ]
+        },
+        {
+          "rank": 6,
+          "gameId": "backpack-hero",
+          "title": "背包英雄",
+          "score": 78,
+          "scoreDeltaVsTarget": 18,
+          "matchedTags": [
+            "planning",
+            "optimization",
+            "short_session",
+            "system_mastery"
+          ],
+          "blockedBy": [
+            "optimization"
+          ],
+          "sharedTags": [
+            "planning",
+            "short_session"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": true,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "deckbuilder_roguelike",
+            "short_loop"
+          ]
+        }
+      ],
+      "targetTags": [
+        "tactics",
+        "puzzle_strategy",
+        "turn_based",
+        "perfect_information",
+        "short_session",
+        "planning"
+      ],
+      "targetDiscriminatorTags": [
+        "perfect_information_tactics_puzzle",
+        "short_grid_turn_scenarios",
+        "push_pull_damage_forecasting"
+      ],
+      "targetConfusableWith": [
+        "slay-the-spire",
+        "monster-train",
+        "civilization-vi",
+        "baba-is-you",
+        "plants-vs-zombies",
+        "xcom-2",
+        "triangle-strategy"
+      ],
+      "targetPrimaryCluster": "strategy_buildcraft",
+      "targetSecondaryClusters": [
+        "short_loop",
+        "tactics_turn_based"
+      ],
+      "selectedAnswerTags": [
+        "4x_strategy",
+        "action_combat",
+        "auto_attack",
+        "automation",
+        "battle_royale",
+        "branching_story",
+        "buildcraft",
+        "chaos_fun",
+        "character_bond",
+        "choice_consequence",
+        "cinematic",
+        "cinematic_choice",
+        "colony_sim",
+        "coop",
+        "cozy",
+        "crafting",
+        "deckbuilder",
+        "dialogue",
+        "discovery",
+        "empire_building",
+        "factory",
+        "failure_pressure",
+        "fast_feedback",
+        "fixed_coop",
+        "heavy_text",
+        "hype",
+        "interactive_movie",
+        "knowledge_progression",
+        "lane_strategy",
+        "local_multiplayer",
+        "low_pressure",
+        "macro_planning",
+        "management",
+        "mini_games",
+        "mystery",
+        "optimization",
+        "party",
+        "perfect_information",
+        "philosophical",
+        "physics",
+        "planning",
+        "puzzle",
+        "puzzle_platforming",
+        "randomness",
+        "resource_chain",
+        "resource_management",
+        "resource_pressure",
+        "short_session",
+        "spatial_logic",
+        "story",
+        "strategy",
+        "survival",
+        "system_mastery",
+        "systemic",
+        "teamwork",
+        "tower_defense",
+        "two_player"
+      ],
+      "selectedAntiTags": [
+        "collection",
+        "high_complexity",
+        "long_term",
+        "macro_planning",
+        "management",
+        "optimization",
+        "routine"
+      ],
+      "targetDiscriminatorTagsExpressedByAnswers": [],
+      "targetDiscriminatorTagsMissingFromAnswers": [
+        "perfect_information_tactics_puzzle",
+        "short_grid_turn_scenarios",
+        "push_pull_damage_forecasting"
+      ],
+      "v03StrategyCandidatesInTop6": [
+        "dome-keeper",
+        "loop-hero",
+        "griftlands",
+        "backpack-hero"
+      ],
+      "confusableCandidatesInTop6": [],
+      "likelyFailureReason": "question_space_insufficient",
+      "diagnosticFinding": "The target only matched 3 scoring tags and none of its discriminatorTags are expressible by the current answer tags.",
+      "recommendedAction": "Do not force global scoring changes. If this pattern repeats, add a v0.4 strategy-specific follow-up question or make the generated seed more specific where the current 12 questions already allow it.",
+      "includedBecause": [
+        "target_cluster_strategy_buildcraft",
+        "top6_contains_v0.3_strategy_candidate"
+      ]
+    },
+    {
+      "seedId": "seed-age-of-empires-iv",
+      "targetGameId": "age-of-empires-iv",
+      "targetTitle": "帝国时代 IV",
+      "targetRank": 15,
+      "targetScore": 60,
+      "targetMatchedTags": [
+        "macro_planning",
+        "pvp",
+        "ranked",
+        "high_pressure",
+        "skill_mastery"
+      ],
+      "top6": [
+        {
+          "rank": 1,
+          "gameId": "slay-the-spire",
+          "title": "杀戮尖塔",
+          "score": 90,
+          "scoreDeltaVsTarget": 30,
+          "matchedTags": [
+            "deckbuilder",
+            "planning",
+            "system_mastery",
+            "optimization"
+          ],
+          "blockedBy": [],
+          "sharedTags": [],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": false,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "deckbuilder_roguelike"
+          ]
+        },
+        {
+          "rank": 2,
+          "gameId": "they-are-billions",
+          "title": "亿万僵尸",
+          "score": 90,
+          "scoreDeltaVsTarget": 30,
+          "matchedTags": [
+            "tower_defense",
+            "resource_management",
+            "planning",
+            "high_pressure",
+            "macro_planning"
+          ],
+          "blockedBy": [],
+          "sharedTags": [
+            "high_pressure",
+            "macro_planning",
+            "rts"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": true,
+          "isV03AddedStrategyGame": true,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "city_colony_management",
+            "defense_survival",
+            "rts_grand_strategy"
+          ]
+        },
+        {
+          "rank": 3,
+          "gameId": "loop-hero",
+          "title": "循环英雄",
+          "score": 90,
+          "scoreDeltaVsTarget": 30,
+          "matchedTags": [
+            "resource_management",
+            "planning",
+            "system_mastery",
+            "short_session"
+          ],
+          "blockedBy": [],
+          "sharedTags": [],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": true,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "city_colony_management",
+            "deckbuilder_roguelike",
+            "short_loop"
+          ]
+        },
+        {
+          "rank": 4,
+          "gameId": "backpack-hero",
+          "title": "背包英雄",
+          "score": 90,
+          "scoreDeltaVsTarget": 30,
+          "matchedTags": [
+            "planning",
+            "optimization",
+            "short_session",
+            "system_mastery"
+          ],
+          "blockedBy": [],
+          "sharedTags": [],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": true,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "deckbuilder_roguelike",
+            "short_loop"
+          ]
+        },
+        {
+          "rank": 5,
+          "gameId": "dome-keeper",
+          "title": "穹顶守护者",
+          "score": 90,
+          "scoreDeltaVsTarget": 30,
+          "matchedTags": [
+            "tower_defense",
+            "resource_management",
+            "short_session",
+            "planning",
+            "survival",
+            "fast_feedback"
+          ],
+          "blockedBy": [],
+          "sharedTags": [],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": true,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "city_colony_management",
+            "defense_survival",
+            "short_loop"
+          ]
+        },
+        {
+          "rank": 6,
+          "gameId": "oxygen-not-included",
+          "title": "缺氧",
+          "score": 80,
+          "scoreDeltaVsTarget": 20,
+          "matchedTags": [
+            "colony_sim",
+            "systemic",
+            "survival",
+            "optimization",
+            "automation"
+          ],
+          "blockedBy": [],
+          "sharedTags": [],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": true,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "city_colony_management",
+            "factory_automation"
+          ]
+        }
+      ],
+      "targetTags": [
+        "rts",
+        "macro_planning",
+        "pvp",
+        "ranked",
+        "economy_management",
+        "army_control",
+        "high_pressure",
+        "skill_mastery"
+      ],
+      "targetDiscriminatorTags": [
+        "real_time_economy_army_macro",
+        "civilization_matchup_build_orders",
+        "ranked_rts_micro_pressure"
+      ],
+      "targetConfusableWith": [
+        "they-are-billions",
+        "northgard",
+        "total-war-warhammer-iii",
+        "civilization-vi"
+      ],
+      "targetPrimaryCluster": "strategy_buildcraft",
+      "targetSecondaryClusters": [
+        "rts_grand_strategy"
+      ],
+      "selectedAnswerTags": [
+        "4x_strategy",
+        "auto_attack",
+        "automation",
+        "battle_royale",
+        "branching_story",
+        "buildcraft",
+        "character_bond",
+        "choice_consequence",
+        "cinematic",
+        "cinematic_choice",
+        "colony_sim",
+        "crafting",
+        "dark_fantasy",
+        "deckbuilder",
+        "dialogue",
+        "discovery",
+        "empire_building",
+        "factory",
+        "failure_pressure",
+        "fast_feedback",
+        "heavy_text",
+        "high_challenge",
+        "high_pressure",
+        "horror",
+        "interactive_movie",
+        "knowledge_progression",
+        "lane_strategy",
+        "macro_planning",
+        "management",
+        "mature_theme",
+        "mini_games",
+        "mystery",
+        "objective",
+        "optimization",
+        "perfect_information",
+        "philosophical",
+        "physics",
+        "planning",
+        "puzzle",
+        "pvp",
+        "ranked",
+        "resource_chain",
+        "resource_management",
+        "resource_pressure",
+        "short_session",
+        "skill_mastery",
+        "social_pressure",
+        "spatial_logic",
+        "story",
+        "strategy",
+        "survival",
+        "system_mastery",
+        "systemic",
+        "team",
+        "tower_defense"
+      ],
+      "selectedAntiTags": [
+        "collection",
+        "fixed_coop",
+        "long_term",
+        "management",
+        "routine",
+        "social_pressure",
+        "team"
+      ],
+      "targetDiscriminatorTagsExpressedByAnswers": [],
+      "targetDiscriminatorTagsMissingFromAnswers": [
+        "real_time_economy_army_macro",
+        "civilization_matchup_build_orders",
+        "ranked_rts_micro_pressure"
+      ],
+      "v03StrategyCandidatesInTop6": [
+        "they-are-billions",
+        "loop-hero",
+        "backpack-hero",
+        "dome-keeper",
+        "oxygen-not-included"
+      ],
+      "confusableCandidatesInTop6": [
+        "they-are-billions"
+      ],
+      "likelyFailureReason": "candidate_metadata_too_broad",
+      "diagnosticFinding": "Top6 contains 5 v0.3 added strategy games above the target, indicating broad candidate tags are still pulling unrelated seeds upward.",
+      "recommendedAction": "For v0.3.2, review the candidates above the target and remove only demonstrably over-broad scoring tags from those candidates.",
+      "includedBecause": [
+        "target_cluster_strategy_buildcraft",
+        "top6_contains_v0.3_strategy_candidate"
+      ]
+    },
+    {
+      "seedId": "seed-total-war-warhammer-iii",
+      "targetGameId": "total-war-warhammer-iii",
+      "targetTitle": "全面战争：战锤3",
+      "targetRank": 31,
+      "targetScore": 40,
+      "targetMatchedTags": [
+        "macro_planning",
+        "long_session",
+        "empire_building"
+      ],
+      "top6": [
+        {
+          "rank": 1,
+          "gameId": "oxygen-not-included",
+          "title": "缺氧",
+          "score": 90,
+          "scoreDeltaVsTarget": 50,
+          "matchedTags": [
+            "colony_sim",
+            "systemic",
+            "survival",
+            "optimization",
+            "automation",
+            "long_session"
+          ],
+          "blockedBy": [],
+          "sharedTags": [
+            "long_session"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": true,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "city_colony_management",
+            "factory_automation"
+          ]
+        },
+        {
+          "rank": 2,
+          "gameId": "slay-the-spire",
+          "title": "杀戮尖塔",
+          "score": 80,
+          "scoreDeltaVsTarget": 40,
+          "matchedTags": [
+            "deckbuilder",
+            "planning",
+            "system_mastery",
+            "optimization"
+          ],
+          "blockedBy": [],
+          "sharedTags": [],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": false,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "deckbuilder_roguelike"
+          ]
+        },
+        {
+          "rank": 3,
+          "gameId": "griftlands",
+          "title": "欺诈之地",
+          "score": 80,
+          "scoreDeltaVsTarget": 40,
+          "matchedTags": [
+            "deckbuilder",
+            "story",
+            "dialogue",
+            "choice_consequence",
+            "planning",
+            "character_bond"
+          ],
+          "blockedBy": [],
+          "sharedTags": [],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": true,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "deckbuilder_roguelike",
+            "narrative_strategy"
+          ]
+        },
+        {
+          "rank": 4,
+          "gameId": "northgard",
+          "title": "Northgard（北境之地）",
+          "score": 80,
+          "scoreDeltaVsTarget": 40,
+          "matchedTags": [
+            "resource_management",
+            "survival",
+            "macro_planning",
+            "planning"
+          ],
+          "blockedBy": [],
+          "sharedTags": [
+            "macro_planning"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": true,
+          "isV03AddedStrategyGame": true,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "city_colony_management",
+            "rts_grand_strategy"
+          ]
+        },
+        {
+          "rank": 5,
+          "gameId": "outer-wilds",
+          "title": "星际拓荒",
+          "score": 70,
+          "scoreDeltaVsTarget": 30,
+          "matchedTags": [
+            "exploration",
+            "mystery",
+            "knowledge_progression",
+            "puzzle",
+            "discovery"
+          ],
+          "blockedBy": [],
+          "sharedTags": [],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": false,
+          "primaryCluster": "narrative_roleplay",
+          "secondaryClusters": []
+        },
+        {
+          "rank": 6,
+          "gameId": "civilization-vi",
+          "title": "文明6",
+          "score": 70,
+          "scoreDeltaVsTarget": 30,
+          "matchedTags": [
+            "4x_strategy",
+            "long_session",
+            "macro_planning",
+            "empire_building",
+            "optimization"
+          ],
+          "blockedBy": [],
+          "sharedTags": [
+            "empire_building",
+            "long_session",
+            "macro_planning",
+            "turn_based"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": true,
+          "isV03AddedStrategyGame": false,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "rts_grand_strategy",
+            "tactics_turn_based"
+          ]
+        }
+      ],
+      "targetTags": [
+        "grand_strategy",
+        "tactics",
+        "fantasy",
+        "army_control",
+        "macro_planning",
+        "turn_based",
+        "long_session",
+        "empire_building"
+      ],
+      "targetDiscriminatorTags": [
+        "campaign_map_plus_real_time_battles",
+        "fantasy_faction_army_rosters",
+        "grand_strategy_tactical_spectacle"
+      ],
+      "targetConfusableWith": [
+        "age-of-empires-iv",
+        "northgard",
+        "xcom-2",
+        "triangle-strategy",
+        "civilization-vi"
+      ],
+      "targetPrimaryCluster": "strategy_buildcraft",
+      "targetSecondaryClusters": [
+        "rts_grand_strategy",
+        "tactics_turn_based"
+      ],
+      "selectedAnswerTags": [
+        "4x_strategy",
+        "action_combat",
+        "automation",
+        "battle_royale",
+        "branching_story",
+        "buildcraft",
+        "character_bond",
+        "choice_consequence",
+        "cinematic",
+        "cinematic_choice",
+        "colony_sim",
+        "crafting",
+        "deckbuilder",
+        "dialogue",
+        "discovery",
+        "empire_building",
+        "exploration",
+        "factory",
+        "failure_pressure",
+        "fast_feedback",
+        "heavy_text",
+        "hype",
+        "immersion",
+        "interactive_movie",
+        "knowledge_progression",
+        "lane_strategy",
+        "long_session",
+        "low_guidance",
+        "macro_planning",
+        "management",
+        "mini_games",
+        "mystery",
+        "objective",
+        "optimization",
+        "party",
+        "perfect_information",
+        "philosophical",
+        "physics",
+        "planning",
+        "puzzle",
+        "pvp",
+        "ranked",
+        "resource_chain",
+        "resource_management",
+        "resource_pressure",
+        "self_directed",
+        "slow_burn",
+        "social_pressure",
+        "spatial_logic",
+        "story",
+        "strategy",
+        "survival",
+        "system_mastery",
+        "systemic",
+        "team"
+      ],
+      "selectedAntiTags": [
+        "collection",
+        "high_difficulty",
+        "high_pressure",
+        "long_term",
+        "management",
+        "routine",
+        "soulslike"
+      ],
+      "targetDiscriminatorTagsExpressedByAnswers": [],
+      "targetDiscriminatorTagsMissingFromAnswers": [
+        "campaign_map_plus_real_time_battles",
+        "fantasy_faction_army_rosters",
+        "grand_strategy_tactical_spectacle"
+      ],
+      "v03StrategyCandidatesInTop6": [
+        "oxygen-not-included",
+        "griftlands",
+        "northgard"
+      ],
+      "confusableCandidatesInTop6": [
+        "northgard",
+        "civilization-vi"
+      ],
+      "likelyFailureReason": "confusable_games_under_suppressed",
+      "diagnosticFinding": "Top6 contains 2 declared confusable games, so the current transparent tag ranking cannot separate close neighbors for this seed.",
+      "recommendedAction": "In v0.3.2, inspect the confusable relations first. Do not add algorithmic suppression yet; either tighten confusableWith or add a narrow seed/metadata distinction for the target.",
+      "includedBecause": [
+        "target_cluster_strategy_buildcraft",
+        "top6_contains_v0.3_strategy_candidate"
+      ]
+    },
+    {
+      "seedId": "seed-xcom-2",
+      "targetGameId": "xcom-2",
+      "targetTitle": "XCOM 2",
+      "targetRank": 11,
+      "targetScore": 60,
+      "targetMatchedTags": [
+        "planning",
+        "high_pressure",
+        "story"
+      ],
+      "top6": [
+        {
+          "rank": 1,
+          "gameId": "frostpunk",
+          "title": "冰汽时代",
+          "score": 90,
+          "scoreDeltaVsTarget": 30,
+          "matchedTags": [
+            "survival",
+            "resource_pressure",
+            "planning",
+            "high_pressure",
+            "story",
+            "management"
+          ],
+          "blockedBy": [],
+          "sharedTags": [
+            "high_pressure",
+            "planning",
+            "story"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": true,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "city_colony_management",
+            "narrative_strategy"
+          ]
+        },
+        {
+          "rank": 2,
+          "gameId": "dome-keeper",
+          "title": "穹顶守护者",
+          "score": 90,
+          "scoreDeltaVsTarget": 30,
+          "matchedTags": [
+            "tower_defense",
+            "resource_management",
+            "short_session",
+            "planning",
+            "survival",
+            "fast_feedback"
+          ],
+          "blockedBy": [],
+          "sharedTags": [
+            "planning"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": true,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "city_colony_management",
+            "defense_survival",
+            "short_loop"
+          ]
+        },
+        {
+          "rank": 3,
+          "gameId": "griftlands",
+          "title": "欺诈之地",
+          "score": 88,
+          "scoreDeltaVsTarget": 28,
+          "matchedTags": [
+            "deckbuilder",
+            "story",
+            "dialogue",
+            "choice_consequence",
+            "planning",
+            "character_bond"
+          ],
+          "blockedBy": [
+            "dialogue"
+          ],
+          "sharedTags": [
+            "planning",
+            "story"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": true,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "deckbuilder_roguelike",
+            "narrative_strategy"
+          ]
+        },
+        {
+          "rank": 4,
+          "gameId": "loop-hero",
+          "title": "循环英雄",
+          "score": 80,
+          "scoreDeltaVsTarget": 20,
+          "matchedTags": [
+            "resource_management",
+            "planning",
+            "system_mastery",
+            "short_session"
+          ],
+          "blockedBy": [],
+          "sharedTags": [
+            "planning"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": true,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "city_colony_management",
+            "deckbuilder_roguelike",
+            "short_loop"
+          ]
+        },
+        {
+          "rank": 5,
+          "gameId": "they-are-billions",
+          "title": "亿万僵尸",
+          "score": 78,
+          "scoreDeltaVsTarget": 18,
+          "matchedTags": [
+            "tower_defense",
+            "resource_management",
+            "planning",
+            "high_pressure",
+            "macro_planning"
+          ],
+          "blockedBy": [
+            "macro_planning"
+          ],
+          "sharedTags": [
+            "high_pressure",
+            "planning"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": true,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "city_colony_management",
+            "defense_survival",
+            "rts_grand_strategy"
+          ]
+        },
+        {
+          "rank": 6,
+          "gameId": "fire-emblem-engage",
+          "title": "火焰纹章 Engage",
+          "score": 70,
+          "scoreDeltaVsTarget": 10,
+          "matchedTags": [
+            "character_bond",
+            "planning",
+            "story"
+          ],
+          "blockedBy": [],
+          "sharedTags": [
+            "planning",
+            "story",
+            "tactics",
+            "turn_based"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": true,
+          "isV03AddedStrategyGame": true,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "narrative_strategy",
+            "tactics_turn_based"
+          ]
+        }
+      ],
+      "targetTags": [
+        "tactics",
+        "turn_based",
+        "squad_building",
+        "permadeath",
+        "planning",
+        "high_pressure",
+        "story",
+        "risk_reward"
+      ],
+      "targetDiscriminatorTags": [
+        "cover_based_squad_tactics",
+        "permadeath_soldier_attachment",
+        "strategic_base_guerrilla_campaign"
+      ],
+      "targetConfusableWith": [
+        "marvels-midnight-suns",
+        "fire-emblem-engage",
+        "tactics-ogre-reborn",
+        "triangle-strategy",
+        "into-the-breach",
+        "total-war-warhammer-iii"
+      ],
+      "targetPrimaryCluster": "strategy_buildcraft",
+      "targetSecondaryClusters": [
+        "narrative_strategy",
+        "tactics_turn_based"
+      ],
+      "selectedAnswerTags": [
+        "4x_strategy",
+        "auto_attack",
+        "automation",
+        "branching_story",
+        "buildcraft",
+        "character_bond",
+        "choice_consequence",
+        "cinematic",
+        "cinematic_choice",
+        "colony_sim",
+        "crafting",
+        "dark_fantasy",
+        "deckbuilder",
+        "dialogue",
+        "discovery",
+        "empire_building",
+        "factory",
+        "failure_pressure",
+        "fast_feedback",
+        "heavy_text",
+        "high_pressure",
+        "horror",
+        "immersion",
+        "interactive_movie",
+        "knowledge_progression",
+        "lane_strategy",
+        "macro_planning",
+        "management",
+        "mature_theme",
+        "mini_games",
+        "mystery",
+        "objective",
+        "optimization",
+        "perfect_information",
+        "philosophical",
+        "physics",
+        "planning",
+        "puzzle",
+        "pvp",
+        "ranked",
+        "resource_chain",
+        "resource_management",
+        "resource_pressure",
+        "roleplay",
+        "short_session",
+        "social_pressure",
+        "spatial_logic",
+        "story",
+        "strategy",
+        "survival",
+        "system_mastery",
+        "systemic",
+        "team",
+        "tower_defense"
+      ],
+      "selectedAntiTags": [
+        "cinematic_story",
+        "dialogue",
+        "heavy_text",
+        "high_complexity",
+        "macro_planning",
+        "optimization"
+      ],
+      "targetDiscriminatorTagsExpressedByAnswers": [],
+      "targetDiscriminatorTagsMissingFromAnswers": [
+        "cover_based_squad_tactics",
+        "permadeath_soldier_attachment",
+        "strategic_base_guerrilla_campaign"
+      ],
+      "v03StrategyCandidatesInTop6": [
+        "frostpunk",
+        "dome-keeper",
+        "griftlands",
+        "loop-hero",
+        "they-are-billions",
+        "fire-emblem-engage"
+      ],
+      "confusableCandidatesInTop6": [
+        "fire-emblem-engage"
+      ],
+      "likelyFailureReason": "question_space_insufficient",
+      "diagnosticFinding": "The target only matched 3 scoring tags and none of its discriminatorTags are expressible by the current answer tags.",
+      "recommendedAction": "Do not force global scoring changes. If this pattern repeats, add a v0.4 strategy-specific follow-up question or make the generated seed more specific where the current 12 questions already allow it.",
+      "includedBecause": [
+        "target_cluster_strategy_buildcraft",
+        "top6_contains_v0.3_strategy_candidate"
+      ]
+    },
+    {
+      "seedId": "seed-tactics-ogre-reborn",
+      "targetGameId": "tactics-ogre-reborn",
+      "targetTitle": "皇家骑士团：重生",
+      "targetRank": 19,
+      "targetScore": 60,
+      "targetMatchedTags": [
+        "story",
+        "planning",
+        "long_session"
+      ],
+      "top6": [
+        {
+          "rank": 1,
+          "gameId": "griftlands",
+          "title": "欺诈之地",
+          "score": 100,
+          "scoreDeltaVsTarget": 40,
+          "matchedTags": [
+            "deckbuilder",
+            "story",
+            "dialogue",
+            "choice_consequence",
+            "planning",
+            "character_bond"
+          ],
+          "blockedBy": [],
+          "sharedTags": [
+            "planning",
+            "story"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": true,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "deckbuilder_roguelike",
+            "narrative_strategy"
+          ]
+        },
+        {
+          "rank": 2,
+          "gameId": "oxygen-not-included",
+          "title": "缺氧",
+          "score": 90,
+          "scoreDeltaVsTarget": 30,
+          "matchedTags": [
+            "colony_sim",
+            "systemic",
+            "survival",
+            "optimization",
+            "automation",
+            "long_session"
+          ],
+          "blockedBy": [],
+          "sharedTags": [
+            "long_session"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": true,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "city_colony_management",
+            "factory_automation"
+          ]
+        },
+        {
+          "rank": 3,
+          "gameId": "slay-the-spire",
+          "title": "杀戮尖塔",
+          "score": 80,
+          "scoreDeltaVsTarget": 20,
+          "matchedTags": [
+            "deckbuilder",
+            "planning",
+            "system_mastery",
+            "optimization"
+          ],
+          "blockedBy": [],
+          "sharedTags": [
+            "planning"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": false,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "deckbuilder_roguelike"
+          ]
+        },
+        {
+          "rank": 4,
+          "gameId": "northgard",
+          "title": "Northgard（北境之地）",
+          "score": 80,
+          "scoreDeltaVsTarget": 20,
+          "matchedTags": [
+            "resource_management",
+            "survival",
+            "macro_planning",
+            "planning"
+          ],
+          "blockedBy": [],
+          "sharedTags": [
+            "planning"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": true,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "city_colony_management",
+            "rts_grand_strategy"
+          ]
+        },
+        {
+          "rank": 5,
+          "gameId": "civilization-vi",
+          "title": "文明6",
+          "score": 70,
+          "scoreDeltaVsTarget": 10,
+          "matchedTags": [
+            "4x_strategy",
+            "long_session",
+            "macro_planning",
+            "empire_building",
+            "optimization"
+          ],
+          "blockedBy": [],
+          "sharedTags": [
+            "long_session",
+            "turn_based"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": false,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "rts_grand_strategy",
+            "tactics_turn_based"
+          ]
+        },
+        {
+          "rank": 6,
+          "gameId": "they-are-billions",
+          "title": "亿万僵尸",
+          "score": 70,
+          "scoreDeltaVsTarget": 10,
+          "matchedTags": [
+            "resource_management",
+            "planning",
+            "macro_planning"
+          ],
+          "blockedBy": [],
+          "sharedTags": [
+            "planning"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": true,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "city_colony_management",
+            "defense_survival",
+            "rts_grand_strategy"
+          ]
+        }
+      ],
+      "targetTags": [
+        "tactics",
+        "turn_based",
+        "party_building",
+        "class_building",
+        "story",
+        "planning",
+        "long_session"
+      ],
+      "targetDiscriminatorTags": [
+        "isometric_class_tactics_campaign",
+        "political_branching_war_story",
+        "party_roster_job_builds"
+      ],
+      "targetConfusableWith": [
+        "xcom-2",
+        "fire-emblem-engage",
+        "triangle-strategy",
+        "marvels-midnight-suns"
+      ],
+      "targetPrimaryCluster": "strategy_buildcraft",
+      "targetSecondaryClusters": [
+        "narrative_strategy",
+        "tactics_turn_based"
+      ],
+      "selectedAnswerTags": [
+        "4x_strategy",
+        "action_combat",
+        "automation",
+        "battle_royale",
+        "branching_story",
+        "buildcraft",
+        "character_bond",
+        "choice_consequence",
+        "cinematic",
+        "cinematic_choice",
+        "colony_sim",
+        "crafting",
+        "deckbuilder",
+        "dialogue",
+        "discovery",
+        "empire_building",
+        "factory",
+        "failure_pressure",
+        "fast_feedback",
+        "heavy_text",
+        "hype",
+        "immersion",
+        "interactive_movie",
+        "knowledge_progression",
+        "lane_strategy",
+        "long_session",
+        "macro_planning",
+        "management",
+        "mini_games",
+        "mystery",
+        "objective",
+        "optimization",
+        "party",
+        "perfect_information",
+        "philosophical",
+        "physics",
+        "planning",
+        "puzzle",
+        "pvp",
+        "ranked",
+        "resource_chain",
+        "resource_management",
+        "resource_pressure",
+        "roleplay",
+        "slow_burn",
+        "social_pressure",
+        "spatial_logic",
+        "story",
+        "strategy",
+        "survival",
+        "system_mastery",
+        "systemic",
+        "team"
+      ],
+      "selectedAntiTags": [
+        "collection",
+        "fixed_coop",
+        "long_term",
+        "management",
+        "routine",
+        "social_pressure",
+        "team"
+      ],
+      "targetDiscriminatorTagsExpressedByAnswers": [],
+      "targetDiscriminatorTagsMissingFromAnswers": [
+        "isometric_class_tactics_campaign",
+        "political_branching_war_story",
+        "party_roster_job_builds"
+      ],
+      "v03StrategyCandidatesInTop6": [
+        "griftlands",
+        "oxygen-not-included",
+        "northgard",
+        "they-are-billions"
+      ],
+      "confusableCandidatesInTop6": [],
+      "likelyFailureReason": "question_space_insufficient",
+      "diagnosticFinding": "The target only matched 3 scoring tags and none of its discriminatorTags are expressible by the current answer tags.",
+      "recommendedAction": "Do not force global scoring changes. If this pattern repeats, add a v0.4 strategy-specific follow-up question or make the generated seed more specific where the current 12 questions already allow it.",
+      "includedBecause": [
+        "target_cluster_strategy_buildcraft",
+        "top6_contains_v0.3_strategy_candidate"
+      ]
+    },
+    {
+      "seedId": "seed-marvels-midnight-suns",
+      "targetGameId": "marvels-midnight-suns",
+      "targetTitle": "漫威暗夜之子",
+      "targetRank": 15,
+      "targetScore": 60,
+      "targetMatchedTags": [
+        "deckbuilder",
+        "planning",
+        "story"
+      ],
+      "top6": [
+        {
+          "rank": 1,
+          "gameId": "griftlands",
+          "title": "欺诈之地",
+          "score": 100,
+          "scoreDeltaVsTarget": 40,
+          "matchedTags": [
+            "deckbuilder",
+            "story",
+            "dialogue",
+            "choice_consequence",
+            "planning",
+            "character_bond"
+          ],
+          "blockedBy": [],
+          "sharedTags": [
+            "deckbuilder",
+            "planning",
+            "story"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": true,
+          "isV03AddedStrategyGame": true,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "deckbuilder_roguelike",
+            "narrative_strategy"
+          ]
+        },
+        {
+          "rank": 2,
+          "gameId": "dome-keeper",
+          "title": "穹顶守护者",
+          "score": 100,
+          "scoreDeltaVsTarget": 40,
+          "matchedTags": [
+            "tower_defense",
+            "resource_management",
+            "short_session",
+            "planning",
+            "survival",
+            "fast_feedback"
+          ],
+          "blockedBy": [],
+          "sharedTags": [
+            "planning"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": true,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "city_colony_management",
+            "defense_survival",
+            "short_loop"
+          ]
+        },
+        {
+          "rank": 3,
+          "gameId": "loop-hero",
+          "title": "循环英雄",
+          "score": 80,
+          "scoreDeltaVsTarget": 20,
+          "matchedTags": [
+            "resource_management",
+            "planning",
+            "system_mastery",
+            "short_session"
+          ],
+          "blockedBy": [],
+          "sharedTags": [
+            "planning"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": true,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "city_colony_management",
+            "deckbuilder_roguelike",
+            "short_loop"
+          ]
+        },
+        {
+          "rank": 4,
+          "gameId": "slay-the-spire",
+          "title": "杀戮尖塔",
+          "score": 68,
+          "scoreDeltaVsTarget": 8,
+          "matchedTags": [
+            "deckbuilder",
+            "planning",
+            "system_mastery",
+            "optimization"
+          ],
+          "blockedBy": [
+            "optimization"
+          ],
+          "sharedTags": [
+            "deckbuilder",
+            "planning"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": false,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "deckbuilder_roguelike"
+          ]
+        },
+        {
+          "rank": 5,
+          "gameId": "frostpunk",
+          "title": "冰汽时代",
+          "score": 68,
+          "scoreDeltaVsTarget": 8,
+          "matchedTags": [
+            "survival",
+            "resource_pressure",
+            "planning",
+            "story",
+            "management"
+          ],
+          "blockedBy": [
+            "management"
+          ],
+          "sharedTags": [
+            "planning",
+            "story"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": true,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "city_colony_management",
+            "narrative_strategy"
+          ]
+        },
+        {
+          "rank": 6,
+          "gameId": "they-are-billions",
+          "title": "亿万僵尸",
+          "score": 68,
+          "scoreDeltaVsTarget": 8,
+          "matchedTags": [
+            "tower_defense",
+            "resource_management",
+            "planning",
+            "macro_planning"
+          ],
+          "blockedBy": [
+            "macro_planning"
+          ],
+          "sharedTags": [
+            "planning"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": true,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "city_colony_management",
+            "defense_survival",
+            "rts_grand_strategy"
+          ]
+        }
+      ],
+      "targetTags": [
+        "card_game",
+        "deckbuilder",
+        "tactics",
+        "turn_based",
+        "superhero",
+        "relationship",
+        "planning",
+        "story"
+      ],
+      "targetDiscriminatorTags": [
+        "superhero_card_tactics",
+        "positioning_without_grid_cards",
+        "abbey_relationship_deck_unlocks"
+      ],
+      "targetConfusableWith": [
+        "xcom-2",
+        "fire-emblem-engage",
+        "tactics-ogre-reborn",
+        "triangle-strategy",
+        "griftlands"
+      ],
+      "targetPrimaryCluster": "strategy_buildcraft",
+      "targetSecondaryClusters": [
+        "deckbuilder_roguelike",
+        "narrative_strategy",
+        "tactics_turn_based"
+      ],
+      "selectedAnswerTags": [
+        "4x_strategy",
+        "action_combat",
+        "auto_attack",
+        "automation",
+        "battle_royale",
+        "branching_story",
+        "buildcraft",
+        "character_bond",
+        "choice_consequence",
+        "cinematic",
+        "cinematic_choice",
+        "colony_sim",
+        "crafting",
+        "deckbuilder",
+        "dialogue",
+        "discovery",
+        "empire_building",
+        "factory",
+        "failure_pressure",
+        "fast_feedback",
+        "heavy_text",
+        "hype",
+        "immersion",
+        "interactive_movie",
+        "knowledge_progression",
+        "lane_strategy",
+        "macro_planning",
+        "management",
+        "mini_games",
+        "mystery",
+        "objective",
+        "optimization",
+        "party",
+        "perfect_information",
+        "philosophical",
+        "physics",
+        "planning",
+        "puzzle",
+        "pvp",
+        "ranked",
+        "resource_chain",
+        "resource_management",
+        "resource_pressure",
+        "roleplay",
+        "short_session",
+        "social_pressure",
+        "spatial_logic",
+        "story",
+        "strategy",
+        "survival",
+        "system_mastery",
+        "systemic",
+        "team",
+        "tower_defense"
+      ],
+      "selectedAntiTags": [
+        "collection",
+        "high_complexity",
+        "long_term",
+        "macro_planning",
+        "management",
+        "optimization",
+        "routine"
+      ],
+      "targetDiscriminatorTagsExpressedByAnswers": [],
+      "targetDiscriminatorTagsMissingFromAnswers": [
+        "superhero_card_tactics",
+        "positioning_without_grid_cards",
+        "abbey_relationship_deck_unlocks"
+      ],
+      "v03StrategyCandidatesInTop6": [
+        "griftlands",
+        "dome-keeper",
+        "loop-hero",
+        "frostpunk",
+        "they-are-billions"
+      ],
+      "confusableCandidatesInTop6": [
+        "griftlands"
+      ],
+      "likelyFailureReason": "question_space_insufficient",
+      "diagnosticFinding": "The target only matched 3 scoring tags and none of its discriminatorTags are expressible by the current answer tags.",
+      "recommendedAction": "Do not force global scoring changes. If this pattern repeats, add a v0.4 strategy-specific follow-up question or make the generated seed more specific where the current 12 questions already allow it.",
+      "includedBecause": [
+        "target_cluster_strategy_buildcraft",
+        "top6_contains_v0.3_strategy_candidate"
+      ]
+    },
+    {
+      "seedId": "seed-dicey-dungeons",
+      "targetGameId": "dicey-dungeons",
+      "targetTitle": "骰子地下城",
+      "targetRank": 8,
+      "targetScore": 70,
+      "targetMatchedTags": [
+        "deckbuilder",
+        "run_based",
+        "short_session",
+        "system_mastery"
+      ],
+      "top6": [
+        {
+          "rank": 1,
+          "gameId": "loop-hero",
+          "title": "循环英雄",
+          "score": 90,
+          "scoreDeltaVsTarget": 20,
+          "matchedTags": [
+            "run_based",
+            "resource_management",
+            "planning",
+            "system_mastery",
+            "short_session"
+          ],
+          "blockedBy": [],
+          "sharedTags": [
+            "low_reflex",
+            "roguelike",
+            "run_based",
+            "short_session",
+            "system_mastery"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": true,
+          "isV03AddedStrategyGame": true,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "city_colony_management",
+            "deckbuilder_roguelike",
+            "short_loop"
+          ]
+        },
+        {
+          "rank": 2,
+          "gameId": "backpack-hero",
+          "title": "背包英雄",
+          "score": 88,
+          "scoreDeltaVsTarget": 18,
+          "matchedTags": [
+            "planning",
+            "run_based",
+            "optimization",
+            "short_session",
+            "system_mastery"
+          ],
+          "blockedBy": [
+            "optimization"
+          ],
+          "sharedTags": [
+            "combo",
+            "roguelike",
+            "run_based",
+            "short_session",
+            "system_mastery"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": true,
+          "isV03AddedStrategyGame": true,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "deckbuilder_roguelike",
+            "short_loop"
+          ]
+        },
+        {
+          "rank": 3,
+          "gameId": "griftlands",
+          "title": "欺诈之地",
+          "score": 80,
+          "scoreDeltaVsTarget": 10,
+          "matchedTags": [
+            "deckbuilder",
+            "story",
+            "dialogue",
+            "choice_consequence",
+            "run_based",
+            "planning",
+            "character_bond"
+          ],
+          "blockedBy": [],
+          "sharedTags": [
+            "deckbuilder",
+            "roguelike",
+            "run_based"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": true,
+          "isV03AddedStrategyGame": true,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "deckbuilder_roguelike",
+            "narrative_strategy"
+          ]
+        },
+        {
+          "rank": 4,
+          "gameId": "dome-keeper",
+          "title": "穹顶守护者",
+          "score": 80,
+          "scoreDeltaVsTarget": 10,
+          "matchedTags": [
+            "tower_defense",
+            "resource_management",
+            "short_session",
+            "planning",
+            "fast_feedback"
+          ],
+          "blockedBy": [],
+          "sharedTags": [
+            "short_session"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": true,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "city_colony_management",
+            "defense_survival",
+            "short_loop"
+          ]
+        },
+        {
+          "rank": 5,
+          "gameId": "slay-the-spire",
+          "title": "杀戮尖塔",
+          "score": 78,
+          "scoreDeltaVsTarget": 8,
+          "matchedTags": [
+            "deckbuilder",
+            "planning",
+            "run_based",
+            "system_mastery",
+            "optimization"
+          ],
+          "blockedBy": [
+            "optimization"
+          ],
+          "sharedTags": [
+            "deckbuilder",
+            "low_reflex",
+            "roguelike",
+            "run_based",
+            "system_mastery"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": true,
+          "isV03AddedStrategyGame": false,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "deckbuilder_roguelike"
+          ]
+        },
+        {
+          "rank": 6,
+          "gameId": "honor-of-kings",
+          "title": "王者荣耀",
+          "score": 70,
+          "scoreDeltaVsTarget": 0,
+          "matchedTags": [
+            "pvp",
+            "team",
+            "ranked",
+            "short_session",
+            "social_pressure",
+            "hype"
+          ],
+          "blockedBy": [],
+          "sharedTags": [
+            "short_session"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": false,
+          "primaryCluster": "competitive_pvp",
+          "secondaryClusters": [
+            "short_loop"
+          ]
+        }
+      ],
+      "targetTags": [
+        "deckbuilder",
+        "dice",
+        "roguelike",
+        "run_based",
+        "combo",
+        "short_session",
+        "system_mastery",
+        "low_reflex"
+      ],
+      "targetDiscriminatorTags": [
+        "dice_value_combo_runs",
+        "character_rule_variant_deckbuilder",
+        "short_random_tactical_puzzle"
+      ],
+      "targetConfusableWith": [
+        "slay-the-spire",
+        "balatro",
+        "wildfrost",
+        "griftlands",
+        "peglin",
+        "loop-hero",
+        "backpack-hero"
+      ],
+      "targetPrimaryCluster": "strategy_buildcraft",
+      "targetSecondaryClusters": [
+        "deckbuilder_roguelike",
+        "short_loop"
+      ],
+      "selectedAnswerTags": [
+        "4x_strategy",
+        "action_combat",
+        "auto_attack",
+        "automation",
+        "battle_royale",
+        "branching_story",
+        "buildcraft",
+        "character_bond",
+        "choice_consequence",
+        "cinematic",
+        "cinematic_choice",
+        "colony_sim",
+        "cozy",
+        "crafting",
+        "deckbuilder",
+        "dialogue",
+        "discovery",
+        "empire_building",
+        "factory",
+        "fast_feedback",
+        "heavy_text",
+        "hype",
+        "interactive_movie",
+        "knowledge_progression",
+        "lane_strategy",
+        "low_pressure",
+        "macro_planning",
+        "management",
+        "mini_games",
+        "mystery",
+        "objective",
+        "optimization",
+        "party",
+        "perfect_information",
+        "philosophical",
+        "physics",
+        "planning",
+        "puzzle",
+        "pvp",
+        "ranked",
+        "resource_chain",
+        "resource_management",
+        "run_based",
+        "short_session",
+        "social_pressure",
+        "spatial_logic",
+        "story",
+        "strategy",
+        "system_mastery",
+        "systemic",
+        "team",
+        "tower_defense"
+      ],
+      "selectedAntiTags": [
+        "collection",
+        "high_complexity",
+        "long_term",
+        "macro_planning",
+        "management",
+        "optimization",
+        "routine"
+      ],
+      "targetDiscriminatorTagsExpressedByAnswers": [],
+      "targetDiscriminatorTagsMissingFromAnswers": [
+        "dice_value_combo_runs",
+        "character_rule_variant_deckbuilder",
+        "short_random_tactical_puzzle"
+      ],
+      "v03StrategyCandidatesInTop6": [
+        "loop-hero",
+        "backpack-hero",
+        "griftlands",
+        "dome-keeper"
+      ],
+      "confusableCandidatesInTop6": [
+        "loop-hero",
+        "backpack-hero",
+        "griftlands",
+        "slay-the-spire"
+      ],
+      "likelyFailureReason": "confusable_games_under_suppressed",
+      "diagnosticFinding": "Top6 contains 4 declared confusable games, so the current transparent tag ranking cannot separate close neighbors for this seed.",
+      "recommendedAction": "In v0.3.2, inspect the confusable relations first. Do not add algorithmic suppression yet; either tighten confusableWith or add a narrow seed/metadata distinction for the target.",
+      "includedBecause": [
+        "target_cluster_strategy_buildcraft",
+        "top6_contains_v0.3_strategy_candidate"
+      ]
+    },
+    {
+      "seedId": "seed-dyson-sphere-program",
+      "targetGameId": "dyson-sphere-program",
+      "targetTitle": "戴森球计划",
+      "targetRank": 9,
+      "targetScore": 70,
+      "targetMatchedTags": [
+        "factory",
+        "automation",
+        "macro_planning",
+        "resource_chain",
+        "optimization"
+      ],
+      "top6": [
+        {
+          "rank": 1,
+          "gameId": "oxygen-not-included",
+          "title": "缺氧",
+          "score": 90,
+          "scoreDeltaVsTarget": 20,
+          "matchedTags": [
+            "colony_sim",
+            "systemic",
+            "survival",
+            "optimization",
+            "automation",
+            "long_session"
+          ],
+          "blockedBy": [],
+          "sharedTags": [
+            "automation",
+            "optimization"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": true,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "city_colony_management",
+            "factory_automation"
+          ]
+        },
+        {
+          "rank": 2,
+          "gameId": "overcooked-2",
+          "title": "胡闹厨房2",
+          "score": 80,
+          "scoreDeltaVsTarget": 10,
+          "matchedTags": [
+            "fixed_coop",
+            "party",
+            "short_session",
+            "chaos_fun",
+            "coop",
+            "teamwork",
+            "fast_feedback"
+          ],
+          "blockedBy": [],
+          "sharedTags": [],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": false,
+          "primaryCluster": "coop_party",
+          "secondaryClusters": [
+            "short_loop"
+          ]
+        },
+        {
+          "rank": 3,
+          "gameId": "anno-1800",
+          "title": "纪元1800",
+          "score": 78,
+          "scoreDeltaVsTarget": 8,
+          "matchedTags": [
+            "resource_chain",
+            "optimization",
+            "macro_planning",
+            "empire_building",
+            "long_session",
+            "management"
+          ],
+          "blockedBy": [
+            "management"
+          ],
+          "sharedTags": [
+            "macro_planning",
+            "optimization",
+            "resource_chain"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": true,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "city_colony_management",
+            "factory_automation",
+            "rts_grand_strategy"
+          ]
+        },
+        {
+          "rank": 4,
+          "gameId": "civilization-vi",
+          "title": "文明6",
+          "score": 70,
+          "scoreDeltaVsTarget": 0,
+          "matchedTags": [
+            "4x_strategy",
+            "long_session",
+            "macro_planning",
+            "empire_building",
+            "optimization"
+          ],
+          "blockedBy": [],
+          "sharedTags": [
+            "macro_planning",
+            "optimization"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": true,
+          "isV03AddedStrategyGame": false,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "rts_grand_strategy",
+            "tactics_turn_based"
+          ]
+        },
+        {
+          "rank": 5,
+          "gameId": "backpack-hero",
+          "title": "背包英雄",
+          "score": 70,
+          "scoreDeltaVsTarget": 0,
+          "matchedTags": [
+            "planning",
+            "combo",
+            "optimization",
+            "short_session",
+            "system_mastery"
+          ],
+          "blockedBy": [],
+          "sharedTags": [
+            "optimization"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": true,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "deckbuilder_roguelike",
+            "short_loop"
+          ]
+        },
+        {
+          "rank": 6,
+          "gameId": "dome-keeper",
+          "title": "穹顶守护者",
+          "score": 70,
+          "scoreDeltaVsTarget": 0,
+          "matchedTags": [
+            "resource_management",
+            "short_session",
+            "planning",
+            "survival",
+            "fast_feedback"
+          ],
+          "blockedBy": [],
+          "sharedTags": [],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": true,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "city_colony_management",
+            "defense_survival",
+            "short_loop"
+          ]
+        }
+      ],
+      "targetTags": [
+        "factory",
+        "automation",
+        "macro_planning",
+        "resource_chain",
+        "sci_fi",
+        "optimization"
+      ],
+      "targetDiscriminatorTags": [
+        "interplanetary_factory_logistics",
+        "macro_scale_resource_chains",
+        "sci_fi_automation_expansion"
+      ],
+      "targetConfusableWith": [
+        "factorio",
+        "civilization-vi",
+        "rimworld"
+      ],
+      "targetPrimaryCluster": "sandbox_factory",
+      "targetSecondaryClusters": [
+        "factory_automation",
+        "rts_grand_strategy"
+      ],
+      "selectedAnswerTags": [
+        "4x_strategy",
+        "action_combat",
+        "aim",
+        "automation",
+        "battle_royale",
+        "branching_story",
+        "chaos_fun",
+        "character_bond",
+        "choice_consequence",
+        "cinematic",
+        "cinematic_choice",
+        "colony_sim",
+        "combat_mastery",
+        "combo",
+        "coop",
+        "cozy",
+        "crafting",
+        "dialogue",
+        "discovery",
+        "empire_building",
+        "factory",
+        "failure_pressure",
+        "fast_feedback",
+        "fixed_coop",
+        "heavy_text",
+        "hero_shooter",
+        "hype",
+        "immersion",
+        "interactive_movie",
+        "knowledge_progression",
+        "local_multiplayer",
+        "long_session",
+        "low_pressure",
+        "macro_planning",
+        "management",
+        "melee_action",
+        "mini_games",
+        "mystery",
+        "optimization",
+        "party",
+        "perfect_information",
+        "philosophical",
+        "physics",
+        "planning",
+        "puzzle",
+        "puzzle_platforming",
+        "randomness",
+        "reflex",
+        "resource_chain",
+        "resource_management",
+        "resource_pressure",
+        "short_session",
+        "slow_burn",
+        "spatial_logic",
+        "story",
+        "survival",
+        "system_mastery",
+        "systemic",
+        "teamwork",
+        "two_player"
+      ],
+      "selectedAntiTags": [
+        "collection",
+        "high_difficulty",
+        "high_pressure",
+        "long_term",
+        "management",
+        "routine",
+        "soulslike"
+      ],
+      "targetDiscriminatorTagsExpressedByAnswers": [],
+      "targetDiscriminatorTagsMissingFromAnswers": [
+        "interplanetary_factory_logistics",
+        "macro_scale_resource_chains",
+        "sci_fi_automation_expansion"
+      ],
+      "v03StrategyCandidatesInTop6": [
+        "oxygen-not-included",
+        "anno-1800",
+        "backpack-hero",
+        "dome-keeper"
+      ],
+      "confusableCandidatesInTop6": [
+        "civilization-vi"
+      ],
+      "likelyFailureReason": "candidate_metadata_too_broad",
+      "diagnosticFinding": "Top6 contains 4 v0.3 added strategy games above the target, indicating broad candidate tags are still pulling unrelated seeds upward.",
+      "recommendedAction": "For v0.3.2, review the candidates above the target and remove only demonstrably over-broad scoring tags from those candidates.",
+      "includedBecause": [
+        "top6_contains_v0.3_strategy_candidate"
+      ]
+    },
+    {
+      "seedId": "seed-plants-vs-zombies",
+      "targetGameId": "plants-vs-zombies",
+      "targetTitle": "植物大战僵尸",
+      "targetRank": 8,
+      "targetScore": 60,
+      "targetMatchedTags": [
+        "tower_defense",
+        "short_session",
+        "fast_feedback",
+        "solo"
+      ],
+      "top6": [
+        {
+          "rank": 1,
+          "gameId": "dome-keeper",
+          "title": "穹顶守护者",
+          "score": 90,
+          "scoreDeltaVsTarget": 30,
+          "matchedTags": [
+            "tower_defense",
+            "resource_management",
+            "short_session",
+            "planning",
+            "survival",
+            "fast_feedback"
+          ],
+          "blockedBy": [],
+          "sharedTags": [
+            "fast_feedback",
+            "short_session",
+            "tower_defense"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": true,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "city_colony_management",
+            "defense_survival",
+            "short_loop"
+          ]
+        },
+        {
+          "rank": 2,
+          "gameId": "tetris-effect",
+          "title": "俄罗斯方块效应",
+          "score": 70,
+          "scoreDeltaVsTarget": 10,
+          "matchedTags": [
+            "short_session",
+            "puzzle",
+            "fast_feedback",
+            "low_pressure",
+            "reflex"
+          ],
+          "blockedBy": [],
+          "sharedTags": [
+            "fast_feedback",
+            "short_session"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": true,
+          "isV03AddedStrategyGame": false,
+          "primaryCluster": "short_loop_casual",
+          "secondaryClusters": [
+            "short_loop"
+          ]
+        },
+        {
+          "rank": 3,
+          "gameId": "spiritfarer",
+          "title": "Spiritfarer",
+          "score": 68,
+          "scoreDeltaVsTarget": 8,
+          "matchedTags": [
+            "cozy",
+            "management",
+            "crafting",
+            "low_pressure",
+            "character_bond"
+          ],
+          "blockedBy": [
+            "management"
+          ],
+          "sharedTags": [],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": false,
+          "primaryCluster": "cozy_management",
+          "secondaryClusters": [
+            "city_colony_management",
+            "narrative_strategy"
+          ]
+        },
+        {
+          "rank": 4,
+          "gameId": "rimworld",
+          "title": "RimWorld",
+          "score": 68,
+          "scoreDeltaVsTarget": 8,
+          "matchedTags": [
+            "colony_sim",
+            "resource_management",
+            "survival",
+            "systemic",
+            "solo"
+          ],
+          "blockedBy": [
+            "high_complexity"
+          ],
+          "sharedTags": [
+            "solo"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": false,
+          "primaryCluster": "sandbox_factory",
+          "secondaryClusters": [
+            "city_colony_management"
+          ]
+        },
+        {
+          "rank": 5,
+          "gameId": "final-fantasy-xvi",
+          "title": "最终幻想 XVI",
+          "score": 60,
+          "scoreDeltaVsTarget": 0,
+          "matchedTags": [
+            "story",
+            "cinematic",
+            "action_combat",
+            "solo",
+            "combat_mastery"
+          ],
+          "blockedBy": [],
+          "sharedTags": [
+            "solo"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": false,
+          "isV03AddedStrategyGame": false,
+          "primaryCluster": "narrative_roleplay",
+          "secondaryClusters": [
+            "narrative_strategy"
+          ]
+        },
+        {
+          "rank": 6,
+          "gameId": "vampire-survivors",
+          "title": "吸血鬼幸存者",
+          "score": 60,
+          "scoreDeltaVsTarget": 0,
+          "matchedTags": [
+            "short_session",
+            "auto_attack",
+            "fast_feedback",
+            "solo"
+          ],
+          "blockedBy": [],
+          "sharedTags": [
+            "fast_feedback",
+            "short_session",
+            "solo"
+          ],
+          "sharedDiscriminatorTags": [],
+          "confusableWithTarget": true,
+          "isV03AddedStrategyGame": false,
+          "primaryCluster": "strategy_buildcraft",
+          "secondaryClusters": [
+            "defense_survival",
+            "short_loop"
+          ]
+        }
+      ],
+      "targetTags": [
+        "tower_defense",
+        "short_session",
+        "light_strategy",
+        "cute",
+        "fast_feedback",
+        "accessible",
+        "solo"
+      ],
+      "targetDiscriminatorTags": [
+        "accessible_lane_tower_defense",
+        "short_level_light_strategy",
+        "cute_counter_unit_planning"
+      ],
+      "targetConfusableWith": [
+        "tetris-effect",
+        "vampire-survivors",
+        "into-the-breach"
+      ],
+      "targetPrimaryCluster": "short_loop_casual",
+      "targetSecondaryClusters": [
+        "defense_survival",
+        "short_loop"
+      ],
+      "selectedAnswerTags": [
+        "action_combat",
+        "aim",
+        "anime",
+        "auto_attack",
+        "automation",
+        "battle_royale",
+        "branching_story",
+        "character_bond",
+        "character_collection",
+        "choice_consequence",
+        "cinematic",
+        "cinematic_choice",
+        "collection",
+        "colony_sim",
+        "combat_mastery",
+        "combo",
+        "cozy",
+        "crafting",
+        "dialogue",
+        "discovery",
+        "factory",
+        "failure_pressure",
+        "fast_feedback",
+        "heavy_text",
+        "hero_shooter",
+        "hype",
+        "interactive_movie",
+        "knowledge_progression",
+        "long_term",
+        "low_pressure",
+        "macro_planning",
+        "management",
+        "melee_action",
+        "mini_games",
+        "mystery",
+        "optimization",
+        "optional_social",
+        "party",
+        "philosophical",
+        "physics",
+        "planning",
+        "puzzle",
+        "reflex",
+        "resource_chain",
+        "resource_management",
+        "resource_pressure",
+        "short_session",
+        "solo",
+        "spatial_logic",
+        "story",
+        "survival",
+        "systemic",
+        "team_building",
+        "tower_defense"
+      ],
+      "selectedAntiTags": [
+        "collection",
+        "high_complexity",
+        "long_term",
+        "macro_planning",
+        "management",
+        "optimization",
+        "routine"
+      ],
+      "targetDiscriminatorTagsExpressedByAnswers": [],
+      "targetDiscriminatorTagsMissingFromAnswers": [
+        "accessible_lane_tower_defense",
+        "short_level_light_strategy",
+        "cute_counter_unit_planning"
+      ],
+      "v03StrategyCandidatesInTop6": [
+        "dome-keeper"
+      ],
+      "confusableCandidatesInTop6": [
+        "tetris-effect",
+        "vampire-survivors"
+      ],
+      "likelyFailureReason": "confusable_games_under_suppressed",
+      "diagnosticFinding": "Top6 contains 2 declared confusable games, so the current transparent tag ranking cannot separate close neighbors for this seed.",
+      "recommendedAction": "In v0.3.2, inspect the confusable relations first. Do not add algorithmic suppression yet; either tighten confusableWith or add a narrow seed/metadata distinction for the target.",
+      "includedBecause": [
+        "top6_contains_v0.3_strategy_candidate"
+      ]
+    }
+  ]
+}
