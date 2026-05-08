@@ -4,6 +4,11 @@
 
 Mini v0.2 keeps the v0.1 recommendation behavior stable while adding structural metadata for future scaling and diagnostics.
 
+Project-level iteration record:
+- `docs/ITERATION_LOG.md`
+
+Future structural, generator, validation, or release changes must read `docs/ITERATION_LOG.md` before editing and must update it or the relevant linked phase document before the task is closed.
+
 This phase does not:
 - expand the 60-game pool
 - modify `src/lib/gameseek/scoring.ts`

@@ -4,6 +4,11 @@
 
 Goal: calibrate the existing 60-game Mini v0.2 pool until golden seed `Top6Recall` reaches `1.0`.
 
+Project-level iteration record:
+- `docs/ITERATION_LOG.md`
+
+Future calibration changes must read `docs/ITERATION_LOG.md` and this document before editing. After calibration, record the changed tags, affected seeds, verification output, and remaining risks in Markdown before closing the task.
+
 Allowed files for this calibration:
 - `src/lib/gameseek/games.ts`
 - `src/lib/gameseek/questions.ts`
