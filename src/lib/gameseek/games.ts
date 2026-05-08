@@ -1,0 +1,604 @@
+import type { Game } from "./types";
+
+export const games: Game[] = [
+  {
+    id: "honor-of-kings",
+    title: "王者荣耀",
+    cluster: "competitive_pvp",
+    tags: ["pvp", "moba", "team", "ranked", "short_session", "reflex", "social_pressure", "hype"],
+    antiTags: ["solo_only", "low_pressure", "no_pvp", "no_team_dependency"],
+    why: ["适合想要短局 5v5、团队配合、排位胜负反馈的玩家。"],
+    notFor: ["不适合只想单人低压、讨厌队友影响体验的玩家。"],
+    similar: ["英雄联盟手游", "Dota 2", "宝可梦大集结"]
+  },
+  {
+    id: "lol-wild-rift",
+    title: "英雄联盟手游",
+    cluster: "competitive_pvp",
+    tags: ["pvp", "moba", "team", "ranked", "lane_phase", "macro", "reflex", "high_pressure"],
+    antiTags: ["solo_only", "low_pressure", "no_pvp", "no_team_dependency"],
+    why: ["适合想要 MOBA 对线、团战、运营和排位成长的玩家。"],
+    notFor: ["不适合讨厌竞技压力和队友依赖的玩家。"],
+    similar: ["王者荣耀", "英雄联盟", "Dota 2"]
+  },
+  {
+    id: "valorant",
+    title: "VALORANT",
+    cluster: "competitive_pvp",
+    tags: ["pvp", "tactical_shooter", "ranked", "team", "aim", "low_ttk", "high_pressure", "skill_mastery", "reflex", "combat_mastery"],
+    antiTags: ["low_pressure", "no_pvp", "no_aim", "solo_only"],
+    why: ["适合想要枪法、技能配合、低容错爆破战术的玩家。"],
+    notFor: ["不适合讨厌瞄准、排位压力或队友沟通的玩家。"],
+    similar: ["CS2", "彩虹六号：围攻", "Apex Legends"]
+  },
+  {
+    id: "apex-legends",
+    title: "Apex Legends",
+    cluster: "competitive_pvp",
+    tags: ["pvp", "battle_royale", "team", "aim", "movement", "hero_skill", "high_pressure", "long_session"],
+    antiTags: ["low_pressure", "no_pvp", "no_aim", "solo_only"],
+    why: ["适合想要高机动英雄吃鸡、枪法身法和团队协同的玩家。"],
+    notFor: ["不适合讨厌长局淘汰压力和枪法要求的玩家。"],
+    similar: ["和平精英", "PUBG", "使命召唤：战区"]
+  },
+  {
+    id: "peace-elite",
+    title: "和平精英",
+    cluster: "competitive_pvp",
+    tags: ["pvp", "battle_royale", "team", "survival", "aim", "mobile_shooter", "high_pressure"],
+    antiTags: ["low_pressure", "no_pvp", "no_aim", "solo_only"],
+    why: ["适合想要移动端大逃杀、生存搜物资、组队吃鸡的玩家。"],
+    notFor: ["不适合只想轻松单机或讨厌被淘汰压力的玩家。"],
+    similar: ["Apex Legends", "PUBG", "使命召唤手游"]
+  },
+  {
+    id: "cs2",
+    title: "CS2",
+    cluster: "competitive_pvp",
+    tags: ["pvp", "tactical_shooter", "aim", "low_ttk", "economy_rounds", "ranked", "high_pressure", "reflex", "skill_mastery", "combat_mastery"],
+    antiTags: ["low_pressure", "no_pvp", "no_aim", "casual_only"],
+    why: ["适合想要纯枪法、投掷物、经济局和爆破战术的玩家。"],
+    notFor: ["不适合想要低压娱乐或讨厌高容错失败的玩家。"],
+    similar: ["VALORANT", "彩虹六号：围攻"]
+  },
+  {
+    id: "overwatch-2",
+    title: "守望先锋2",
+    cluster: "competitive_pvp",
+    tags: ["pvp", "hero_shooter", "team", "objective", "hero_skill", "fast_feedback", "social_pressure"],
+    antiTags: ["solo_only", "no_team_dependency", "no_pvp"],
+    why: ["适合想要英雄技能团战、目标点推进和团队角色配合的玩家。"],
+    notFor: ["不适合讨厌队友配合和多人压力的玩家。"],
+    similar: ["Apex Legends", "VALORANT", "The Finals"]
+  },
+  {
+    id: "naraka-bladepoint",
+    title: "永劫无间",
+    cluster: "competitive_pvp",
+    tags: ["pvp", "melee_action", "battle_royale", "timing", "combo", "high_pressure", "skill_mastery"],
+    antiTags: ["low_pressure", "no_pvp", "no_reflex"],
+    why: ["适合想要近战动作、博弈、连招和吃鸡淘汰压力的玩家。"],
+    notFor: ["不适合讨厌高压 PVP 和动作反应的玩家。"],
+    similar: ["Apex Legends", "只狼", "荣耀战魂"]
+  },
+  {
+    id: "genshin-impact",
+    title: "原神",
+    cluster: "open_world_explore",
+    tags: ["open_world", "exploration", "character_collection", "element_team_building", "anime", "long_term", "story", "cozy_adventure"],
+    antiTags: ["no_collection", "no_long_term", "no_gacha_like"],
+    why: ["适合想要角色收集、元素队伍构筑和版本化大地图探索的玩家。"],
+    notFor: ["不适合讨厌长期养成、收集和版本运营节奏的玩家。"],
+    similar: ["塞尔达传说：旷野之息", "崩坏：星穹铁道"]
+  },
+  {
+    id: "zelda-botw",
+    title: "塞尔达传说：旷野之息",
+    cluster: "open_world_explore",
+    tags: ["open_world", "physics_play", "free_solution", "exploration", "discovery", "low_guidance", "adventure"],
+    antiTags: ["needs_strong_story", "needs_clear_objectives"],
+    why: ["适合想要自由探索、物理互动、自己找解法的玩家。"],
+    notFor: ["不适合非常依赖强剧情和清晰任务指引的玩家。"],
+    similar: ["原神", "艾尔登法环", "Tunic"]
+  },
+  {
+    id: "elden-ring",
+    title: "艾尔登法环",
+    cluster: "open_world_explore",
+    tags: ["open_world", "soulslike", "high_difficulty", "dark_fantasy", "combat_mastery", "route_discovery", "high_pressure", "low_guidance"],
+    antiTags: ["low_pressure", "no_high_difficulty", "no_death_penalty"],
+    why: ["适合想要高难战斗、黑暗奇幻、路线发现和失败突破的玩家。"],
+    notFor: ["不适合讨厌受苦、死亡惩罚和高压战斗的玩家。"],
+    similar: ["黑暗之魂3", "塞尔达传说：旷野之息"]
+  },
+  {
+    id: "rdr2",
+    title: "荒野大镖客2",
+    cluster: "open_world_explore",
+    tags: ["open_world", "cinematic_story", "slow_burn", "immersion", "realistic_world", "travel_feeling", "character_story"],
+    antiTags: ["needs_fast_feedback", "no_slow_pace"],
+    why: ["适合想要写实世界、慢节奏旅途感和电影化叙事的玩家。"],
+    notFor: ["不适合只想短局快反馈或讨厌慢热节奏的玩家。"],
+    similar: ["巫师3", "赛博朋克2077", "GTA V"]
+  },
+  {
+    id: "cyberpunk-2077",
+    title: "赛博朋克2077",
+    cluster: "open_world_explore",
+    tags: ["open_world", "sci_fi", "first_person", "story", "buildcraft", "city_exploration", "cinematic"],
+    antiTags: ["no_mature_theme", "no_open_world"],
+    why: ["适合想要赛博都市、任务叙事、角色构筑和第一人称代入的玩家。"],
+    notFor: ["不适合讨厌开放世界任务和成人题材的玩家。"],
+    similar: ["巫师3", "荒野大镖客2", "辐射4"]
+  },
+  {
+    id: "witcher-3",
+    title: "巫师3",
+    cluster: "open_world_explore",
+    tags: ["open_world", "dark_fantasy", "story", "choice_consequence", "quest_writing", "exploration"],
+    antiTags: ["no_heavy_story", "no_open_world"],
+    why: ["适合想要开放世界、支线叙事、道德选择和黑暗奇幻旅程的玩家。"],
+    notFor: ["不适合只想玩法系统、讨厌长剧情任务的玩家。"],
+    similar: ["赛博朋克2077", "荒野大镖客2", "上古卷轴5"]
+  },
+  {
+    id: "palworld",
+    title: "幻兽帕鲁",
+    cluster: "open_world_explore",
+    tags: ["open_world", "creature_collecting", "survival", "base_building", "automation", "crafting", "exploration"],
+    antiTags: ["no_sandbox", "no_survival", "no_crafting"],
+    why: ["适合想要抓伙伴、造基地、生存制作和自动化生产的玩家。"],
+    notFor: ["不适合讨厌沙盒生存和基地建设的玩家。"],
+    similar: ["我的世界", "方舟", "宝可梦"]
+  },
+  {
+    id: "skyrim",
+    title: "上古卷轴5",
+    cluster: "open_world_explore",
+    tags: ["open_world", "roleplay", "fantasy", "self_directed", "mod_friendly", "exploration", "sandbox_rpg"],
+    antiTags: ["needs_tight_story", "needs_modern_combat"],
+    why: ["适合想要自由扮演、奇幻世界探索和自己找目标的玩家。"],
+    notFor: ["不适合想要紧凑剧情和现代动作手感的玩家。"],
+    similar: ["巫师3", "辐射4", "艾尔登法环"]
+  },
+  {
+    id: "baldurs-gate-3",
+    title: "博德之门3",
+    cluster: "narrative_roleplay",
+    tags: ["story", "choice_consequence", "crpg", "turn_based", "party_building", "roleplay", "long_session"],
+    antiTags: ["no_heavy_text", "no_complex_system", "no_long_session"],
+    why: ["适合想要自由选择、队友关系、角色扮演和回合战术的玩家。"],
+    notFor: ["不适合讨厌长文本、复杂规则和长流程的玩家。"],
+    similar: ["神界：原罪2", "极乐迪斯科"]
+  },
+  {
+    id: "disco-elysium",
+    title: "极乐迪斯科",
+    cluster: "narrative_roleplay",
+    tags: ["story", "heavy_text", "dialogue", "detective", "roleplay", "philosophical", "no_combat"],
+    antiTags: ["no_heavy_text", "needs_action", "needs_fast_feedback"],
+    why: ["适合想要大量文本、人格扮演、对话推理和文学感的玩家。"],
+    notFor: ["不适合讨厌阅读或想要战斗爽感的玩家。"],
+    similar: ["博德之门3", "公民沉睡者"]
+  },
+  {
+    id: "persona-5-royal",
+    title: "女神异闻录5 皇家版",
+    cluster: "narrative_roleplay",
+    tags: ["story", "character_bond", "turn_based", "school_life", "anime", "calendar", "long_term"],
+    antiTags: ["no_anime", "no_long_story", "no_turn_based"],
+    why: ["适合想要校园日常、角色羁绊、回合战斗和长线剧情的玩家。"],
+    notFor: ["不适合讨厌二次元、长流程或日常社群系统的玩家。"],
+    similar: ["崩坏：星穹铁道", "最终幻想"]
+  },
+  {
+    id: "final-fantasy-xvi",
+    title: "最终幻想 XVI",
+    cluster: "narrative_roleplay",
+    tags: ["story", "cinematic", "action_combat", "fantasy", "epic", "character_drama"],
+    antiTags: ["no_cinematic", "needs_open_world", "no_action"],
+    why: ["适合想要史诗演出、角色命运和动作战斗结合的玩家。"],
+    notFor: ["不适合想要高自由探索或纯系统玩法的玩家。"],
+    similar: ["最终幻想 VII 重制版", "巫师3"]
+  },
+  {
+    id: "detroit-become-human",
+    title: "底特律：化身为人",
+    cluster: "narrative_roleplay",
+    tags: ["interactive_movie", "choice_consequence", "cinematic", "branching_story", "sci_fi", "low_execution"],
+    antiTags: ["needs_deep_gameplay", "no_cinematic"],
+    why: ["适合想要电影互动、分支选择和剧情后果的玩家。"],
+    notFor: ["不适合想要复杂战斗或系统深度的玩家。"],
+    similar: ["Life is Strange", "采石场惊魂"]
+  },
+  {
+    id: "star-rail",
+    title: "崩坏：星穹铁道",
+    cluster: "narrative_roleplay",
+    tags: ["story", "turn_based", "character_collection", "anime", "team_building", "long_term", "sci_fi"],
+    antiTags: ["no_collection", "no_long_term", "no_turn_based"],
+    why: ["适合想要角色收集、回合队伍构筑和科幻剧情推进的玩家。"],
+    notFor: ["不适合讨厌长期养成和角色收集的玩家。"],
+    similar: ["原神", "女神异闻录5 皇家版"]
+  },
+  {
+    id: "life-is-strange",
+    title: "Life is Strange",
+    cluster: "narrative_roleplay",
+    tags: ["story", "choice_consequence", "character_bond", "episodic", "low_pressure", "dialogue"],
+    antiTags: ["needs_action", "no_teen_drama", "no_slow_pace"],
+    why: ["适合想要角色关系、选择后果和章节式叙事的玩家。"],
+    notFor: ["不适合想要强战斗或高速反馈的玩家。"],
+    similar: ["底特律：化身为人", "Oxenfree"]
+  },
+  {
+    id: "outer-wilds",
+    title: "星际拓荒",
+    cluster: "narrative_roleplay",
+    tags: ["exploration", "mystery", "knowledge_progression", "space", "puzzle", "discovery", "no_combat"],
+    antiTags: ["needs_clear_objectives", "no_exploration", "no_mystery"],
+    why: ["适合想要靠知识推进、探索宇宙谜团和自我发现的玩家。"],
+    notFor: ["不适合非常依赖任务标记和明确指引的玩家。"],
+    similar: ["遗忘之城", "塞尔达传说：旷野之息"]
+  },
+  {
+    id: "slay-the-spire",
+    title: "杀戮尖塔",
+    cluster: "strategy_buildcraft",
+    tags: ["deckbuilder", "roguelike", "planning", "run_based", "risk_reward", "low_reflex", "system_mastery"],
+    antiTags: ["needs_story", "needs_action", "no_failure_retry"],
+    why: ["适合想要牌组、路线、遗物和风险取舍的玩家。"],
+    notFor: ["不适合想要强剧情演出或实时动作的玩家。"],
+    similar: ["怪物火车", "Balatro", "邪恶冥刻"]
+  },
+  {
+    id: "balatro",
+    title: "Balatro",
+    cluster: "strategy_buildcraft",
+    tags: ["deckbuilder", "poker", "combo", "short_session", "multiplier", "run_based", "system_mastery"],
+    antiTags: ["needs_story", "no_card_logic"],
+    why: ["适合想要短局扑克牌型、倍率爆炸和连锁构筑爽感的玩家。"],
+    notFor: ["不适合想要剧情、角色或长线冒险的玩家。"],
+    similar: ["杀戮尖塔", "吸血鬼幸存者"]
+  },
+  {
+    id: "hades",
+    title: "哈迪斯",
+    cluster: "strategy_buildcraft",
+    tags: ["action_roguelike", "run_based", "reflex", "buildcraft", "story", "fast_feedback", "combat_mastery"],
+    antiTags: ["no_reflex", "no_failure_retry", "low_pressure_only"],
+    why: ["适合想要动作手感、祝福构筑和死亡后剧情推进的玩家。"],
+    notFor: ["不适合讨厌反复失败和动作操作的玩家。"],
+    similar: ["死亡细胞", "杀戮尖塔", "以撒的结合"]
+  },
+  {
+    id: "monster-train",
+    title: "怪物火车",
+    cluster: "strategy_buildcraft",
+    tags: ["deckbuilder", "roguelike", "lane_strategy", "planning", "combo", "run_based", "low_reflex"],
+    antiTags: ["needs_story", "needs_action"],
+    why: ["适合想要卡组、单位站位和多层战场组合的玩家。"],
+    notFor: ["不适合想要剧情或动作爽感的玩家。"],
+    similar: ["杀戮尖塔", "Across the Obelisk"]
+  },
+  {
+    id: "vampire-survivors",
+    title: "吸血鬼幸存者",
+    cluster: "strategy_buildcraft",
+    tags: ["short_session", "auto_attack", "horde_survival", "low_execution", "number_growth", "fast_feedback"],
+    antiTags: ["needs_deep_story", "needs_precision_control"],
+    why: ["适合想要低操作割草、满屏成长和短局爽感的玩家。"],
+    notFor: ["不适合想要高策略密度或剧情沉浸的玩家。"],
+    similar: ["土豆兄弟", "Balatro"]
+  },
+  {
+    id: "inscryption",
+    title: "邪恶冥刻",
+    cluster: "strategy_buildcraft",
+    tags: ["card_game", "narrative_trick", "horror", "puzzle", "rule_twist", "mystery"],
+    antiTags: ["no_horror", "needs_pure_strategy", "no_weird_story"],
+    why: ["适合想要卡牌、叙事诡计、规则反转和怪诞氛围的玩家。"],
+    notFor: ["不适合只想纯构筑、讨厌恐怖怪诞的玩家。"],
+    similar: ["杀戮尖塔", "小马岛"]
+  },
+  {
+    id: "civilization-vi",
+    title: "文明6",
+    cluster: "strategy_buildcraft",
+    tags: ["4x_strategy", "long_session", "macro_planning", "empire_building", "turn_based", "optimization"],
+    antiTags: ["short_session_only", "no_complex_system", "no_long_session"],
+    why: ["适合想要宏观规划、文明发展、长局策略和系统优化的玩家。"],
+    notFor: ["不适合只想短局或讨厌复杂系统的玩家。"],
+    similar: ["群星", "全面战争", "Humankind"]
+  },
+  {
+    id: "into-the-breach",
+    title: "Into the Breach",
+    cluster: "strategy_buildcraft",
+    tags: ["tactics", "puzzle_strategy", "turn_based", "perfect_information", "short_session", "planning"],
+    antiTags: ["needs_story", "needs_random_growth"],
+    why: ["适合想要短局战棋、完美信息和解题式战术判断的玩家。"],
+    notFor: ["不适合想要角色剧情或长期养成的玩家。"],
+    similar: ["XCOM", "杀戮尖塔"]
+  },
+  {
+    id: "stardew-valley",
+    title: "星露谷物语",
+    cluster: "cozy_management",
+    tags: ["farming", "life_sim", "cozy", "routine", "relationship", "collection", "low_pressure"],
+    antiTags: ["needs_fast_feedback", "no_repetition", "no_cozy"],
+    why: ["适合想要农场日程、村民关系、钓鱼采矿和长期秩序成形的玩家。"],
+    notFor: ["不适合讨厌重复日程和慢节奏经营的玩家。"],
+    similar: ["牧场物语", "珊瑚岛", "动物森友会"]
+  },
+  {
+    id: "animal-crossing",
+    title: "集合啦！动物森友会",
+    cluster: "cozy_management",
+    tags: ["cozy", "decoration", "collection", "daily_routine", "island_design", "low_pressure", "self_expression"],
+    antiTags: ["needs_challenge", "needs_fast_feedback", "no_daily_routine"],
+    why: ["适合想要岛屿装修、家具收集和低压陪伴的玩家。"],
+    notFor: ["不适合想要强挑战和明确目标的玩家。"],
+    similar: ["星露谷物语", "模拟人生4"]
+  },
+  {
+    id: "the-sims-4",
+    title: "模拟人生4",
+    cluster: "cozy_management",
+    tags: ["life_sim", "house_building", "character_creation", "sandbox_story", "self_expression", "low_pressure"],
+    antiTags: ["needs_clear_objectives", "needs_combat", "no_sandbox"],
+    why: ["适合想要捏人、盖房、编排人生故事和自我表达的玩家。"],
+    notFor: ["不适合需要明确主线和挑战目标的玩家。"],
+    similar: ["动物森友会", "星露谷物语"]
+  },
+  {
+    id: "dave-the-diver",
+    title: "潜水员戴夫",
+    cluster: "cozy_management",
+    tags: ["exploration", "restaurant_management", "cozy", "humor", "medium_session", "collection", "light_action"],
+    antiTags: ["no_management", "no_exploration"],
+    why: ["适合想要白天潜水探索、晚上经营餐厅的轻松混合玩法。"],
+    notFor: ["不适合完全不想经营或收集的玩家。"],
+    similar: ["星露谷物语", "Spiritfarer"]
+  },
+  {
+    id: "spiritfarer",
+    title: "Spiritfarer",
+    cluster: "cozy_management",
+    tags: ["cozy", "emotional_story", "management", "farewell", "crafting", "low_pressure", "character_bond"],
+    antiTags: ["no_emotional_story", "needs_fast_feedback"],
+    why: ["适合想要温柔经营、陪伴角色告别和轻度制作的玩家。"],
+    notFor: ["不适合不想要伤感叙事的玩家。"],
+    similar: ["星露谷物语", "Unpacking"]
+  },
+  {
+    id: "unpacking",
+    title: "Unpacking",
+    cluster: "cozy_management",
+    tags: ["cozy", "organization", "environmental_story", "short_session", "low_pressure", "object_placement"],
+    antiTags: ["needs_challenge", "needs_long_progression", "needs_combat"],
+    why: ["适合想要整理物品、从空间变化理解人生故事的玩家。"],
+    notFor: ["不适合想要复杂系统或强挑战的玩家。"],
+    similar: ["Spiritfarer", "动物森友会"]
+  },
+  {
+    id: "coral-island",
+    title: "珊瑚岛",
+    cluster: "cozy_management",
+    tags: ["farming", "life_sim", "cozy", "relationship", "collection", "town_restoration"],
+    antiTags: ["needs_fast_feedback", "no_repetition"],
+    why: ["适合想要现代牧场、村镇关系和长期收集修复的玩家。"],
+    notFor: ["不适合讨厌农场日程和重复收集的玩家。"],
+    similar: ["星露谷物语", "牧场物语"]
+  },
+  {
+    id: "story-of-seasons",
+    title: "牧场物语",
+    cluster: "cozy_management",
+    tags: ["farming", "life_sim", "cozy", "relationship", "routine", "long_term"],
+    antiTags: ["needs_fast_feedback", "no_repetition"],
+    why: ["适合想要传统牧场生活、种田、养动物和村民关系的玩家。"],
+    notFor: ["不适合讨厌慢节奏生活模拟的玩家。"],
+    similar: ["星露谷物语", "珊瑚岛"]
+  },
+  {
+    id: "minecraft",
+    title: "我的世界",
+    cluster: "sandbox_factory",
+    tags: ["sandbox", "building", "survival", "creative", "exploration", "self_directed", "crafting"],
+    antiTags: ["needs_clear_objectives", "no_sandbox", "no_building"],
+    why: ["适合想要自由建造、探索、制作和自己定义目标的玩家。"],
+    notFor: ["不适合强依赖任务指引和线性流程的玩家。"],
+    similar: ["泰拉瑞亚", "幻兽帕鲁"]
+  },
+  {
+    id: "terraria",
+    title: "泰拉瑞亚",
+    cluster: "sandbox_factory",
+    tags: ["sandbox", "crafting", "exploration", "boss_progression", "gear_growth", "2d_action", "building"],
+    antiTags: ["needs_clear_objectives", "no_action", "no_sandbox"],
+    why: ["适合想要 2D 沙盒探索、装备成长、Boss 推进和建造的玩家。"],
+    notFor: ["不适合讨厌自我探索和战斗成长的玩家。"],
+    similar: ["我的世界", "星界边境"]
+  },
+  {
+    id: "dont-starve",
+    title: "饥荒",
+    cluster: "sandbox_factory",
+    tags: ["survival", "crafting", "resource_pressure", "dark_humor", "self_directed", "failure_pressure"],
+    antiTags: ["low_pressure", "no_survival", "no_failure_punishment"],
+    why: ["适合想要资源压力、生存计划和失败学习的玩家。"],
+    notFor: ["不适合想要低压治愈或不想被资源惩罚的玩家。"],
+    similar: ["RimWorld", "我的世界"]
+  },
+  {
+    id: "rimworld",
+    title: "RimWorld",
+    cluster: "sandbox_factory",
+    tags: ["colony_sim", "emergent_story", "resource_management", "survival", "systemic", "high_complexity"],
+    antiTags: ["no_complex_system", "low_pressure", "needs_short_session"],
+    why: ["适合想要殖民地管理、突发故事和系统连锁反应的玩家。"],
+    notFor: ["不适合讨厌复杂系统和崩盘压力的玩家。"],
+    similar: ["矮人要塞", "饥荒", "环世界"]
+  },
+  {
+    id: "dyson-sphere-program",
+    title: "戴森球计划",
+    cluster: "sandbox_factory",
+    tags: ["factory", "automation", "macro_planning", "resource_chain", "sci_fi", "optimization"],
+    antiTags: ["no_factory", "no_optimization", "needs_story"],
+    why: ["适合想要星际工厂、生产链和宏观自动化优化的玩家。"],
+    notFor: ["不适合讨厌效率规划和生产线的玩家。"],
+    similar: ["Factorio", "幸福工厂"]
+  },
+  {
+    id: "factorio",
+    title: "Factorio",
+    cluster: "sandbox_factory",
+    tags: ["factory", "automation", "optimization", "resource_chain", "defense", "system_mastery"],
+    antiTags: ["no_factory", "no_optimization", "needs_story"],
+    why: ["适合想要生产线、物流自动化和效率迭代的玩家。"],
+    notFor: ["不适合讨厌规划和重复优化的玩家。"],
+    similar: ["戴森球计划", "幸福工厂"]
+  },
+  {
+    id: "it-takes-two",
+    title: "双人成行",
+    cluster: "coop_party",
+    tags: ["fixed_coop", "two_player", "puzzle_platforming", "story", "variety", "teamwork"],
+    antiTags: ["solo_only", "no_coop", "no_friend_available"],
+    why: ["适合有固定搭档、想要双人合作冒险和多变机制的玩家。"],
+    notFor: ["不适合没有固定搭档或只想单人玩的玩家。"],
+    similar: ["胡闹厨房2", "人类一败涂地"]
+  },
+  {
+    id: "overcooked-2",
+    title: "胡闹厨房2",
+    cluster: "coop_party",
+    tags: ["fixed_coop", "party", "time_pressure", "coordination", "cooking", "short_session", "chaos_fun", "coop", "teamwork", "fast_feedback"],
+    antiTags: ["solo_only", "no_time_pressure", "no_coop"],
+    why: ["适合想要朋友合作、厨房分工、时间压力和混乱笑点的玩家。"],
+    notFor: ["不适合讨厌合作压力和临场混乱的玩家。"],
+    similar: ["速速上菜", "双人成行"]
+  },
+  {
+    id: "eggy-party",
+    title: "蛋仔派对",
+    cluster: "coop_party",
+    tags: ["party", "multiplayer", "short_session", "chaos_fun", "ugc", "cute", "fast_feedback"],
+    antiTags: ["solo_only", "no_multiplayer", "needs_deep_system"],
+    why: ["适合想要短局派对、轻松混乱、UGC 关卡和社交传播的玩家。"],
+    notFor: ["不适合只想深度单机体验的玩家。"],
+    similar: ["Fall Guys", "超级马力欧派对"]
+  },
+  {
+    id: "sky",
+    title: "光·遇",
+    cluster: "coop_party",
+    tags: ["social_cozy", "exploration", "companionship", "low_pressure", "aesthetic", "soft_social"],
+    antiTags: ["no_social", "needs_clear_objectives", "needs_combat"],
+    why: ["适合想要治愈社交、陪伴探索和审美氛围的玩家。"],
+    notFor: ["不适合想要强目标、强战斗和高挑战的玩家。"],
+    similar: ["风之旅人", "动物森友会"]
+  },
+  {
+    id: "human-fall-flat",
+    title: "人类一败涂地",
+    cluster: "coop_party",
+    tags: ["physics_comedy", "coop", "puzzle_platforming", "chaos_fun", "short_session", "low_pressure"],
+    antiTags: ["needs_precision", "solo_only", "no_chaos"],
+    why: ["适合想要物理搞笑、朋友互坑和轻解谜的玩家。"],
+    notFor: ["不适合想要精密操作和严肃叙事的玩家。"],
+    similar: ["双人成行", "胡闹厨房2"]
+  },
+  {
+    id: "super-mario-party",
+    title: "超级马力欧派对",
+    cluster: "coop_party",
+    tags: ["party", "local_multiplayer", "mini_games", "family_fun", "short_session", "randomness"],
+    antiTags: ["solo_only", "no_randomness", "needs_deep_strategy"],
+    why: ["适合想要聚会小游戏、轻松互动和本地多人乐趣的玩家。"],
+    notFor: ["不适合想要严肃策略和低随机性的玩家。"],
+    similar: ["蛋仔派对", "马力欧赛车"]
+  },
+  {
+    id: "monument-valley-2",
+    title: "纪念碑谷2",
+    cluster: "puzzle_observation",
+    tags: ["puzzle", "visual_trick", "short_session", "low_pressure", "aesthetic", "guided"],
+    antiTags: ["needs_challenge", "needs_long_game"],
+    why: ["适合想要短流程、低压力、视觉错位和艺术解谜的玩家。"],
+    notFor: ["不适合想要高难和长线系统的玩家。"],
+    similar: ["Florence", "Gorogoa"]
+  },
+  {
+    id: "baba-is-you",
+    title: "Baba Is You",
+    cluster: "puzzle_observation",
+    tags: ["puzzle", "logic", "rule_manipulation", "high_difficulty", "system_mastery", "low_reflex"],
+    antiTags: ["low_pressure_only", "needs_story", "no_hard_puzzle"],
+    why: ["适合想要规则语言、逻辑推导和高难解谜的玩家。"],
+    notFor: ["不适合讨厌卡关和抽象逻辑的玩家。"],
+    similar: ["Patrick's Parabox", "塔罗斯的法则"]
+  },
+  {
+    id: "portal-2",
+    title: "传送门2",
+    cluster: "puzzle_observation",
+    tags: ["puzzle", "spatial_logic", "physics", "humor", "guided", "first_person", "medium_session"],
+    antiTags: ["motion_sick_sensitive", "no_puzzle"],
+    why: ["适合想要空间逻辑、传送门物理和幽默关卡解谜的玩家。"],
+    notFor: ["不适合讨厌第一人称或空间谜题的玩家。"],
+    similar: ["塔罗斯的法则", "Antichamber"]
+  },
+  {
+    id: "return-of-obra-dinn",
+    title: "奥伯拉丁的回归",
+    cluster: "puzzle_observation",
+    tags: ["deduction", "mystery", "observation", "logic", "no_combat", "slow_thinking", "detective"],
+    antiTags: ["needs_action", "no_deduction", "needs_clear_solution"],
+    why: ["适合想要观察证据、推理身份和还原事件真相的玩家。"],
+    notFor: ["不适合想要动作、即时反馈或明确提示的玩家。"],
+    similar: ["黄金偶像案", "Her Story"]
+  },
+  {
+    id: "animal-well",
+    title: "动物井",
+    cluster: "short_loop_casual",
+    tags: ["exploration", "metroidvania", "mystery", "puzzle", "compact_world", "discovery"],
+    antiTags: ["needs_clear_objectives", "no_mystery"],
+    why: ["适合想要紧凑地图、神秘探索和发现隐藏规则的玩家。"],
+    notFor: ["不适合非常依赖任务指引的玩家。"],
+    similar: ["Tunic", "空洞骑士"]
+  },
+  {
+    id: "tunic",
+    title: "Tunic",
+    cluster: "short_loop_casual",
+    tags: ["exploration", "mystery", "manual_discovery", "action_adventure", "puzzle", "compact_world"],
+    antiTags: ["needs_clear_objectives", "no_action"],
+    why: ["适合想要探索手册秘密、箱庭冒险和轻动作解谜的玩家。"],
+    notFor: ["不适合讨厌弱引导和隐藏信息的玩家。"],
+    similar: ["塞尔达传说：旷野之息", "动物井"]
+  },
+  {
+    id: "tetris-effect",
+    title: "俄罗斯方块效应",
+    cluster: "short_loop_casual",
+    tags: ["short_session", "puzzle", "flow_state", "music", "score_chase", "fast_feedback", "low_pressure", "reflex"],
+    antiTags: ["needs_story", "no_score_chase"],
+    why: ["适合想要短局、音乐沉浸、分数挑战和心流体验的玩家。"],
+    notFor: ["不适合想要剧情和角色成长的玩家。"],
+    similar: ["节奏地牢", "俄罗斯方块"]
+  },
+  {
+    id: "plants-vs-zombies",
+    title: "植物大战僵尸",
+    cluster: "short_loop_casual",
+    tags: ["tower_defense", "short_session", "light_strategy", "cute", "fast_feedback", "accessible"],
+    antiTags: ["needs_deep_strategy", "needs_story"],
+    why: ["适合想要轻策略、短关卡、低门槛塔防的玩家。"],
+    notFor: ["不适合想要复杂长期策略和深系统的玩家。"],
+    similar: ["明日方舟", "王国保卫战"]
+  }
+];
