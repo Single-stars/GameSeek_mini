@@ -977,3 +977,123 @@ Report hygiene:
 - `test:gameseek:robustness` regenerated v0.3.4 reports during verification.
 - Those v0.3.4 report files were restored after verification.
 - v0.4.1 commits only `reports/v0.4.1-followup-pair-hardening.json` and `reports/v0.4.1-followup-pair-hardening.md`.
+
+## v0.4.1 Release
+
+Date:
+- `2026-05-09`
+
+Release:
+- `v0.4.1`
+
+Commit:
+- `7f95153 Harden GameSeek follow-up pair distinctions`
+
+Release definition:
+- Backend-only follow-up pair hardening release.
+
+Release notes:
+- Fixed the two unresolved v0.4.0 pair scenarios:
+  - `slay-the-spire` vs `monster-train`
+  - `rimworld` vs `oxygen-not-included`
+- Follow-up pair status: `tested = 8`, `passed = 8`, `failed = 0`, `skipped_missing_game = 2`, `regressions = 0`.
+- No pool expansion.
+- No frontend changes.
+- No `goldenSeeds.ts` changes.
+- No `questions.ts` changes.
+- No `scoring.ts` rewrite.
+- No API contract change.
+- No popularity, rating, sales, or external priors.
+
+Release verification on `main`:
+- `npm.cmd run test:gameseek`: passed, baseline `Top6Recall = 1`, `TopKMonotonicityPassed = true`, `failures = []`.
+- `npm.cmd run test:gameseek:metadata`: passed, metadata errors `0`, warnings `0`.
+- `npm.cmd run test:gameseek:api`: passed.
+- `npm.cmd run test:gameseek:followups`: passed, pair scenarios `8` passed, `0` failed, `2` skipped.
+- `npm.cmd run test:gameseek:robustness`: passed, `missingFiles = []`.
+- `npm.cmd run build`: passed.
+- `git diff -- src/lib/gameseek/goldenSeeds.ts`: no diff.
+- `git diff -- src/lib/gameseek/questions.ts`: no diff.
+- `git diff -- src/lib/gameseek/scoring.ts`: no diff.
+- `git status --short`: clean after restoring report churn.
+
+Remote state:
+- `origin/main` points to `7f95153`.
+- `origin/mini-v0.4.1-followup-pair-hardening` points to `7f95153`.
+- `refs/tags/v0.4.1` points to `7f95153`.
+
+## v0.4.2 Frontend Follow-up Integration
+
+Date:
+- `2026-05-09`
+
+Branch:
+- `mini-v0.4.2-frontend-followup-integration`
+
+Base:
+- `main`
+- `v0.4.1`
+
+Phase document:
+- `docs/MINI_V042_FRONTEND_FOLLOWUP_INTEGRATION.md`
+
+Scope:
+- Connect backend follow-up capability to the frontend.
+- Keep a minimal single-page loop.
+- Do not expand the game pool.
+- Do not change `goldenSeeds.ts`.
+- Do not change `questions.ts`.
+- Do not rewrite `scoring.ts`.
+- Do not change the API route contract.
+- Do not add popularity, rating, sales, or external priors.
+
+Files changed or added:
+- `src/app/page.tsx`
+- `scripts/test-gameseek-frontend-contract.ts`
+- `package.json`
+- `docs/MINI_V042_FRONTEND_FOLLOWUP_INTEGRATION.md`
+- `docs/ITERATION_LOG.md`
+
+Frontend behavior:
+- Added explicit `Phase` state machine.
+- First request sends `{ answers }`.
+- If `needsFollowUp = true` and questions are returned, the page shows initial recommendations and follow-up questions.
+- Follow-up submit sends `{ answers, followUpAnswers }`.
+- Skip follow-up keeps the initial recommendations as final display.
+- Missing or empty legacy follow-up fields are handled defensively.
+- Errors are shown on-page with a recovery button.
+
+TDD / contract notes:
+- Added `scripts/test-gameseek-frontend-contract.ts` first.
+- Initial RED run passed API checks but failed page markers because `page.tsx` had no follow-up state machine.
+- Implemented the page state machine and UI.
+- Contract test then passed.
+- First build failed on TypeScript narrowing because the follow-up panel is only rendered in `answering_followups`, making `phase === "loading_final"` an impossible comparison in that branch.
+- Removed that impossible comparison; build passed.
+
+Manual validation:
+- Production server started at `http://127.0.0.1:3002/`.
+- Local page request returned HTTP `200`.
+- Codex in-app browser automation could not connect because no `iab` backend was discovered in this session.
+- Validation therefore used production build plus direct API path checks:
+  - No-follow-up path with `lol-wild-rift`: status `200`, recommendations `6`, `needsFollowUp = false`, follow-up count `0`.
+  - Follow-up path with `slay-the-spire`: status `200`, recommendations `6`, `needsFollowUp = true`, follow-up count `3`, question ids `F_DECKBUILDER_STYLE`, `F_STRATEGY_SUBCLUSTER`, `F_COLONY_MANAGEMENT_STYLE`.
+  - Follow-up final request: status `200`, recommendations `6`, `needsFollowUp = false`.
+  - Skip path: no second request, initial recommendations retained.
+
+Final verification:
+- `npm.cmd run test:gameseek`: passed, baseline `Top6Recall = 1`, `TopKMonotonicityPassed = true`, `failures = []`.
+- `npm.cmd run test:gameseek:metadata`: passed, metadata errors `0`, warnings `0`.
+- `npm.cmd run test:gameseek:api`: passed.
+- `npm.cmd run test:gameseek:followups`: passed, pair scenarios `8` passed, `0` failed, `2` skipped.
+- `npm.cmd run test:gameseek:robustness`: passed, `missingFiles = []`.
+- `npm.cmd run test:gameseek:frontend-contract`: passed.
+- `npm.cmd run build`: passed.
+- `git diff -- src/lib/gameseek/goldenSeeds.ts`: no diff.
+- `git diff -- src/lib/gameseek/questions.ts`: no diff.
+- `git diff -- src/lib/gameseek/scoring.ts`: no diff.
+
+Report hygiene:
+- `test:gameseek:robustness` regenerated v0.3.4 reports during verification.
+- `test:gameseek:followups` regenerated v0.4.1 pair-hardening reports during verification.
+- Those historical report files were restored after verification.
