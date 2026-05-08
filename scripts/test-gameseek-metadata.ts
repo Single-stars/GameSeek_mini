@@ -1,5 +1,5 @@
 ﻿import { games } from "../src/lib/gameseek/games";
-import type { Game, GameCluster } from "../src/lib/gameseek/types";
+import type { Game, GameCluster, GameSubCluster } from "../src/lib/gameseek/types";
 
 type Issue = {
   type: string;
@@ -25,6 +25,19 @@ const CLUSTERS: GameCluster[] = [
 const UNUSUALLY_LARGE_CLUSTER_LIMITS: Partial<Record<GameCluster, number>> = {
   strategy_buildcraft: 30,
 };
+
+const SUB_CLUSTERS: GameSubCluster[] = [
+  "factory_automation",
+  "city_colony_management",
+  "deckbuilder_roguelike",
+  "tactics_turn_based",
+  "rts_grand_strategy",
+  "defense_survival",
+  "short_loop_strategy",
+  "narrative_strategy",
+  "puzzle_strategy",
+  "hybrid_strategy",
+];
 
 const errors: Issue[] = [];
 const warnings: Issue[] = [];
@@ -77,6 +90,31 @@ for (const game of games as Game[]) {
 
   if (!isNonEmptyStringArray(game.tags)) {
     pushError({ type: "empty_tags", game: gameId });
+  }
+
+  if (game.cluster === "strategy_buildcraft") {
+    if (!isNonEmptyString(game.primarySubCluster)) {
+      pushError({ type: "missing_primarySubCluster", game: gameId });
+    } else if (!SUB_CLUSTERS.includes(game.primarySubCluster as GameSubCluster)) {
+      pushError({ type: "invalid_primarySubCluster", game: gameId, value: game.primarySubCluster });
+    }
+  } else if (game.primarySubCluster != null && !SUB_CLUSTERS.includes(game.primarySubCluster as GameSubCluster)) {
+    pushError({ type: "invalid_primarySubCluster", game: gameId, value: game.primarySubCluster });
+  }
+
+  if (game.secondarySubClusters != null) {
+    if (!Array.isArray(game.secondarySubClusters)) {
+      pushError({ type: "invalid_secondarySubClusters", game: gameId, value: game.secondarySubClusters });
+    } else {
+      if (game.secondarySubClusters.length > 2) {
+        pushError({ type: "too_many_secondarySubClusters", game: gameId, value: game.secondarySubClusters });
+      }
+      for (const subCluster of game.secondarySubClusters) {
+        if (!SUB_CLUSTERS.includes(subCluster)) {
+          pushError({ type: "invalid_secondarySubCluster", game: gameId, value: subCluster });
+        }
+      }
+    }
   }
 
   if (!Array.isArray(game.discriminatorTags)) {

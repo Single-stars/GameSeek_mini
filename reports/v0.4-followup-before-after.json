@@ -1,0 +1,128 @@
+{
+  "passed": true,
+  "baseline": {
+    "total": 80,
+    "top1Recall": 0.3375,
+    "top3Recall": 0.65,
+    "top6Recall": 1,
+    "topKMonotonicityPassed": true
+  },
+  "followUpQuestionCount": 8,
+  "v034Baseline": {
+    "confusableAbFailed": 49,
+    "strategyBuildcraftHighRiskConfusions": 146
+  },
+  "pairSummary": {
+    "tested": 8,
+    "passed": 6,
+    "failed": 2,
+    "skipped": 2
+  },
+  "pairResults": [
+    {
+      "pair": "factorio vs dyson-sphere-program",
+      "status": "passed",
+      "aSeedRanks": {
+        "a": 1,
+        "b": 6
+      },
+      "bSeedRanks": {
+        "a": 3,
+        "b": 1
+      }
+    },
+    {
+      "pair": "slay-the-spire vs monster-train",
+      "status": "failed",
+      "aSeedRanks": {
+        "a": 1,
+        "b": 14
+      },
+      "bSeedRanks": {
+        "a": 2,
+        "b": 3
+      }
+    },
+    {
+      "pair": "balatro vs dicey-dungeons",
+      "status": "passed",
+      "aSeedRanks": {
+        "a": 4,
+        "b": 5
+      },
+      "bSeedRanks": {
+        "a": 5,
+        "b": 4
+      }
+    },
+    {
+      "pair": "xcom-2 vs into-the-breach",
+      "status": "passed",
+      "aSeedRanks": {
+        "a": 2,
+        "b": 20
+      },
+      "bSeedRanks": {
+        "a": 36,
+        "b": 2
+      }
+    },
+    {
+      "pair": "tactics-ogre-reborn vs marvels-midnight-suns",
+      "status": "passed",
+      "aSeedRanks": {
+        "a": 1,
+        "b": 7
+      },
+      "bSeedRanks": {
+        "a": 10,
+        "b": 2
+      }
+    },
+    {
+      "pair": "age-of-empires-iv vs total-war-warhammer-iii",
+      "status": "passed",
+      "aSeedRanks": {
+        "a": 1,
+        "b": 33
+      },
+      "bSeedRanks": {
+        "a": 70,
+        "b": 2
+      }
+    },
+    {
+      "pair": "civilization-vi vs age-of-empires-iv",
+      "status": "passed",
+      "aSeedRanks": {
+        "a": 1,
+        "b": 64
+      },
+      "bSeedRanks": {
+        "a": 27,
+        "b": 1
+      }
+    },
+    {
+      "pair": "plants-vs-zombies vs bloons-td-6",
+      "status": "skipped_missing_game"
+    },
+    {
+      "pair": "cities-skylines vs frostpunk",
+      "status": "skipped_missing_game"
+    },
+    {
+      "pair": "rimworld vs oxygen-not-included",
+      "status": "failed",
+      "aSeedRanks": {
+        "a": 2,
+        "b": 1
+      },
+      "bSeedRanks": {
+        "a": 10,
+        "b": 1
+      }
+    }
+  ],
+  "errors": []
+}

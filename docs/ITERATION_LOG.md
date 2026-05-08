@@ -768,3 +768,109 @@ Final verification:
 - `git diff -- src/lib/gameseek/games.ts`: no diff.
 - `git diff -- src/lib/gameseek/goldenSeeds.ts`: no diff.
 - `git status --short`: only intended v0.3.4 diagnostics files changed before commit.
+
+## v0.4 Backend Follow-up Sub-clusters
+
+Date:
+- `2026-05-08`
+
+Branch:
+- `mini-v0.4-strategy-followup-subclusters`
+
+Base branch:
+- `mini-v0.3.4-recommendation-robustness-diagnostics`
+
+Phase document:
+- `docs/MINI_V04_FOLLOWUP_SUBCLUSTERS.md`
+
+Scope:
+- Backend-only dynamic follow-up.
+- Add strategy sub-cluster metadata.
+- Add follow-up questions, selector, and bounded rerank.
+- Extend API compatibly with optional `followUpAnswers`.
+- Do not expand the game pool.
+- Do not delete or replace the original 12 questions.
+- Do not modify `src/lib/gameseek/goldenSeeds.ts`.
+- Do not modify `src/lib/gameseek/questions.ts`.
+- Do not rewrite `src/lib/gameseek/scoring.ts`.
+- Do not add popularity, rating, sales, or other external priors.
+
+Files changed or added:
+- `src/lib/gameseek/types.ts`
+- `src/lib/gameseek/games.ts`
+- `src/lib/gameseek/followupQuestions.ts`
+- `src/lib/gameseek/followupSelector.ts`
+- `src/lib/gameseek/followupScoring.ts`
+- `src/app/api/recommend/route.ts`
+- `scripts/test-gameseek-metadata.ts`
+- `scripts/test-gameseek-followups.ts`
+- `package.json`
+- `reports/v0.4-followup-before-after.json`
+- `reports/v0.4-followup-before-after.md`
+- `docs/MINI_V04_FOLLOWUP_SUBCLUSTERS.md`
+- `docs/ITERATION_LOG.md`
+
+Sub-cluster rules:
+- Added `GameSubCluster`.
+- Added optional `primarySubCluster` and `secondarySubClusters`.
+- Every `strategy_buildcraft` game now has one `primarySubCluster`.
+- `secondarySubClusters` is capped at 2.
+- Non-strategy games can omit sub-clusters, but closely related games can carry them for follow-up rerank.
+
+Follow-up behavior:
+- `rankAllWithFollowUps` calls existing `rankAll` first.
+- Empty or missing `followUpAnswers` has zero ordering effect.
+- Follow-up bonus cap is `+16`.
+- Follow-up penalty floor is `-12`.
+- Selector returns at most 3 questions and is conservative.
+
+API behavior:
+- Old `{ answers }` request remains compatible.
+- New `{ answers, followUpAnswers }` request enables rerank.
+- Response now includes `recommendations`, `needsFollowUp`, `followUpQuestions`, and `diagnostic` in addition to `results`.
+
+TDD / execution notes:
+- Added `scripts/test-gameseek-followups.ts` first.
+- Initial red test failed as expected because follow-up modules did not exist.
+- Implemented follow-up modules and metadata.
+- Build initially failed because direct API test passed a standard `Request` to a handler typed as `NextRequest`; fixed the test type bridge only.
+- Build then failed on a `GameSubCluster | undefined` include type; fixed `followupScoring.ts` type narrowing.
+
+Follow-up pair scenario result:
+- Existing tested pairs: `8`
+- Passed/improved: `6`
+- Still unresolved: `2`
+- Skipped missing game: `2`
+
+Improved pairs:
+- `factorio` vs `dyson-sphere-program`
+- `balatro` vs `dicey-dungeons`
+- `xcom-2` vs `into-the-breach`
+- `tactics-ogre-reborn` vs `marvels-midnight-suns`
+- `age-of-empires-iv` vs `total-war-warhammer-iii`
+- `civilization-vi` vs `age-of-empires-iv`
+
+Still unresolved:
+- `slay-the-spire` vs `monster-train`
+- `rimworld` vs `oxygen-not-included`
+
+Skipped missing game:
+- `plants-vs-zombies` vs `bloons-td-6`
+- `cities-skylines` vs `frostpunk`
+
+Final verification:
+- `npm.cmd run test:gameseek`: passed, baseline `Top6Recall = 1`, `TopKMonotonicityPassed = true`, `failures = []`.
+- `npm.cmd run test:gameseek:metadata`: passed, metadata errors `0`, warnings `0`.
+- `npm.cmd run test:gameseek:api`: passed.
+- `npm.cmd run test:gameseek:followups`: passed, existing pair scenarios `6` passed, `2` unresolved, `2` skipped missing game.
+- `npm.cmd run test:gameseek:robustness`: passed, `missingFiles = []`.
+- `npm.cmd run build`: passed.
+- `git diff -- src/lib/gameseek/goldenSeeds.ts`: no diff.
+- `git diff -- src/lib/gameseek/scoring.ts`: no diff.
+- `git diff -- src/lib/gameseek/questions.ts`: no diff.
+- `git status --short`: only intended v0.4 files changed before commit.
+
+Report hygiene:
+- `test:gameseek:robustness` regenerated v0.3.4 JSON reports during verification.
+- Those v0.3.4 report files were restored after verification to avoid committing timestamp/report churn.
+- v0.4 commits only `reports/v0.4-followup-before-after.json` and `reports/v0.4-followup-before-after.md`.

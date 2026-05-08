@@ -9,10 +9,24 @@ export type GameCluster =
   | "puzzle_observation"
   | "short_loop_casual";
 
+export type GameSubCluster =
+  | "factory_automation"
+  | "city_colony_management"
+  | "deckbuilder_roguelike"
+  | "tactics_turn_based"
+  | "rts_grand_strategy"
+  | "defense_survival"
+  | "short_loop_strategy"
+  | "narrative_strategy"
+  | "puzzle_strategy"
+  | "hybrid_strategy";
+
 export type Game = {
   id: string;
   title: string;
   cluster: GameCluster;
+  primarySubCluster?: GameSubCluster;
+  secondarySubClusters?: GameSubCluster[];
   tags: string[];
   antiTags: string[];
   discriminatorTags: string[];

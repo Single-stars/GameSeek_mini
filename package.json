@@ -10,6 +10,7 @@
     "test:gameseek:api": "tsx scripts/test-gameseek-api.ts",
     "test:gameseek:metadata": "tsx scripts/test-gameseek-metadata.ts",
     "test:gameseek:seeds": "tsx scripts/audit-golden-seeds.ts",
+    "test:gameseek:followups": "tsx scripts/test-gameseek-followups.ts",
     "test:gameseek:simulation": "tsx scripts/simulate-user-answers.ts",
     "test:gameseek:noise": "tsx scripts/test-answer-noise.ts",
     "test:gameseek:ab": "tsx scripts/test-confusable-ab.ts",
